@@ -1,156 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Outbound Guide | Wiki, Crafting, Starter Guide, Multiplayer, Energy</title>
-  <meta name="description" content="Outbound guide and wiki with starter tips, crafting roadmap, energy systems, van upgrades, farming, pets, co-op multiplayer, PC requirements, videos and screenshots. English and Chinese supported." />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    html{scroll-behavior:smooth} body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f7fafc;color:#0f172a}.lang-zh .en{display:none}.lang-en .zh{display:none}.hero{background:linear-gradient(135deg,rgba(12,28,47,.82),rgba(16,107,113,.68)),url('assets/shot1.jpg');background-size:cover;background-position:center}.card{background:white;border:1px solid #e5e7eb;border-radius:22px;box-shadow:0 12px 35px rgba(15,23,42,.07)}.pill{border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.14);backdrop-filter:blur(8px)}.toc a{display:block;padding:.55rem .75rem;border-radius:.65rem;color:#475569}.toc a:hover{background:#eef6ff;color:#2563eb}.gradient-title{background:linear-gradient(90deg,#2563eb,#14b8a6);-webkit-background-clip:text;background-clip:text;color:transparent}.imgbox{background:linear-gradient(135deg,#dbeafe,#ccfbf1)}
+    html{scroll-behavior:smooth} body{font-family:inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f7fafc;color:#1f2937} .lang-zh .en{display:none}.lang-en .zh{display:none} .hero{background:linear-gradient(135deg,rgba(12,28,47,.82),rgba(16,107,113,.68)),url('assets/shot1.jpg');background-size:cover;background-position:center} .card{background:white;border:1px solid #e5e7eb;border-radius:12px;box-shadow:0 12px 35px rgba(15,23,42,.07)} .pill{border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.14);backdrop-filter:blur(8px)} .toc a{display:block;padding:.55rem .75rem;border-radius:6px;color:#374151}.toc a:hover{background:#f8fafc;color:#2563eb} .gradient-title{background:linear-gradient(90deg,#2563eb,#14b8a6);-webkit-background-clip:text;background-clip:text;color:transparent} .img-box{background:linear-gradient(135deg,#f8fafc,#e2e8f0)}
   </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V167JMFJWE"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-V167JMFJWE');</script>
+  <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "wotxx3bbrn");</script>
 </head>
 <body id="bodyTag" class="lang-en">
-  <nav class="bg-white/95 backdrop-blur sticky top-0 z-50 border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-      <a href="#top" class="font-black text-xl text-blue-600">OutboundGuide.org</a>
-      <div class="hidden lg:flex gap-5 text-sm font-semibold text-slate-700">
-        <a href="/en/starter-guide.html"><span class="en">Starter</span><span class="zh">开荒</span></a>
-        <a href="/en/crafting.html"><span class="en">Crafting</span><span class="zh">合成</span></a>
-        <a href="/en/multiplayer.html"><span class="en">Co-op</span><span class="zh">联机</span></a>
-        <a href="/en/energy.html"><span class="en">Energy</span><span class="zh">能源</span></a>
-        <a href="/en/van-upgrades.html"><span class="en">Van</span><span class="zh">房车</span></a>
-        <a href="/en/system-requirements.html"><span class="en">PC</span><span class="zh">配置</span></a>
-        <a href="#faq">FAQ</a>
+  <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200"><div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between"><a href="/" class="font-black text-xl tracking-tighter text-slate-900 underline decoration-blue-500 decoration-4 underline-offset-4">OutboundGuide.org</a><div class="flex items-center gap-2 bg-slate-100 p-1 rounded-xl"><button id="btn-en" onclick="setLang('en')" class="px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm">EN</button><button id="btn-zh" onclick="setLang('zh')" class="px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm">中文</button></div></div></nav>
+  <header class="hero py-24 mb-16"><div class="max-w-7xl mx-auto px-4 text-center text-white"><div class="pill inline-block px-4 py-1.5 rounded-full text-sm font-bold mb-6 tracking-wide">Non-official Fan Wiki & Guide</div><h1 class="text-5xl md:text-7xl font-black mb-8 leading-[1.1] tracking-tight">Outbound Guide<br><span class="text-blue-300">拾光旅人攻略</span></h1><p class="text-xl md:text-2xl text-slate-200 max-w-3xl mx-auto mb-10 leading-relaxed"><span class="en">A practical guide for the cozy open-world camper van survival game: crafting, energy, van upgrades, crops, pets and 4-player co-op.</span><span class="zh">面向《Outbound / 拾光旅人》的实战攻略站：合成、能源、房车升级、种植、宠物和 4 人联机。</span></p><div class="flex flex-wrap justify-center gap-4"><a href="/en/starter-guide.html" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl font-black text-lg shadow-xl shadow-blue-900/20 transition transform hover:-translate-y-1">Launch Guide <span class="zh">开荒攻略</span></a><a href="https://store.steampowered.com/app/2681030/Outbound/" target="_blank" class="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-2xl font-black text-lg backdrop-blur-md border border-white/20 transition transform hover:-translate-y-1">Steam Page <span class="zh">Steam 商店页</span></a></div></div></header>
+  <main class="max-w-7xl mx-auto px-4 space-y-24">
+    <section class="grid lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-8 space-y-12">
+        <div class="aspect-video card overflow-hidden ring-1 ring-slate-200"><iframe class="w-full h-full" src="https://www.youtube.com/embed/dXhWhKxCjrI" title="Outbound Release Date Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <section id="intro" class="space-y-6"><h2 class="text-4xl font-black tracking-tight text-slate-900">What is Outbound? <span class="text-blue-600">Outbound 是什么游戏？</span></h2><p class="text-lg leading-relaxed text-slate-600"><span class="en">Outbound is a cozy open-world exploration and survival-crafting game set in a utopian near future. You start with an empty electric camper van and gradually turn it into a mobile home.</span><span class="zh">《Outbound》是一款设定在未来乌托邦背景的舒适开放世界探索与生存建造游戏。玩家从一辆空荡荡的电动房车开始，逐步把它改造和移动之家。</span></p></section>
       </div>
-      <div class="flex items-center gap-2 bg-slate-100 p-1 rounded-xl">
-        <button id="btn-en" onclick="setLang('en')" class="px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm">EN</button>
-        <button id="btn-zh" onclick="setLang('zh')" class="px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm">中文</button>
-        <a href="/zh/starter-guide.html" class="px-2 py-1 text-[11px] text-slate-500 hover:text-blue-600 border-l border-slate-300 ml-1 pl-2">中文站</a>
+      <aside class="lg:col-span-4 sticky top-24"><div class="card p-8 bg-slate-900 text-white border-0 shadow-2xl"><h3 class="text-xl font-black mb-6 flex items-center gap-2"><span class="w-2 h-6 bg-blue-500 rounded-full"></span>Quick Links <span class="text-slate-500 font-normal text-sm">快速导航</span></h3><div class="space-y-2 toc"><a href="#intro" class="hover:bg-white/10 text-slate-300">About Game <span class="text-xs opacity-50">游戏介绍</span></a><a href="/en/crafting.html" class="hover:bg-white/10 text-slate-300">Crafting Database <span class="text-xs opacity-50">合成表</span></a><a href="/en/multiplayer.html" class="hover:bg-white/10 text-slate-300">Co-op Guide <span class="text-xs opacity-50">联机攻略</span></a><a href="/en/van-upgrades.html" class="hover:bg-white/10 text-slate-300">Van Upgrades <span class="text-xs opacity-50">房车升级</span></a><a href="/en/energy.html" class="hover:bg-white/10 text-slate-300">Energy Systems <span class="text-xs opacity-50">能源系统</span></a></div><div class="mt-8 pt-8 border-t border-white/10"><div class="text-sm text-slate-400 mb-2">Steam AppID</div><div class="font-mono text-blue-400">2681030</div></div></div></aside>
+    </section>
+
+    <section id="more-guides" class="py-12 border-t border-slate-200">
+      <h2 class="text-3xl font-black mb-2"><span class="en">More Outbound Guides</span><span class="zh">更多 Outbound 攻略</span></h2>
+      <p class="text-slate-600 mb-8"><span class="en">Deep-dive pages for each system, in English and Chinese.</span><span class="zh">每个系统的深度专题页，中英双语。</span></p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <a href="/en/starter-guide.html" class="card p-6 hover:shadow-2xl transition-all hover:-translate-y-1 group"><div class="text-xs text-blue-600 font-bold mb-2 tracking-widest">STARTER</div><div class="font-black text-xl mb-3 group-hover:text-blue-600 transition">First Hour Walkthrough</div><div class="text-sm text-slate-600 leading-relaxed">Concrete route for hours 0-1. Avoid the most common new-player mistakes.</div></a>
+        <a href="/en/crafting.html" class="card p-6 hover:shadow-2xl transition-all hover:-translate-y-1 group"><div class="text-xs text-emerald-600 font-bold mb-2 tracking-widest">CRAFTING</div><div class="font-black text-xl mb-3 group-hover:text-emerald-600 transition">Crafting Database</div><div class="text-sm text-slate-600 leading-relaxed">All recipes with status tags (Confirmed / Launch-day / Pending).</div></a>
+        <a href="/en/multiplayer.html" class="card p-6 hover:shadow-2xl transition-all hover:-translate-y-1 group"><div class="text-xs text-purple-600 font-bold mb-2 tracking-widest">CO-OP</div><div class="font-black text-xl mb-3 group-hover:text-purple-600 transition">4-Player Multiplayer</div><div class="text-sm text-slate-600 leading-relaxed">Role splits, host/join, shared van management, common pitfalls.</div></a>
       </div>
-    </div>
-  </nav>
+    </section>
 
-  <header id="top" class="hero text-white">
-    <div class="max-w-7xl mx-auto px-4 py-24 lg:py-32 grid lg:grid-cols-2 gap-12 items-center">
-      <div>
-        <div class="inline-flex gap-2 items-center pill rounded-full px-4 py-2 text-sm font-bold mb-6">
-          <span class="en">Non-official wiki and launch guide</span><span class="zh">非官方 Wiki 与首发攻略站</span>
-        </div>
-        <h1 class="text-5xl lg:text-7xl font-black leading-tight mb-6"><span class="en">Outbound Guide</span><span class="zh">Outbound 拾光旅人攻略</span></h1>
-        <p class="text-xl lg:text-2xl text-slate-100 mb-8 leading-relaxed"><span class="en">A practical guide for the cozy open-world camper van survival game: crafting, energy, van upgrades, crops, pets and 4-player co-op.</span><span class="zh">面向《Outbound / 拾光旅人》的实用攻略站：合成、能源、房车升级、种植、宠物和 4 人联机。</span></p>
-        <div class="flex flex-wrap gap-3 text-sm font-bold">
-          <span class="bg-yellow-300 text-slate-900 px-4 py-2 rounded-full"><span class="en">Launch window guide</span><span class="zh">首发窗口攻略</span></span>
-          <span class="bg-white/18 px-4 py-2 rounded-full"><span class="en">Steam AppID 2681030</span><span class="zh">Steam 应用 ID 2681030</span></span>
-          <span class="bg-white/18 px-4 py-2 rounded-full"><span class="en">English + Chinese</span><span class="zh">中英双语</span></span>
-        </div>
+    <section class="max-w-4xl mx-auto pb-24">
+      <div class="card p-8 bg-slate-50 border-slate-200">
+        <h2 class="text-2xl font-black mb-4 flex items-center gap-2">💬 <span class="en">Discussion</span><span class="zh">玩家讨论</span></h2>
+        <p class="text-slate-600 text-sm mb-6"><span class="en">Drop a tip, a fix, or a question. Sign in with GitHub to post in English. Chinese discussion below.</span><span class="zh">发现新技巧或想提问？欢迎留言。</span></p>
+        <script src="https://giscus.app/client.js"
+                data-repo="bos12050512-dotcom/outbound-guide"
+                data-repo-id="R_kgDOSZPlqw"
+                data-category="Announcements"
+                data-category-id="DIC_kwDOSZPlq84C8s3i"
+                data-mapping="pathname"
+                data-strict="0"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="top"
+                data-theme="light"
+                data-lang="en"
+                data-loading="lazy"
+                crossorigin="anonymous"
+                async></script>
       </div>
-      <div class="card overflow-hidden bg-slate-900 border-slate-700">
-        <div class="aspect-video">
-          <iframe class="w-full h-full" src="https://www.youtube.com/embed/j8IrWHKYQz0" title="Outbound Release Date Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-        <div class="p-4 text-slate-200 text-sm"><span class="en">Official/public trailer embed. If it does not play in your region, use the Steam trailer section below.</span><span class="zh">官方/公开视频嵌入。如果所在地区无法播放 YouTube，请看下方 Steam 预告片入口。</span></div>
-      </div>
-    </div>
-  </header>
-
-  <main class="max-w-7xl mx-auto px-4 py-16">
-    <div class="grid lg:grid-cols-[260px_1fr] gap-10">
-      <aside class="hidden lg:block"><div class="sticky top-24 card p-4 toc text-sm"><div class="font-black mb-3"><span class="en">Contents</span><span class="zh">目录</span></div><a href="#overview"><span class="en">Game Overview</span><span class="zh">游戏概览</span></a><a href="#gallery"><span class="en">Screenshots</span><span class="zh">截图视频</span></a><a href="#start"><span class="en">First Hour Plan</span><span class="zh">首小时开荒</span></a><a href="#systems"><span class="en">Core Systems</span><span class="zh">核心系统</span></a><a href="#crafting"><span class="en">Crafting Roadmap</span><span class="zh">合成路线</span></a><a href="#multiplayer"><span class="en">Co-op Guide</span><span class="zh">联机攻略</span></a><a href="#requirements"><span class="en">PC Requirements</span><span class="zh">配置要求</span></a><a href="#faq">FAQ</a></div></aside>
-      <div class="space-y-14">
-        <section id="overview" class="card p-8">
-          <h2 class="text-4xl font-black gradient-title mb-6"><span class="en">What is Outbound?</span><span class="zh">Outbound 是什么游戏？</span></h2>
-          <div class="grid md:grid-cols-2 gap-8 items-center"><div class="space-y-4 text-slate-700 leading-8"><p><span class="en">Outbound is a cozy open-world exploration and survival-crafting game set in a utopian near future. You start with an empty electric camper van and gradually turn it into a mobile home.</span><span class="zh">《Outbound》是一款近未来乌托邦背景的舒适开放世界探索与生存建造游戏。玩家从一辆空荡荡的电动房车开始，逐步把它改造成移动之家。</span></p><p><span class="en">The official Steam description highlights five pillars: explore colorful biomes, build and craft modular parts, grow plants and mushrooms, adopt and train a pet, and play solo or online co-op with up to 4 players.</span><span class="zh">Steam 官方介绍的核心卖点包括：探索多样生态群系、用模块化部件建造房车、种植植物与蘑菇、领养训练宠物，以及单人或最多 4 人在线合作。</span></p><p class="font-semibold text-slate-900"><span class="en">This site focuses on launch-day answers: what to build first, how power works, what resources matter, and how to avoid wasting early materials.</span><span class="zh">本站重点解决首发当天玩家最需要的答案：先造什么、能源怎么供、哪些资源优先、如何避免前期材料浪费。</span></p></div><img src="assets/header.jpg" onerror="this.style.display='none';this.parentElement.classList.add('imgbox')" alt="Outbound header" class="rounded-2xl w-full shadow-lg" /></div>
-        </section>
-
-        <section id="gallery" class="space-y-6">
-          <div class="flex items-end justify-between gap-4"><h2 class="text-3xl font-black"><span class="en">Screenshots and Video</span><span class="zh">实机画面与视频</span></h2><a class="text-blue-600 font-bold" href="https://store.steampowered.com/app/2681030/Outbound/" target="_blank"><span class="en">View on Steam</span><span class="zh">查看 Steam 页面</span></a></div>
-          <div class="grid md:grid-cols-3 gap-5"><img src="assets/shot1.jpg" class="rounded-2xl shadow h-56 w-full object-cover" alt="Outbound screenshot 1"><img src="assets/shot2.jpg" class="rounded-2xl shadow h-56 w-full object-cover" alt="Outbound screenshot 2"><img src="assets/shot3.jpg" class="rounded-2xl shadow h-56 w-full object-cover" alt="Outbound screenshot 3"><img src="assets/shot5.jpg" class="rounded-2xl shadow h-56 w-full object-cover" alt="Outbound screenshot 4"><img src="assets/shot6.jpg" class="rounded-2xl shadow h-56 w-full object-cover" alt="Outbound screenshot 5"><div class="card p-6 flex flex-col justify-center"><div class="font-black text-xl mb-2"><span class="en">Steam trailers</span><span class="zh">Steam 预告片</span></div><p class="text-slate-600 mb-4"><span class="en">Steam hosts official HLS trailers. Use this when YouTube is unavailable.</span><span class="zh">Steam 也提供官方预告片。如果 YouTube 打不开，可以从 Steam 页面观看。</span></p><a class="bg-slate-900 text-white text-center px-4 py-3 rounded-xl font-bold" target="_blank" href="https://store.steampowered.com/app/2681030/Outbound/"><span class="en">Open Steam trailer</span><span class="zh">打开 Steam 预告片</span></a></div></div>
-        </section>
-
-        <section id="start" class="card p-8">
-          <h2 class="text-3xl font-black mb-6"><span class="en">First Hour Starter Plan</span><span class="zh">首小时开荒路线</span></h2>
-          <div class="grid md:grid-cols-2 gap-6">
-            <div class="p-5 rounded-2xl bg-blue-50"><h3 class="font-black text-xl mb-3"><span class="en">0-10 min: check power and storage</span><span class="zh">0-10 分钟：确认电力和储物</span></h3><p class="text-slate-700 leading-7"><span class="en">Before expanding, understand where energy is generated, where it is consumed, and how much storage space your starter van has.</span><span class="zh">扩建之前，先确认电力从哪里来、哪些设备会耗电、初始房车能放多少材料。</span></p></div>
-            <div class="p-5 rounded-2xl bg-emerald-50"><h3 class="font-black text-xl mb-3"><span class="en">10-25 min: gather basic materials</span><span class="zh">10-25 分钟：采集基础材料</span></h3><p class="text-slate-700 leading-7"><span class="en">Prioritize wood-like, metal-like and plant resources. Keep rare components until you know the recipe path.</span><span class="zh">优先拿木材类、金属类、植物类资源。稀有零件先别乱用，等确认合成路线再消耗。</span></p></div>
-            <div class="p-5 rounded-2xl bg-amber-50"><h3 class="font-black text-xl mb-3"><span class="en">25-40 min: build a work loop</span><span class="zh">25-40 分钟：建立工作循环</span></h3><p class="text-slate-700 leading-7"><span class="en">Aim for a simple loop: gather resources, process materials, craft a useful module, then upgrade the van layout.</span><span class="zh">目标是形成循环：采集资源、加工材料、制作有用模块、再升级房车布局。</span></p></div>
-            <div class="p-5 rounded-2xl bg-purple-50"><h3 class="font-black text-xl mb-3"><span class="en">40-60 min: choose your direction</span><span class="zh">40-60 分钟：确定发展方向</span></h3><p class="text-slate-700 leading-7"><span class="en">Pick one route first: power stability, storage expansion, farming/cooking, or exploration mobility.</span><span class="zh">先选一条路线：电力稳定、储物扩容、种植烹饪，或探索机动性。</span></p></div>
-          </div>
-        </section>
-
-        <section id="systems" class="space-y-6"><h2 class="text-3xl font-black"><span class="en">Core Systems Explained</span><span class="zh">核心玩法系统</span></h2><div class="grid md:grid-cols-2 gap-6"><div class="card p-6"><h3 class="font-black text-xl mb-3"><span class="en">Energy: sun, wind and water</span><span class="zh">能源：太阳能、风能、水能</span></h3><p class="text-slate-700 leading-7"><span class="en">Outbound revolves around sustainable power. Energy determines how many stations, modules and comfort upgrades your van can support. Expect early guides to focus on stable production before decoration.</span><span class="zh">Outbound 的核心是可持续供电。电力决定你能运行多少工作站、模块和舒适性升级。早期攻略会优先关注稳定发电，而不是装饰。</span></p></div><div class="card p-6"><h3 class="font-black text-xl mb-3"><span class="en">Modular van building</span><span class="zh">模块化房车建造</span></h3><p class="text-slate-700 leading-7"><span class="en">The vehicle is your base. Space planning matters: storage, crafting stations, sleeping/comfort zones and external modules compete for limited room.</span><span class="zh">房车就是你的基地。空间规划很重要：储物、工作台、休息舒适区、外部模块都会抢有限空间。</span></p></div><div class="card p-6"><h3 class="font-black text-xl mb-3"><span class="en">Growing and cooking</span><span class="zh">种植与烹饪</span></h3><p class="text-slate-700 leading-7"><span class="en">Official copy confirms gardens, plants, mushrooms and cooking. Food systems are likely tied to health, travel efficiency or long-term self-sufficiency.</span><span class="zh">官方确认有花园、植物、蘑菇和烹饪。食物系统大概率与健康、旅行效率或长期自给自足有关。</span></p></div><div class="card p-6"><h3 class="font-black text-xl mb-3"><span class="en">Pets and training</span><span class="zh">宠物与训练</span></h3><p class="text-slate-700 leading-7"><span class="en">Players can adopt a friend at the Paws & Whiskers Lodge, then feed, pet and train it. Launch-day testing should identify what pets can help with.</span><span class="zh">玩家可以在 Paws & Whiskers Lodge 领养伙伴，并喂养、抚摸、训练它。首发后需要验证宠物具体能帮哪些忙。</span></p></div></div></section>
-
-        <section id="crafting" class="card p-8">
-          <h2 class="text-3xl font-black mb-4"><span class="en">Crafting Roadmap</span><span class="zh">合成路线图</span></h2><p class="text-slate-600 mb-6"><span class="en">Full recipes will be updated after hands-on verification. Below is the launch-day tracking table for the most important early-game items.</span><span class="zh">完整配方会在实测后更新。下面是首发当天最需要优先验证的前期物品追踪表。</span></p>
-          <div class="overflow-x-auto"><table class="w-full text-left border-collapse"><thead><tr class="bg-slate-900 text-white"><th class="p-3">Item</th><th class="p-3">Priority</th><th class="p-3"><span class="en">Why it matters</span><span class="zh">作用</span></th><th class="p-3">Status</th></tr></thead><tbody class="divide-y"><tr><td class="p-3 font-bold">Solar / Wind Power Module</td><td class="p-3">High</td><td class="p-3"><span class="en">Stabilizes crafting and automation.</span><span class="zh">稳定工作台和自动化供电。</span></td><td class="p-3 text-amber-600 font-bold">Pending verification</td></tr><tr><td class="p-3 font-bold">Storage Upgrade</td><td class="p-3">High</td><td class="p-3"><span class="en">Reduces early material loss and travel interruptions.</span><span class="zh">减少前期材料丢失和频繁往返。</span></td><td class="p-3 text-amber-600 font-bold">Pending verification</td></tr><tr><td class="p-3 font-bold">Basic Workstation</td><td class="p-3">High</td><td class="p-3"><span class="en">Unlocks processing and modular upgrades.</span><span class="zh">解锁加工和模块升级。</span></td><td class="p-3 text-amber-600 font-bold">Pending verification</td></tr><tr><td class="p-3 font-bold">Garden / Planter</td><td class="p-3">Medium</td><td class="p-3"><span class="en">Supports self-sufficient food production.</span><span class="zh">支持食物自给。</span></td><td class="p-3 text-amber-600 font-bold">Pending verification</td></tr></tbody></table></div>
-        </section>
-
-        <section id="multiplayer" class="card p-8"><h2 class="text-3xl font-black mb-4"><span class="en">Co-op Multiplayer Guide</span><span class="zh">多人联机攻略</span></h2><div class="grid md:grid-cols-3 gap-5"><div class="p-5 bg-slate-50 rounded-2xl"><h3 class="font-black mb-2"><span class="en">Driver</span><span class="zh">驾驶位</span></h3><p class="text-slate-700"><span class="en">Handles route choice and biome scouting.</span><span class="zh">负责路线选择和生态群系探索。</span></p></div><div class="p-5 bg-slate-50 rounded-2xl"><h3 class="font-black mb-2"><span class="en">Builder</span><span class="zh">建造位</span></h3><p class="text-slate-700"><span class="en">Manages van layout, workstations and modules.</span><span class="zh">管理房车布局、工作台和模块。</span></p></div><div class="p-5 bg-slate-50 rounded-2xl"><h3 class="font-black mb-2"><span class="en">Gatherer</span><span class="zh">采集位</span></h3><p class="text-slate-700"><span class="en">Collects resources and marks useful locations.</span><span class="zh">收集资源并标记有用地点。</span></p></div></div></section>
-
-        <section id="requirements" class="card p-8"><h2 class="text-3xl font-black mb-6"><span class="en">Official PC Requirements</span><span class="zh">官方 PC 配置要求</span></h2><div class="grid md:grid-cols-2 gap-6"><div class="bg-slate-50 rounded-2xl p-6"><h3 class="font-black text-xl mb-4">Minimum</h3><ul class="space-y-2 text-slate-700"><li>OS: Windows 10 64-bit</li><li>CPU: Intel Core i3-10100F / Ryzen 3 3100</li><li>RAM: 4 GB</li><li>GPU: NVIDIA GTX 1050 / AMD RX 570</li><li>DirectX: 11</li><li>Storage: 16 GB</li></ul></div><div class="bg-blue-50 rounded-2xl p-6"><h3 class="font-black text-xl mb-4">Recommended</h3><ul class="space-y-2 text-slate-700"><li>OS: Windows 11 64-bit</li><li>CPU: Intel i3-12100F / Ryzen 7 1700 or better</li><li>RAM: 8 GB</li><li>GPU: NVIDIA RTX 3060 / AMD RX 7600XT or better</li><li>DirectX: 12</li><li>Storage: 16 GB</li></ul></div></div></section>
-
-        <section id="faq" class="space-y-4"><h2 class="text-3xl font-black mb-6">FAQ</h2><details class="card p-5" open><summary class="font-black cursor-pointer"><span class="en">Does Outbound support Chinese?</span><span class="zh">Outbound 支持中文吗？</span></summary><p class="mt-3 text-slate-700"><span class="en">Yes. Steam lists Simplified Chinese and Traditional Chinese among supported languages.</span><span class="zh">支持。Steam 页面列出了简体中文和繁体中文。</span></p></details><details class="card p-5"><summary class="font-black cursor-pointer"><span class="en">Can I play solo?</span><span class="zh">可以单人玩吗？</span></summary><p class="mt-3 text-slate-700"><span class="en">Yes. Official text says the game can be played alone or together with friends.</span><span class="zh">可以。官方说明支持单人游玩，也支持和朋友一起玩。</span></p></details><details class="card p-5"><summary class="font-black cursor-pointer"><span class="en">How many players are supported online?</span><span class="zh">最多几个人联机？</span></summary><p class="mt-3 text-slate-700"><span class="en">Official Steam text says online co-op supports up to 4 players.</span><span class="zh">Steam 官方说明支持最多 4 人在线合作。</span></p></details></section>
-      </div>
-    </div>
+    </section>
   </main>
 
-  <section class="max-w-7xl mx-auto px-4 py-12">
-    <h2 class="text-3xl font-black mb-2"><span class="en">More Outbound Guides</span><span class="zh">更多 Outbound 攻略</span></h2>
-    <p class="text-slate-600 mb-6"><span class="en">Deep-dive pages for each system, in English and Chinese.</span><span class="zh">每个系统的深度专题页，中英双语。</span></p>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      <a href="/en/starter-guide.html" class="card p-5 hover:shadow-xl transition"><div class="text-xs text-blue-600 font-bold mb-1">STARTER</div><div class="font-black text-lg mb-1">First Hour Walkthrough</div><div class="text-sm text-slate-600">Concrete route for hours 0-1. Avoid the most common new-player mistakes.</div></a>
-      <a href="/en/crafting.html" class="card p-5 hover:shadow-xl transition"><div class="text-xs text-emerald-600 font-bold mb-1">CRAFTING</div><div class="font-black text-lg mb-1">Crafting Database</div><div class="text-sm text-slate-600">All recipes with status tags (Confirmed / Launch-day / Pending).</div></a>
-      <a href="/en/multiplayer.html" class="card p-5 hover:shadow-xl transition"><div class="text-xs text-purple-600 font-bold mb-1">CO-OP</div><div class="font-black text-lg mb-1">4-Player Multiplayer</div><div class="text-sm text-slate-600">Role splits, host/join, shared van management, common pitfalls.</div></a>
-      <a href="/en/energy.html" class="card p-5 hover:shadow-xl transition"><div class="text-xs text-amber-600 font-bold mb-1">ENERGY</div><div class="font-black text-lg mb-1">Power & Energy Guide</div><div class="text-sm text-slate-600">Solar, wind, batteries. Why your van loses power at night.</div></a>
-      <a href="/en/van-upgrades.html" class="card p-5 hover:shadow-xl transition"><div class="text-xs text-teal-600 font-bold mb-1">VAN</div><div class="font-black text-lg mb-1">Van Upgrades & Layouts</div><div class="text-sm text-slate-600">Best module unlock order. Four proven layout templates.</div></a>
-      <a href="/en/system-requirements.html" class="card p-5 hover:shadow-xl transition"><div class="text-xs text-slate-700 font-bold mb-1">PC</div><div class="font-black text-lg mb-1">PC Requirements</div><div class="text-sm text-slate-600">Official min/recommended specs + per-GPU FPS estimates.</div></a>
-    </div>
-    <div class="mt-6 text-sm text-slate-500"><span class="en">中文版攻略：</span><a href="/zh/starter-guide.html" class="text-blue-600 hover:underline">开荒</a> · <a href="/zh/crafting.html" class="text-blue-600 hover:underline">合成表</a> · <a href="/zh/multiplayer.html" class="text-blue-600 hover:underline">联机</a> · <a href="/zh/energy.html" class="text-blue-600 hover:underline">能源</a> · <a href="/zh/van-upgrades.html" class="text-blue-600 hover:underline">房车</a> · <a href="/zh/system-requirements.html" class="text-blue-600 hover:underline">配置</a></div>
-  </section>
-
-  <section class="max-w-4xl mx-auto px-4 pb-8">
-    <div class="card p-6">
-      <h2 class="text-2xl font-black mb-2">💬 <span class="en">Discussion</span><span class="zh">玩家讨论</span></h2>
-      <p class="text-slate-600 text-sm mb-4"><span class="en">Drop a tip, a fix, or a question. Sign in with GitHub to post in English. Chinese discussion below.</span><span class="zh">发现新技巧或想提问？欢迎留言。</span></p>
-      <script src="https://giscus.app/client.js"
-              data-repo="OASISXXr/outbound-guide"
-              data-repo-id="R_kgDOSZPlqw"
-              data-category="Announcements"
-              data-category-id="DIC_kwDOSZPlq84C8s3i"
-              data-mapping="pathname"
-              data-strict="0"
-              data-reactions-enabled="1"
-              data-emit-metadata="0"
-              data-input-position="top"
-              data-theme="light"
-              data-lang="en"
-              data-loading="lazy"
-              crossorigin="anonymous"
-              async></script>
-      <div class="mt-3 text-xs text-slate-500"><span class="en">Reddit: </span><a href="https://www.reddit.com/r/Outbound/" target="_blank" class="text-blue-600 hover:underline">r/Outbound</a> · <span class="en">Email: </span><span class="font-mono">contact[at]outboundguide.org</span></div>
-    </div>
-  </section>
-
-  <footer class="bg-slate-950 text-slate-300 py-12 mt-16">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row gap-6 justify-between">
-      <div>
-        <div class="font-black text-white text-xl mb-2">OutboundGuide.org</div>
-        <p class="max-w-2xl"><span class="en">Non-official fan guide. Outbound is a trademark of Square Glade Games. Images and game information are used for community guide purposes.</span><span class="zh">非官方玩家攻略站。Outbound 为 Square Glade Games 商标。图片与游戏信息仅用于玩家攻略与资料整理。</span></p>
-        <div class="mt-4 flex flex-wrap gap-4 text-sm">
-          <a href="/en/about.html" class="hover:text-white">About</a>
-          <a href="/en/privacy.html" class="hover:text-white">Privacy</a>
-          <a href="/en/disclaimer.html" class="hover:text-white">Disclaimer</a>
-          <a href="/en/contact.html" class="hover:text-white">Contact</a>
-          <span class="text-slate-600">|</span>
-          <a href="/zh/about.html" class="hover:text-white">关于</a>
-          <a href="/zh/privacy.html" class="hover:text-white">隐私</a>
-          <a href="/zh/disclaimer.html" class="hover:text-white">免责</a>
-          <a href="/zh/contact.html" class="hover:text-white">联系</a>
+  <footer class="bg-slate-950 text-slate-300 py-16">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row gap-12 justify-between">
+      <div class="space-y-6">
+        <div class="font-black text-white text-2xl tracking-tighter">OutboundGuide.org</div>
+        <p class="max-w-2xl text-slate-400"><span class="en">Non-official fan guide. Outbound is a trademark of Square Glade Games. Images and game information are used for community guide purposes.</span><span class="zh">非官方玩家攻略站。Outbound 为 Square Glade Games 商标。图片与游戏信息仅用于玩家攻略与资料整理。</span></p>
+        <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+          <a href="/en/about.html" class="hover:text-white">About</a><a href="/en/privacy.html" class="hover:text-white">Privacy</a><a href="/en/disclaimer.html" class="hover:text-white">Disclaimer</a><a href="/en/contact.html" class="hover:text-white">Contact</a>
+          <span class="text-slate-800">|</span>
+          <a href="/zh/about.html" class="hover:text-white">关于</a><a href="/zh/privacy.html" class="hover:text-white">隐私</a><a href="/zh/disclaimer.html" class="hover:text-white">免责</a><a href="/zh/contact.html" class="hover:text-white">联系</a>
         </div>
       </div>
-      <div class="text-sm">
-        <a class="underline" href="https://store.steampowered.com/app/2681030/Outbound/" target="_blank">Steam</a> · 
-        <a class="underline" href="https://www.squareglade.games" target="_blank">Developer</a>
+      <div class="text-sm flex flex-col items-start md:items-end gap-2 text-slate-500 font-mono">
+        <a class="hover:text-blue-400 transition" href="https://store.steampowered.com/app/2681030/Outbound/" target="_blank">Steam AppID: 2681030</a>
+        <a class="hover:text-blue-400 transition" href="https://www.squareglade.games" target="_blank">Developer Site</a>
+        <div class="mt-4 text-xs opacity-50 underline">google-site-verification: google18915ba1cafd0872.html</div>
       </div>
     </div>
   </footer>
