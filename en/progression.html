@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Outbound Progression Guide - Tech Tree, Signal Tower Choices & Unlock Order | Outbound Guide</title>
+  <meta name="description" content="Complete progression guide for Outbound: signal tower choices (which to pick first), tech tree unlock order, gardening prerequisite, and best skill paths. Updated for Day 10.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html{scroll-behavior:smooth} body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f7fafc;color:#0f172a}.lang-zh .en{display:none}.lang-en .zh{display:none}.card{background:white;border:1px solid #e5e7eb;border-radius:22px;box-shadow:0 12px 35px rgba(15,23,42,.07)}.pill{border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.14);backdrop-filter:blur(8px)}.tech-node{transition:transform .2s,box-shadow .2s}.tech-node:hover{transform:translateY(-3px);box-shadow:0 16px 32px rgba(15,23,42,.12)}.gradient-title{background:linear-gradient(90deg,#8b5cf6,#06b6d4);-webkit-background-clip:text;background-clip:text;color:transparent}section[id]{scroll-margin-top:100px}.connector{width:2px;height:24px;background:#cbd5e1;margin:0 auto}
+  </style>
+</head>
+<body id="bodyTag" class="lang-en">
+  <nav class="bg-white/95 backdrop-blur sticky top-0 z-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="/" class="font-black text-xl text-blue-600">OutboundGuide.org</a>
+      <div class="hidden lg:flex gap-5 text-sm font-semibold text-slate-700">
+        <a href="/en/starter-guide.html"><span class="en">Starter</span><span class="zh">开荒</span></a>
+        <a href="/en/crafting.html"><span class="en">Crafting</span><span class="zh">合成</span></a>
+        <a href="/en/energy.html"><span class="en">Energy</span><span class="zh">能源</span></a>
+        <a href="/en/van-upgrades.html"><span class="en">Van</span><span class="zh">房车</span></a>
+      </div>
+      <div class="flex items-center gap-2 bg-slate-100 p-1 rounded-xl">
+        <button id="btn-en" onclick="setLang('en')" class="px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm">EN</button>
+        <button id="btn-zh" onclick="setLang('zh')" class="px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm">中文</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-purple-900 via-indigo-900 to-slate-900 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="inline-flex gap-2 items-center pill rounded-full px-4 py-2 text-sm font-bold mb-6 bg-purple-600/40">
+        <span class="en">📊 Progression & Tech Tree</span><span class="zh">📊 进阶解锁与科技树</span>
+      </div>
+      <h1 class="text-5xl lg:text-6xl font-black mb-6"><span class="en">Progression Guide</span><span class="zh">进阶解锁指南</span></h1>
+      <p class="text-xl text-slate-300 mb-4"><span class="en">Signal tower choices, tech tree unlock order, and the best skill paths. Stop wasting points on wrong upgrades.</span><span class="zh">信号塔选择、科技树解锁顺序和最佳技能路线。别再把点数浪费在错误的升级上了。</span></p>
+      <div class="flex flex-wrap gap-3 text-sm">
+        <span class="bg-purple-500 text-white px-4 py-2 rounded-full font-bold">📡 Signal Towers</span>
+        <span class="bg-cyan-500 text-white px-4 py-2 rounded-full font-bold">🌱 Gardening Unlock</span>
+        <span class="bg-amber-500 text-white px-4 py-2 rounded-full font-bold">⚡ Best Skill Paths</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-12">
+    <!-- Quick Navigation -->
+    <div class="card p-6 mb-8">
+      <h2 class="text-lg font-bold mb-4"><span class="en">Jump to Section</span><span class="zh">快速跳转</span></h2>
+      <div class="flex flex-wrap gap-3">
+        <a href="#signal-towers" class="bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold hover:bg-purple-200">📡 Signal Towers</a>
+        <a href="#tech-tree" class="bg-cyan-100 text-cyan-700 px-4 py-2 rounded-full text-sm font-semibold hover:bg-cyan-200">🌳 Tech Tree</a>
+        <a href="#skill-paths" class="bg-amber-100 text-amber-700 px-4 py-2 rounded-full text-sm font-semibold hover:bg-amber-200">⚡ Best Paths</a>
+        <a href="#common-mistakes" class="bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-200">❌ Common Mistakes</a>
+        <a href="#unlock-order" class="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-semibold hover:bg-emerald-200">📋 Unlock Order</a>
+      </div>
+    </div>
+
+    <!-- Signal Towers Section -->
+    <section id="signal-towers" class="mb-12">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">📡</span>
+        <h2 class="text-3xl font-black"><span class="en">Signal Tower Choices (Pick-One System)</span><span class="zh">信号塔选择（三选一系统）</span></h2>
+      </div>
+
+      <div class="card p-8 border-l-4 border-purple-500 mb-6">
+        <h3 class="text-xl font-bold mb-4"><span class="en">How Signal Towers Work</span><span class="zh">信号塔如何运作</span></h3>
+        <p class="text-slate-600 mb-4"><span class="en">At certain progression milestones, you'll activate Signal Towers that present a <strong>"pick one of three"</strong> choice. Each choice unlocks a different branch of the tech tree. <strong>You cannot undo this choice</strong>, so pick carefully!</span><span class="zh">在特定进度里程碑，你会激活信号塔，出现<strong>"三选一"</strong>的选择。每个选择解锁科技树的不同分支。<strong>这个选择无法撤销</strong>，请谨慎选择！</span></p>
+
+        <div class="bg-amber-50 border border-amber-200 rounded-lg p-4">
+          <p class="text-amber-800 font-semibold"><span class="en">⚠️ Many players report being stuck because they picked the wrong tower. Read this guide before choosing!</span><span class="zh">⚠️ 许多玩家报告因为选错了信号塔而卡关。选择前请阅读本指南！</span></p>
+        </div>
+      </div>
+
+      <h3 class="text-xl font-bold mb-4"><span class="en">Tower 1: Early Game (First Signal Tower)</span><span class="zh">信号塔 1：前期（第一个信号塔）</span></h3>
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <div class="tech-node card p-6 border-t-4 border-emerald-500">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="bg-emerald-100 text-emerald-700 px-2 py-1 rounded text-xs font-bold">⭐ RECOMMENDED</span>
+          </div>
+          <h4 class="text-xl font-bold mb-2"><span class="en">Gardening</span><span class="zh">园艺</span></h4>
+          <p class="text-slate-600 text-sm mb-3"><span class="en">Unlocks crop planting, mushroom cultivation, and food processing. Essential for self-sufficiency.</span><span class="zh">解锁作物种植、蘑菇培养和食物加工。自给自足的核心。</span></p>
+          <div class="bg-emerald-50 rounded-lg p-3">
+            <p class="text-sm font-semibold text-emerald-800"><span class="en">Why pick this:</span><span class="zh">为什么选这个：</span></p>
+            <ul class="text-sm text-emerald-700 mt-1 space-y-1">
+              <li>• <span class="en">Required for mushroom recipes</span><span class="zh">蘑菇配方的前置条件</span></li>
+              <li>• <span class="en">Enables passive food generation</span><span class="zh">启用被动食物生成</span></li>
+              <li>• <span class="en">Unlocks compost → better crops</span><span class="zh">解锁堆肥 → 更好的作物</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tech-node card p-6 border-t-4 border-blue-500">
+          <h4 class="text-xl font-bold mb-2"><span class="en">Electronics</span><span class="zh">电子学</span></h4>
+          <p class="text-slate-600 text-sm mb-3"><span class="en">Unlocks advanced energy modules, battery upgrades, and automated systems.</span><span class="zh">解锁高级能源模块、电池升级和自动化系统。</span></p>
+          <div class="bg-blue-50 rounded-lg p-3">
+            <p class="text-sm font-semibold text-blue-800"><span class="en">Why pick this:</span><span class="zh">为什么选这个：</span></p>
+            <ul class="text-sm text-blue-700 mt-1 space-y-1">
+              <li>• <span class="en">Better power storage solutions</span><span class="zh">更好的电力存储方案</span></li>
+              <li>• <span class="en">Automated crafting stations</span><span class="zh">自动化工作站</span></li>
+              <li>• <span class="en">Great for co-op specialization</span><span class="zh">适合联机专精路线</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tech-node card p-6 border-t-4 border-amber-500">
+          <h4 class="text-xl font-bold mb-2"><span class="en">Mechanics</span><span class="zh">机械学</span></h4>
+          <p class="text-slate-600 text-sm mb-3"><span class="en">Unlocks van expansion, storage upgrades, and mobility improvements.</span><span class="zh">解锁房车扩展、储物升级和机动性改进。</span></p>
+          <div class="bg-amber-50 rounded-lg p-3">
+            <p class="text-sm font-semibold text-amber-800"><span class="en">Why pick this:</span><span class="zh">为什么选这个：</span></p>
+            <ul class="text-sm text-amber-700 mt-1 space-y-1">
+              <li>• <span class="en">More storage space early</span><span class="zh">前期更多储物空间</span></li>
+              <li>• <span class="en">Better van mobility</span><span class="zh">更好的房车机动性</span></li>
+              <li>• <span class="en">Useful but not critical early on</span><span class="zh">有用但前期不是关键</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card p-6 bg-gradient-to-r from-purple-50 to-cyan-50">
+        <h3 class="text-lg font-bold mb-3"><span class="en">💡 Our Recommendation for Solo Players</span><span class="zh">💡 单人玩家推荐</span></h3>
+        <div class="flex items-center gap-4">
+          <div class="flex items-center gap-2">
+            <span class="bg-emerald-500 text-white px-3 py-1 rounded-full font-bold text-sm">1st</span>
+            <span class="font-semibold"><span class="en">Gardening</span><span class="zh">园艺</span></span>
+          </div>
+          <span class="text-slate-400">→</span>
+          <div class="flex items-center gap-2">
+            <span class="bg-blue-500 text-white px-3 py-1 rounded-full font-bold text-sm">2nd</span>
+            <span class="font-semibold"><span class="en">Electronics</span><span class="zh">电子学</span></span>
+          </div>
+          <span class="text-slate-400">→</span>
+          <div class="flex items-center gap-2">
+            <span class="bg-amber-500 text-white px-3 py-1 rounded-full font-bold text-sm">3rd</span>
+            <span class="font-semibold"><span class="en">Mechanics</span><span class="zh">机械学</span></span>
+          </div>
+        </div>
+        <p class="text-sm text-slate-600 mt-3"><span class="en">Food self-sufficiency (Gardening) gives you the freedom to explore longer without worrying about supplies. Electronics then powers your automation. Mechanics last because storage can be managed with smart inventory.</span><span class="zh">食物自给（园艺）让你可以更长时间探索而不用担心补给。电子学随后为自动化供电。机械学最后因为储物可以通过聪明的库存管理来解决。</span></p>
+      </div>
+    </section>
+
+    <!-- Tech Tree Section -->
+    <section id="tech-tree" class="mb-12">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🌳</span>
+        <h2 class="text-3xl font-black"><span class="en">Full Tech Tree Overview</span><span class="zh">完整科技树概览</span></h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Gardening Branch -->
+        <div class="card p-6">
+          <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+            <span class="text-2xl">🌱</span> <span class="en">Gardening Branch</span><span class="zh">园艺分支</span>
+          </h3>
+          <div class="space-y-3">
+            <div class="bg-emerald-50 p-3 rounded-lg border-l-4 border-emerald-500">
+              <div class="font-bold text-sm">Gardening <span class="text-xs text-slate-500">(Base)</span></div>
+              <p class="text-xs text-slate-600"><span class="en">Unlocks planter boxes and basic seeds</span><span class="zh">解锁种植箱和基础种子</span></p>
+            </div>
+            <div class="connector"></div>
+            <div class="bg-emerald-50 p-3 rounded-lg border-l-4 border-emerald-400">
+              <div class="font-bold text-sm">Composting</div>
+              <p class="text-xs text-slate-600"><span class="en">Convert waste to fertilizer → better yields</span><span class="zh">将废物转化为肥料 → 更高产量</span></p>
+            </div>
+            <div class="connector"></div>
+            <div class="bg-emerald-50 p-3 rounded-lg border-l-4 border-emerald-300">
+              <div class="font-bold text-sm">Mushroom Cultivation</div>
+              <p class="text-xs text-slate-600"><span class="en">Grow rare mushrooms (needed for advanced recipes)</span><span class="zh">种植稀有蘑菇（高级配方需要）</span></p>
+            </div>
+            <div class="connector"></div>
+            <div class="bg-purple-50 p-3 rounded-lg border-l-4 border-purple-500">
+              <div class="font-bold text-sm">Advanced Botany <span class="text-xs text-purple-600">⭐ Late-game</span></div>
+              <p class="text-xs text-slate-600"><span class="en">Cross-breeding, rare seeds, medicinal plants</span><span class="zh">杂交、稀有种子、药用植物</span></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Electronics Branch -->
+        <div class="card p-6">
+          <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+            <span class="text-2xl">⚡</span> <span class="en">Electronics Branch</span><span class="zh">电子学分支</span>
+          </h3>
+          <div class="space-y-3">
+            <div class="bg-blue-50 p-3 rounded-lg border-l-4 border-blue-500">
+              <div class="font-bold text-sm">Electronics <span class="text-xs text-slate-500">(Base)</span></div>
+              <p class="text-xs text-slate-600"><span class="en">Unlocks circuit boards and basic wiring</span><span class="zh">解锁电路板和基础布线</span></p>
+            </div>
+            <div class="connector"></div>
+            <div class="bg-blue-50 p-3 rounded-lg border-l-4 border-blue-400">
+              <div class="font-bold text-sm">Battery Systems</div>
+              <p class="text-xs text-slate-600"><span class="en">Larger battery capacity → overnight power</span><span class="zh">更大电池容量 → 夜间供电</span></p>
+            </div>
+            <div class="connector"></div>
+            <div class="bg-blue-50 p-3 rounded-lg border-l-4 border-blue-300">
+              <div class="font-bold text-sm">Automation</div>
+              <p class="text-xs text-slate-600"><span class="en">Auto-crafters and resource processing</span><span class="zh">自动合成器和资源加工</span></p>
+            </div>
+            <div class="connector"></div>
+            <div class="bg-purple-50 p-3 rounded-lg border-l-4 border-purple-500">
+              <div class="font-bold text-sm">Smart Grid <span class="text-xs text-purple-600">⭐ Late-game</span></div>
+              <p class="text-xs text-slate-600"><span class="en">Intelligent power distribution, solar optimization</span><span class="zh">智能电力分配、太阳能优化</span></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mechanics Branch -->
+        <div class="card p-6">
+          <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+            <span class="text-2xl">🔧</span> <span class="en">Mechanics Branch</span><span class="zh">机械学分支</span>
+          </h3>
+          <div class="space-y-3">
+            <div class="bg-amber-50 p-3 rounded-lg border-l-4 border-amber-500">
+              <div class="font-bold text-sm">Mechanics <span class="text-xs text-slate-500">(Base)</span></div>
+              <p class="text-xs text-slate-600"><span class="en">Unlocks metalworking and basic tools</span><span class="zh">解锁金属加工和基础工具</span></p>
+            </div>
+            <div class="connector"></div>
+            <div class="bg-amber-50 p-3 rounded-lg border-l-4 border-amber-400">
+              <div class="font-bold text-sm">Storage Expansion</div>
+              <p class="text-xs text-slate-600"><span class="en">Additional van storage modules</span><span class="zh">额外的房车储物模块</span></p>
+            </div>
+            <div class="connector"></div>
+            <div class="bg-amber-50 p-3 rounded-lg border-l-4 border-amber-300">
+              <div class="font-bold text-sm">Mobility Upgrades</div>
+              <p class="text-xs text-slate-600"><span class="en">Better tires, suspension, off-road capability</span><span class="zh">更好的轮胎、悬挂、越野能力</span></p>
+            </div>
+            <div class="connector"></div>
+            <div class="bg-purple-50 p-3 rounded-lg border-l-4 border-purple-500">
+              <div class="font-bold text-sm">Advanced Engineering <span class="text-xs text-purple-600">⭐ Late-game</span></div>
+              <p class="text-xs text-slate-600"><span class="en">Modular van extensions, specialized equipment</span><span class="zh">模块化房车扩展、专业设备</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Best Skill Paths Section -->
+    <section id="skill-paths" class="mb-12">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">⚡</span>
+        <h2 class="text-3xl font-black"><span class="en">Recommended Skill Paths</span><span class="zh">推荐技能路线</span></h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="card p-6 border-l-4 border-emerald-500">
+          <h3 class="text-xl font-bold mb-3"><span class="en">🌿 Self-Sufficient Solo Path</span><span class="zh">🌿 自给自足单人路线</span></h3>
+          <p class="text-slate-600 text-sm mb-4"><span class="en">Best for solo players who want maximum independence.</span><span class="zh">最适合追求最大独立性的单人玩家。</span></p>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3 p-2 bg-slate-50 rounded-lg">
+              <span class="bg-emerald-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+              <span class="text-sm"><span class="en">Gardening → Composting → Mushroom Cultivation</span><span class="zh">园艺 → 堆肥 → 蘑菇培养</span></span>
+            </div>
+            <div class="flex items-center gap-3 p-2 bg-slate-50 rounded-lg">
+              <span class="bg-blue-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+              <span class="text-sm"><span class="en">Electronics → Battery Systems</span><span class="zh">电子学 → 电池系统</span></span>
+            </div>
+            <div class="flex items-center gap-3 p-2 bg-slate-50 rounded-lg">
+              <span class="bg-amber-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold">3</span>
+              <span class="text-sm"><span class="en">Mechanics → Storage Expansion</span><span class="zh">机械学 → 储物扩展</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card p-6 border-l-4 border-purple-500">
+          <h3 class="text-xl font-bold mb-3"><span class="en">🤝 Co-op Specialization Path</span><span class="zh">🤝 联机专精路线</span></h3>
+          <p class="text-slate-600 text-sm mb-4"><span class="en">Best for 4-player teams where each player specializes.</span><span class="zh">最适合每个玩家专精一项的 4 人团队。</span></p>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3 p-2 bg-slate-50 rounded-lg">
+              <span class="bg-emerald-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold">P1</span>
+              <span class="text-sm"><span class="en">Player 1: Full Gardening (food supply)</span><span class="zh">玩家1：全园艺（食物供应）</span></span>
+            </div>
+            <div class="flex items-center gap-3 p-2 bg-slate-50 rounded-lg">
+              <span class="bg-blue-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold">P2</span>
+              <span class="text-sm"><span class="en">Player 2: Full Electronics (power & automation)</span><span class="zh">玩家2：全电子学（电力与自动化）</span></span>
+            </div>
+            <div class="flex items-center gap-3 p-2 bg-slate-50 rounded-lg">
+              <span class="bg-amber-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold">P3</span>
+              <span class="text-sm"><span class="en">Player 3: Full Mechanics (van & storage)</span><span class="zh">玩家3：全机械学（房车与储物）</span></span>
+            </div>
+            <div class="flex items-center gap-3 p-2 bg-slate-50 rounded-lg">
+              <span class="bg-cyan-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold">P4</span>
+              <span class="text-sm"><span class="en">Player 4: Hybrid (fill gaps as needed)</span><span class="zh">玩家4：混合型（按需填补空缺）</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Common Mistakes Section -->
+    <section id="common-mistakes" class="mb-12">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">❌</span>
+        <h2 class="text-3xl font-black"><span class="en">Common Progression Mistakes</span><span class="zh">常见进阶错误</span></h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="card p-6 border-l-4 border-red-500">
+          <h3 class="text-lg font-bold mb-3"><span class="en">❌ Picking Mechanics First</span><span class="zh">❌ 先选机械学</span></h3>
+          <p class="text-slate-600 text-sm"><span class="en">Storage is nice, but you can manage inventory with smart crafting. Food and power are harder to substitute.</span><span class="zh">储物虽然好，但你可以通过聪明的合成来管理库存。食物和电力更难替代。</span></p>
+        </div>
+
+        <div class="card p-6 border-l-4 border-red-500">
+          <h3 class="text-lg font-bold mb-3"><span class="en">❌ Ignoring Gardening for Mushrooms</span><span class="zh">❌ 忽略蘑菇需要的园艺</span></h3>
+          <p class="text-slate-600 text-sm"><span class="en">Many late-game recipes require cultivated mushrooms. Without Gardening, you'll be stuck buying or finding them randomly.</span><span class="zh">许多后期配方需要种植蘑菇。没有园艺，你只能购买或随机找到它们。</span></p>
+        </div>
+
+        <div class="card p-6 border-l-4 border-red-500">
+          <h3 class="text-lg font-bold mb-3"><span class="en">❌ Spreading Points Too Thin</span><span class="zh">❌ 点数分散太广</span></h3>
+          <p class="text-slate-600 text-sm"><span class="en">It's better to max one branch before starting another. Half-finished branches don't give meaningful bonuses.</span><span class="zh">最好先满一个分支再开始另一个。半成品分支不会提供有意义的加成。</span></p>
+        </div>
+
+        <div class="card p-6 border-l-4 border-red-500">
+          <h3 class="text-lg font-bold mb-3"><span class="en">❌ Not Reading Tower Descriptions</span><span class="zh">❌ 不看信号塔描述</span></h3>
+          <p class="text-slate-600 text-sm"><span class="en">Each tower clearly states what it unlocks. Many players click randomly and regret it. Always read before choosing!</span><span class="zh">每个信号塔都清楚地说明了它解锁什么。许多玩家随机点击然后后悔。选择前一定要阅读！</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Unlock Order Section -->
+    <section id="unlock-order" class="mb-12">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">📋</span>
+        <h2 class="text-3xl font-black"><span class="en">Recommended Unlock Order</span><span class="zh">推荐解锁顺序</span></h2>
+      </div>
+
+      <div class="card p-8">
+        <div class="space-y-4">
+          <div class="flex items-start gap-4 p-4 bg-emerald-50 rounded-xl">
+            <span class="bg-emerald-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0">1</span>
+            <div>
+              <h4 class="font-bold"><span class="en">Signal Tower 1 → Gardening</span><span class="zh">信号塔 1 → 园艺</span></h4>
+              <p class="text-sm text-slate-600"><span class="en">Unlocks food production. Priority: plant basic crops immediately for passive food supply.</span><span class="zh">解锁食物生产。优先：立即种植基础作物以获得被动食物供应。</span></p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 p-4 bg-blue-50 rounded-xl">
+            <span class="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0">2</span>
+            <div>
+              <h4 class="font-bold"><span class="en">Signal Tower 2 → Electronics</span><span class="zh">信号塔 2 → 电子学</span></h4>
+              <p class="text-sm text-slate-600"><span class="en">Unlocks power automation. Priority: battery systems for overnight energy stability.</span><span class="zh">解锁电力自动化。优先：电池系统以确保夜间能源稳定。</span></p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 p-4 bg-amber-50 rounded-xl">
+            <span class="bg-amber-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0">3</span>
+            <div>
+              <h4 class="font-bold"><span class="en">Signal Tower 3 → Mechanics</span><span class="zh">信号塔 3 → 机械学</span></h4>
+              <p class="text-sm text-slate-600"><span class="en">Unlocks van upgrades. Priority: storage expansion, then mobility for exploring new biomes.</span><span class="zh">解锁房车升级。优先：储物扩展，然后是探索新生态区的机动性。</span></p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 p-4 bg-purple-50 rounded-xl">
+            <span class="bg-purple-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0">4</span>
+            <div>
+              <h4 class="font-bold"><span class="en">Late Game → Cross-Branch Synergies</span><span class="zh">后期 → 跨分支协同</span></h4>
+              <p class="text-sm text-slate-600"><span class="en">Combine Gardening + Electronics for automated farms. Combine Mechanics + Electronics for smart van systems.</span><span class="zh">结合园艺 + 电子学实现自动化农场。结合机械学 + 电子学实现智能房车系统。</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Guides -->
+    <section class="card p-8 mb-8">
+      <h3 class="text-xl font-bold mb-4"><span class="en">📖 Related Guides</span><span class="zh">📖 相关攻略</span></h3>
+      <div class="grid md:grid-cols-3 gap-4">
+        <a href="/en/crafting.html" class="p-4 bg-slate-50 rounded-xl hover:bg-blue-50 transition">
+          <div class="font-bold mb-1"><span class="en">Crafting Database</span><span class="zh">合成数据库</span></div>
+          <p class="text-sm text-slate-600"><span class="en">All recipes and materials</span><span class="zh">所有配方和材料</span></p>
+        </a>
+        <a href="/en/energy.html" class="p-4 bg-slate-50 rounded-xl hover:bg-blue-50 transition">
+          <div class="font-bold mb-1"><span class="en">Energy Guide</span><span class="zh">能源指南</span></div>
+          <p class="text-sm text-slate-600"><span class="en">Power systems & optimization</span><span class="zh">电力系统与优化</span></p>
+        </a>
+        <a href="/en/van-upgrades.html" class="p-4 bg-slate-50 rounded-xl hover:bg-blue-50 transition">
+          <div class="font-bold mb-1"><span class="en">Van Upgrades</span><span class="zh">房车升级</span></div>
+          <p class="text-sm text-slate-600"><span class="en">Module unlock order & layouts</span><span class="zh">模块解锁顺序与布局</span></p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Comments -->
+    <section class="card p-6">
+      <h3 class="text-xl font-bold mb-4"><span class="en">💬 Share Your Build</span><span class="zh">💬 分享你的加点方案</span></h3>
+      <p class="text-slate-600 mb-4"><span class="en">What signal tower did you pick first? Was it the right choice? Share your experience!</span><span class="zh">你第一个选了哪个信号塔？选对了吗？分享你的经验！</span></p>
+      <script src="https://giscus.app/client.js"
+              data-repo="bos12050512-dotcom/outbound-guide"
+              data-repo-id="R_kgDOSZPlqw"
+              data-category="Announcements"
+              data-category-id="DIC_kwDOSZPlq84C8s3i"
+              data-mapping="pathname"
+              data-strict="0"
+              data-reactions-enabled="1"
+              data-emit-metadata="0"
+              data-input-position="top"
+              data-theme="light"
+              data-lang="en"
+              data-loading="lazy"
+              crossorigin="anonymous"
+              async></script>
+    </section>
+  </main>
+
+  <footer class="bg-slate-950 text-slate-300 py-12 mt-16">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p><span class="en">OutboundGuide.org - Non-official fan guide</span><span class="zh">OutboundGuide.org - 非官方玩家攻略站</span></p>
+      <p class="text-sm text-slate-500 mt-2">Outbound is a trademark of Square Glade Games.</p>
+    </div>
+  </footer>
+
+  <script>
+    function setLang(lang){const b=document.getElementById('bodyTag'),en=document.getElementById('btn-en'),zh=document.getElementById('btn-zh'); if(lang==='zh'){b.className='lang-zh';zh.className='px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm';en.className='px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm'}else{b.className='lang-en';en.className='px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm';zh.className='px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm'} localStorage.setItem('lang',lang)}; setLang(localStorage.getItem('lang')||'en');
+  </script>
+</body>
+</html>
