@@ -314,12 +314,50 @@ Great vid! For anyone wanting recipes/energy/co-op tips, I built a small fan wik
 
 ---
 
-## ✅ 现在就要做的清单（按顺序）
+## 📈 Day 10 新内容推广（5/20）
 
-- [ ] **5/10 今晚 21:00**：发推文 1 + Steam 社区帖
-- [ ] **5/11 早 09:00**：发推文 2 + Reddit r/Outbound + r/Steam
-- [ ] **5/11 中午 12:00**：发小红书 + B站动态
-- [ ] **5/11 晚 20:00**：发推文 3 + Discord 留言
-- [ ] **5/12 起**：每天检查 GA4，回复网站评论
+### 新页面发布
+
+**收集品地图 (Collectibles Map)** - outboundguide.org/en/collectibles.html
+- 针对搜索量激增的 "USB key locations" 和 "Red Ridge Airstrip USB"
+- 覆盖 6 个 USB 密钥位置 + 石堆路径 + 稀有材料
+
+**技术修复页 (Tech Fixes)** - outboundguide.org/en/tech-fixes.html
+- 针对 Steam 论坛激增的 "il2cpp loading error" 报错帖
+- 包含晕3D 解决方案（FOV/摄像头设置）
+- Steam Deck 优化设置
+
+### 新增 YouTube 拦截话术
+
+**针对技术问题求助评论**：
+```
+Found a fix! Check this guide for il2cpp errors and Steam Deck settings:
+👉 https://outboundguide.org/en/tech-fixes.html
+```
+
+**针对收集品求助评论**：
+```
+Found the Red Ridge USB! It's in a red toolbox near the runway. Full map here:
+👉 https://outboundguide.org/en/collectibles.html
+```
+
+### 每日检查清单
+
+- [ ] 检查 GA4 实时流量（看新页面的 Organic 搜索量）
+- [ ] 搜索 "Outbound il2cpp error" / "Outbound USB" 新视频
+- [ ] 回复评论区，引流到 tech-fixes.html / collectibles.html
+- [ ] 监控评论系统（Giscus/Cusdis）的新评论
+
+### SEO 关键词补充
+
+**长尾关键词清单（Day 10 更新）**：
+- "Outbound Red Ridge Airstrip USB location"
+- "Outbound il2cpp failed to load fix"
+- "Outbound motion sickness settings"
+- "Outbound Steam Deck optimization"
+- "Outbound collectibles map USB"
+- "Outbound stone cairns guide"
+
+---
 
 🚐 加油！明天见！

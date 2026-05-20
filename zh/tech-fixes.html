@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Outbound 技术修复 - il2cpp错误、晕3D、帧率优化 | Outbound 攻略站</title>
+  <meta name="description" content="修复 il2cpp 加载错误，通过视野和摄像头设置减轻晕动症，优化 Steam Deck 性能。完整故障排除指南。">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html{scroll-behavior:smooth} body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f7fafc;color:#0f172a}.lang-zh .en{display:none}.lang-en .zh{display:none}.card{background:white;border:1px solid #e5e7eb;border-radius:22px;box-shadow:0 12px 35px rgba(15,23,42,.07)}.pill{border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.14);backdrop-filter:blur(8px)}.fix-card{transition:transform .2s,box-shadow .2s}.fix-card:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(15,23,42,.1)}.code-block{background:#1e293b;color:#e2e8f0;font-family:'Courier New',monospace;padding:1rem;border-radius:0.75rem;overflow-x:auto}.gradient-title{background:linear-gradient(90deg,#ef4444,#f97316);-webkit-background-clip:text;background-clip:text;color:transparent}section[id]{scroll-margin-top:100px}
+  </style>
+</head>
+<body id="bodyTag" class="lang-zh">
+  <nav class="bg-white/95 backdrop-blur sticky top-0 z-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="/zh/" class="font-black text-xl text-blue-600">OutboundGuide.org</a>
+      <div class="hidden lg:flex gap-5 text-sm font-semibold text-slate-700">
+        <a href="/zh/starter-guide.html">开荒</a>
+        <a href="/zh/crafting.html">合成</a>
+        <a href="/zh/system-requirements.html">PC设置</a>
+      </div>
+      <div class="flex items-center gap-2 bg-slate-100 p-1 rounded-xl">
+        <button id="btn-en" onclick="setLang('en')" class="px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm">EN</button>
+        <button id="btn-zh" onclick="setLang('zh')" class="px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm">中文</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-red-900 via-orange-900 to-slate-900 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="inline-flex gap-2 items-center pill rounded-full px-4 py-2 text-sm font-bold mb-6 bg-red-600/40">
+        ⚠️ 技术支持与修复
+      </div>
+      <h1 class="text-5xl lg:text-6xl font-black mb-6">技术问题修复</h1>
+      <p class="text-xl text-slate-300 mb-4">解决 il2cpp 报错、晕3D 和性能问题。包含 Steam Deck 优化设置。</p>
+      <div class="flex flex-wrap gap-3 text-sm">
+        <span class="bg-red-500 text-white px-4 py-2 rounded-full font-bold">🚨 il2cpp 崩溃</span>
+        <span class="bg-orange-500 text-white px-4 py-2 rounded-full font-bold">😵 晕动症</span>
+        <span class="bg-purple-500 text-white px-4 py-2 rounded-full font-bold">🎮 Steam Deck</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-12">
+    <!-- 快速导航 -->
+    <div class="card p-6 mb-8">
+      <h2 class="text-lg font-bold mb-4">快速查找问题</h2>
+      <div class="flex flex-wrap gap-3">
+        <a href="#il2cpp" class="bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-200">🚨 il2cpp 错误</a>
+        <a href="#motion-sickness" class="bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-semibold hover:bg-orange-200">😵 晕动症</a>
+        <a href="#steam-deck" class="bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold hover:bg-purple-200">🎮 Steam Deck</a>
+        <a href="#general-performance" class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold hover:bg-blue-200">⚡ 性能</a>
+        <a href="#stuttering" class="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-semibold hover:bg-emerald-200">🔄 卡顿</a>
+      </div>
+    </div>
+
+    <!-- il2cpp 错误部分 -->
+    <section id="il2cpp" class="mb-12">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🚨</span>
+        <h2 class="text-3xl font-black">il2cpp 加载错误</h2>
+      </div>
+
+      <div class="card p-8 border-l-4 border-red-500 mb-6">
+        <h3 class="text-xl font-bold mb-4">什么是 il2cpp 错误？</h3>
+        <p class="text-slate-600 mb-4">错误信息通常显示"Failed to load il2cpp"或在加载阶段出现白屏。这是 Unity 引擎问题，IL2CPP 构建未能正确加载。</p>
+
+        <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+          <p class="text-red-800 font-semibold">⚠️ 这个错误在第10天 Steam 论坛上激增。你不是一个人！</p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="fix-card card p-6">
+          <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+            <span class="bg-blue-100 text-blue-700 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">1</span>
+            验证游戏文件
+          </h3>
+          <p class="text-slate-600 mb-4">损坏的游戏文件是 il2cpp 错误的首要原因。</p>
+          <ol class="list-decimal pl-6 space-y-2 text-slate-700">
+            <li>打开 Steam → 库 → 右键 Outbound</li>
+            <li>选择"属性" → "本地文件" → "验证游戏文件完整性"</li>
+            <li>等待 5-10 分钟完成</li>
+            <li>重启 Steam 并重新启动游戏</li>
+          </ol>
+        </div>
+
+        <div class="fix-card card p-6">
+          <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+            <span class="bg-blue-100 text-blue-700 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">2</span>
+            重新安装 VC++ 运行库
+          </h3>
+          <p class="text-slate-600 mb-4">缺失或损坏的 Visual C++ 库可能导致 il2cpp 失败。</p>
+          <ol class="list-decimal pl-6 space-y-2 text-slate-700">
+            <li>从 Microsoft 下载 Visual C++ Redistributable 2015-2022</li>
+            <li>运行安装程序（x64 版本）</li>
+            <li>重启系统</li>
+            <li>再次尝试启动 Outbound</li>
+          </ol>
+        </div>
+
+        <div class="fix-card card p-6">
+          <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+            <span class="bg-blue-100 text-blue-700 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">3</span>
+            清除着色器缓存
+          </h3>
+          <p class="text-slate-600 mb-4">损坏的着色器缓存可能干扰 il2cpp 加载。</p>
+          <div class="code-block text-sm">
+            <p class="text-slate-400 mb-2"># 删除以下文件夹：</p>
+            <p>C:\Users\YourName\AppData\Local\Outbound\ShaderCache</p>
+            <p>C:\Users\YourName\AppData\Local\Unity\Cache</p>
+          </div>
+        </div>
+
+        <div class="fix-card card p-6">
+          <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+            <span class="bg-blue-100 text-blue-700 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">4</span>
+            管理员模式启动
+          </h3>
+          <p class="text-slate-600 mb-4">以管理员身份运行可以解决权限相关的 il2cpp 问题。</p>
+          <ol class="list-decimal pl-6 space-y-2 text-slate-700">
+            <li>在 Steam 库中右键 Outbound</li>
+            <li>选择"属性" → "本地文件" → "浏览"</li>
+            <li>右键 Outbound.exe → 属性 → 兼容性 → "以管理员身份运行"</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- 晕动症部分 -->
+    <section id="motion-sickness" class="mb-12">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">😵</span>
+        <h2 class="text-3xl font-black">晕动症解决方案</h2>
+      </div>
+
+      <p class="text-slate-600 mb-6">许多玩家反映摄像头移动和视野设置导致晕动症。以下是社区验证的解决方案。</p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="fix-card card p-6">
+          <h3 class="text-lg font-bold mb-3">🎯 降低视野 (FOV)</h3>
+          <p class="text-slate-600 text-sm mb-4">高视野会导致恶心。尝试这些值：</p>
+          <div class="space-y-2">
+            <div class="bg-amber-50 p-3 rounded-lg">
+              <div class="text-sm text-slate-600">默认视野</div>
+              <div class="font-bold text-amber-700">70-80°</div>
+            </div>
+            <div class="bg-green-50 p-3 rounded-lg">
+              <div class="text-sm text-slate-600">敏感玩家推荐</div>
+              <div class="font-bold text-green-700">55-65°</div>
+            </div>
+          </div>
+          <p class="text-xs text-slate-500 mt-3">在：设置 → 摄像头 → 视野中找到</p>
+        </div>
+
+        <div class="fix-card card p-6">
+          <h3 class="text-lg font-bold mb-3">⚙️ 减少镜头晃动</h3>
+          <p class="text-slate-600 text-sm mb-4">房车移动可能导致明显的镜头晃动。</p>
+          <div class="space-y-2">
+            <div class="flex justify-between items-center p-2 bg-slate-50 rounded">
+              <span>镜头晃动强度</span>
+              <span class="bg-green-100 text-green-700 px-2 py-1 rounded text-sm font-bold">0%</span>
+            </div>
+            <div class="flex justify-between items-center p-2 bg-slate-50 rounded">
+              <span>房车弹跳</span>
+              <span class="bg-green-100 text-green-700 px-2 py-1 rounded text-sm font-bold">50%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="fix-card card p-6">
+          <h3 class="text-lg font-bold mb-3">🖥️ 启用垂直同步</h3>
+          <p class="text-slate-600 text-sm mb-4">画面撕裂可能加剧晕动症。</p>
+          <div class="bg-blue-50 p-3 rounded-lg">
+            <p class="text-sm font-semibold">推荐：垂直同步开启 + 60 FPS 上限</p>
+          </div>
+        </div>
+
+        <div class="fix-card card p-6">
+          <h3 class="text-lg font-bold mb-3">🏃 使用冲刺锁定</h3>
+          <p class="text-slate-600 text-sm mb-4">冲刺锁定在移动时保持视角居中。</p>
+          <div class="bg-amber-50 p-3 rounded-lg">
+            <p class="text-sm text-amber-800">在：游戏 → 无障碍 → 冲刺锁定中启用</p>
+          </div>
+        </div>
+
+        <div class="fix-card card p-6">
+          <h3 class="text-lg font-bold mb-3">💊 晕车药辅助</h3>
+          <p class="text-slate-600 text-sm mb-4">如果设置不够，考虑这些补充剂：</p>
+          <ul class="space-y-1 text-sm text-slate-700">
+            <li>• 姜根 (Ginger root)</li>
+            <li>• 茶苯海明 (Dramamine)</li>
+            <li>• 按压腕带</li>
+          </ul>
+        </div>
+
+        <div class="fix-card card p-6">
+          <h3 class="text-lg font-bold mb-3">⏱️ 定时休息</h3>
+          <p class="text-slate-600 text-sm mb-4">遵循 20-20-20 法则：</p>
+          <div class="text-center">
+            <div class="text-4xl font-black text-blue-600">20</div>
+            <p class="text-sm text-slate-600">分钟 → 20秒 → 看20英尺外</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Steam Deck 部分 -->
+    <section id="steam-deck" class="mb-12">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🎮</span>
+        <h2 class="text-3xl font-black">Steam Deck 优化</h2>
+      </div>
+
+      <div class="card p-8 bg-gradient-to-r from-purple-50 to-slate-900 mb-6">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-xl font-bold mb-4">官方 Steam Deck 支持</h3>
+            <p class="text-slate-600 mb-4">Outbound 已通过 Steam Deck 验证。但许多用户报告可以通过以下调整解决性能问题。</p>
+            <div class="flex items-center gap-2 text-sm">
+              <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full font-bold">✓ 已验证</span>
+              <span class="text-slate-500">Steam Deck 兼容</span>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-4">
+            <h4 class="font-bold mb-2">快速数据</h4>
+            <div class="grid grid-cols-2 gap-3 text-center">
+              <div>
+                <div class="text-2xl font-bold text-purple-600">30+</div>
+                <div class="text-xs text-slate-500">Deck 上的 FPS</div>
+              </div>
+              <div>
+                <div class="text-2xl font-bold text-blue-600">~2.5小时</div>
+                <div class="text-xs text-slate-500">电池续航</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="fix-card card p-6">
+          <h3 class="text-lg font-bold mb-4">⚡ 游戏内设置</h3>
+          <div class="space-y-3">
+            <div class="flex justify-between items-center p-3 bg-slate-50 rounded-lg">
+              <span>分辨率缩放</span>
+              <span class="font-bold text-blue-600">70%</span>
+            </div>
+            <div class="flex justify-between items-center p-3 bg-slate-50 rounded-lg">
+              <span>阴影质量</span>
+              <span class="font-bold text-red-600">关闭</span>
+            </div>
+            <div class="flex justify-between items-center p-3 bg-slate-50 rounded-lg">
+              <span>纹理质量</span>
+              <span class="font-bold text-amber-600">中</span>
+            </div>
+            <div class="flex justify-between items-center p-3 bg-slate-50 rounded-lg">
+              <span>粒子效果</span>
+              <span class="font-bold text-amber-600">低</span>
+            </div>
+            <div class="flex justify-between items-center p-3 bg-slate-50 rounded-lg">
+              <span>环境光遮蔽</span>
+              <span class="font-bold text-red-600">关闭</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="fix-card card p-6">
+          <h3 class="text-lg font-bold mb-4">🔧 SteamOS TDP 设置</h3>
+          <div class="code-block text-sm mb-4">
+            <p class="text-slate-400 mb-2"># SteamOS 游戏模式中推荐：</p>
+            <p>TDP 限制：8W - 10W</p>
+            <p>GPU 频率：800MHz（如可能请降压）</p>
+          </div>
+          <div class="bg-amber-50 border border-amber-200 rounded-lg p-3">
+            <p class="text-sm text-amber-800">💡 提示：使用 FSR（超分辨率）在不影响画质的情况下提升性能。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 通用性能部分 -->
+    <section id="general-performance" class="mb-12">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">⚡</span>
+        <h2 class="text-3xl font-black">通用性能技巧</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="card p-6 text-center">
+          <div class="text-4xl mb-3">🖥️</div>
+          <h3 class="text-lg font-bold mb-2">仅使用独立显卡</h3>
+          <p class="text-slate-600 text-sm">在 BIOS/NVIDIA 控制面板中禁用集成显卡。只将 Outbound 分配给独立显卡。</p>
+        </div>
+
+        <div class="card p-6 text-center">
+          <div class="text-4xl mb-3">💾</div>
+          <h3 class="text-lg font-bold mb-2">安装到 SSD</h3>
+          <p class="text-slate-600 text-sm">Outbound 加载大量资源。安装到 SSD 可显著减少加载时间和卡顿。</p>
+        </div>
+
+        <div class="card p-6 text-center">
+          <div class="text-4xl mb-3">🔋</div>
+          <h3 class="text-lg font-bold mb-2">电源设置</h3>
+          <p class="text-slate-600 text-sm">在 Windows 中将电源计划设为"高性能"以获得最大 CPU/GPU 性能。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 卡顿部分 -->
+    <section id="stuttering" class="mb-12">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">🔄</span>
+        <h2 class="text-3xl font-black">卡顿与冻结修复</h2>
+      </div>
+
+      <div class="card p-8">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-lg font-bold mb-4">常见原因</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <span class="bg-red-100 text-red-600 w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">1</span>
+                <div><strong>杀毒软件干扰</strong> - AV 如 Windows Defender 或 Avast 可能阻止游戏文件</div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="bg-red-100 text-red-600 w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">2</span>
+                <div><strong>机械硬盘碎片</strong> - 传统硬盘导致卡顿</div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="bg-red-100 text-red-600 w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">3</span>
+                <div><strong>显卡驱动过时</strong> - 旧驱动没有针对游戏优化</div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="bg-red-100 text-red-600 w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">4</span>
+                <div><strong>后台应用</strong> - Discord、浏览器、直播软件消耗资源</div>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold mb-4">快速修复</h3>
+            <div class="space-y-3">
+              <div class="bg-green-50 p-3 rounded-lg">
+                <p class="font-semibold text-green-800">添加到杀毒软件排除项：</p>
+                <code class="text-sm text-green-700">Outbound.exe 文件夹</code>
+              </div>
+              <div class="bg-blue-50 p-3 rounded-lg">
+                <p class="font-semibold text-blue-800">更新显卡驱动</p>
+                <p class="text-sm text-blue-600">NVIDIA: 551.86+ | AMD: 24.2.1+</p>
+              </div>
+              <div class="bg-purple-50 p-3 rounded-lg">
+                <p class="font-semibold text-purple-800">干净启动</p>
+                <p class="text-sm text-purple-600">游戏前关闭不必要的后台应用</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 评论区 -->
+    <section class="card p-6">
+      <h3 class="text-xl font-bold mb-4">💬 社区解决方案</h3>
+      <p class="text-slate-600 mb-4">找到了这里没有列出的修复方法？与社区分享！</p>
+      <div id="cusdis-thread" data-host="https://cusdis.com" data-app-id="711a47a3-e8ae-468b-ab72-11a35fdab2d3" data-page-id="zh-tech-fixes" data-page-url="https://outboundguide.org/zh/tech-fixes.html" data-page-title="技术问题修复"></div>
+      <script async src="https://cusdis.com/js/cusdis.js"></script>
+    </section>
+  </main>
+
+  <footer class="bg-slate-950 text-slate-300 py-12 mt-16">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p>OutboundGuide.org - 非官方玩家攻略站</p>
+      <p class="text-sm text-slate-500 mt-2">Outbound 为 Square Glade Games 商标。</p>
+    </div>
+  </footer>
+
+  <script>
+    function setLang(lang){const b=document.getElementById('bodyTag'),en=document.getElementById('btn-en'),zh=document.getElementById('btn-zh'); if(lang==='zh'){b.className='lang-zh';zh.className='px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm';en.className='px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm'}else{b.className='lang-en';en.className='px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm';zh.className='px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm'} localStorage.setItem('lang',lang)}; setLang(localStorage.getItem('lang')||'zh');
+  </script>
+</body>
+</html>
