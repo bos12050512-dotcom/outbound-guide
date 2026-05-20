@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Outbound 载具升级完全指南 - 最佳面包车布局、模块优先级与专业技巧 | Outbound攻略</title>
+  <meta name="description" content="Outbound载具升级指南：最佳面包车布局、模块放置优先级、空间规划技巧，以及如何避免昂贵的重建。根据社区策略更新。</title>
+  <link rel="canonical" href="https://outboundguide.org/zh/vehicle-upgrades.html" />
+  <link rel="alternate" hreflang="en" href="https://outboundguide.org/en/vehicle-upgrades.html" />
+  <link rel="alternate" hreflang="zh" href="https://outboundguide.org/zh/vehicle-upgrades.html" />
+  <link rel="alternate" hreflang="x-default" href="https://outboundguide.org/en/vehicle-upgrades.html" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V167JMFJWE"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-V167JMFJWE');</script>
+  <style>
+    html{scroll-behavior:smooth}body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f7fafc;color:#0f172a}.lang-zh .en{display:none}.lang-en .zh{display:none}.card{background:white;border:1px solid #e5e7eb;border-radius:18px;box-shadow:0 8px 30px rgba(15,23,42,.06)}.adslot{background:repeating-linear-gradient(45deg,#f1f5f9,#f1f5f9 10px,#e2e8f0 10px,#e2e8f0 20px);border:1px dashed #94a3b8;color:#64748b;font-size:12px;text-align:center;padding:24px;border-radius:12px}.module-card{transition:transform .25s,box-shadow .25s}.module-card:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(15,23,42,.1)}.priority-badge{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;font-weight:900;font-size:14px}.quick-nav{position:sticky;top:72px;z-40;background:white;border-radius:16px;border:1px solid #e5e7eb;padding:1rem;margin-bottom:1.5rem;box-shadow:0 4px 20px rgba(15,23,42,.08)}.layout-box{border:2px solid #e5e7eb;border-radius:12px;padding:1rem;transition:border-color .2s}.layout-box:hover{border-color:#3b82f6}
+  </style>
+</head>
+<body id="bodyTag" class="lang-zh">
+
+  <nav class="bg-white/95 backdrop-blur sticky top-0 z-50 border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
+      <a href="/zh/" class="font-black text-xl text-blue-600">OutboundGuide.org</a>
+      <div class="hidden md:flex gap-5 text-sm font-semibold text-slate-700">
+        <a href="/zh/starter-guide.html"><span class="en">Starter</span><span class="zh">开荒</span></a>
+        <a href="/zh/crafting.html"><span class="en">Crafting</span><span class="zh">合成</span></a>
+        <a href="/zh/energy.html"><span class="en">Energy</span><span class="zh">能源</span></a>
+        <a href="/zh/multiplayer.html"><span class="en">Co-op</span><span class="zh">联机</span></a>
+        <a href="/zh/collectibles.html"><span class="en">Collectibles</span><span class="zh">收集</span></a>
+      </div>
+      <div class="flex items-center gap-2 bg-slate-100 p-1 rounded-xl">
+        <button id="btn-en" onclick="setLang('en')" class="px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm">EN</button>
+        <button id="btn-zh" onclick="setLang('zh')" class="px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm">中文</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-slate-800 via-blue-900 to-slate-900 text-white py-16">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="inline-flex gap-2 items-center bg-blue-500/30 rounded-full px-4 py-2 text-sm font-bold mb-6">
+        <span>🚐</span><span class="en">Vehicle Guide</span><span class="zh">载具指南</span>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-black mb-4">
+        <span class="en">Outbound Vehicle Upgrades</span>
+        <span class="zh">Outbound 载具升级完全指南</span>
+      </h1>
+      <p class="text-xl text-blue-200 mb-6">
+        <span class="en">Your van is your base. Plan space, prioritize the right modules, and avoid expensive teardowns with our expert guide.</span>
+        <span class="zh">你的面包车是你的基地。规划空间，优先正确模块，使用我们的专家指南避免昂贵的重建。</span>
+      </p>
+      <div class="flex flex-wrap gap-3 text-sm">
+        <span class="bg-blue-400 text-slate-900 px-4 py-2 rounded-full font-bold">🚗 8个模块</span>
+        <span class="bg-white/20 px-4 py-2 rounded-full">🗺️ 4种布局</span>
+        <span class="bg-white/20 px-4 py-2 rounded-full">⚡ 优先级指南</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-10">
+    <div class="adslot">[ 广告位 - 顶部横幅 ]</div>
+
+    <!-- 快速导航 -->
+    <div class="quick-nav">
+      <h3 class="text-sm font-bold text-slate-500 mb-3"><span class="en">⚡ QUICK JUMP</span><span class="zh">⚡ 快速跳转</span></h3>
+      <div class="flex flex-wrap gap-2">
+        <a href="#module-priority" class="bg-amber-100 text-amber-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-amber-200">📦 优先级</a>
+        <a href="#layouts" class="bg-blue-100 text-blue-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-blue-200">🏠 布局</a>
+        <a href="#mistakes" class="bg-red-100 text-red-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-red-200">⚠️ 错误</a>
+        <a href="#energy" class="bg-emerald-100 text-emerald-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-emerald-200">⚡ 能源</a>
+        <a href="#co-op" class="bg-purple-100 text-purple-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-purple-200">👥 联机</a>
+      </div>
+    </div>
+
+    <!-- 模块优先级部分 -->
+    <section id="module-priority" class="mb-12 scroll-mt-20">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-4xl">📦</span>
+        <div>
+          <h2 class="text-2xl font-black"><span class="en">Module Priority Guide</span><span class="zh">模块优先级指南</span></h2>
+          <p class="text-slate-500 text-sm"><span class="en">What to build first, second, and why</span><span class="zh">先建什么，后建什么，以及为什么</span></p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <div class="module-card card p-5 border-t-4 border-amber-500 text-center">
+          <div class="priority-badge bg-amber-500 text-white mb-3">1</div>
+          <h3 class="font-bold text-lg mb-2"><span class="en">Storage S</span><span class="zh">储物S</span></h3>
+          <p class="text-slate-600 text-sm"><span class="en">First upgrade, always. More loot per trip = faster progression.</span><span class="zh">第一个升级，永远需要。更多战利品=更快进度。</span></p>
+          <span class="inline-block mt-3 bg-amber-100 text-amber-700 px-2 py-1 rounded text-xs font-semibold">🔥 必要</span>
+        </div>
+
+        <div class="module-card card p-5 border-t-4 border-blue-500 text-center">
+          <div class="priority-badge bg-blue-500 text-white mb-3">2</div>
+          <h3 class="font-bold text-lg mb-2"><span class="en">Workbench</span><span class="zh">工作台</span></h3>
+          <p class="text-slate-600 text-sm"><span class="en">Unlocks all other crafting. Your production hub.</span><span class="zh">解锁所有其他合成。你的生产中心。</span></p>
+          <span class="inline-block mt-3 bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-semibold">🏭 核心</span>
+        </div>
+
+        <div class="module-card card p-5 border-t-4 border-orange-500 text-center">
+          <div class="priority-badge bg-orange-500 text-white mb-3">3</div>
+          <h3 class="font-bold text-lg mb-2"><span class="en">Cooking</span><span class="zh">烹饪</span></h3>
+          <p class="text-slate-600 text-sm"><span class="en">Converts raw food, extends shelf life. Food = energy.</span><span class="zh">转换原材料，延长保质期。食物=能源。</span></p>
+          <span class="inline-block mt-3 bg-orange-100 text-orange-700 px-2 py-1 rounded text-xs font-semibold">🍳 生存</span>
+        </div>
+
+        <div class="module-card card p-5 border-t-4 border-purple-500 text-center">
+          <div class="priority-badge bg-purple-500 text-white mb-3">4</div>
+          <h3 class="font-bold text-lg mb-2"><span class="en">Solar + Battery</span><span class="zh">太阳能+电池</span></h3>
+          <p class="text-slate-600 text-sm"><span class="en">Power stability before adding more modules.</span><span class="zh">添加更多模块前的电力稳定。</span></p>
+          <span class="inline-block mt-3 bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs font-semibold">⚡ 电源</span>
+        </div>
+      </div>
+
+      <div class="card p-6 bg-slate-50">
+        <h3 class="text-lg font-bold mb-4"><span class="en">📋 Full Priority List</span><span class="zh">📋 完整优先级列表</span></h3>
+        <div class="grid md:grid-cols-2 gap-4">
+          <ol class="list-decimal pl-6 space-y-2 text-slate-700">
+            <li><b>储物模块S</b> — <span class="en">first upgrade, always</span><span class="zh">第一个升级，永远</span></li>
+            <li><b>基础工作台</b> — <span class="en">unlocks all crafting</span><span class="zh">解锁所有合成</span></li>
+            <li><b>烹饪站</b> — <span class="en">converts raw food</span><span class="zh">转换生食</span></li>
+            <li><b>睡眠区</b> — <span class="en">save point + time skip</span><span class="zh">存档点+时间跳过</span></li>
+          </ol>
+          <ol class="list-decimal pl-6 space-y-2 text-slate-700" start="5">
+            <li><b>太阳能板+电池</b> — <span class="en">power stability first</span><span class="zh">先稳定电力</span></li>
+            <li><b>种植箱</b> — <span class="en">long-term renewable food</span><span class="zh">长期可再生食物</span></li>
+            <li><b>储物模块L</b> — <span class="en">late-game expansion</span><span class="zh">后期扩展</span></li>
+            <li><b>冷藏单元</b> — <span class="en">only after stable energy</span><span class="zh">仅在电力稳定后</span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <div class="adslot">[ 广告位 - 文中 ]</div>
+
+    <!-- 布局模板部分 -->
+    <section id="layouts" class="mb-12 scroll-mt-20">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-4xl">🏠</span>
+        <div>
+          <h2 class="text-2xl font-black"><span class="en">Van Layout Templates</span><span class="zh">面包车布局模板</span></h2>
+          <p class="text-slate-500 text-sm"><span class="en">Proven layouts for different playstyles</span><span class="zh">不同游戏风格的成熟布局</span></p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="layout-box bg-gradient-to-br from-blue-50 to-cyan-50">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-2xl">🧭</span>
+            <h3 class="text-lg font-bold"><span class="en">Explorer Layout</span><span class="zh">探索者布局</span></h3>
+          </div>
+          <p class="text-slate-600 text-sm mb-4"><span class="en">Maximum storage, basic crafting, minimal decoration. Best for biome scouting and resource gathering.</span><span class="zh">最大储物、基本合成、最少装饰。最适合生态区侦察和资源收集。</span></p>
+          <div class="bg-white rounded-lg p-3 mb-4">
+            <div class="text-xs text-slate-500 mb-2"><span class="en">Modules:</span><span class="zh">模块：</span></div>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs">储物L×2</span>
+              <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs">工作台</span>
+              <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs">烹饪</span>
+              <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs">睡眠</span>
+              <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs">太阳能×2</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="bg-emerald-100 text-emerald-700 px-2 py-1 rounded text-xs font-semibold">✅ 单人最佳</span>
+            <span class="text-xs text-slate-500">生态区侦察</span>
+          </div>
+        </div>
+
+        <div class="layout-box bg-gradient-to-br from-amber-50 to-orange-50">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-2xl">🏡</span>
+            <h3 class="text-lg font-bold"><span class="en">Cozy Home Layout</span><span class="zh">温馨家园布局</span></h3>
+          </div>
+          <p class="text-slate-600 text-sm mb-4"><span class="en">Comfort first. Slower progression, more aesthetic. Perfect for relaxing gameplay sessions.</span><span class="zh">舒适第一。进度较慢，但更美观。非常适合轻松的游戏体验。</span></p>
+          <div class="bg-white rounded-lg p-3 mb-4">
+            <div class="text-xs text-slate-500 mb-2"><span class="en">Modules:</span><span class="zh">模块：</span></div>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-amber-100 text-amber-700 px-2 py-1 rounded text-xs">烹饪</span>
+              <span class="bg-amber-100 text-amber-700 px-2 py-1 rounded text-xs">冰箱</span>
+              <span class="bg-amber-100 text-amber-700 px-2 py-1 rounded text-xs">睡眠</span>
+              <span class="bg-amber-100 text-amber-700 px-2 py-1 rounded text-xs">种植×2</span>
+              <span class="bg-amber-100 text-amber-700 px-2 py-1 rounded text-xs">宠物区</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="bg-emerald-100 text-emerald-700 px-2 py-1 rounded text-xs font-semibold">✅ 轻松</span>
+            <span class="text-xs text-slate-500">美观优先</span>
+          </div>
+        </div>
+
+        <div class="layout-box bg-gradient-to-br from-stone-50 to-slate-50">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-2xl">🔧</span>
+            <h3 class="text-lg font-bold"><span class="en">Crafting Hub Layout</span><span class="zh">合成中心布局</span></h3>
+          </div>
+          <p class="text-slate-600 text-sm mb-4"><span class="en">Maximize crafting throughput. Park near resource hotspots for efficient production runs.</span><span class="zh">最大化合成产出。停在资源热点附近以便高效生产。</span></p>
+          <div class="bg-white rounded-lg p-3 mb-4">
+            <div class="text-xs text-slate-500 mb-2"><span class="en">Modules:</span><span class="zh">模块：</span></div>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-stone-100 text-stone-700 px-2 py-1 rounded text-xs">工作台×2</span>
+              <span class="bg-stone-100 text-stone-700 px-2 py-1 rounded text-xs">储物L</span>
+              <span class="bg-stone-100 text-stone-700 px-2 py-1 rounded text-xs">烹饪</span>
+              <span class="bg-stone-100 text-stone-700 px-2 py-1 rounded text-xs">太阳能×2</span>
+              <span class="bg-stone-100 text-stone-700 px-2 py-1 rounded text-xs">电池×2</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="bg-amber-100 text-amber-700 px-2 py-1 rounded text-xs font-semibold">⚡ 电源密集</span>
+            <span class="text-xs text-slate-500">资源效率</span>
+          </div>
+        </div>
+
+        <div class="layout-box bg-gradient-to-br from-purple-50 to-pink-50">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-2xl">👥</span>
+            <h3 class="text-lg font-bold"><span class="en">Co-op Party Layout</span><span class="zh">联机派对布局</span></h3>
+          </div>
+          <p class="text-slate-600 text-sm mb-4"><span class="en">4-player optimized: each player has a dedicated zone. Balance between utility and comfort.</span><span class="zh">4人玩家优化：每个玩家有专属区域。平衡实用性和舒适性。</span></p>
+          <div class="bg-white rounded-lg p-3 mb-4">
+            <div class="text-xs text-slate-500 mb-2"><span class="en">Modules:</span><span class="zh">模块：</span></div>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs">工作台</span>
+              <span class="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs">烹饪</span>
+              <span class="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs">睡眠×2</span>
+              <span class="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs">储物L×2</span>
+              <span class="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs">宠物区</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="bg-emerald-100 text-emerald-700 px-2 py-1 rounded text-xs font-semibold">✅ 4人</span>
+            <span class="text-xs text-slate-500">共享资源</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 常见错误部分 -->
+    <section id="mistakes" class="mb-12 scroll-mt-20">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-4xl">⚠️</span>
+        <div>
+          <h2 class="text-2xl font-black"><span class="en">Common Layout Mistakes</span><span class="zh">常见布局错误</span></h2>
+          <p class="text-slate-500 text-sm"><span class="en">What to avoid when planning your van</span><span class="zh">规划面包车时避免什么</span></p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="card p-6 border-l-4 border-red-500">
+          <h3 class="font-bold text-lg mb-3">🚫 <span class="en">Scattered Workstations</span><span class="zh">分散工作站</span></h3>
+          <p class="text-slate-600 text-sm mb-3"><span class="en">Putting workstations far apart wastes time walking between them. Keep related stations close.</span><span class="zh">把工作站放得太远会浪费时间在它们之间走动。把相关站点放近。</span></p>
+          <div class="bg-red-50 rounded-lg p-3">
+            <span class="text-sm font-semibold text-red-700"><span class="en">Tip:</span><span class="zh">提示：</span> <span class="en">Cluster workbench + storage + cooking in one corner</span><span class="zh">将工作台+储物+烹饪集中在一个角落</span></div>
+          </div>
+        </div>
+
+        <div class="card p-6 border-l-4 border-amber-500">
+          <h3 class="font-bold text-lg mb-3">🚫 <span class="en">Decoration Before Utility</span><span class="zh">装饰先于实用</span></h3>
+          <p class="text-slate-600 text-sm mb-3"><span class="en">Looks great, slows progression. Focus on function first, add aesthetics later.</span><span class="zh">看起来很棒，但会减慢进度。先专注于功能，之后再添加美学。</span></p>
+          <div class="bg-amber-50 rounded-lg p-3">
+            <span class="text-sm font-semibold text-amber-700"><span class="en">Tip:</span><span class="zh">提示：</span> <span class="en">Build essential modules first, decorate after day 50</span><span class="zh">先构建必要模块，第50天后装饰</span></div>
+          </div>
+        </div>
+
+        <div class="card p-6 border-l-4 border-orange-500">
+          <h3 class="font-bold text-lg mb-3">🚫 <span class="en">Heat Source Clustering</span><span class="zh">热源聚集</span></h3>
+          <p class="text-slate-600 text-sm mb-3"><span class="en">Placing cooking + fridge nearby may cause efficiency penalty. Verify in-game.</span><span class="zh">烹饪+冰箱放在一起可能会导致效率损失。在游戏中验证。</span></p>
+          <div class="bg-orange-50 rounded-lg p-3">
+            <span class="text-sm font-semibold text-orange-700"><span class="en">Tip:</span><span class="zh">提示：</span> <span class="en">Keep cooking and refrigeration on opposite sides</span><span class="zh">将烹饪和冷藏放在对面两侧</span></div>
+          </div>
+        </div>
+
+        <div class="card p-6 border-l-4 border-purple-500">
+          <h3 class="font-bold text-lg mb-3">🚫 <span class="en">No Reserved Late-Game Space</span><span class="zh">没有预留后期空间</span></h3>
+          <p class="text-slate-600 text-sm mb-3"><span class="en">Building everything tight early means forced teardown later when you need Storage L or extra battery.</span><span class="zh">早期把所有东西建得很紧凑意味着以后需要储物L或额外电池时被迫拆除。</span></p>
+          <div class="bg-purple-50 rounded-lg p-3">
+            <span class="text-sm font-semibold text-purple-700"><span class="en">Tip:</span><span class="zh">提示：</span> <span class="en">Reserve one corner for future 2×2 modules</span><span class="zh">留一个角落给未来的2×2模块</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 能源管理部分 -->
+    <section id="energy" class="mb-12 scroll-mt-20">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-4xl">⚡</span>
+        <div>
+          <h2 class="text-2xl font-black"><span class="en">Energy Management</span><span class="zh">能源管理</span></h2>
+          <p class="text-slate-500 text-sm"><span class="en">Power your modules efficiently</span><span class="zh">高效为模块供电</span></p>
+        </div>
+      </div>
+
+      <div class="card p-6 mb-6">
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="text-center">
+            <div class="text-4xl mb-3">☀️</div>
+            <h3 class="font-bold mb-2"><span class="en">Solar Panels</span><span class="zh">太阳能板</span></h3>
+            <p class="text-slate-600 text-sm"><span class="en">Primary power source. Place in direct sunlight for best efficiency.</span><span class="zh">主要电源。放在阳光直射处以获得最佳效率。</span></p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-3">🌬️</div>
+            <h3 class="font-bold mb-2"><span class="en">Wind Turbines</span><span class="zh">风力涡轮</span></h3>
+            <p class="text-slate-600 text-sm"><span class="en">Supplement solar at night or cloudy days.</span><span class="zh">在夜间或阴天补充太阳能。</span></p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-3">🔋</div>
+            <h3 class="font-bold mb-2"><span class="en">Batteries</span><span class="zh">电池</span></h3>
+            <p class="text-slate-600 text-sm"><span class="en">Store excess power for night use. Essential for high-energy setups.</span><span class="zh">存储多余电力供夜间使用。高能耗配置必需品。</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card p-6 bg-gradient-to-r from-emerald-50 to-teal-50">
+        <h3 class="font-bold mb-4"><span class="en">💡 Pro Energy Tip</span><span class="zh">💡 能源专业提示</span></h3>
+        <p class="text-slate-600 text-sm mb-4"><span class="en">Calculate your total power draw before building. Workbench + Cooking + Fridge = high baseline. Add solar panels incrementally as you add modules.</span><span class="zh">在建造前计算总功耗。工作台+烹饪+冰箱=高基线。随着添加模块逐步增加太阳能板。</span></p>
+        <div class="bg-white rounded-lg p-4">
+          <div class="text-sm font-semibold text-slate-600 mb-2"><span class="en">Recommended power setup for early game:</span><span class="zh">早期游戏推荐电源配置：</span></div>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded text-xs font-semibold">1太阳能板</span>
+            <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded text-xs font-semibold">+</span>
+            <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded text-xs font-semibold">1电池</span>
+            <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded text-xs font-semibold">=</span>
+            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded text-xs font-semibold">基础可持续电源</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 联机部分 -->
+    <section id="co-op" class="mb-8 scroll-mt-20">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-4xl">👥</span>
+        <div>
+          <h2 class="text-2xl font-black"><span class="en">Co-op Van Planning</span><span class="zh">联机面包车规划</span></h2>
+          <p class="text-slate-500 text-sm"><span class="en">Coordinate with your teammates</span><span class="zh">与队友协调</span></p>
+        </div>
+      </div>
+
+      <div class="card p-6 bg-gradient-to-r from-purple-50 to-indigo-50">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <h3 class="font-bold mb-3"><span class="en">🏗️ Shared Layout Strategy</span><span class="zh">🏗️ 共享布局策略</span></h3>
+            <ul class="list-disc pl-5 space-y-2 text-slate-600 text-sm">
+              <li><span class="en">Each player gets a dedicated sleep zone</span><span class="zh">每个玩家获得专属睡眠区</span></li>
+              <li><span class="en">Assign workstation ownership (you build, you maintain)</span><span class="zh">分配工作站所有权（你建，你维护）</span></li>
+              <li><span class="en">Storage L × 2 for shared inventory</span><span class="zh">储物L×2用于共享库存</span></li>
+              <li><a href="/zh/multiplayer.html" class="text-blue-600 hover:underline"><span class="en">→ Full co-op guide</span><span class="zh">→ 完整联机指南</span></a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold mb-3"><span class="en">⚠️ Host-Only Achievement Issue</span><span class="zh">⚠️ 仅房主成就问题</span></h3>
+            <p class="text-slate-600 text-sm mb-3"><span class="en">Note: Some players report host-only achievements not working in co-op. Check the</span><span class="zh">注意：一些玩家报告联机中仅房主成就不工作。查看</span> <a href="/zh/multiplayer.html#achievements" class="text-blue-600 hover:underline"><span class="en">multiplayer page</span><span class="zh">联机页面</span></a> <span class="en">for workarounds.</span><span class="zh">了解解决方案。</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="adslot">[ 广告位 - 底部 ]</div>
+
+    <!-- 来源 -->
+    <section class="card p-6 bg-slate-50 mb-6">
+      <h2 class="text-lg font-black mb-3"><span class="en">📚 Sources</span><span class="zh">📚 来源</span></h2>
+      <ul class="list-disc pl-6 text-sm text-slate-600 space-y-1">
+        <li><span class="en">Steam store page for Outbound (AppID 2681030)</span><span class="zh">Outbound Steam商店页面 (AppID 2681030)</span></li>
+        <li><span class="en">r/Outbound community layout discussions</span><span class="zh">r/Outbound 社区布局讨论</span></li>
+        <li><span class="en">Square Glade Games official Discord</span><span class="zh">Square Glade Games 官方 Discord</span></li>
+      </ul>
+      <p class="text-xs text-slate-500 mt-3"><span class="en">Layout templates are based on common survival game patterns. Actual module specifications may vary. Always check in-game for latest module requirements.</span><span class="zh">布局模板基于常见生存游戏模式。实际模块规格可能有所不同。始终在游戏中查看最新模块要求。</span></p>
+    </section>
+
+    <!-- 评论区 -->
+    <section class="card p-6">
+      <h2 class="text-xl font-black mb-4"><span class="en">💬 Share Your Layout</span><span class="zh">💬 分享你的布局</span></h2>
+      <p class="text-slate-600 text-sm mb-4"><span class="en">Found a better layout? Share your van setup with the community!</span><span class="zh">找到了更好的布局？与社区分享你的面包车设置！</span></p>
+      <script src="https://giscus.app/client.js"
+              data-repo="bos12050512-dotcom/outbound-guide"
+              data-repo-id="R_kgDOSZPlqw"
+              data-category="Announcements"
+              data-category-id="DIC_kwDOSZPlq84C8s3i"
+              data-mapping="pathname"
+              data-strict="0"
+              data-reactions-enabled="1"
+              data-emit-metadata="0"
+              data-input-position="top"
+              data-theme="light"
+              data-lang="zh"
+              data-loading="lazy"
+              crossorigin="anonymous"
+              async></script>
+    </section>
+  </main>
+
+  <footer class="bg-slate-950 text-slate-300 py-10 mt-10">
+    <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row gap-4 justify-between text-sm">
+      <div>
+        <div class="font-black text-white">OutboundGuide.org</div>
+        <div class="text-slate-400"><span class="en">Non-official fan guide. Outbound © Square Glade Games.</span><span class="zh">非官方玩家攻略站。Outbound © Square Glade Games。</span></div>
+      </div>
+      <div class="flex flex-wrap gap-4">
+        <a href="/zh/about.html" class="hover:text-white"><span class="en">About</span><span class="zh">关于</span></a>
+        <a href="/zh/privacy.html" class="hover:text-white"><span class="en">Privacy</span><span class="zh">隐私</span></a>
+        <a href="/zh/disclaimer.html" class="hover:text-white"><span class="en">Disclaimer</span><span class="zh">免责声明</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function setLang(lang){
+      const b=document.getElementById('bodyTag'),
+            en=document.getElementById('btn-en'),
+            zh=document.getElementById('btn-zh');
+      if(lang==='zh'){
+        b.className='lang-zh';
+        zh.className='px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm';
+        en.className='px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm';
+      }else{
+        b.className='lang-en';
+        en.className='px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm';
+        zh.className='px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm';
+      }
+      localStorage.setItem('lang',lang);
+    }
+    setLang(localStorage.getItem('lang')||'zh');
+  </script>
+</body>
+</html>

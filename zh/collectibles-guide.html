@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Outbound 全收集品指南 100%完成度 - 所有USB密钥、石堆与秘密 | Outbound攻略</title>
+  <meta name="description" content="Outbound 100%完成度完整指南：找到所有USB密钥、石堆标记、稀有材料和隐藏秘密位置。根据玩家发现每日更新。">
+  <link rel="canonical" href="https://outboundguide.org/zh/collectibles-guide.html" />
+  <link rel="alternate" hreflang="en" href="https://outboundguide.org/en/collectibles-guide.html" />
+  <link rel="alternate" hreflang="zh" href="https://outboundguide.org/zh/collectibles-guide.html" />
+  <link rel="alternate" hreflang="x-default" href="https://outboundguide.org/en/collectibles-guide.html" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V167JMFJWE"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-V167JMFJWE');</script>
+  <style>
+    html{scroll-behavior:smooth}body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f7fafc;color:#0f172a}.lang-zh .en{display:none}.lang-en .zh{display:none}.card{background:white;border:1px solid #e5e7eb;border-radius:18px;box-shadow:0 8px 30px rgba(15,23,42,.06)}.adslot{background:repeating-linear-gradient(45deg,#f1f5f9,#f1f5f9 10px,#e2e8f0 10px,#e2e8f0 20px);border:1px dashed #94a3b8;color:#64748b;font-size:12px;text-align:center;padding:24px;border-radius:12px}.collectible-card{transition:transform .25s,box-shadow .25s}.collectible-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(15,23,42,.1)}.location-marker{position:relative;padding-left:1.5rem}.location-marker::before{content:'📍';position:absolute;left:0}.code-block{background:#1e293b;color:#e2e8f0;font-family:'Fira Code',monospace;font-size:13px;padding:1rem;border-radius:8px;overflow-x:auto}.code-block code{display:block;white-space:pre}.gradient-title{background:linear-gradient(90deg,#f59e0b,#ef4444);-webkit-background-clip:text;background-clip:text;color:transparent}.quick-nav{position:sticky;top:72px;z-40;background:white;border-radius:16px;border:1px solid #e5e7eb;padding:1rem;margin-bottom:1.5rem;box-shadow:0 4px 20px rgba(15,23,42,.08)}
+  </style>
+</head>
+<body id="bodyTag" class="lang-zh">
+
+  <nav class="bg-white/95 backdrop-blur sticky top-0 z-50 border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
+      <a href="/zh/" class="font-black text-xl text-blue-600">OutboundGuide.org</a>
+      <div class="hidden md:flex gap-5 text-sm font-semibold text-slate-700">
+        <a href="/zh/starter-guide.html"><span class="en">Starter</span><span class="zh">开荒</span></a>
+        <a href="/zh/crafting.html"><span class="en">Crafting</span><span class="zh">合成</span></a>
+        <a href="/zh/energy.html"><span class="en">Energy</span><span class="zh">能源</span></a>
+        <a href="/zh/multiplayer.html"><span class="en">Co-op</span><span class="zh">联机</span></a>
+        <a href="/zh/collectibles-guide.html" class="text-blue-600 font-bold"><span class="en">Collectibles</span><span class="zh">收集</span></a>
+      </div>
+      <div class="flex items-center gap-2 bg-slate-100 p-1 rounded-xl">
+        <button id="btn-en" onclick="setLang('en')" class="px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm">EN</button>
+        <button id="btn-zh" onclick="setLang('zh')" class="px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm">中文</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-amber-900 via-orange-800 to-red-900 text-white py-16">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="inline-flex gap-2 items-center bg-white/20 backdrop-blur rounded-full px-4 py-2 text-sm font-bold mb-6">
+        <span>🎯</span><span class="en">100% Completion Guide</span><span class="zh">100%完成指南</span>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-black mb-4">
+        <span class="en">Outbound Collectibles Guide</span>
+        <span class="zh">Outbound 收集品完全指南</span>
+      </h1>
+      <p class="text-xl text-amber-100 mb-6">
+        <span class="en">Find every USB key, stone cairn, rare material, and hidden secret. Community-verified locations updated daily.</span>
+        <span class="zh">找到每个USB密钥、石堆标记、稀有材料和隐藏秘密。每日根据社区验证更新位置。</span>
+      </p>
+      <div class="flex flex-wrap gap-3 text-sm">
+        <span class="bg-amber-400 text-slate-900 px-4 py-2 rounded-full font-bold">🔥 15+ USB密钥</span>
+        <span class="bg-white/20 px-4 py-2 rounded-full">🪨 20+ 石堆</span>
+        <span class="bg-white/20 px-4 py-2 rounded-full">💎 稀有材料</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-10">
+    <div class="adslot">[ 广告位 - 顶部横幅 ]</div>
+
+    <!-- 快速导航 -->
+    <div class="quick-nav">
+      <h3 class="text-sm font-bold text-slate-500 mb-3"><span class="en">⚡ QUICK JUMP</span><span class="zh">⚡ 快速跳转</span></h3>
+      <div class="flex flex-wrap gap-2">
+        <a href="#usb-keys" class="bg-amber-100 text-amber-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-amber-200">🔌 USB密钥</a>
+        <a href="#cairns" class="bg-stone-100 text-stone-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-stone-200">🪨 石堆</a>
+        <a href="#rare-materials" class="bg-emerald-100 text-emerald-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-emerald-200">💎 稀有材料</a>
+        <a href="#achievements" class="bg-purple-100 text-purple-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-purple-200">🏆 成就</a>
+        <a href="#secrets" class="bg-cyan-100 text-cyan-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-cyan-200">🔐 秘密</a>
+      </div>
+    </div>
+
+    <!-- USB密钥部分 -->
+    <section id="usb-keys" class="mb-12 scroll-mt-20">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-4xl">🔌</span>
+        <div>
+          <h2 class="text-2xl font-black"><span class="en">USB Keys & USB Sticks</span><span class="zh">USB密钥位置</span></h2>
+          <p class="text-slate-500 text-sm"><span class="en">Unlock achievements and special content</span><span class="zh">解锁成就和特殊内容</span></p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- 红岭空降场USB -->
+        <div class="collectible-card card p-6 border-l-4 border-amber-500">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="bg-amber-100 text-amber-700 px-2 py-1 rounded text-xs font-bold">⚡ 热门</span>
+          </div>
+          <h3 class="text-lg font-bold mb-2"><span class="en">Red Ridge Airstrip USB</span><span class="zh">红岭空降场USB</span></h3>
+          <div class="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4">
+            <p class="text-sm text-amber-800"><strong>⚠️ 常见问题：</strong> <span class="en">Hidden inside a locked box near the runway - many players walk right past it!</span><span class="zh">藏在跑道附近锁箱内 - 许多玩家直接走过！</span></p>
+          </div>
+          <div class="space-y-2 text-sm text-slate-600">
+            <div class="location-marker"><span class="en">Location:</span><span class="zh">位置：</span>红岭空降场的坠毁飞机残骸附近</div>
+            <div class="location-marker"><span class="en">Look for:</span><span class="zh">寻找：</span>跑道边缘的红色工具箱</div>
+            <div class="location-marker"><span class="en">Biome:</span><span class="zh">生态区：</span>沙漠/草原</div>
+          </div>
+          <div class="mt-4 flex items-center gap-2">
+            <span class="bg-green-100 text-green-700 px-2 py-0.5 rounded text-xs">✅ 已验证</span>
+            <a href="https://outboundguide.org/zh/collectibles.html" class="text-blue-600 text-xs hover:underline"><span class="en">View on map</span><span class="zh">在地图上查看</span> →</a>
+          </div>
+        </div>
+
+        <!-- 古老森林USB -->
+        <div class="collectible-card card p-6 border-l-4 border-emerald-500">
+          <h3 class="text-lg font-bold mb-2"><span class="en">Old Forest USB</span><span class="zh">古老森林USB</span></h3>
+          <p class="text-slate-600 text-sm mb-4"><span class="en">Hidden in a hollow tree stump. Look for a subtle glow effect near the forest edge.</span><span class="zh">藏在空心树桩里。森林边缘附近有微妙的发光效果。</span></p>
+          <div class="space-y-2 text-sm text-slate-600">
+            <div class="location-marker"><span class="en">Biome:</span><span class="zh">生态区：</span>古老森林</div>
+            <div class="location-marker"><span class="en">Time:</span><span class="zh">时间：</span>任意，但黄昏时发光更明显</div>
+          </div>
+          <div class="mt-4 flex items-center gap-2">
+            <span class="bg-amber-100 text-amber-700 px-2 py-0.5 rounded text-xs">⏳ 未验证</span>
+          </div>
+        </div>
+
+        <!-- 西部海滩USB -->
+        <div class="collectible-card card p-6 border-l-4 border-cyan-500">
+          <h3 class="text-lg font-bold mb-2"><span class="en">Western Beach USB</span><span class="zh">西部海滩USB</span></h3>
+          <p class="text-slate-600 text-sm mb-4"><span class="en">Inside a washed-up crate near the lighthouse. May require swimming to reach.</span><span class="zh">灯塔附近冲上岸的板条箱内。可能需要游泳到达。</span></p>
+          <div class="space-y-2 text-sm text-slate-600">
+            <div class="location-marker"><span class="en">Biome:</span><span class="zh">生态区：</span>西部海滩</div>
+            <div class="location-marker"><span class="en">Tip:</span><span class="zh">提示：</span>退潮时从陆地接近</div>
+          </div>
+          <div class="mt-4 flex items-center gap-2">
+            <span class="bg-green-100 text-green-700 px-2 py-0.5 rounded text-xs">✅ 已验证</span>
+          </div>
+        </div>
+
+        <!-- 无线电塔USB -->
+        <div class="collectible-card card p-6 border-l-4 border-purple-500">
+          <h3 class="text-lg font-bold mb-2"><span class="en">Radio Tower USB</span><span class="zh">无线电塔USB</span></h3>
+          <p class="text-slate-600 text-sm mb-4"><span class="en">At the base of the main antenna. Climb the ladder and look for a maintenance box.</span><span class="zh">主天线底部。爬上梯子找维护箱。</span></p>
+          <div class="space-y-2 text-sm text-slate-600">
+            <div class="location-marker"><span class="en">Biome:</span><span class="zh">生态区：</span>高地</div>
+            <div class="location-marker"><span class="en">Requires:</span><span class="zh">需求：</span>攀爬能力/升级抓钩</div>
+          </div>
+          <div class="mt-4 flex items-center gap-2">
+            <span class="bg-green-100 text-green-700 px-2 py-0.5 rounded text-xs">✅ 已验证</span>
+          </div>
+        </div>
+
+        <!-- 蘑菇洞穴USB -->
+        <div class="collectible-card card p-6 border-l-4 border-orange-500">
+          <h3 class="text-lg font-bold mb-2"><span class="en">Mushroom Cave USB</span><span class="zh">蘑菇洞穴USB</span></h3>
+          <p class="text-slate-600 text-sm mb-4"><span class="en">Deep inside the glowing mushroom cave. Bring a light source as it's very dark inside.</span><span class="zh">发光蘑菇洞穴深处。带光源，洞穴内非常暗。</span></p>
+          <div class="space-y-2 text-sm text-slate-600">
+            <div class="location-marker"><span class="en">Biome:</span><span class="zh">生态区：</span>地下/洞穴</div>
+            <div class="location-marker"><span class="en">Tip:</span><span class="zh">提示：</span>使用发光蘑菇导航</div>
+          </div>
+          <div class="mt-4 flex items-center gap-2">
+            <span class="bg-green-100 text-green-700 px-2 py-0.5 rounded text-xs">✅ 已验证</span>
+          </div>
+        </div>
+
+        <!-- 废弃营地USB -->
+        <div class="collectible-card card p-6 border-l-4 border-stone-500">
+          <h3 class="text-lg font-bold mb-2"><span class="en">Abandoned Camp USB</span><span class="zh">废弃营地USB</span></h3>
+          <p class="text-slate-600 text-sm mb-4"><span class="en">Under an overturned tent. Check the tent's northeast corner.</span><span class="zh">翻倒帐篷下方。检查帐篷东北角。</span></p>
+          <div class="space-y-2 text-sm text-slate-600">
+            <div class="location-marker"><span class="en">Biome:</span><span class="zh">生态区：</span>沙漠/草原</div>
+            <div class="location-marker"><span class="en">Search:</span><span class="zh">搜索：</span>帐篷残骸下方</div>
+          </div>
+          <div class="mt-4 flex items-center gap-2">
+            <span class="bg-green-100 text-green-700 px-2 py-0.5 rounded text-xs">✅ 已验证</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="adslot">[ 广告位 - 文中 ]</div>
+
+    <!-- 石堆部分 -->
+    <section id="cairns" class="mb-12 scroll-mt-20">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-4xl">🪨</span>
+        <div>
+          <h2 class="text-2xl font-black"><span class="en">Stone Cairns</span><span class="zh">石堆标记</span></h2>
+          <p class="text-slate-500 text-sm"><span class="en">Stacked markers that point to hidden POIs</span><span class="zh">指向隐藏兴趣点的堆叠标记</span></p>
+        </div>
+      </div>
+
+      <div class="card p-6 mb-6">
+        <h3 class="text-lg font-bold mb-4"><span class="en">📍 Coastal Cairn Trail</span><span class="zh">📍 海岸石堆路径</span></h3>
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="bg-amber-50 rounded-xl p-4 text-center">
+            <div class="text-2xl mb-2">1️⃣</div>
+            <p class="text-sm font-semibold"><span class="en">First Beach Cairn</span><span class="zh">第一海滩石堆</span></p>
+            <p class="text-xs text-slate-500 mt-1"><span class="en">Near the first beach save point</span><span class="zh">第一海滩存档点附近</span></p>
+          </div>
+          <div class="bg-amber-50 rounded-xl p-4 text-center">
+            <div class="text-2xl mb-2">2️⃣</div>
+            <p class="text-sm font-semibold"><span class="en">Bay Overlook Cairn</span><span class="zh">海湾观景石堆</span></p>
+            <p class="text-xs text-slate-500 mt-1"><span class="en">Rocky outcrop overlooking the bay</span><span class="zh">俯瞰海湾的岩石露头</span></p>
+          </div>
+          <div class="bg-amber-50 rounded-xl p-4 text-center">
+            <div class="text-2xl mb-2">3️⃣</div>
+            <p class="text-sm font-semibold"><span class="en">Cave Entrance Cairn</span><span class="zh">洞穴入口石堆</span></p>
+            <p class="text-xs text-slate-500 mt-1"><span class="en">Points toward hidden cave</span><span class="zh">指向隐藏洞穴</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card p-6 mb-6">
+        <h3 class="text-lg font-bold mb-4"><span class="en">📍 Highland Cairn Circuit</span><span class="zh">📍 高地石堆环线</span></h3>
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="bg-stone-100 rounded-xl p-4 text-center">
+            <div class="text-2xl mb-2">1️⃣</div>
+            <p class="text-sm font-semibold"><span class="en">Wind Turbine Cairn</span><span class="zh">风力涡轮石堆</span></p>
+            <p class="text-xs text-slate-500 mt-1"><span class="en">Near the wind turbine plateau</span><span class="zh">风力涡轮高原附近</span></p>
+          </div>
+          <div class="bg-stone-100 rounded-xl p-4 text-center">
+            <div class="text-2xl mb-2">2️⃣</div>
+            <p class="text-sm font-semibold"><span class="en">Mining Equipment Cairn</span><span class="zh">采矿设备石堆</span></p>
+            <p class="text-xs text-slate-500 mt-1"><span class="en">Marks old mining equipment</span><span class="zh">标记旧采矿设备</span></p>
+          </div>
+          <div class="bg-stone-100 rounded-xl p-4 text-center">
+            <div class="text-2xl mb-2">3️⃣</div>
+            <p class="text-sm font-semibold"><span class="en">Underground Cairn</span><span class="zh">地下石堆</span></p>
+            <p class="text-xs text-slate-500 mt-1"><span class="en">Overlooks hidden underground entrance</span><span class="zh">俯瞰隐藏地下入口</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card p-6 bg-gradient-to-r from-amber-50 to-orange-50">
+        <h3 class="text-lg font-bold mb-3"><span class="en">💡 Pro Tip</span><span class="zh">💡 专业提示</span></h3>
+        <p class="text-slate-600 text-sm"><span class="en">Each cairn chain typically points to a valuable location - a hidden item, rare material spawn, or secret area. Follow the cairn direction to find the POI.</span><span class="zh">每个石堆链通常指向一个有价值的位置 - 隐藏物品、稀有材料生成点或秘密区域。沿石堆方向寻找兴趣点。</span></p>
+      </div>
+    </section>
+
+    <!-- 稀有材料部分 -->
+    <section id="rare-materials" class="mb-12 scroll-mt-20">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-4xl">💎</span>
+        <div>
+          <h2 class="text-2xl font-black"><span class="en">Rare Materials</span><span class="zh">稀有材料</span></h2>
+          <p class="text-slate-500 text-sm"><span class="en">Essential for late-game crafting</span><span class="zh">后期合成必需品</span></p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="collectible-card card p-6 text-center">
+          <div class="text-5xl mb-4">🪵</div>
+          <h3 class="text-lg font-bold mb-2"><span class="en">Redwood Branches</span><span class="zh">红木树枝</span></h3>
+          <div class="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4">
+            <p class="text-sm text-amber-800"><strong>⚠️ 需求高：</strong> <span class="en">Used for Tier 3 tools and axe</span><span class="zh">用于3级工具和斧头</span></p>
+          </div>
+          <p class="text-slate-600 text-sm mb-3"><span class="en">Ground-level fallen branches with red tint. Found at Western Beach and Old Forest edges.</span><span class="zh">地面上有红色调的落叶树枝。在西部海滩和古老森林边缘找到。</span></p>
+          <div class="text-left text-xs text-slate-500">
+            <div class="location-marker">第二生态区入口</div>
+            <div class="location-marker">路边草地区域</div>
+          </div>
+          <a href="/zh/crafting.html" class="inline-block mt-4 text-blue-600 font-semibold text-sm hover:underline">
+            → <span class="en">Full Material Guide</span><span class="zh">完整材料指南</span>
+          </a>
+        </div>
+
+        <div class="collectible-card card p-6 text-center">
+          <div class="text-5xl mb-4">🧲</div>
+          <h3 class="text-lg font-bold mb-2"><span class="en">Rare Earth Magnets</span><span class="zh">稀土磁铁</span></h3>
+          <p class="text-slate-600 text-sm mb-3"><span class="en">Found in junkyard areas. Can be crafted or found in rare crates.</span><span class="zh">在废品场区域发现。可合成或从稀有板条箱中获得。</span></p>
+          <div class="text-left text-xs text-slate-500">
+            <div class="location-marker">废品场生态区</div>
+            <div class="location-marker">稀有箱子掉落</div>
+          </div>
+        </div>
+
+        <div class="collectible-card card p-6 text-center">
+          <div class="text-5xl mb-4">🌿</div>
+          <h3 class="text-lg font-bold mb-2"><span class="en">Rare Mushrooms</span><span class="zh">稀有蘑菇</span></h3>
+          <p class="text-slate-600 text-sm mb-3"><span class="en">Glowing mushrooms only appear at night. Check mushroom cave biomes.</span><span class="zh">发光蘑菇只在夜间出现。检查蘑菇洞穴生态区。</span></p>
+          <div class="text-left text-xs text-slate-500">
+            <div class="location-marker">蘑菇洞穴</div>
+            <div class="location-marker">仅夜间生成</div>
+          </div>
+          <span class="inline-block mt-4 text-amber-600 font-semibold text-sm">⏳ 需要更多数据</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 成就部分 -->
+    <section id="achievements" class="mb-12 scroll-mt-20">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-4xl">🏆</span>
+        <div>
+          <h2 class="text-2xl font-black"><span class="en">Hidden Achievements</span><span class="zh">隐藏成就</span></h2>
+          <p class="text-slate-500 text-sm"><span class="en">Secret achievements tied to collectibles</span><span class="zh">与收集品相关的隐藏成就</span></p>
+        </div>
+      </div>
+
+      <div class="card p-6 mb-6 bg-gradient-to-r from-purple-50 to-pink-50">
+        <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+          <span>🏠</span>
+          <span class="en">Gnome Workshop</span>
+          <span class="zh">地精工坊</span>
+        </h3>
+        <p class="text-slate-600 text-sm mb-4"><span class="en">Hidden area with achievement reward. Players report finding it near the old mill. Follow the hidden path behind the waterfall.</span><span class="zh">有成就奖励的隐藏区域。玩家报告在旧磨坊附近找到。沿瀑布后面的隐藏路径。</span></p>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-semibold">🏆 隐藏成就</span>
+          <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs">✅ 已验证</span>
+        </div>
+      </div>
+
+      <div class="card p-6">
+        <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+          <span>🛖</span>
+          <span class="en">Developer Area</span>
+          <span class="zh">开发者区域</span>
+        </h3>
+        <p class="text-slate-600 text-sm mb-4"><span class="en">Easter egg area referencing the devs. Often found near the Gnome Workshop. Contains dev notes and fun references.</span><span class="zh">彩蛋区域。经常在地精工坊附近。包含开发者笔记和有趣彩蛋。</span></p>
+        <span class="inline-block bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs font-semibold">🔒 更多信息即将推出</span>
+      </div>
+    </section>
+
+    <div class="adslot">[ 广告位 - 底部 ]</div>
+
+    <!-- 来源 -->
+    <section class="card p-6 bg-slate-50 mb-6">
+      <h2 class="text-lg font-black mb-3"><span class="en">📚 Sources & Verification</span><span class="zh">📚 来源与验证</span></h2>
+      <ul class="list-disc pl-6 text-sm text-slate-600 space-y-1">
+        <li><span class="en">Steam store page for Outbound (AppID 2681030)</span><span class="zh">Outbound Steam商店页面 (AppID 2681030)</span></li>
+        <li><span class="en">r/Outbound community discoveries</span><span class="zh">r/Outbound 社区发现</span></li>
+        <li><span class="en">Square Glade Games official Discord</span><span class="zh">Square Glade Games 官方 Discord</span></li>
+        <li><span class="en">Player-submitted location reports</span><span class="zh">玩家提交的位置报告</span></li>
+      </ul>
+      <p class="text-xs text-slate-500 mt-3"><span class="en">Locations marked "Unverified" are reported by players but not yet confirmed. Help us verify by sharing your findings in the comments below.</span><span class="zh">标记为"未验证"的位置由玩家报告但尚未确认。可以通过下方评论区分享您的发现来帮助验证。</span></p>
+    </section>
+
+    <!-- 评论区 -->
+    <section class="card p-6">
+      <h2 class="text-xl font-black mb-4"><span class="en">💬 Community Reports</span><span class="zh">💬 社区报告</span></h2>
+      <p class="text-slate-600 text-sm mb-4"><span class="en">Found a collectible not listed here? Share your discovery to help other players!</span><span class="zh">找到了这里没有列出的收集品？分享您的发现来帮助其他玩家！</span></p>
+      <script src="https://giscus.app/client.js"
+              data-repo="bos12050512-dotcom/outbound-guide"
+              data-repo-id="R_kgDOSZPlqw"
+              data-category="Announcements"
+              data-category-id="DIC_kwDOSZPlq84C8s3i"
+              data-mapping="pathname"
+              data-strict="0"
+              data-reactions-enabled="1"
+              data-emit-metadata="0"
+              data-input-position="top"
+              data-theme="light"
+              data-lang="zh"
+              data-loading="lazy"
+              crossorigin="anonymous"
+              async></script>
+      <noscript class="text-sm text-slate-500"><span class="en">Comments require JavaScript. Join the discussion on</span><span class="zh">评论需要JavaScript。在</span> <a href="https://www.reddit.com/r/Outbound/" class="text-blue-600 underline">Reddit</a><span class="en"> or email</span><span class="zh">或发送邮件至</span> <span class="font-mono">contact[at]outboundguide.org</span>.</noscript>
+    </section>
+  </main>
+
+  <footer class="bg-slate-950 text-slate-300 py-10 mt-10">
+    <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row gap-4 justify-between text-sm">
+      <div>
+        <div class="font-black text-white">OutboundGuide.org</div>
+        <div class="text-slate-400"><span class="en">Non-official fan guide. Outbound © Square Glade Games.</span><span class="zh">非官方玩家攻略站。Outbound © Square Glade Games。</span></div>
+      </div>
+      <div class="flex flex-wrap gap-4">
+        <a href="/zh/about.html" class="hover:text-white"><span class="en">About</span><span class="zh">关于</span></a>
+        <a href="/zh/privacy.html" class="hover:text-white"><span class="en">Privacy</span><span class="zh">隐私</span></a>
+        <a href="/zh/disclaimer.html" class="hover:text-white"><span class="en">Disclaimer</span><span class="zh">免责声明</span></a>
+        <a href="/zh/contact.html" class="hover:text-white"><span class="en">Contact</span><span class="zh">联系</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function setLang(lang){
+      const b=document.getElementById('bodyTag'),
+            en=document.getElementById('btn-en'),
+            zh=document.getElementById('btn-zh');
+      if(lang==='zh'){
+        b.className='lang-zh';
+        zh.className='px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm';
+        en.className='px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm';
+      }else{
+        b.className='lang-en';
+        en.className='px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm';
+        zh.className='px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm';
+      }
+      localStorage.setItem('lang',lang);
+    }
+    setLang(localStorage.getItem('lang')||'zh');
+  </script>
+</body>
+</html>

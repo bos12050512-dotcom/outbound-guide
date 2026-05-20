@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Outbound 联机问题修复完全指南 - 连接问题、联机bug与故障排除 | Outbound攻略</title>
+  <meta name="description" content="Outbound联机故障排除：修复连接问题、仅主机成就、联机bug和匹配问题。根据社区解决方案更新。</title>
+  <link rel="canonical" href="https://outboundguide.org/zh/multiplayer-fixes.html" />
+  <link rel="alternate" hreflang="en" href="https://outboundguide.org/en/multiplayer-fixes.html" />
+  <link rel="alternate" hreflang="zh" href="https://outboundguide.org/zh/multiplayer-fixes.html" />
+  <link rel="alternate" hreflang="x-default" href="https://outboundguide.org/en/multiplayer-fixes.html" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V167JMFJWE"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-V167JMFJWE');</script>
+  <style>
+    html{scroll-behavior:smooth}body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f7fafc;color:#0f172a}.lang-zh .en{display:none}.lang-en .zh{display:none}.card{background:white;border:1px solid #e5e7eb;border-radius:18px;box-shadow:0 8px 30px rgba(15,23,42,.06)}.adslot{background:repeating-linear-gradient(45deg,#f1f5f9,#f1f5f9 10px,#e2e8f0 10px,#e2e8f0 20px);border:1px dashed #94a3b8;color:#64748b;font-size:12px;text-align:center;padding:24px;border-radius:12px}.fix-card{transition:transform .25s,box-shadow .25s}.fix-card:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(15,23,42,.1)}.code-block{background:#1e293b;color:#e2e8f0;font-family:'Fira Code',monospace;font-size:13px;padding:1rem;border-radius:8px;overflow-x:auto}.quick-nav{position:sticky;top:72px;z-40;background:white;border-radius:16px;border:1px solid #e5e7eb;padding:1rem;margin-bottom:1.5rem;box-shadow:0 4px 20px rgba(15,23,42,.08)}
+  </style>
+</head>
+<body id="bodyTag" class="lang-zh">
+
+  <nav class="bg-white/95 backdrop-blur sticky top-0 z-50 border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
+      <a href="/zh/" class="font-black text-xl text-blue-600">OutboundGuide.org</a>
+      <div class="hidden md:flex gap-5 text-sm font-semibold text-slate-700">
+        <a href="/zh/starter-guide.html"><span class="en">Starter</span><span class="zh">开荒</span></a>
+        <a href="/zh/crafting.html"><span class="en">Crafting</span><span class="zh">合成</span></a>
+        <a href="/zh/energy.html"><span class="en">Energy</span><span class="zh">能源</span></a>
+        <a href="/zh/multiplayer.html"><span class="en">Co-op</span><span class="zh">联机</span></a>
+        <a href="/zh/multiplayer-fixes.html" class="text-blue-600 font-bold"><span class="en">Fixes</span><span class="zh">修复</span></a>
+      </div>
+      <div class="flex items-center gap-2 bg-slate-100 p-1 rounded-xl">
+        <button id="btn-en" onclick="setLang('en')" class="px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm">EN</button>
+        <button id="btn-zh" onclick="setLang('zh')" class="px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm">中文</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-red-900 via-rose-900 to-slate-900 text-white py-16">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="inline-flex gap-2 items-center bg-red-500/30 rounded-full px-4 py-2 text-sm font-bold mb-6">
+        <span>🔧</span><span class="en">Troubleshooting Guide</span><span class="zh">故障排除指南</span>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-black mb-4">
+        <span class="en">Outbound Multiplayer Fixes</span>
+        <span class="zh">Outbound 联机问题完全修复指南</span>
+      </h1>
+      <p class="text-xl text-rose-200 mb-6">
+        <span class="en">Fix connection issues, co-op bugs, host problems, and matchmaking errors with our community-tested solutions.</span>
+        <span class="zh">使用我们经过社区测试的解决方案修复连接问题、联机bug、主机问题和匹配错误。</span>
+      </p>
+      <div class="flex flex-wrap gap-3 text-sm">
+        <span class="bg-red-400 text-slate-900 px-4 py-2 rounded-full font-bold">🚨 连接</span>
+        <span class="bg-white/20 px-4 py-2 rounded-full">🐛 Bug修复</span>
+        <span class="bg-white/20 px-4 py-2 rounded-full">🏆 成就</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-10">
+    <div class="adslot">[ 广告位 - 顶部横幅 ]</div>
+
+    <!-- 快速导航 -->
+    <div class="quick-nav">
+      <h3 class="text-sm font-bold text-slate-500 mb-3"><span class="en">⚡ QUICK JUMP</span><span class="zh">⚡ 快速跳转</span></h3>
+      <div class="flex flex-wrap gap-2">
+        <a href="#connection" class="bg-red-100 text-red-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-red-200">🔌 连接</a>
+        <a href="#host" class="bg-amber-100 text-amber-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-amber-200">👤 主机问题</a>
+        <a href="#achievements" class="bg-purple-100 text-purple-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-purple-200">🏆 成就</a>
+        <a href="#bugs" class="bg-blue-100 text-blue-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-blue-200">🐛 常见bug</a>
+        <a href="#matchmaking" class="bg-emerald-100 text-emerald-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-emerald-200">🎮 匹配</a>
+      </div>
+    </div>
+
+    <!-- 连接问题部分 -->
+    <section id="connection" class="mb-12 scroll-mt-20">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-4xl">🔌</span>
+        <div>
+          <h2 class="text-2xl font-black"><span class="en">Connection Issues</span><span class="zh">连接问题</span></h2>
+          <p class="text-slate-500 text-sm"><span class="en">Can't connect to friends? Try these fixes</span><span class="zh">无法连接好友？尝试以下修复</span></p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="fix-card card p-6 border-l-4 border-red-500">
+          <h3 class="font-bold text-lg mb-3">❌ <span class="en">Cannot Join Friend's Game</span><span class="zh">无法加入好友游戏</span></h3>
+          <div class="space-y-3">
+            <div class="bg-red-50 rounded-lg p-3">
+              <h4 class="font-semibold text-sm text-red-800 mb-1"><span class="en">Try First:</span><span class="zh">首先尝试：</span></h4>
+              <ul class="text-sm text-red-700 space-y-1 list-disc pl-4">
+                <li><span class="en">Check both players are on same Steam region</span><span class="zh">检查双方玩家在同一Steam区域</span></li>
+                <li><span class="en">Verify host has "Joinable" status enabled</span><span class="zh">验证主机已开启"可加入"状态</span></li>
+                <li><span class="en">Restart game and Steam completely</span><span class="zh">完全重启游戏和Steam</span></li>
+              </ul>
+            </div>
+            <div class="bg-amber-50 rounded-lg p-3">
+              <h4 class="font-semibold text-sm text-amber-800 mb-1"><span class="en">If Still Not Working:</span><span class="zh">如果仍然无效：</span></h4>
+              <ul class="text-sm text-amber-700 space-y-1 list-disc pl-4">
+                <li><span class="en">Check firewall/antivirus exceptions</span><span class="zh">检查防火墙/杀毒软件例外</span></li>
+                <li><span class="en">Port forward: UDP 27036, 27031</span><span class="zh">端口转发：UDP 27036, 27031</span></li>
+                <li><span class="en">Try disabling VPN</span><span class="zh">尝试禁用VPN</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="fix-card card p-6 border-l-4 border-orange-500">
+          <h3 class="font-bold text-lg mb-3">⚠️ <span class="en">Lagging or Disconnecting</span><span class="zh">卡顿或断开连接</span></h3>
+          <div class="space-y-3">
+            <div class="bg-orange-50 rounded-lg p-3">
+              <h4 class="font-semibold text-sm text-orange-800 mb-1"><span class="en">Network Optimization:</span><span class="zh">网络优化：</span></h4>
+              <ul class="text-sm text-orange-700 space-y-1 list-disc pl-4">
+                <li><span class="en">Host should have stable upload speed</span><span class="zh">主机应有稳定的上传速度</span></li>
+                <li><span class="en">Close bandwidth-heavy applications</span><span class="zh">关闭占用带宽的应用程序</span></li>
+                <li><span class="en">Use wired connection over WiFi when possible</span><span class="zh">尽可能使用有线连接而非WiFi</span></li>
+              </ul>
+            </div>
+            <div class="bg-slate-50 rounded-lg p-3">
+              <p class="text-sm text-slate-600"><span class="en">Recommended host specs for 4-player:</span><span class="zh">4人游戏推荐主机规格：</span> <span class="font-mono text-xs">10+ Mbps上传</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fix-card card p-6 border-l-4 border-yellow-500">
+          <h3 class="font-bold text-lg mb-3">🌐 <span class="en">NAT Type Issues</span><span class="zh">NAT类型问题</span></h3>
+          <div class="space-y-3">
+            <p class="text-slate-600 text-sm"><span class="en">NAT type affects peer-to-peer connection quality. Strict NAT often causes connection failures.</span><span class="zh">NAT类型影响点对点连接质量。严格NAT通常导致连接失败。</span></p>
+            <div class="bg-yellow-50 rounded-lg p-3">
+              <h4 class="font-semibold text-sm text-yellow-800 mb-2"><span class="en">NAT Types (Best to Worst):</span><span class="zh">NAT类型（从好到差）：</span></h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-semibold">Open (最佳)</span>
+                <span class="bg-amber-100 text-amber-700 px-2 py-1 rounded text-xs">Moderate</span>
+                <span class="bg-red-100 text-red-700 px-2 py-1 rounded text-xs">Strict (最差)</span>
+              </div>
+            </div>
+            <p class="text-xs text-slate-500"><span class="en">To improve NAT: enable UPnP on router, port forward, or use VPN with port forwarding.</span><span class="zh">改善NAT：开启路由器UPnP、端口转发、或使用带端口转发的VPN。</span></p>
+          </div>
+        </div>
+
+        <div class="fix-card card p-6 border-l-4 border-cyan-500">
+          <h3 class="font-bold text-lg mb-3">🔀 <span class="en">Steam Family Sharing Conflict</span><span class="zh">Steam家庭共享冲突</span></h3>
+          <div class="space-y-3">
+            <p class="text-slate-600 text-sm"><span class="en">Family sharing can cause connection issues between accounts.</span><span class="zh">家庭共享可能导致账户之间的连接问题。</span></p>
+            <div class="bg-cyan-50 rounded-lg p-3">
+              <h4 class="font-semibold text-sm text-cyan-800 mb-2"><span class="en">Fix:</span><span class="zh">修复：</span></h4>
+              <ol class="text-sm text-cyan-700 space-y-1 list-decimal pl-4">
+                <li><span class="en">Host must own their own copy (not using shared)</span><span class="zh">主机必须拥有自己的副本（不使用共享）</span></li>
+                <li><span class="en">Each player should own or legitimately share</span><span class="zh">每个玩家应拥有或合法共享</span></li>
+                <li><span class="en">Avoid same device shared sessions</span><span class="zh">避免同一设备共享会话</span></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="adslot">[ 广告位 - 文中 ]</div>
+
+    <!-- 主机问题部分 -->
+    <section id="host" class="mb-12 scroll-mt-20">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-4xl">👤</span>
+        <div>
+          <h2 class="text-2xl font-black"><span class="en">Host Issues</span><span class="zh">主机问题</span></h2>
+          <p class="text-slate-500 text-sm"><span class="en">Problems when you're the host</span><span class="zh">当你作为主机时的问题</span></p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="fix-card card p-6 border-l-4 border-amber-500">
+          <h3 class="font-bold text-lg mb-3">🚪 <span class="en">Cannot Set Game to Joinable</span><span class="zh">无法将游戏设为可加入</span></h3>
+          <div class="space-y-3">
+            <p class="text-slate-600 text-sm"><span class="en">The "Make Joinable" option sometimes doesn't appear or won't work.</span><span class="zh">"设为可加入"选项有时不出现或无法工作。</span></p>
+            <div class="bg-amber-50 rounded-lg p-3">
+              <h4 class="font-semibold text-sm text-amber-800 mb-2"><span class="en">Workarounds:</span><span class="zh">解决方案：</span></h4>
+              <ol class="text-sm text-amber-700 space-y-1 list-decimal pl-4">
+                <li><span class="en">Restart Outbound completely</span><span class="zh">完全重启Outbound</span></li>
+                <li><span class="en">Check you're not in a loading screen</span><span class="zh">检查你不在加载画面中</span></li>
+                <li><span class="en">Try inviting via Steam overlay (Shift+Tab)</span><span class="zh">尝试通过Steam覆盖层邀请（Shift+Tab）</span></li>
+                <li><span class="en">Exit to main menu, then re-make joinable</span><span class="zh">退出到主菜单，然后重新设为可加入</span></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="fix-card card p-6 border-l-4 border-purple-500">
+          <h3 class="font-bold text-lg mb-3">🔄 <span class="en">Host Migration Failed</span><span class="zh">主机迁移失败</span></h3>
+          <div class="space-y-3">
+            <p class="text-slate-600 text-sm"><span class="en">When host leaves, game should migrate to next player. Sometimes this fails.</span><span class="zh">当主机离开时，游戏应迁移到下一个玩家。有时这会失败。</span></p>
+            <div class="bg-purple-50 rounded-lg p-3">
+              <h4 class="font-semibold text-sm text-purple-800 mb-2"><span class="en">If Host Migration Fails:</span><span class="zh">如果主机迁移失败：</span></h4>
+              <ul class="text-sm text-purple-700 space-y-1 list-disc pl-4">
+                <li><span class="en">All progress since last save is lost</span><span class="zh">上次存档后的所有进度将丢失</span></li>
+                <li><span class="en">Save frequently to minimize loss</span><span class="zh">频繁存档以最小化损失</span></li>
+                <li><span class="en">Host should save before leaving</span><span class="zh">主机离开前应存档</span></li>
+              </ul>
+            </div>
+            <p class="text-xs text-slate-500"><span class="en">This is a known issue - devs are working on fix.</span><span class="zh">这是已知问题 - 开发者在修复中。</span></p>
+          </div>
+        </div>
+
+        <div class="fix-card card p-6 border-l-4 border-rose-500">
+          <h3 class="font-bold text-lg mb-3">👥 <span class="en">Player Dropping Out</span><span class="zh">玩家掉线</span></h3>
+          <div class="space-y-3">
+            <p class="text-slate-600 text-sm"><span class="en">Players getting kicked unexpectedly during gameplay.</span><span class="zh">游戏过程中玩家意外掉线。</span></p>
+            <div class="bg-rose-50 rounded-lg p-3">
+              <h4 class="font-semibold text-sm text-rose-800 mb-2"><span class="en">Prevention:</span><span class="zh">预防：</span></h4>
+              <ul class="text-sm text-rose-700 space-y-1 list-disc pl-4">
+                <li><span class="en">Host: Don't alt-tab or minimize game</span><span class="zh">主机：不要切换或最小化游戏</span></li>
+                <li><span class="en">All: Stable internet, close other downloads</span><span class="zh">所有人：稳定网络，关闭其他下载</span></li>
+                <li><span class="en">All: Update to latest game version</span><span class="zh">所有人：更新到最新游戏版本</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="fix-card card p-6 border-l-4 border-teal-500">
+          <h3 class="font-bold text-lg mb-3">🔒 <span class="en">Password Protected Games</span><span class="zh">密码保护的游戏</span></h3>
+          <div class="space-y-3">
+            <p class="text-slate-600 text-sm"><span class="en">Setting a password for private sessions.</span><span class="zh">为私人会话设置密码。</span></p>
+            <div class="bg-teal-50 rounded-lg p-3">
+              <p class="text-sm text-teal-700"><span class="en">Go to host menu → "Set Password" → enter 4-digit code. Share with friends before they try to join.</span><span class="zh">进入主机菜单 → "设置密码" → 输入4位数代码。在朋友尝试加入前分享给他们。</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 成就部分 -->
+    <section id="achievements" class="mb-12 scroll-mt-20">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-4xl">🏆</span>
+        <div>
+          <h2 class="text-2xl font-black"><span class="en">Host-Only Achievements</span><span class="zh">仅主机成就</span></h2>
+          <p class="text-slate-500 text-sm"><span class="en">Known issue: achievements not unlocking for non-host players</span><span class="zh">已知问题：非主机玩家的成就无法解锁</span></p>
+        </div>
+      </div>
+
+      <div class="card p-6 bg-gradient-to-r from-purple-50 to-pink-50 mb-6">
+        <div class="flex items-start gap-4">
+          <div class="text-4xl">⚠️</div>
+          <div>
+            <h3 class="font-bold text-lg mb-3"><span class="en">Known Bug Report</span><span class="zh">已知bug报告</span></h3>
+            <p class="text-slate-600 text-sm mb-4"><span class="en">Multiple players report that host-only achievements are not unlocking for joiners in co-op mode. This appears to be a game bug, not a user error.</span><span class="zh">多个玩家报告联机模式中非主机玩家的仅主机成就不解锁。这似乎是游戏bug，不是用户错误。</span></p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-xs font-semibold">🐛 已确认bug</span>
+              <span class="bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-xs">⏳ 开发者修复中</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="fix-card card p-6 border-l-4 border-amber-500">
+          <h3 class="font-bold text-lg mb-3">🔄 <span class="en">Workaround: Host Rotation</span><span class="zh">变通方法：主机轮换</span></h3>
+          <div class="space-y-3">
+            <p class="text-slate-600 text-sm"><span class="en">To earn host-only achievements, each player must host a session.</span><span class="zh">为了获得仅主机成就，每个玩家必须主持一个会话。</span></p>
+            <div class="bg-amber-50 rounded-lg p-3">
+              <h4 class="font-semibold text-sm text-amber-800 mb-2"><span class="en">Steps:</span><span class="zh">步骤：</span></h4>
+              <ol class="text-sm text-amber-700 space-y-1 list-decimal pl-4">
+                <li><span class="en">Player A hosts, everyone plays</span><span class="zh">玩家A主持，大家玩</span></li>
+                <li><span class="en">Player A saves game (checkpoint)</span><span class="zh">玩家A存档（检查点）</span></li>
+                <li><span class="en">Player B hosts new session from save</span><span class="zh">玩家B从存档主持新会话</span></li>
+                <li><span class="en">Repeat for each player</span><span class="zh">对每个玩家重复</span></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="fix-card card p-6 border-l-4 border-blue-500">
+          <h3 class="font-bold text-lg mb-3">📝 <span class="en">Report to Developers</span><span class="zh">向开发者报告</span></h3>
+          <div class="space-y-3">
+            <p class="text-slate-600 text-sm"><span class="en">Help fix this faster by reporting with details.</span><span class="zh">通过详细报告帮助更快修复。</span></p>
+            <div class="bg-blue-50 rounded-lg p-3">
+              <h4 class="font-semibold text-sm text-blue-800 mb-2"><span class="en">Report Channels:</span><span class="zh">报告渠道：</span></h4>
+              <ul class="text-sm text-blue-700 space-y-1 list-disc pl-4">
+                <li><a href="https://discord.gg/outbound" class="hover:underline" target="_blank">Discord #bug-reports 频道</a></li>
+                <li><a href="https://steamcommunity.com/app/2681030" class="hover:underline" target="_blank">Steam 社区论坛</a></li>
+                <li><a href="https://www.reddit.com/r/Outbound/" class="hover:underline" target="_blank">r/Outbound</a></li>
+              </ul>
+            </div>
+            <p class="text-xs text-slate-500"><span class="en">Include: game version, platform, steps to reproduce, screenshot if possible.</span><span class="zh">包括：游戏版本、平台、重现步骤、可能的截图。</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="adslot">[ 广告位 - 文中 ]</div>
+
+    <!-- 常见bug部分 -->
+    <section id="bugs" class="mb-12 scroll-mt-20">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-4xl">🐛</span>
+        <div>
+          <h2 class="text-2xl font-black"><span class="en">Common Bugs</span><span class="zh">常见bug</span></h2>
+          <p class="text-slate-500 text-sm"><span class="en">Fixes for frequently reported issues</span><span class="zh">修复频繁报告的问题</span></p>
+        </div>
+      </div>
+
+      <div class="grid gap-6">
+        <div class="fix-card card p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-semibold">🔥 常见</span>
+            <h3 class="font-bold text-lg"><span class="en">Game Freezes on Load Screen</span><span class="zh">加载画面时游戏冻结</span></h3>
+          </div>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-semibold text-sm mb-2"><span class="en">Quick Fixes:</span><span class="zh">快速修复：</span></h4>
+              <ul class="text-sm text-slate-600 space-y-1 list-disc pl-4">
+                <li><span class="en">Verify game files in Steam</span><span class="zh">在Steam中验证游戏文件</span></li>
+                <li><span class="en">Update GPU drivers</span><span class="zh">更新GPU驱动</span></li>
+                <li><span class="en">Run as Administrator</span><span class="zh">以管理员身份运行</span></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold text-sm mb-2"><span class="en">If Persists:</span><span class="zh">如果持续：</span></h4>
+              <ul class="text-sm text-slate-600 space-y-1 list-disc pl-4">
+                <li><span class="en">Delete local save files, restart</span><span class="zh">删除本地存档文件，重启</span></li>
+                <li><span class="en">Check for pending updates</span><span class="zh">检查是否有待处理更新</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="fix-card card p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-semibold">⚠️ 中等</span>
+            <h3 class="font-bold text-lg"><span class="en">Items Not Syncing Between Players</span><span class="zh">物品在玩家之间不同步</span></h3>
+          </div>
+          <div class="space-y-3">
+            <p class="text-slate-600 text-sm"><span class="en">Picked up items appearing/disappearing for different players.</span><span class="zh">捡起的物品对不同玩家出现/消失。</span></p>
+            <div class="bg-amber-50 rounded-lg p-3">
+              <h4 class="font-semibold text-sm text-amber-800 mb-2"><span class="en">Workaround:</span><span class="zh">变通方法：</span></h4>
+              <ul class="text-sm text-amber-700 space-y-1 list-disc pl-4">
+                <li><span class="en">Host: Check that all players have same items</span><span class="zh">主机：检查所有玩家是否有相同物品</span></li>
+                <li><span class="en">Host: Redistribute synced items manually</span><span class="zh">主机：手动重新分配同步的物品</span></li>
+                <li><span class="en">Known issue - report to devs if frequent</span><span class="zh">已知问题 - 如果频繁发生则向开发者报告</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="fix-card card p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">🔧 可修复</span>
+            <h3 class="font-bold text-lg"><span class="en">Cant Craft After Joining Mid-Game</span><span class="zh">中途加入后无法合成</span></h3>
+          </div>
+          <div class="space-y-3">
+            <p class="text-slate-600 text-sm"><span class="en">New joiners sometimes can't access workbench or crafting.</span><span class="zh">新加入者有时无法访问工作台或合成。</span></p>
+            <div class="bg-blue-50 rounded-lg p-3">
+              <h4 class="font-semibold text-sm text-blue-800 mb-2"><span class="en">Fix:</span><span class="zh">修复：</span></h4>
+              <ol class="text-sm text-blue-700 space-y-1 list-decimal pl-4">
+                <li><span class="en">Host: Walk to workbench with joiner</span><span class="zh">主机：与加入者一起走到工作台</span></li>
+                <li><span class="en">Joiner: Stand within interaction range</span><span class="zh">加入者：站在交互范围内</span></li>
+                <li><span class="en">Host: Show interact prompt to joiner</span><span class="zh">主机：向加入者显示交互提示</span></li>
+                <li><span class="en">Both: Wait for sync (5-10 seconds)</span><span class="zh">双方：等待同步（5-10秒）</span></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 匹配问题部分 -->
+    <section id="matchmaking" class="mb-12 scroll-mt-20">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-4xl">🎮</span>
+        <div>
+          <h2 class="text-2xl font-black"><span class="en">Matchmaking Issues</span><span class="zh">匹配问题</span></h2>
+          <p class="text-slate-500 text-sm"><span class="en">Finding and joining random players</span><span class="zh">查找和加入随机玩家</span></p>
+        </div>
+      </div>
+
+      <div class="card p-6 bg-gradient-to-r from-emerald-50 to-teal-50">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <h3 class="font-bold mb-3"><span class="en">Public Matchmaking Not Working</span><span class="zh">公开匹配不工作</span></h3>
+            <p class="text-slate-600 text-sm mb-4"><span class="en">Outbound uses peer-to-peer, not dedicated servers. Public matchmaking finds players on same network type.</span><span class="zh">Outbound使用点对点而非专用服务器。公开匹配查找相同网络类型的玩家。</span></p>
+            <ul class="text-sm text-slate-600 space-y-1 list-disc pl-4">
+              <li><span class="en">Better NAT = more matches</span><span class="zh">更好的NAT = 更多匹配</span></li>
+              <li><span class="en">Off-peak hours = fewer matches</span><span class="zh">非高峰时段 = 更少匹配</span></li>
+              <li><a href="https://discord.gg/outbound" class="text-blue-600 hover:underline" target="_blank">加入 Discord LFG</a> <span class="en">for easier co-op</span><span class="zh">更易找到联机</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold mb-3"><span class="en">Private Sessions</span><span class="zh">私人会话</span></h3>
+            <p class="text-slate-600 text-sm mb-4"><span class="en">For playing with friends only, use private session.</span><span class="zh">仅与朋友游玩时，使用私人会话。</span></p>
+            <div class="bg-white rounded-lg p-3">
+              <ol class="text-sm text-slate-700 space-y-1 list-decimal pl-4">
+                <li><span class="en">Host: Main Menu → Play → Private Session</span><span class="zh">主机：主菜单 → 开始游戏 → 私人会话</span></li>
+                <li><span class="en">Host: Set password (optional but recommended)</span><span class="zh">主机：设置密码（可选但推荐）</span></li>
+                <li><span class="en">Friends: Steam overlay invite or direct join</span><span class="zh">朋友：Steam覆盖层邀请或直接加入</span></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="adslot">[ 广告位 - 底部 ]</div>
+
+    <!-- 来源 -->
+    <section class="card p-6 bg-slate-50 mb-6">
+      <h2 class="text-lg font-black mb-3"><span class="en">📚 Sources</span><span class="zh">📚 来源</span></h2>
+      <ul class="list-disc pl-6 text-sm text-slate-600 space-y-1">
+        <li><span class="en">r/Outbound community bug reports</span><span class="zh">r/Outbound 社区bug报告</span></li>
+        <li><span class="en">Square Glade Games Discord</span><span class="zh">Square Glade Games Discord</span></li>
+        <li><span class="en">Steam Community Forums</span><span class="zh">Steam社区论坛</span></li>
+        <li><span class="en">Direct player reports</span><span class="zh">直接玩家报告</span></li>
+      </ul>
+      <p class="text-xs text-slate-500 mt-3"><span class="en">These are community-tested workarounds, not official fixes. For official support, contact Square Glade Games directly.</span><span class="zh">这些是社区测试的变通方法，不是官方修复。如需官方支持，请直接联系Square Glade Games。</span></p>
+    </section>
+
+    <!-- 评论区 -->
+    <section class="card p-6">
+      <h2 class="text-xl font-black mb-4"><span class="en">💬 Report Your Issues</span><span class="zh">💬 报告您的问题</span></h2>
+      <p class="text-slate-600 text-sm mb-4"><span class="en">Found a fix not listed here? Help other players by sharing your solution!</span><span class="zh">找到了这里没有列出的修复？通过分享您的解决方案来帮助其他玩家！</span></p>
+      <script src="https://giscus.app/client.js"
+              data-repo="bos12050512-dotcom/outbound-guide"
+              data-repo-id="R_kgDOSZPlqw"
+              data-category="Announcements"
+              data-category-id="DIC_kwDOSZPlq84C8s3i"
+              data-mapping="pathname"
+              data-strict="0"
+              data-reactions-enabled="1"
+              data-emit-metadata="0"
+              data-input-position="top"
+              data-theme="light"
+              data-lang="zh"
+              data-loading="lazy"
+              crossorigin="anonymous"
+              async></script>
+    </section>
+  </main>
+
+  <footer class="bg-slate-950 text-slate-300 py-10 mt-10">
+    <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row gap-4 justify-between text-sm">
+      <div>
+        <div class="font-black text-white">OutboundGuide.org</div>
+        <div class="text-slate-400"><span class="en">Non-official fan guide. Outbound © Square Glade Games.</span><span class="zh">非官方玩家攻略站。Outbound © Square Glade Games。</span></div>
+      </div>
+      <div class="flex flex-wrap gap-4">
+        <a href="/zh/about.html" class="hover:text-white"><span class="en">About</span><span class="zh">关于</span></a>
+        <a href="/zh/privacy.html" class="hover:text-white"><span class="en">Privacy</span><span class="zh">隐私</span></a>
+        <a href="/zh/disclaimer.html" class="hover:text-white"><span class="en">Disclaimer</span><span class="zh">免责声明</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function setLang(lang){
+      const b=document.getElementById('bodyTag'),
+            en=document.getElementById('btn-en'),
+            zh=document.getElementById('btn-zh');
+      if(lang==='zh'){
+        b.className='lang-zh';
+        zh.className='px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm';
+        en.className='px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm';
+      }else{
+        b.className='lang-en';
+        en.className='px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm';
+        zh.className='px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm';
+      }
+      localStorage.setItem('lang',lang);
+    }
+    setLang(localStorage.getItem('lang')||'zh');
+  </script>
+</body>
+</html>
