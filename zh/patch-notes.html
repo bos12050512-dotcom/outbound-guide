@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Outbound补丁日志 1.0.6-1.0.9 | Outbound Guide</title>
+  <meta name="description" content="Outbound补丁1.0.6到1.0.9完整更新日志。钓鱼预览、路线图、平衡性改动、bug修复和生活质量改进。">
+  <link rel="canonical" href="https://outboundguide.org/zh/patch-notes.html" />
+  <link rel="alternate" hreflang="en" href="https://outboundguide.org/en/patch-notes.html" />
+  <link rel="alternate" hreflang="zh" href="https://outboundguide.org/zh/patch-notes.html" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V167JMFJWE"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-V167JMFJWE');</script>
+  <style>
+    html{scroll-behavior:smooth}body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f7fafc;color:#0f172a}.lang-zh .en{display:none}.lang-en .zh{display:none}.card{background:white;border:1px solid #e5e7eb;border-radius:18px;box-shadow:0 8px 30px rgba(15,23,42,.06)}.adslot{background:repeating-linear-gradient(45deg,#f1f5f9,#f1f5f9 10px,#e2e8f0 10px,#e2e8f0 20px);border:1px dashed #94a3b8;color:#64748b;font-size:12px;text-align:center;padding:24px;border-radius:12px}.patch-card{transition:transform .25s,box-shadow .25s}.patch-card:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(15,23,42,.1)}.quick-nav{position:sticky;top:72px;z-40;background:white;border-radius:16px;border:1px solid #e5e7eb;padding:1rem;margin-bottom:1.5rem;box-shadow:0 4px 20px rgba(15,23,42,.08)}.badge-new{background:linear-gradient(135deg,#10b981,#059669);color:white}.badge-fix{background:linear-gradient(135deg,#f59e0b,#d97706);color:white}.badge-change{background:linear-gradient(135deg,#3b82f6,#2563eb);color:white}.badge-qol{background:linear-gradient(135deg,#8b5cf6,#7c3aed);color:white}
+  </style>
+</head>
+<body id="bodyTag" class="lang-zh">
+
+  <nav class="bg-white/95 backdrop-blur sticky top-0 z-50 border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
+      <a href="/" class="font-black text-xl text-blue-600">OutboundGuide.org</a>
+      <div class="hidden md:flex gap-5 text-sm font-semibold text-slate-700">
+        <a href="/zh/starter-guide.html">开荒</a>
+        <a href="/zh/crafting.html">合成</a>
+        <a href="/zh/vehicle-upgrades.html">载具</a>
+        <a href="/zh/patch-notes.html" class="text-amber-600 font-bold">补丁</a>
+      </div>
+      <div class="flex items-center gap-2 bg-slate-100 p-1 rounded-xl">
+        <button id="btn-en" onclick="setLang('en')" class="px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm">EN</button>
+        <button id="btn-zh" onclick="setLang('zh')" class="px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm">中文</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 text-white py-16">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="inline-flex gap-2 items-center bg-white/20 backdrop-blur rounded-full px-4 py-2 text-sm font-bold mb-6">
+        <span>📝</span>补丁 1.0.6 - 1.0.9
+      </div>
+      <h1 class="text-4xl md:text-5xl font-black mb-4">补丁日志与路线图</h1>
+      <p class="text-xl text-emerald-100 mb-6">发售以来所有补丁的完整更新日志。包含官方2026路线图和钓鱼系统预览！</p>
+      <div class="flex flex-wrap gap-3 text-sm">
+        <span class="bg-emerald-400 text-slate-900 px-4 py-2 rounded-full font-bold">📝 4个补丁</span>
+        <span class="bg-white/20 px-4 py-2 rounded-full">🎣 夏季钓鱼更新</span>
+        <span class="bg-white/20 px-4 py-2 rounded-full">🗺️ 2026路线图</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-10">
+    <div class="adslot">[ 广告位 - 顶部横幅 ]</div>
+
+    <div class="quick-nav">
+      <h3 class="text-sm font-bold text-slate-500 mb-3">⚡ 快速跳转</h3>
+      <div class="flex flex-wrap gap-2">
+        <a href="#roadmap" class="bg-purple-100 text-purple-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-purple-200">🗺️ 路线图</a>
+        <a href="#p109" class="bg-emerald-100 text-emerald-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-emerald-200">1.0.9</a>
+        <a href="#p108" class="bg-blue-100 text-blue-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-blue-200">1.0.8</a>
+        <a href="#p107" class="bg-amber-100 text-amber-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-amber-200">1.0.7</a>
+        <a href="#p106" class="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-slate-200">1.0.6</a>
+      </div>
+    </div>
+
+    <!-- 路线图 -->
+    <section id="roadmap" class="mb-12 scroll-mt-20">
+      <div class="card p-6 bg-gradient-to-r from-purple-50 to-pink-50 border-l-4 border-purple-500">
+        <h2 class="text-2xl font-black mb-4">🗺️ Outbound 2026路线图</h2>
+        <p class="text-slate-600 text-sm mb-4">Square Glade Games于2026年5月15日公布的官方路线图。</p>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-white rounded-xl p-4 border border-purple-200">
+            <div class="text-sm font-bold text-purple-600 mb-2">☀️ 2026年夏季</div>
+            <div class="font-black text-lg mb-1">🎣 钓鱼更新 (1.1)</div>
+            <ul class="text-sm text-slate-600 space-y-1 list-disc pl-4">
+              <li>在世界各地钓鱼点钓鱼</li>
+              <li>捕捉各种鱼类并收集</li>
+              <li>鱼类记录在日志中</li>
+              <li>鱼缸作为装饰</li>
+              <li>纯装饰用途（非食物）</li>
+            </ul>
+          </div>
+          <div class="bg-white rounded-xl p-4 border border-purple-200">
+            <div class="text-sm font-bold text-purple-600 mb-2">🔮 未来更新</div>
+            <div class="font-black text-lg mb-1">📦 更多内容规划中</div>
+            <ul class="text-sm text-slate-600 space-y-1 list-disc pl-4">
+              <li>持续修复bug和提升稳定性</li>
+              <li>生活质量改进</li>
+              <li>整合社区反馈</li>
+              <li>更多详情即将公布</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1.0.9 -->
+    <section id="p109" class="mb-12 scroll-mt-20">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="bg-emerald-600 text-white px-3 py-1 rounded-lg font-black text-sm">1.0.9</span>
+        <div>
+          <h2 class="text-2xl font-black">补丁 1.0.9</h2>
+          <p class="text-slate-500 text-sm">2026年5月21日</p>
+        </div>
+      </div>
+      <div class="space-y-3">
+        <div class="patch-card card p-4"><div class="flex items-center gap-2 mb-2"><span class="badge-fix text-xs px-2 py-0.5 rounded-full font-bold">修复</span></div><p class="text-sm text-slate-600">修复下载终端有时没有下载内容导致游戏软锁的问题。</p></div>
+        <div class="patch-card card p-4"><div class="flex items-center gap-2 mb-2"><span class="badge-new text-xs px-2 py-0.5 rounded-full font-bold">新增</span></div><p class="text-sm text-slate-600">新增一键发送存档和日志文件给开发者的功能。</p></div>
+        <div class="patch-card card p-4"><div class="flex items-center gap-2 mb-2"><span class="badge-fix text-xs px-2 py-0.5 rounded-full font-bold">修复</span></div><p class="text-sm text-slate-600">修复车辆灯有时在错误的时间自动开启。</p></div>
+        <div class="patch-card card p-4"><div class="flex items-center gap-2 mb-2"><span class="badge-fix text-xs px-2 py-0.5 rounded-full font-bold">修复</span></div><p class="text-sm text-slate-600">修复多人模式下"瓶盖满屋！"成就。</p></div>
+        <div class="patch-card card p-4"><div class="flex items-center gap-2 mb-2"><span class="badge-fix text-xs px-2 py-0.5 rounded-full font-bold">修复</span></div><p class="text-sm text-slate-600">修复Cap 'n Snaps地图图例、画作外观相同、多人作物收获等问题。</p></div>
+      </div>
+    </section>
+
+    <!-- 1.0.8 -->
+    <section id="p108" class="mb-12 scroll-mt-20">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="bg-blue-600 text-white px-3 py-1 rounded-lg font-black text-sm">1.0.8</span>
+        <div>
+          <h2 class="text-2xl font-black">补丁 1.0.8 - 平衡性与改进</h2>
+          <p class="text-slate-500 text-sm">2026年5月18日</p>
+        </div>
+      </div>
+      <div class="space-y-3">
+        <div class="patch-card card p-4 border-l-4 border-emerald-500"><div class="flex items-center gap-2 mb-2"><span class="badge-change text-xs px-2 py-0.5 rounded-full font-bold">平衡</span></div><p class="text-sm text-slate-600">🏃 现在可以在夜间冲刺了！冲刺速度+15%，体力恢复+150%，移除归巢靴。</p></div>
+        <div class="patch-card card p-4 border-l-4 border-amber-500"><div class="flex items-center gap-2 mb-2"><span class="badge-change text-xs px-2 py-0.5 rounded-full font-bold">合成</span></div><p class="text-sm text-slate-600">🪵 锯木机配方大改：所有木板从2木材→1木材（1:1比例）。Everwood、Silverbark、Redwood、Blossomwood全部适用。</p></div>
+        <div class="patch-card card p-4 border-l-4 border-amber-500"><div class="flex items-center gap-2 mb-2"><span class="badge-change text-xs px-2 py-0.5 rounded-full font-bold">资源</span></div><p class="text-sm text-slate-600">黏土产出翻倍。地图1增加Everwood和Fiber。地图2增加Durafiber。地图3红矿石翻倍。</p></div>
+        <div class="patch-card card p-4 border-l-4 border-blue-500"><div class="flex items-center gap-2 mb-2"><span class="badge-qol text-xs px-2 py-0.5 rounded-full font-bold">优化</span></div><p class="text-sm text-slate-600">背包增加排序和搜索。地图图例增加收集计数器。地图连接默认显示。狗加载时自动生成在旁边。</p></div>
+        <div class="patch-card card p-4 border-l-4 border-blue-500"><div class="flex items-center gap-2 mb-2"><span class="badge-qol text-xs px-2 py-0.5 rounded-full font-bold">优化</span></div><p class="text-sm text-slate-600">新增关闭车辆镜头自动居中设置。多人标记功能可重新绑定按键。地图1桥梁修复减少到20个木板。</p></div>
+      </div>
+    </section>
+
+    <!-- 1.0.7 -->
+    <section id="p107" class="mb-12 scroll-mt-20">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="bg-amber-600 text-white px-3 py-1 rounded-lg font-black text-sm">1.0.7</span>
+        <div>
+          <h2 class="text-2xl font-black">补丁 1.0.7</h2>
+          <p class="text-slate-500 text-sm">2026年5月17日</p>
+        </div>
+      </div>
+      <div class="patch-card card p-4"><div class="flex items-center gap-2 mb-2"><span class="badge-fix text-xs px-2 py-0.5 rounded-full font-bold">修复</span></div><p class="text-sm text-slate-600">修复补丁1.0.6后下载信号不出现的问题。</p></div>
+    </section>
+
+    <!-- 1.0.6 -->
+    <section id="p106" class="mb-12 scroll-mt-20">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="bg-slate-600 text-white px-3 py-1 rounded-lg font-black text-sm">1.0.6</span>
+        <div>
+          <h2 class="text-2xl font-black">补丁 1.0.6 - 路线图与钓鱼预览</h2>
+          <p class="text-slate-500 text-sm">2026年5月15日</p>
+        </div>
+      </div>
+      <div class="space-y-3">
+        <div class="patch-card card p-4 border-l-4 border-purple-500"><div class="flex items-center gap-2 mb-2"><span class="badge-new text-xs px-2 py-0.5 rounded-full font-bold">新增</span></div><p class="text-sm text-slate-600">💡 车辆灯光手动控制 - 随时开关车灯！</p></div>
+        <div class="patch-card card p-4 border-l-4 border-purple-500"><div class="flex items-center gap-2 mb-2"><span class="badge-new text-xs px-2 py-0.5 rounded-full font-bold">新增</span></div><p class="text-sm text-slate-600">💡 储物过滤和搜索：按字母排序、按堆叠大小排序、或优先显示食物。</p></div>
+        <div class="patch-card card p-4"><div class="flex items-center gap-2 mb-2"><span class="badge-fix text-xs px-2 py-0.5 rounded-full font-bold">修复</span></div><p class="text-sm text-slate-600">修复车辆漂浮、信号频率、风车梯子、狗伙伴储物UI等bug。修复多人模式蜂箱和集水器问题。</p></div>
+      </div>
+    </section>
+
+    <div class="adslot">[ 广告位 - 底部 ]</div>
+
+    <section class="card p-6">
+      <h2 class="text-xl font-black mb-4">💬 社区讨论</h2>
+      <p class="text-slate-600 text-sm mb-4">你对最新补丁怎么看？分享你的反馈！</p>
+      <script src="https://giscus.app/client.js"
+              data-repo="bos12050512-dotcom/outbound-guide"
+              data-repo-id="R_kgDOSZPlqw"
+              data-category="Announcements"
+              data-category-id="DIC_kwDOSZPlq84C8s3i"
+              data-mapping="pathname"
+              data-strict="0"
+              data-reactions-enabled="1"
+              data-emit-metadata="0"
+              data-input-position="top"
+              data-theme="light"
+              data-lang="zh-CN"
+              data-loading="lazy"
+              crossorigin="anonymous"
+              async></script>
+    </section>
+  </main>
+
+  <footer class="bg-slate-950 text-slate-300 py-10 mt-10">
+    <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row gap-4 justify-between text-sm">
+      <div>
+        <div class="font-black text-white">OutboundGuide.org</div>
+        <div class="text-slate-400">非官方玩家攻略站。Outbound © Square Glade Games。</div>
+      </div>
+      <div class="flex flex-wrap gap-4">
+        <a href="/zh/about.html" class="hover:text-white">关于</a>
+        <a href="/zh/privacy.html" class="hover:text-white">隐私</a>
+        <a href="/zh/disclaimer.html" class="hover:text-white">免责声明</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function setLang(lang){const b=document.getElementById('bodyTag'),en=document.getElementById('btn-en'),zh=document.getElementById('btn-zh');if(lang==='zh'){b.className='lang-zh';zh.className='px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm';en.className='px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm'}else{b.className='lang-en';en.className='px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm';zh.className='px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm'}localStorage.setItem('lang',lang)}setLang(localStorage.getItem('lang')||'zh');
+  </script>
+</body>
+</html>
