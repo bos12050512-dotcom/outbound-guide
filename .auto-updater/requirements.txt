@@ -1,0 +1,9 @@
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+feedparser>=6.0.10
+python-dateutil>=2.8.2
+jinja2>=3.1.2
+gitpython>=3.1.40
+schedule>=1.2.0
+praw>=7.7.1
+steam[client]>=1.4.4
