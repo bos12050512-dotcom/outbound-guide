@@ -3,69 +3,238 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://outboundguide.org/</loc>
-    <lastmod>2026-05-10</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://outboundguide.org/en/starter-guide.html"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://outboundguide.org/zh/starter-guide.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://outboundguide.org/"/>
   </url>
-
-  <url><loc>https://outboundguide.org/en/starter-guide.html</loc><lastmod>2026-05-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://outboundguide.org/en/starter-guide.html"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://outboundguide.org/zh/starter-guide.html"/>
+  <url>
+    <loc>https://outboundguide.org/en/starter-guide.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
-  <url><loc>https://outboundguide.org/en/crafting.html</loc><lastmod>2026-05-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://outboundguide.org/en/crafting.html"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://outboundguide.org/zh/crafting.html"/>
-  </url>
-  <url><loc>https://outboundguide.org/en/multiplayer.html</loc><lastmod>2026-05-10</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://outboundguide.org/en/multiplayer.html"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://outboundguide.org/zh/multiplayer.html"/>
-  </url>
-  <url><loc>https://outboundguide.org/en/system-requirements.html</loc><lastmod>2026-05-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://outboundguide.org/en/system-requirements.html"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://outboundguide.org/zh/system-requirements.html"/>
-  </url>
-  <url><loc>https://outboundguide.org/en/energy.html</loc><lastmod>2026-05-10</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://outboundguide.org/en/energy.html"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://outboundguide.org/zh/energy.html"/>
-  </url>
-  <url><loc>https://outboundguide.org/en/van-upgrades.html</loc><lastmod>2026-05-10</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://outboundguide.org/en/van-upgrades.html"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://outboundguide.org/zh/van-upgrades.html"/>
-  </url>
-  <url><loc>https://outboundguide.org/en/about.html</loc><lastmod>2026-05-10</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://outboundguide.org/en/privacy.html</loc><lastmod>2026-05-10</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://outboundguide.org/en/disclaimer.html</loc><lastmod>2026-05-10</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://outboundguide.org/en/contact.html</loc><lastmod>2026-05-10</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
-
-  <url><loc>https://outboundguide.org/zh/starter-guide.html</loc><lastmod>2026-05-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://outboundguide.org/en/starter-guide.html"/>
+  <url>
+    <loc>https://outboundguide.org/zh/starter-guide.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh" href="https://outboundguide.org/zh/starter-guide.html"/>
   </url>
-  <url><loc>https://outboundguide.org/zh/crafting.html</loc><lastmod>2026-05-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://outboundguide.org/en/crafting.html"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://outboundguide.org/zh/crafting.html"/>
+  <url>
+    <loc>https://outboundguide.org/en/crafting.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
-  <url><loc>https://outboundguide.org/zh/multiplayer.html</loc><lastmod>2026-05-10</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://outboundguide.org/en/multiplayer.html"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://outboundguide.org/zh/multiplayer.html"/>
+  <url>
+    <loc>https://outboundguide.org/zh/crafting.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
-  <url><loc>https://outboundguide.org/zh/system-requirements.html</loc><lastmod>2026-05-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://outboundguide.org/en/system-requirements.html"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://outboundguide.org/zh/system-requirements.html"/>
+  <url>
+    <loc>https://outboundguide.org/en/energy.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
-  <url><loc>https://outboundguide.org/zh/energy.html</loc><lastmod>2026-05-10</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://outboundguide.org/en/energy.html"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://outboundguide.org/zh/energy.html"/>
+  <url>
+    <loc>https://outboundguide.org/zh/energy.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
-  <url><loc>https://outboundguide.org/zh/van-upgrades.html</loc><lastmod>2026-05-10</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://outboundguide.org/en/van-upgrades.html"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://outboundguide.org/zh/van-upgrades.html"/>
+  <url>
+    <loc>https://outboundguide.org/en/van-upgrades.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
-  <url><loc>https://outboundguide.org/zh/about.html</loc><lastmod>2026-05-10</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://outboundguide.org/zh/privacy.html</loc><lastmod>2026-05-10</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://outboundguide.org/zh/disclaimer.html</loc><lastmod>2026-05-10</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://outboundguide.org/zh/contact.html</loc><lastmod>2026-05-10</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url>
+    <loc>https://outboundguide.org/zh/van-upgrades.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/en/multiplayer.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/zh/multiplayer.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/en/achievements.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/zh/achievements.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/en/collectibles-guide.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/zh/collectibles-guide.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/en/progression.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/zh/progression.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/en/tech-fixes.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/zh/tech-fixes.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/en/patch-notes.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/zh/patch-notes.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/en/fishing.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/zh/fishing.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/en/school-bus-adventures.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/zh/school-bus-adventures.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/en/signal-towers.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/zh/signal-towers.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/en/system-requirements.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/zh/system-requirements.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/en/vehicle-upgrades.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/zh/vehicle-upgrades.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/en/multiplayer-fixes.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/zh/multiplayer-fixes.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/en/items/redwood.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/zh/items/redwood.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/en/items/gnome-workshop.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/zh/items/gnome-workshop.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/en/items/rare-earth-magnet.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/zh/items/rare-earth-magnet.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/en/news/refund-review-controversy.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/en/game-controllers.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/en/best-controllers.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/en/collectibles.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/zh/collectibles.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/en/faq.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/en/compare.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://outboundguide.org/en/collectibles-map.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

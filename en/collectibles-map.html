@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Outbound Interactive Collectibles Map | Outbound Guide</title>
+<meta name="description" content="Interactive map showing all collectible locations in Outbound: USB Keys, Cairns, and Hidden Areas. Filter by type and click markers for details." />
+<link rel="canonical" href="https://outboundguide.org/en/collectibles-map.html" />
+<link rel="alternate" hreflang="en" href="https://outboundguide.org/en/collectibles-map.html" />
+<link rel="alternate" hreflang="zh" href="https://outboundguide.org/zh/collectibles-map.html" />
+<link rel="alternate" hreflang="x-default" href="https://outboundguide.org/en/collectibles-map.html" />
+<meta property="og:title" content="Outbound Interactive Collectibles Map" />
+<meta property="og:description" content="Find all USB Keys, Cairns, and Hidden Areas in Outbound with our interactive map." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://outboundguide.org/en/collectibles-map.html" />
+<meta property="og:image" content="https://outboundguide.org/assets/header.jpg" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V167JMFJWE"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-V167JMFJWE');</script>
+<script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wotxx3bbrn");</script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+html{scroll-behavior:smooth}body{font-family:Inter,system-ui,sans-serif;background:#f7fafc;color:#0f172a}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:18px;box-shadow:0 8px 25px rgba(15,23,42,.06)}
+.adslot{background:repeating-linear-gradient(45deg,#f1f5f9,#f1f5f9 10px,#e2e8f0 10px,#e2e8f0 20px);border:1px dashed #94a3b8;color:#64748b;font-size:12px;text-align:center;padding:24px;border-radius:12px}
+.lang-zh .en{display:none}
+#map{height:600px;width:100%;border-radius:12px;z-index:1}
+@media(max-width:768px){#map{height:400px}}
+.filter-btn{cursor:pointer;padding:8px 16px;border-radius:999px;font-size:.85rem;font-weight:700;border:2px solid transparent;transition:all .2s}
+.filter-btn.active{color:#fff}
+.filter-btn:hover{opacity:.85}
+.legend-dot{width:14px;height:14px;border-radius:50%;display:inline-block;margin-right:8px;vertical-align:middle;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+.custom-popup .leaflet-popup-content-wrapper{border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,.15)}
+.custom-popup .leaflet-popup-content{margin:12px 16px;font-size:.9rem;line-height:1.5}
+.custom-popup h3{font-weight:800;margin:0 0 4px;font-size:1rem}
+.custom-popup p{margin:0;color:#475569}
+</style>
+</head>
+<body>
+<nav class="bg-white sticky top-0 z-50 border-b border-slate-200">
+<div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
+<a href="/" class="font-black text-lg text-blue-600">OutboundGuide.org</a>
+<div class="hidden md:flex gap-5 text-sm font-semibold text-slate-700">
+<a href="/en/starter-guide.html">Starter</a>
+<a href="/en/crafting.html">Crafting</a>
+<a href="/en/multiplayer.html">Co-op</a>
+<a href="/en/faq.html">FAQ</a>
+<a href="/en/compare.html">Compare</a>
+<a href="/en/collectibles-map.html" class="text-blue-600">Map</a>
+</div>
+<div class="flex gap-2 text-xs"><a href="/en/collectibles-map.html" class="font-bold text-blue-600">EN</a><span class="text-slate-300">|</span><a href="/zh/collectibles-map.html" class="text-slate-500">中文</a></div>
+</div>
+</nav>
+
+<header class="bg-gradient-to-br from-blue-600 to-teal-500 text-white py-16">
+<div class="max-w-4xl mx-auto px-4">
+<div class="text-sm opacity-80 mb-3">Collectibles · Updated May 23, 2026</div>
+<h1 class="text-4xl md:text-5xl font-black mb-4">Outbound Interactive Collectibles Map</h1>
+<p class="text-lg opacity-90">Find every USB Key, Cairn, and Hidden Area in Outbound. Click markers for details and use the filter panel to show only what you need.</p>
+</div>
+</header>
+
+<main class="max-w-6xl mx-auto px-4 py-10 space-y-8">
+
+<div class="adslot">[ Ad slot - top banner 728x90 / responsive ]</div>
+
+<!-- Filter Panel + Map -->
+<section class="card p-4 md:p-6">
+<div class="flex flex-col md:flex-row gap-6">
+<!-- Filter Sidebar -->
+<div class="md:w-64 flex-shrink-0 space-y-4">
+<h2 class="text-lg font-black text-slate-800">Filter by Type</h2>
+
+<div class="space-y-2">
+<button class="filter-btn active w-full text-left bg-blue-600 text-white" data-type="usb" onclick="toggleFilter('usb',this)">
+<span class="legend-dot" style="background:#2563eb"></span>USB Keys <span class="text-xs opacity-75">(15)</span>
+</button>
+<button class="filter-btn active w-full text-left bg-orange-500 text-white" data-type="cairn" onclick="toggleFilter('cairn',this)">
+<span class="legend-dot" style="background:#ea580c"></span>Cairns <span class="text-xs opacity-75">(12)</span>
+</button>
+<button class="filter-btn active w-full text-left bg-green-600 text-white" data-type="hidden" onclick="toggleFilter('hidden',this)">
+<span class="legend-dot" style="background:#16a34a"></span>Hidden Areas <span class="text-xs opacity-75">(8)</span>
+</button>
+</div>
+
+<div class="border-t border-slate-200 pt-4">
+<h3 class="text-sm font-bold text-slate-600 mb-2">Progress Tracker</h3>
+<div class="space-y-2 text-sm">
+<div>
+<div class="flex justify-between mb-1"><span class="text-slate-600">USB Keys</span><span id="usb-count" class="font-bold text-blue-600">0/15</span></div>
+<div class="w-full bg-slate-200 rounded-full h-2"><div id="usb-bar" class="bg-blue-600 h-2 rounded-full transition-all" style="width:0%"></div></div>
+</div>
+<div>
+<div class="flex justify-between mb-1"><span class="text-slate-600">Cairns</span><span id="cairn-count" class="font-bold text-orange-600">0/12</span></div>
+<div class="w-full bg-slate-200 rounded-full h-2"><div id="cairn-bar" class="bg-orange-500 h-2 rounded-full transition-all" style="width:0%"></div></div>
+</div>
+<div>
+<div class="flex justify-between mb-1"><span class="text-slate-600">Hidden Areas</span><span id="hidden-count" class="font-bold text-green-600">0/8</span></div>
+<div class="w-full bg-slate-200 rounded-full h-2"><div id="hidden-bar" class="bg-green-600 h-2 rounded-full transition-all" style="width:0%"></div></div>
+</div>
+</div>
+</div>
+
+<div class="border-t border-slate-200 pt-4">
+<button onclick="resetFilters()" class="w-full text-sm font-bold text-slate-500 hover:text-blue-600 transition py-2">Show All / Reset</button>
+</div>
+</div>
+
+<!-- Map -->
+<div class="flex-1 min-w-0">
+<div id="map"></div>
+</div>
+</div>
+</section>
+
+<!-- Legend / Info -->
+<section class="card p-6">
+<h2 class="text-2xl font-black mb-4">Collectible Types</h2>
+<div class="grid sm:grid-cols-3 gap-6">
+<div class="flex items-start gap-3">
+<span class="legend-dot mt-1" style="background:#2563eb;width:18px;height:18px"></span>
+<div>
+<h3 class="font-bold text-blue-700">USB Keys (15 total)</h3>
+<p class="text-sm text-slate-600">Scattered data drives containing lore audio logs and secret blueprints. Collect all 15 for the "Full Signal" achievement.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="legend-dot mt-1" style="background:#ea580c;width:18px;height:18px"></span>
+<div>
+<h3 class="font-bold text-orange-700">Cairns / Stone Stacks (12 total)</h3>
+<p class="text-sm text-slate-600">Ancient rock formations left by previous travelers. Interacting with all 12 reveals a hidden map fragment and unlocks the "Pathfinder" achievement.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="legend-dot mt-1" style="background:#16a34a;width:18px;height:18px"></span>
+<div>
+<h3 class="font-bold text-green-700">Hidden Areas (8 total)</h3>
+<p class="text-sm text-slate-600">Secret locations not marked on the main map. They contain rare resources, unique crafting materials, and lore fragments.</p>
+</div>
+</div>
+</div>
+</section>
+
+<div class="adslot">[ Ad slot - bottom banner 728x90 / responsive ]</div>
+
+</main>
+
+<footer class="bg-slate-900 text-slate-400 py-10 mt-16">
+<div class="max-w-6xl mx-auto px-4 text-center text-sm space-y-2">
+<p>OutboundGuide.org is a fan-made guide and is not affiliated with Square Glade Games.</p>
+<p><a href="/en/privacy.html" class="hover:text-white">Privacy Policy</a> · <a href="/en/disclaimer.html" class="hover:text-white">Disclaimer</a> · <a href="/en/contact.html" class="hover:text-white">Contact</a></p>
+</div>
+</footer>
+
+<script>
+// === Collectibles Data ===
+const collectibles = {
+  usb: [
+    { id:1, name:"USB Key #1 - Starter Bay", desc:"Found on a crate near the beach where you first wake up. Contains the first lore entry about the evacuation.", lat:48.856, lng:-123.312 },
+    { id:2, name:"USB Key #2 - Abandoned Gas Station", desc:"Inside the station's back office, on the desk. Log mentions fuel shortages before the event.", lat:48.862, lng:-123.285 },
+    { id:3, name:"USB Key #3 - Forest Trail Cache", desc:"Hidden in a hollow tree stump along the main forest trail. Contains a blueprint for the solar panel upgrade.", lat:48.871, lng:-123.270 },
+    { id:4, name:"USB Key #4 - River Crossing Ruins", desc:"Under a collapsed bridge on the east bank. Log describes the last days of the river settlement.", lat:48.880, lng:-123.250 },
+    { id:5, name:"USB Key #5 - Redwood Grove Camp", desc:"Inside a tent at the abandoned logging camp. Contains the reinforced storage module blueprint.", lat:48.895, lng:-123.310 },
+    { id:6, name:"USB Key #6 - Wind Turbine Hill", desc:"At the base of the large wind turbine. Data file reveals energy grid failure details.", lat:48.902, lng:-123.275 },
+    { id:7, name:"USB Key #7 - Old Mine Entrance", desc:"On a workbench just inside the mine entrance. Log mentions rare mineral discoveries.", lat:48.888, lng:-123.240 },
+    { id:8, name:"USB Key #8 - Lakeside Cabin", desc:"In the cabin's fireplace chimney (interact with fireplace). Contains a cooking recipe blueprint.", lat:48.875, lng:-123.220 },
+    { id:9, name:"USB Key #9 - Signal Tower Alpha", desc:"On the tower's maintenance platform (climb the ladder). Reveals the signal network's original purpose.", lat:48.860, lng:-123.230 },
+    { id:10, name:"USB Key #10 - Coastal Cave", desc:"Deep inside the sea cave on the western cliffs. Contains the night-vision upgrade blueprint.", lat:48.848, lng:-123.340 },
+    { id:11, name:"USB Key #11 - Mountain Lookout", desc:"At the top of the hiking trail lookout point. Log describes the first storm warnings.", lat:48.910, lng:-123.295 },
+    { id:12, name:"USB Key #12 - Farmhouse Cellar", desc:"Behind a breakable wall in the old farmhouse cellar. Contains the battery expansion blueprint.", lat:48.868, lng:-123.260 },
+    { id:13, name:"USB Key #13 - Bridge Control Room", desc:"In the control room of the drawbridge. Data file shows the bridge was intentionally locked.", lat:48.882, lng:-123.235 },
+    { id:14, name:"USB Key #14 - Lighthouse Keeper's Journal", desc:"On the lighthouse balcony. The final log entry before the keeper vanished.", lat:48.845, lng:-123.355 },
+    { id:15, name:"USB Key #15 - The Bunker", desc:"Inside the hidden military bunker (requires all other USB Keys to unlock the door). Contains the 'Full Signal' ending trigger.", lat:48.855, lng:-123.245 }
+  ],
+  cairn: [
+    { id:1, name:"Cairn #1 - Welcome Stack", desc:"The first cairn, right next to the starting area. A simple stack of 5 stones marking the main path.", lat:48.858, lng:-123.305 },
+    { id:2, name:"Cairn #2 - Forest Sentinel", desc:"A tall cairn at the forest edge, visible from the main road. Marks the entrance to the dense woods.", lat:48.865, lng:-123.290 },
+    { id:3, name:"Cairn #3 - River Guide", desc:"Built on a rock in the middle of the shallow river crossing. Helps you find the safest path across.", lat:48.878, lng:-123.255 },
+    { id:4, name:"Cairn #4 - Redwood Marker", desc:"A massive cairn at the entrance to the Redwood Grove. Made from redwood bark and river stones.", lat:48.892, lng:-123.305 },
+    { id:5, name:"Cairn #5 - Hilltop Beacon", desc:"The tallest cairn in the game, built on the highest hill. Visible from most of the map.", lat:48.905, lng:-123.280 },
+    { id:6, name:"Cairn #6 - Mine Warning", desc:"A cairn with unusual red stones placed at the mine entrance. Lore suggests it was a danger warning.", lat:48.886, lng:-123.242 },
+    { id:7, name:"Cairn #7 - Lakeside Memorial", desc:"A heart-shaped arrangement of stones by the lake. The most visually distinctive cairn.", lat:48.873, lng:-123.225 },
+    { id:8, name:"Cairn #8 - Coastal Stack", desc:"Built on the coastal cliff edge. Marks a hidden path down to the beach caves.", lat:48.850, lng:-123.335 },
+    { id:9, name:"Cairn #9 - Farm Ruins", desc:"A small cairn in the overgrown farmland. Marks the location of a hidden underground passage.", lat:48.870, lng:-123.265 },
+    { id:10, name:"Cairn #10 - Tower Base", desc:"At the foot of Signal Tower Alpha. Placed by the original tower maintenance crew.", lat:48.859, lng:-123.232 },
+    { id:11, name:"Cairn #11 - Wetland Guide", desc:"A series of small stacked stones marking a safe path through the marshy wetlands.", lat:48.864, lng:-123.215 },
+    { id:12, name:"Cairn #12 - The Final Stack", desc:"The last cairn, hidden behind a waterfall. Interacting with all 12 reveals the hidden map fragment.", lat:48.843, lng:-123.348 }
+  ],
+  hidden: [
+    { id:1, name:"Hidden Area - Sea Cave Network", desc:"A series of interconnected sea caves along the western cliffs. Contains rare shell resources and a secret lore mural.", lat:48.846, lng:-123.342 },
+    { id:2, name:"Hidden Area - Underground Lake", desc:"Accessible through the old mine. A vast underground lake with bioluminescent flora and unique fish (post-1.1).", lat:48.890, lng:-123.238 },
+    { id:3, name:"Hidden Area - Treehouse Village", desc:"A cluster of treehouses connected by rope bridges in the dense northern forest. Contains rare wood types.", lat:48.898, lng:-123.300 },
+    { id:4, name:"Hidden Area - The Bunker", desc:"A pre-event military bunker sealed behind a reinforced door. Requires all 15 USB Keys to open. Contains endgame lore.", lat:48.855, lng:-123.245 },
+    { id:5, name:"Hidden Area - Waterfall Grotto", desc:"Behind the main waterfall on the eastern river. Contains a natural hot spring and rare mineral deposits.", lat:48.841, lng:-123.350 },
+    { id:6, name:"Hidden Area - Abandoned Research Lab", desc:"A hidden laboratory built into the hillside near Signal Tower Alpha. Contains advanced crafting blueprints.", lat:48.863, lng:-123.228 },
+    { id:7, name:"Hidden Area - Sunken Van", desc:"A van similar to yours at the bottom of the lake. Contains a unique paint job and pre-loaded resources.", lat:48.877, lng:-123.218 },
+    { id:8, name:"Hidden Area - The Overlook Sanctuary", desc:"A peaceful garden at the highest accessible point on the map. Contains the rare 'Golden Seed' planting item.", lat:48.912, lng:-123.290 }
+  ]
+};
+
+// === Map Initialization ===
+const map = L.map('map').setView([48.875, -123.270], 13);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  maxZoom: 18
+}).addTo(map);
+
+// === Custom Icons ===
+function createIcon(color) {
+  return L.divIcon({
+    className: 'custom-marker',
+    html: '<div style="background:' + color + ';width:28px;height:28px;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:900;">' +
+          (color === '#2563eb' ? '&#x1F4BE;' : color === '#ea580c' ? '&#x26F0;' : '&#x1F332;') + '</div>',
+    iconSize: [28, 28],
+    iconAnchor: [14, 14],
+    popupAnchor: [0, -16]
+  });
+}
+
+const icons = {
+  usb: createIcon('#2563eb'),
+  cairn: createIcon('#ea580c'),
+  hidden: createIcon('#16a34a')
+};
+
+// === Add Markers ===
+const allMarkers = {};
+const collected = JSON.parse(localStorage.getItem('outbound-collected') || '{"usb":[],"cairn":[],"hidden":[]}');
+
+Object.keys(collectibles).forEach(function(type) {
+  allMarkers[type] = [];
+  collectibles[type].forEach(function(item) {
+    var isCollected = collected[type].includes(item.id);
+    var marker = L.marker([item.lat, item.lng], { icon: icons[type] })
+      .bindPopup(
+        '<div class="custom-popup">' +
+        '<h3 style="color:' + (type === 'usb' ? '#2563eb' : type === 'cairn' ? '#ea580c' : '#16a34a') + '">' + item.name + '</h3>' +
+        '<p>' + item.desc + '</p>' +
+        '<button onclick="toggleCollect(\'' + type + '\',' + item.id + ',this)" style="margin-top:8px;padding:6px 16px;border-radius:999px;font-size:.8rem;font-weight:700;cursor:pointer;border:none;' +
+        (isCollected ? 'background:#16a34a;color:#fff;' : 'background:#e2e8f0;color:#334155;') +
+        '">' + (isCollected ? 'Collected ✓' : 'Mark as Collected') + '</button>' +
+        '</div>',
+        { className: 'custom-popup', maxWidth: 280 }
+      )
+      .addTo(map);
+    allMarkers[type].push(marker);
+  });
+});
+
+// === Filter Logic ===
+const activeFilters = { usb: true, cairn: true, hidden: true };
+
+function toggleFilter(type, btn) {
+  activeFilters[type] = !activeFilters[type];
+  if (activeFilters[type]) {
+    btn.classList.add('active');
+    allMarkers[type].forEach(function(m) { m.addTo(map); });
+  } else {
+    btn.classList.remove('active');
+    allMarkers[type].forEach(function(m) { map.removeLayer(m); });
+  }
+}
+
+function resetFilters() {
+  Object.keys(activeFilters).forEach(function(type) {
+    activeFilters[type] = true;
+    allMarkers[type].forEach(function(m) { m.addTo(map); });
+  });
+  document.querySelectorAll('.filter-btn').forEach(function(btn) { btn.classList.add('active'); });
+}
+
+// === Collection Tracker ===
+function toggleCollect(type, id, btn) {
+  var idx = collected[type].indexOf(id);
+  if (idx > -1) {
+    collected[type].splice(idx, 1);
+    btn.textContent = 'Mark as Collected';
+    btn.style.background = '#e2e8f0';
+    btn.style.color = '#334155';
+  } else {
+    collected[type].push(id);
+    btn.textContent = 'Collected ✓';
+    btn.style.background = '#16a34a';
+    btn.style.color = '#fff';
+  }
+  localStorage.setItem('outbound-collected', JSON.stringify(collected));
+  updateProgress();
+}
+
+function updateProgress() {
+  var totals = { usb: 15, cairn: 12, hidden: 8 };
+  Object.keys(totals).forEach(function(type) {
+    var count = collected[type].length;
+    var total = totals[type];
+    document.getElementById(type + '-count').textContent = count + '/' + total;
+    document.getElementById(type + '-bar').style.width = (count / total * 100) + '%';
+  });
+}
+
+// Initialize progress on load
+updateProgress();
+</script>
+</body>
+</html>
