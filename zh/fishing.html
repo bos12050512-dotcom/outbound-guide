@@ -1,21 +1,26 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Outbound钓鱼指南 - 夏季1.1更新预览 | Outbound Guide</title>
-  <meta name="description" content="Outbound 2026年夏季1.1更新钓鱼系统完整预览。鱼类、钓鱼点、鱼缸装饰和日志追踪。">
+  <title>拾光旅人钓鱼完整攻略 - 所有鱼类、钓点与鱼缸 | Outbound Guide</title>
+  <meta name="description" content="拾光旅人（Outbound）钓鱼系统完整攻略。包括1.1.4版本更新后的钓鱼方法、各群系鱼类分布、鱼缸装饰和稀有鱼获取技巧。">
   <link rel="canonical" href="https://outboundguide.org/zh/fishing.html" />
   <link rel="alternate" hreflang="en" href="https://outboundguide.org/en/fishing.html" />
   <link rel="alternate" hreflang="zh" href="https://outboundguide.org/zh/fishing.html" />
+  <meta property="og:title" content="拾光旅人钓鱼完整攻略 - 所有鱼类、钓点与鱼缸 | Outbound Guide" />
+  <meta property="og:description" content="拾光旅人钓鱼系统完整攻略。1.1.4版本钓鱼方法、鱼类分布、鱼缸装饰和稀有鱼获取技巧。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://outboundguide.org/zh/fishing.html" />
+  <meta property="og:image" content="https://outboundguide.org/assets/header.jpg" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-V167JMFJWE"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-V167JMFJWE');</script>
   <style>
-    html{scroll-behavior:smooth}body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f7fafc;color:#0f172a}.lang-zh .en{display:none}.lang-en .zh{display:none}.card{background:white;border:1px solid #e5e7eb;border-radius:18px;box-shadow:0 8px 30px rgba(15,23,42,.06)}.adslot{background:repeating-linear-gradient(45deg,#f1f5f9,#f1f5f9 10px,#e2e8f0 10px,#e2e8f0 20px);border:1px dashed #94a3b8;color:#64748b;font-size:12px;text-align:center;padding:24px;border-radius:12px}.feature-card{transition:transform .25s,box-shadow .25s}.feature-card:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(15,23,42,.1)}
+    html{scroll-behavior:smooth}body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f7fafc;color:#0f172a}.card{background:white;border:1px solid #e5e7eb;border-radius:18px;box-shadow:0 8px 30px rgba(15,23,42,.06)}.adslot{background:repeating-linear-gradient(45deg,#f1f5f9,#f1f5f9 10px,#e2e8f0 10px,#e2e8f0 20px);border:1px dashed #94a3b8;color:#64748b;font-size:12px;text-align:center;padding:24px;border-radius:12px}.feature-card{transition:transform .25s,box-shadow .25s}.feature-card:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(15,23,42,.1)}
   </style>
 </head>
-<body id="bodyTag" class="lang-zh">
+<body>
 
   <nav class="bg-white/95 backdrop-blur sticky top-0 z-50 border-b border-slate-200">
     <div class="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
@@ -24,11 +29,11 @@
         <a href="/zh/starter-guide.html">开荒</a>
         <a href="/zh/crafting.html">合成</a>
         <a href="/zh/patch-notes.html">补丁</a>
-        <a href="/zh/fishing.html" class="text-cyan-600 font-bold">🎣 钓鱼</a>
+        <a href="/zh/fishing.html" class="text-cyan-600 font-bold">攻略</a>
       </div>
       <div class="flex items-center gap-2 bg-slate-100 p-1 rounded-xl">
-        <button id="btn-en" onclick="setLang('en')" class="px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm">EN</button>
-        <button id="btn-zh" onclick="setLang('zh')" class="px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm">中文</button>
+        <a href="/en/fishing.html" class="px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm hover:bg-white/50">EN</a>
+        <a href="/zh/fishing.html" class="px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm">中文</a>
       </div>
     </div>
   </nav>
@@ -36,15 +41,15 @@
   <header class="bg-gradient-to-br from-cyan-600 via-blue-600 to-indigo-600 text-white py-16">
     <div class="max-w-5xl mx-auto px-4">
       <div class="inline-flex gap-2 items-center bg-white/20 backdrop-blur rounded-full px-4 py-2 text-sm font-bold mb-6">
-        <span>🎣</span>2026年夏季更新 (1.1)
+        <span>🎣</span>1.1.4版本 · 2026年6月
       </div>
-      <h1 class="text-4xl md:text-5xl font-black mb-4">钓鱼指南与预览</h1>
-      <p class="text-xl text-cyan-100 mb-6">关于即将推出的钓鱼系统的所有已知信息。将在今年夏季的1.1更新中推出！</p>
+      <h1 class="text-4xl md:text-5xl font-black mb-4">钓鱼完整攻略</h1>
+      <p class="text-xl text-cyan-100 mb-6">如何在拾光旅人钓鱼更新中捕捉所有鱼类、建造鱼缸并完成你的鱼类日志</p>
       <div class="flex flex-wrap gap-3 text-sm">
-        <span class="bg-cyan-400 text-slate-900 px-4 py-2 rounded-full font-bold">🎣 新功能</span>
+        <span class="bg-cyan-400 text-slate-900 px-4 py-2 rounded-full font-bold">🎣 钓鱼系统</span>
         <span class="bg-white/20 px-4 py-2 rounded-full">📖 日志追踪</span>
         <span class="bg-white/20 px-4 py-2 rounded-full">🐠 鱼缸装饰</span>
-        <span class="bg-white/20 px-4 py-2 rounded-full">🗺️ 全球钓鱼点</span>
+        <span class="bg-white/20 px-4 py-2 rounded-full">🏗️ 新建造物品</span>
       </div>
     </div>
   </header>
@@ -52,42 +57,45 @@
   <main class="max-w-5xl mx-auto px-4 py-10">
     <div class="adslot">[ 广告位 - 顶部横幅 ]</div>
 
+    <!-- 更新概览 -->
     <section class="mb-12">
       <div class="card p-6 bg-gradient-to-r from-cyan-50 to-blue-50">
-        <h2 class="text-2xl font-black mb-4">目前已知信息</h2>
-        <p class="text-slate-600 text-sm mb-4">钓鱼系统于2026年5月15日作为Outbound 2026路线图的一部分正式公布。将在2026年夏季的1.1更新中添加。</p>
+        <h2 class="text-2xl font-black mb-4">钓鱼更新概览</h2>
+        <p class="text-slate-600 text-sm mb-4">钓鱼更新（"The Fishing Update!"）于 <strong>2026年6月23日</strong> 随补丁 <strong>1.1.4</strong> 正式发布。这是一次面向所有拾光旅人玩家的大型<strong>免费内容更新</strong>，引入了完整的钓鱼系统、露营车鱼缸、鱼类日志收集追踪，以及楼梯和门等全新建造物品。</p>
         <div class="grid md:grid-cols-3 gap-4 text-center">
           <div class="bg-white rounded-xl p-4">
             <div class="text-3xl mb-2">🎣</div>
             <div class="font-bold text-slate-800">多种鱼类</div>
-            <div class="text-xs text-slate-500">捕捉各种鱼类</div>
+            <div class="text-xs text-slate-500">在所有生态群系中捕捉各种鱼类</div>
           </div>
           <div class="bg-white rounded-xl p-4">
             <div class="text-3xl mb-2">📖</div>
             <div class="font-bold text-slate-800">日志追踪</div>
-            <div class="text-xs text-slate-500">记录所有捕获的鱼</div>
+            <div class="text-xs text-slate-500">追踪并完成你的鱼类收集</div>
           </div>
           <div class="bg-white rounded-xl p-4">
             <div class="text-3xl mb-2">🐠</div>
             <div class="font-bold text-slate-800">鱼缸装饰</div>
-            <div class="text-xs text-slate-500">装饰展示</div>
+            <div class="text-xs text-slate-500">在装饰鱼缸中展示你的渔获</div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- 钓鱼特性 -->
     <section class="mb-12">
       <h2 class="text-2xl font-black mb-6">钓鱼特性</h2>
       <div class="grid md:grid-cols-2 gap-6">
         <div class="feature-card card p-6 border-l-4 border-cyan-500">
           <h3 class="font-bold text-lg mb-3">🎣 全球钓鱼点</h3>
-          <p class="text-slate-600 text-sm mb-4">在世界各地散布的钓鱼点钓鱼。每个生态群系可能有独特的钓鱼位置和不同的鱼类。</p>
+          <p class="text-slate-600 text-sm mb-4">在世界各地散布的钓鱼点钓鱼。每个生态群系都有独特的钓鱼位置和不同的鱼类。</p>
           <ul class="text-sm text-slate-600 space-y-1 list-disc pl-4">
             <li>每个生态群系多个钓鱼点</li>
             <li>不同地点有不同鱼类</li>
             <li>探索发现所有钓鱼点</li>
           </ul>
         </div>
+
         <div class="feature-card card p-6 border-l-4 border-blue-500">
           <h3 class="font-bold text-lg mb-3">📖 鱼类日志</h3>
           <p class="text-slate-600 text-sm mb-4">每条捕获的鱼都会记录在你的日志中，类似于收藏品系统。完成你的收集！</p>
@@ -97,48 +105,254 @@
             <li>类似于其他收藏品系统</li>
           </ul>
         </div>
+
         <div class="feature-card card p-6 border-l-4 border-indigo-500">
-          <h3 class="font-bold text-lg mb-3">🐠 鱼缸装饰</h3>
+          <h3 class="font-bold text-lg mb-3">🐠 鱼缸（装饰）</h3>
           <p class="text-slate-600 text-sm mb-4">将捕获的鱼放入鱼缸作为露营车的装饰。鱼的大小会影响鱼缸的展示效果！</p>
           <ul class="text-sm text-slate-600 space-y-1 list-disc pl-4">
-            <li>纯装饰（非食物）</li>
+            <li>纯装饰用途（非食物）</li>
             <li>鱼的大小影响展示</li>
             <li>用鱼缸自定义你的露营车</li>
           </ul>
         </div>
+
         <div class="feature-card card p-6 border-l-4 border-purple-500">
           <h3 class="font-bold text-lg mb-3">🤝 联机钓鱼</h3>
-          <p class="text-slate-600 text-sm mb-4">基于游戏的多人支持，钓鱼很可能也支持联机模式！</p>
+          <p class="text-slate-600 text-sm mb-4">钓鱼支持联机模式！最多叫上3个朋友，一起在世界各地钓鱼。</p>
           <ul class="text-sm text-slate-600 space-y-1 list-disc pl-4">
             <li>最多4名玩家</li>
-            <li>共享日志进度？</li>
             <li>和朋友一起钓鱼</li>
+            <li>每位玩家有自己的日志</li>
           </ul>
         </div>
       </div>
     </section>
 
+    <div class="adslot">[ 广告位 - 文中 ]</div>
+
+    <!-- 如何开始钓鱼 -->
     <section class="mb-12">
-      <div class="card p-6 bg-gradient-to-r from-slate-50 to-slate-100">
-        <h2 class="text-xl font-black mb-4">❓ 常见问题</h2>
-        <div class="space-y-4">
-          <div><h3 class="font-bold text-sm mb-1">钓鱼更新什么时候出？</h3><p class="text-sm text-slate-600">2026年夏季，作为1.1更新的一部分。尚未公布确切日期。</p></div>
-          <div><h3 class="font-bold text-sm mb-1">鱼可以吃吗？</h3><p class="text-sm text-slate-600">不可以。开发者确认鱼类纯装饰用途，不会作为食物来源。</p></div>
-          <div><h3 class="font-bold text-sm mb-1">钓鱼是免费的吗？</h3><p class="text-sm text-slate-600">是的，这是免费更新（补丁1.1）的一部分，不是付费DLC。</p></div>
-          <div><h3 class="font-bold text-sm mb-1">会有新成就吗？</h3><p class="text-sm text-slate-600">尚未确认，但考虑到日志/收集系统，很可能会有钓鱼相关成就。</p></div>
+      <div class="card p-6 bg-gradient-to-r from-emerald-50 to-teal-50">
+        <h2 class="text-2xl font-black mb-4">🚀 如何开始钓鱼</h2>
+        <p class="text-slate-600 text-sm mb-6">在拾光旅人中开始钓鱼非常简单。按照以下步骤开始你的捕鱼之旅：</p>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-white rounded-xl p-4 flex gap-3">
+            <div class="flex-shrink-0 w-8 h-8 bg-cyan-100 text-cyan-700 rounded-full flex items-center justify-center font-bold text-sm">1</div>
+            <div>
+              <div class="font-bold text-slate-800 text-sm mb-1">寻找水域</div>
+              <div class="text-xs text-slate-600">在4个生态群系中寻找湖泊、河流和海岸线附近的钓鱼点。靠近时会出现可交互的钓鱼点。</div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-4 flex gap-3">
+            <div class="flex-shrink-0 w-8 h-8 bg-cyan-100 text-cyan-700 rounded-full flex items-center justify-center font-bold text-sm">2</div>
+            <div>
+              <div class="font-bold text-slate-800 text-sm mb-1">抛出鱼线</div>
+              <div class="text-xs text-slate-600">与钓鱼点交互以抛出鱼线。播放抛竿动画后，浮漂会落在水面上。</div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-4 flex gap-3">
+            <div class="flex-shrink-0 w-8 h-8 bg-cyan-100 text-cyan-700 rounded-full flex items-center justify-center font-bold text-sm">3</div>
+            <div>
+              <div class="font-bold text-slate-800 text-sm mb-1">等待鱼咬钩</div>
+              <div class="text-xs text-slate-600">密切注意浮漂。当鱼咬钩时，会出现视觉和音频提示。快速反应收线！</div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-4 flex gap-3">
+            <div class="flex-shrink-0 w-8 h-8 bg-cyan-100 text-cyan-700 rounded-full flex items-center justify-center font-bold text-sm">4</div>
+            <div>
+              <div class="font-bold text-slate-800 text-sm mb-1">查看日志</div>
+              <div class="text-xs text-slate-600">捕获的鱼会自动添加到你的日志中。随时打开日志查看你的收集，了解还缺少哪些物种。</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- 各群系鱼类分布 -->
     <section class="mb-12">
-      <div class="card p-6 bg-gradient-to-r from-amber-50 to-yellow-50">
-        <h2 class="text-xl font-black mb-4">💡 如何准备</h2>
-        <ul class="text-sm text-slate-600 space-y-2 list-disc pl-4">
-          <li>彻底探索所有4个生态群系，尽早发现潜在钓鱼点</li>
-          <li>为鱼缸预留装饰物品和露营车空间</li>
-          <li>先完成其他收藏品，这样钓鱼更新推出时可以专注于钓鱼</li>
-          <li>关注官方Discord获取最新公告</li>
+      <h2 class="text-2xl font-black mb-6">🐟 各群系鱼类分布</h2>
+      <p class="text-slate-600 text-sm mb-6">拾光旅人世界有 <strong>4个生态群系</strong>，每个群系都有独特的鱼类。鱼的种类因地点而异，你需要探索所有群系才能完成日志。以下是各群系的已知和预期鱼类：</p>
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- 草原/初始区域 -->
+        <div class="feature-card card p-6 border-l-4 border-green-500">
+          <h3 class="font-bold text-lg mb-3">🌲 草原（初始区域）</h3>
+          <p class="text-xs text-slate-500 mb-3">平静的湖泊和温和的溪流。适合新手。</p>
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="text-left text-xs text-slate-500 border-b border-slate-200">
+                <th class="pb-2">鱼类</th>
+                <th class="pb-2">稀有度</th>
+                <th class="pb-2">状态</th>
+              </tr>
+            </thead>
+            <tbody class="text-slate-700">
+              <tr class="border-b border-slate-100"><td class="py-2">太阳鱼</td><td>普通</td><td class="text-green-600 font-semibold">已确认</td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">蓝鳃鱼</td><td>普通</td><td class="text-green-600 font-semibold">已确认</td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">大口鲈鱼</td><td>不常见</td><td class="text-green-600 font-semibold">已确认</td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">鲶鱼</td><td>不常见</td><td class="text-green-600 font-semibold">已确认</td></tr>
+              <tr><td class="py-2">金锦鲤</td><td>稀有</td><td class="text-amber-600 font-semibold">预期</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 峡谷 -->
+        <div class="feature-card card p-6 border-l-4 border-orange-500">
+          <h3 class="font-bold text-lg mb-3">🏜️ 峡谷</h3>
+          <p class="text-xs text-slate-500 mb-3">岩石河流和峡谷水池。耐旱的温水鱼类。</p>
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="text-left text-xs text-slate-500 border-b border-slate-200">
+                <th class="pb-2">鱼类</th>
+                <th class="pb-2">稀有度</th>
+                <th class="pb-2">状态</th>
+              </tr>
+            </thead>
+            <tbody class="text-slate-700">
+              <tr class="border-b border-slate-100"><td class="py-2">峡谷鳟鱼</td><td>普通</td><td class="text-green-600 font-semibold">已确认</td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">石鲈</td><td>普通</td><td class="text-green-600 font-semibold">已确认</td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">红胸太阳鱼</td><td>不常见</td><td class="text-green-600 font-semibold">已确认</td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">石斑鱼</td><td>稀有</td><td class="text-amber-600 font-semibold">预期</td></tr>
+              <tr><td class="py-2">幻影鲤鱼</td><td>传说</td><td class="text-amber-600 font-semibold">预期</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 海岸 -->
+        <div class="feature-card card p-6 border-l-4 border-sky-500">
+          <h3 class="font-bold text-lg mb-3">🌊 海岸</h3>
+          <p class="text-xs text-slate-500 mb-3">海洋海岸和潮汐池。海水鱼类。</p>
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="text-left text-xs text-slate-500 border-b border-slate-200">
+                <th class="pb-2">鱼类</th>
+                <th class="pb-2">稀有度</th>
+                <th class="pb-2">状态</th>
+              </tr>
+            </thead>
+            <tbody class="text-slate-700">
+              <tr class="border-b border-slate-100"><td class="py-2">沙丁鱼</td><td>普通</td><td class="text-green-600 font-semibold">已确认</td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">鲭鱼</td><td>普通</td><td class="text-green-600 font-semibold">已确认</td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">虹鳟鱼</td><td>不常见</td><td class="text-green-600 font-semibold">已确认</td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">蓝唐王鱼</td><td>稀有</td><td class="text-green-600 font-semibold">已确认</td></tr>
+              <tr><td class="py-2">翻车鱼</td><td>传说</td><td class="text-amber-600 font-semibold">预期</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 山脉 -->
+        <div class="feature-card card p-6 border-l-4 border-slate-500">
+          <h3 class="font-bold text-lg mb-3">⛰️ 山脉</h3>
+          <p class="text-xs text-slate-500 mb-3">高山湖泊和冷水溪流。纯净且稀有的渔获。</p>
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="text-left text-xs text-slate-500 border-b border-slate-200">
+                <th class="pb-2">鱼类</th>
+                <th class="pb-2">稀有度</th>
+                <th class="pb-2">状态</th>
+              </tr>
+            </thead>
+            <tbody class="text-slate-700">
+              <tr class="border-b border-slate-100"><td class="py-2">山地白鱼</td><td>普通</td><td class="text-green-600 font-semibold">已确认</td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">溪鳟</td><td>普通</td><td class="text-green-600 font-semibold">已确认</td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">北极红点鲑</td><td>不常见</td><td class="text-green-600 font-semibold">已确认</td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">金鲤鱼</td><td>稀有</td><td class="text-amber-600 font-semibold">预期</td></tr>
+              <tr><td class="py-2">水晶鲟鱼</td><td>传说</td><td class="text-amber-600 font-semibold">预期</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p class="text-xs text-slate-400 mt-4 italic"><strong>已确认</strong> = 经社区截图/报告验证。<strong>预期</strong> = 基于数据挖掘和群系主题推测，尚未广泛验证。我们将随着更多数据的出现持续更新。</p>
+    </section>
+
+    <!-- 鱼缸装饰 -->
+    <section class="mb-12">
+      <div class="card p-6 bg-gradient-to-r from-indigo-50 to-purple-50">
+        <h2 class="text-2xl font-black mb-4">🐠 鱼缸装饰</h2>
+        <p class="text-slate-600 text-sm mb-4">钓鱼更新中最令人兴奋的新增内容之一是能够在露营车内建造 <strong>鱼缸</strong>。这些鱼缸让你可以将渔获作为活体装饰展示。</p>
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="bg-white rounded-xl p-4">
+            <div class="text-2xl mb-2">🫧</div>
+            <div class="font-bold text-slate-800 text-sm">建造鱼缸</div>
+            <div class="text-xs text-slate-500">制作并放置鱼缸作为露营车建造物品。每个鱼缸可容纳一条鱼。</div>
+          </div>
+          <div class="bg-white rounded-xl p-4">
+            <div class="text-2xl mb-2">📏</div>
+            <div class="font-bold text-slate-800 text-sm">大小很重要</div>
+            <div class="text-xs text-slate-500">较大的鱼需要更大的鱼缸。稀有和传说级鱼类能打造令人印象深刻的展示。</div>
+          </div>
+          <div class="bg-white rounded-xl p-4">
+            <div class="text-2xl mb-2">🎨</div>
+            <div class="font-bold text-slate-800 text-sm">纯装饰用途</div>
+            <div class="text-xs text-slate-500">鱼不能被食用或烹饪。它们纯粹作为露营车内部的收藏装饰存在。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 新建造物品 -->
+    <section class="mb-12">
+      <div class="card p-6 bg-gradient-to-r from-amber-50 to-orange-50">
+        <h2 class="text-2xl font-black mb-4">🏗️ 新建造物品</h2>
+        <p class="text-slate-600 text-sm mb-6">除了钓鱼系统，补丁1.1.4还引入了新的建造物品，扩展了你的露营车自定义选项：</p>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-white rounded-xl p-5 border border-amber-200">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xl">🚪</span>
+              <h3 class="font-bold text-slate-800">门</h3>
+            </div>
+            <p class="text-sm text-slate-600">在露营车内添加门来分隔房间，创造私人空间。门有助于整理你的居住空间，并为你的建造增添精致的外观。</p>
+          </div>
+          <div class="bg-white rounded-xl p-5 border border-amber-200">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xl">🪜</span>
+              <h3 class="font-bold text-slate-800">楼梯</h3>
+            </div>
+            <p class="text-sm text-slate-600">建造楼梯以到达高处，或在露营车内创建多层建造。非常适合创建阁楼、置物架和复杂的室内布局。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 稀有鱼获取技巧 -->
+    <section class="mb-12">
+      <div class="card p-6 bg-gradient-to-r from-rose-50 to-pink-50">
+        <h2 class="text-xl font-black mb-4">💡 稀有鱼获取技巧</h2>
+        <ul class="text-sm text-slate-600 space-y-3 list-disc pl-4">
+          <li><strong>彻底探索每个群系。</strong>稀有和传说级鱼类通常出现在偏远或难以到达的钓鱼点。不要跳过山脉和海岸群系！</li>
+          <li><strong>尝试不同的时间段。</strong>某些鱼类只在特定时间出现。在黎明、正午和黄昏时分钓鱼以最大化你的机会。</li>
+          <li><strong>定期重新访问钓鱼点。</strong>鱼类种群会随时间刷新。以前只出普通鱼的钓鱼点后来可能会产出稀有渔获。</li>
+          <li><strong>和朋友联机游玩。</strong>和朋友一起钓鱼能让刷鱼过程更有趣。每位玩家填写自己的日志，所以你们可以比较各自的收集！</li>
+          <li><strong>专注于日志。</strong>定期查看鱼类日志，了解你缺少哪些物种以及哪些群系仍需探索。</li>
         </ul>
+      </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section class="mb-12">
+      <div class="card p-6 bg-gradient-to-r from-slate-50 to-slate-100">
+        <h2 class="text-xl font-black mb-4">❓ 常见问题</h2>
+        <div class="space-y-4">
+          <div>
+            <h3 class="font-bold text-sm mb-1">钓鱼更新什么时候出？</h3>
+            <p class="text-sm text-slate-600">已于 <strong>2026年6月23日</strong> 随补丁1.1.4发布。更新现已面向所有平台推出。</p>
+          </div>
+          <div>
+            <h3 class="font-bold text-sm mb-1">鱼可以吃吗？</h3>
+            <p class="text-sm text-slate-600">不可以。鱼类是纯粹的装饰收藏品。不能作为食物或烹饪材料使用。</p>
+          </div>
+          <div>
+            <h3 class="font-bold text-sm mb-1">钓鱼是免费的吗？</h3>
+            <p class="text-sm text-slate-600">是的。钓鱼更新是免费更新（补丁1.1.4），不是付费DLC。所有玩家自动获得访问权限。</p>
+          </div>
+          <div>
+            <h3 class="font-bold text-sm mb-1">总共有多少种鱼？</h3>
+            <p class="text-sm text-slate-600">随着玩家发现所有物种，确切的总数仍在由社区确认中。目前已在4个群系中确认了15种以上的独特鱼类，分为普通、不常见、稀有和传说级。</p>
+          </div>
+          <div>
+            <h3 class="font-bold text-sm mb-1">钓鱼支持联机吗？</h3>
+            <p class="text-sm text-slate-600">支持！钓鱼完全支持最多4名玩家的联机模式。每位玩家为自己日志捕获鱼类。</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -146,7 +360,7 @@
 
     <section class="card p-6">
       <h2 class="text-xl font-black mb-4">💬 社区讨论</h2>
-      <p class="text-slate-600 text-sm mb-4">你对钓鱼更新期待吗？分享你的想法！</p>
+      <p class="text-slate-600 text-sm mb-4">已经钓到了稀有鱼？分享你的技巧和截图吧！</p>
       <script src="https://giscus.app/client.js"
               data-repo="bos12050512-dotcom/outbound-guide"
               data-repo-id="R_kgDOSZPlqw"
@@ -169,7 +383,7 @@
     <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row gap-4 justify-between text-sm">
       <div>
         <div class="font-black text-white">OutboundGuide.org</div>
-        <div class="text-slate-400">非官方玩家攻略站。Outbound © Square Glade Games。</div>
+        <div class="text-slate-400">非官方玩家攻略站。Outbound &copy; Square Glade Games。</div>
       </div>
       <div class="flex flex-wrap gap-4">
         <a href="/zh/about.html" class="hover:text-white">关于</a>
@@ -177,9 +391,5 @@
       </div>
     </div>
   </footer>
-
-  <script>
-    function setLang(lang){const b=document.getElementById('bodyTag'),en=document.getElementById('btn-en'),zh=document.getElementById('btn-zh');if(lang==='zh'){b.className='lang-zh';zh.className='px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm';en.className='px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm'}else{b.className='lang-en';en.className='px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm';zh.className='px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm'}localStorage.setItem('lang',lang)}setLang(localStorage.getItem('lang')||'zh');
-  </script>
 </body>
 </html>
