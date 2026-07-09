@@ -3,28 +3,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Outbound Guide | Wiki, Crafting, Starter Guide, Multiplayer, Energy</title>
-  <meta name="description" content="Outbound guide and wiki with starter tips, crafting roadmap, energy systems, van upgrades, farming, pets, co-op multiplayer, PC requirements, videos and screenshots. English and Chinese supported." />
+  <title>Outbound Guide | Fishing Update, Biome Maps, Crafting & Multiplayer</title>
+  <meta name="description" content="The most up-to-date Outbound guide: Fishing Update 1.1.4 walkthrough, biome maps, crafting recipes, van builds, pets, farming and 4-player co-op. 90+ guides, English & Chinese." />
+  <link rel="canonical" href="https://outboundguide.org/" />
+  <link rel="alternate" hreflang="en" href="https://outboundguide.org/" />
+  <link rel="alternate" hreflang="zh" href="https://outboundguide.org/zh/starter-guide.html" />
+  <link rel="alternate" hreflang="x-default" href="https://outboundguide.org/" />
+  <meta property="og:title" content="Outbound Guide | Fishing Update 1.1.4, Biomes, Crafting & Co-op" />
+  <meta property="og:description" content="Complete Outbound wiki with 90+ guides: Fishing Update 1.1.4, all 4 biomes, crafting, van builds, pets, achievements & more." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://outboundguide.org/" />
+  <meta property="og:image" content="https://outboundguide.org/assets/header.jpg" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V167JMFJWE"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-V167JMFJWE');</script>
   <style>
-    html{scroll-behavior:smooth} body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f7fafc;color:#0f172a}.lang-zh .en{display:none}.lang-en .zh{display:none}.hero{background:linear-gradient(135deg,rgba(12,28,47,.82),rgba(16,107,113,.68)),url('assets/shot1.jpg');background-size:cover;background-position:center}.card{background:white;border:1px solid #e5e7eb;border-radius:22px;box-shadow:0 12px 35px rgba(15,23,42,.07)}.pill{border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.14);backdrop-filter:blur(8px)}.toc a{display:block;padding:.55rem .75rem;border-radius:.65rem;color:#475569}.toc a:hover{background:#eef6ff;color:#2563eb}.gradient-title{background:linear-gradient(90deg,#2563eb,#14b8a6);-webkit-background-clip:text;background-clip:text;color:transparent}.imgbox{background:linear-gradient(135deg,#dbeafe,#ccfbf1)}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f8fafc;color:#0f172a}
+    .lang-zh .en{display:none}
+    .lang-en .zh{display:none}
+    .hero-bg{background:linear-gradient(135deg,#0c1c2fd9,#106b71b0),url('assets/shot1.jpg');background-size:cover;background-position:center}
+    @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+    .shimmer-text{background:linear-gradient(90deg,#60a5fa,#a78bfa,#60a5fa);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 3s linear infinite}
+    .card{background:white;border:1px solid #e5e7eb;border-radius:20px;box-shadow:0 8px 30px rgba(15,23,42,.06);transition:transform .25s,box-shadow .25s}
+    .card:hover{transform:translateY(-3px);box-shadow:0 16px 45px rgba(15,23,42,.1)}
+    .pill{border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.14);backdrop-filter:blur(8px)}
+    .badge-new{background:linear-gradient(135deg,#ef4444,#f97316);color:white}
+    .badge-hot{background:linear-gradient(135deg,#f59e0b,#eab308);color:#1e293b}
+    .badge-update{background:linear-gradient(135deg,#06b6d4,#0ea5e9);color:white}
+    .section-gradient-title{background:linear-gradient(90deg,#2563eb,#14b8a6);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .toc a{display:block;padding:.55rem .75rem;border-radius:.65rem;color:#475569}
+    .toc a:hover{background:#eef6ff;color:#2563eb}
+    .guide-card{transition:transform .25s,box-shadow .25s}
+    .guide-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(15,23,42,.1)}
+    .scroll-hint{animation:bounce 2s infinite}
+    @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+    .marquee{overflow:hidden;white-space:nowrap}
+    .marquee-inner{display:inline-block;animation:marquee 20s linear infinite}
+    @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    .adslot{background:repeating-linear-gradient(45deg,#f1f5f9,#f1f5f9 10px,#e2e8f0 10px,#e2e8f0 20px);border:1px dashed #94a3b8;color:#64748b;font-size:12px;text-align:center;padding:24px;border-radius:12px}
   </style>
 </head>
 <body id="bodyTag" class="lang-en">
+
+  <!-- Nav -->
   <nav class="bg-white/95 backdrop-blur sticky top-0 z-50 border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-      <a href="#top" class="font-black text-xl text-blue-600">OutboundGuide.org</a>
-      <div class="hidden lg:flex gap-5 text-sm font-semibold text-slate-700">
-        <a href="/en/starter-guide.html"><span class="en">Starter</span><span class="zh">开荒</span></a>
+      <a href="/" class="font-black text-xl text-blue-600">OutboundGuide.org</a>
+      <div class="hidden lg:flex gap-5 text-sm font-semibold text-slate-700 items-center">
         <a href="/en/all-guides.html" class="text-indigo-600 font-bold"><span class="en">Guides</span><span class="zh">攻略</span></a>
+        <a href="/en/starter-guide.html"><span class="en">Starter</span><span class="zh">开荒</span></a>
         <a href="/en/crafting.html"><span class="en">Crafting</span><span class="zh">合成</span></a>
-        <a href="/en/progression.html"><span class="en">Progression</span><span class="zh">科技树</span></a>
-        <a href="/en/signal-towers.html"><span class="en">Towers</span><span class="zh">信号塔</span></a>
+        <a href="/en/fishing.html"><span class="en">Fishing</span><span class="zh">钓鱼</span></a>
+        <a href="/en/patch-notes.html"><span class="en">Patches</span><span class="zh">补丁</span></a>
         <a href="/en/multiplayer.html"><span class="en">Co-op</span><span class="zh">联机</span></a>
-        <a href="/en/energy.html"><span class="en">Energy</span><span class="zh">能源</span></a>
-        <a href="/en/collectibles.html"><span class="en">Items</span><span class="zh">收集</span></a>
-        <a href="/en/game-controllers.html"><span class="en">🎮 Gear</span><span class="zh">🎮 外设</span></a>
-        <a href="#faq">FAQ</a>
+        <a href="/en/achievements.html"><span class="en">Achievements</span><span class="zh">成就</span></a>
       </div>
       <div class="flex items-center gap-2 bg-slate-100 p-1 rounded-xl">
         <button id="btn-en" onclick="setLang('en')" class="px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm">EN</button>
@@ -34,228 +67,714 @@
     </div>
   </nav>
 
-  <header id="top" class="hero text-white">
-    <div class="max-w-7xl mx-auto px-4 py-24 lg:py-32 grid lg:grid-cols-2 gap-12 items-center">
+  <!-- Hero -->
+  <header id="top" class="hero-bg text-white relative overflow-hidden">
+    <!-- Animated overlay particles -->
+    <div class="absolute inset-0 opacity-10" style="background-image:radial-gradient(circle at 20% 80%,rgba(96,165,250,.4) 0,transparent 50%),radial-gradient(circle at 80% 20%,rgba(168,85,247,.4) 0,transparent 50%)"></div>
+    <div class="max-w-7xl mx-auto px-4 py-20 lg:py-28 grid lg:grid-cols-2 gap-12 items-center relative z-10">
       <div>
-        <div class="inline-flex gap-2 items-center pill rounded-full px-4 py-2 text-sm font-bold mb-6">
-          <span class="en">Non-official wiki and launch guide</span><span class="zh">非官方 Wiki 与首发攻略站</span>
+        <div class="inline-flex gap-2 items-center pill rounded-full px-4 py-2 text-sm font-bold mb-5">
+          <span>🎣</span><span class="en">Patch 1.1.4 — The Fishing Update OUT NOW</span><span class="zh">1.1.4版本钓鱼更新已上线</span>
         </div>
-        <h1 class="text-5xl lg:text-7xl font-black leading-tight mb-6"><span class="en">Outbound Guide</span><span class="zh">Outbound 拾光旅人攻略</span></h1>
-        <p class="text-xl lg:text-2xl text-slate-100 mb-8 leading-relaxed"><span class="en">A practical guide for the cozy open-world camper van survival game: crafting, energy, van upgrades, crops, pets and 4-player co-op.</span><span class="zh">面向《Outbound / 拾光旅人》的实用攻略站：合成、能源、房车升级、种植、宠物和 4 人联机。</span></p>
-        <div class="flex flex-wrap gap-3 text-sm font-bold">
-          <span class="bg-yellow-300 text-slate-900 px-4 py-2 rounded-full"><span class="en">Launch window guide</span><span class="zh">首发窗口攻略</span></span>
-          <span class="bg-white/18 px-4 py-2 rounded-full"><span class="en">Steam AppID 2681030</span><span class="zh">Steam 应用 ID 2681030</span></span>
-          <span class="bg-white/18 px-4 py-2 rounded-full"><span class="en">🎮 PS5 + Xbox + PC</span><span class="zh">🎮 PS5 + Xbox + PC</span></span>
-          <span class="bg-white/18 px-4 py-2 rounded-full"><span class="en">English + Chinese</span><span class="zh">中英双语</span></span>
+        <h1 class="text-5xl lg:text-7xl font-black leading-tight mb-5">
+          <span class="en">Outbound</span><span class="zh">拾光旅人</span><br>
+          <span class="shimmer-text"><span class="en">Guide</span><span class="zh">攻略站</span></span>
+        </h1>
+        <p class="text-xl lg:text-2xl text-slate-100 mb-8 leading-relaxed max-w-xl">
+          <span class="en">The most complete non-official guide for the cozy camper-van survival game. 95+ pages covering the Fishing Update, all 4 biomes, builds, pets, co-op and more.</span>
+          <span class="zh">最完整的非官方拾光旅人攻略站。95+页面覆盖钓鱼更新、4大群系、建造、宠物、联机等全部内容。</span>
+        </p>
+        <div class="flex flex-wrap gap-3 text-sm font-bold mb-6">
+          <span class="badge-new px-4 py-2 rounded-full"><span class="en">Fishing Update</span><span class="zh">钓鱼更新</span></span>
+          <span class="bg-white/18 px-4 py-2 rounded-full"><span class="en">1,595 Reviews</span><span class="zh">1,595条评价</span></span>
+          <span class="bg-white/18 px-4 py-2 rounded-full"><span class="en">-20% Summer Sale</span><span class="zh">夏季促销-20%</span></span>
+          <span class="bg-white/18 px-4 py-2 rounded-full"><span class="en">EN + 中文</span><span class="zh">中英双语</span></span>
         </div>
-        <div class="mt-4 bg-red-500/90 backdrop-blur rounded-xl p-4 text-white">
-          <div class="flex items-center gap-2 mb-2">
-            <span class="text-xl">🔥</span>
-            <span class="font-black"><span class="en">LIMITED TIME: -10% OFF until May 26!</span><span class="zh">限时优惠：-10%折扣至5月26日！</span></span>
-          </div>
-          <p class="text-sm text-red-100"><span class="en">New DLC: School Bus Adventures now available! 32 Steam achievements to unlock.</span><span class="zh">新DLC：校车冒险现已推出！32个Steam成就等你解锁。</span></p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/en/fishing.html" class="bg-cyan-400 text-slate-900 px-6 py-3 rounded-xl font-bold hover:bg-cyan-300 transition inline-flex items-center gap-2">
+            <span>🎣</span><span class="en">New Fishing Guide</span><span class="zh">钓鱼攻略</span>
+          </a>
+          <a href="/en/all-guides.html" class="bg-white/18 text-white px-6 py-3 rounded-xl font-bold hover:bg-white/28 transition">
+            <span class="en">Browse All Guides</span><span class="zh">浏览全部攻略</span>
+          </a>
         </div>
       </div>
       <div class="card overflow-hidden bg-slate-900 border-slate-700">
         <div class="aspect-video">
           <iframe class="w-full h-full" src="https://www.youtube.com/embed/j8IrWHKYQz0" title="Outbound Release Date Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
-        <div class="p-4 text-slate-200 text-sm"><span class="en">Official/public trailer embed. If it does not play in your region, use the Steam trailer section below.</span><span class="zh">官方/公开视频嵌入。如果所在地区无法播放 YouTube，请看下方 Steam 预告片入口。</span></div>
+        <div class="p-4 text-slate-200 text-sm flex items-center justify-between">
+          <span class="en">Official trailer. If it doesn't play, visit the Steam page below.</span>
+          <span class="zh">官方预告片。如无法播放请访问下方 Steam 页面。</span>
+          <a href="https://store.steampowered.com/app/2681030/Outbound/" target="_blank" class="text-cyan-400 font-bold hover:underline text-xs"><span class="en">Steam Store</span><span class="zh">Steam商店</span></a>
+        </div>
       </div>
+    </div>
+    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 scroll-hint">
+      <svg class="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
     </div>
   </header>
 
-  <!-- GUIDE INDEX - Prominent quick access -->
-  <section id="guides" class="max-w-7xl mx-auto px-4 pt-10 pb-4">
-    <div class="flex items-center gap-3 mb-2">
-      <h2 class="text-3xl font-black gradient-title"><span class="en">📖 Game Guides</span><span class="zh">📖 游戏攻略</span></h2>
-      <span class="bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">18</span>
+  <!-- Featured: Latest Content Banner -->
+  <section class="max-w-7xl mx-auto px-4 pt-10">
+    <div class="card p-6 bg-gradient-to-r from-cyan-50 via-blue-50 to-indigo-50 border-cyan-200 relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-40 h-40 bg-cyan-200/30 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+      <div class="relative z-10 flex flex-col lg:flex-row items-start lg:items-center gap-4 justify-between">
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="badge-update text-xs font-bold px-2 py-0.5 rounded-full"><span class="en">LATEST UPDATE</span><span class="zh">最新更新</span></span>
+            <span class="text-xs text-slate-500 font-medium">v1.1.4 &middot; June 23, 2026</span>
+          </div>
+          <h2 class="text-2xl font-black text-slate-900">
+            <span class="en">The Fishing Update is Here!</span>
+            <span class="zh">钓鱼更新正式上线！</span>
+          </h2>
+          <p class="text-slate-600 text-sm mt-1 max-w-2xl">
+            <span class="en">A major free content update introducing Fishing, Fish Tanks, Stairs, and Doors. Plus new fish species across all 4 biomes.</span>
+            <span class="zh">免费大型内容更新，新增钓鱼系统、鱼缸装饰、楼梯和门。所有4个群系都有新鱼种。</span>
+          </p>
+        </div>
+        <div class="flex gap-2 flex-wrap">
+          <a href="/en/fishing.html" class="bg-cyan-500 text-white px-4 py-2 rounded-lg font-bold text-sm hover:bg-cyan-600 transition">
+            <span class="en">Fishing Guide</span><span class="zh">钓鱼攻略</span>
+          </a>
+          <a href="/en/patch-notes-auto-1.1.4.html" class="bg-white text-cyan-700 px-4 py-2 rounded-lg font-bold text-sm border border-cyan-200 hover:bg-cyan-50 transition">
+            <span class="en">Patch Notes</span><span class="zh">补丁说明</span>
+          </a>
+        </div>
+      </div>
     </div>
-    <p class="text-slate-600 mb-5"><span class="en">Click any card to jump directly to the full guide. Updated for patch 1.0.12 🎉 100K Players!</span><span class="zh">点击卡片直接跳转到完整攻略。已更新至 1.0.12 补丁 🎉 10万玩家达成！</span></p>
+  </section>
 
-    <!-- Category tabs -->
+  <!-- Hot Content -->
+  <section class="max-w-7xl mx-auto px-4 pt-10 pb-4">
+    <div class="flex items-center gap-3 mb-2">
+      <h2 class="text-3xl font-black section-gradient-title">
+        <span class="en">Hot Content</span>
+        <span class="zh">热门内容</span>
+      </h2>
+      <span class="badge-hot text-xs font-bold px-2 py-0.5 rounded-full">NEW</span>
+    </div>
+    <p class="text-slate-600 mb-6">
+      <span class="en">Fresh guides for the latest patch and community discussions.</span>
+      <span class="zh">最新补丁和社区讨论的新鲜攻略。</span>
+    </p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4" id="hot-grid">
+      <!-- Fishing -->
+      <a href="/en/fishing.html" class="guide-card card p-5 bg-gradient-to-br from-cyan-50 to-blue-50 border-cyan-100 group">
+        <div class="text-3xl mb-3">🎣</div>
+        <div class="flex items-center gap-2 mb-1">
+          <span class="badge-update text-[10px] font-bold px-2 py-0.5 rounded-full">1.1.4</span>
+          <span class="text-[10px] bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded font-bold">HOT</span>
+        </div>
+        <div class="font-black text-base mb-1 group-hover:text-cyan-600 transition">
+          <span class="en">Complete Fishing Guide</span>
+          <span class="zh">钓鱼完整攻略</span>
+        </div>
+        <div class="text-xs text-slate-500">
+          <span class="en">All fish by biome, fish tanks, rare catches</span>
+          <span class="zh">各群系鱼类、鱼缸、稀有鱼获取</span>
+        </div>
+      </a>
+
+      <!-- Biomes -->
+      <a href="/en/biome-grasslands.html" class="guide-card card p-5 bg-gradient-to-br from-emerald-50 to-green-50 border-emerald-100 group">
+        <div class="text-3xl mb-3">🗺️</div>
+        <div class="flex items-center gap-2 mb-1">
+          <span class="badge-new text-[10px] font-bold px-2 py-0.5 rounded-full">NEW</span>
+        </div>
+        <div class="font-black text-base mb-1 group-hover:text-emerald-600 transition">
+          <span class="en">4 Biome Guides</span>
+          <span class="zh">4大群系攻略</span>
+        </div>
+        <div class="text-xs text-slate-500">
+          <span class="en">Grasslands &rarr; Canyon &rarr; Coast &rarr; Mountain</span>
+          <span class="zh">草原 &rarr; 峡谷 &rarr; 海岸 &rarr; 山脉</span>
+        </div>
+      </a>
+
+      <!-- Van Layouts -->
+      <a href="/en/van-layouts.html" class="guide-card card p-5 bg-gradient-to-br from-orange-50 to-amber-50 border-orange-100 group">
+        <div class="text-3xl mb-3">🚐</div>
+        <div class="flex items-center gap-2 mb-1">
+          <span class="badge-new text-[10px] font-bold px-2 py-0.5 rounded-full">NEW</span>
+        </div>
+        <div class="font-black text-base mb-1 group-hover:text-orange-600 transition">
+          <span class="en">Van Layout Ideas</span>
+          <span class="zh">房车布局创意</span>
+        </div>
+        <div class="text-xs text-slate-500">
+          <span class="en">3 build templates + stairs & doors (1.1.4)</span>
+          <span class="zh">3种建造模板 + 楼梯和门（1.1.4）</span>
+        </div>
+      </a>
+
+      <!-- Pets -->
+      <a href="/en/pets-guide.html" class="guide-card card p-5 bg-gradient-to-br from-pink-50 to-rose-50 border-pink-100 group">
+        <div class="text-3xl mb-3">🐕</div>
+        <div class="flex items-center gap-2 mb-1">
+          <span class="badge-new text-[10px] font-bold px-2 py-0.5 rounded-full">NEW</span>
+        </div>
+        <div class="font-black text-base mb-1 group-hover:text-pink-600 transition">
+          <span class="en">Pet Guide</span>
+          <span class="zh">宠物攻略</span>
+        </div>
+        <div class="text-xs text-slate-500">
+          <span class="en">Dogs, cats & community requests</span>
+          <span class="zh">猫狗领养与社区需求</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- All Guides -->
+  <section id="guides" class="max-w-7xl mx-auto px-4 pt-10 pb-4">
+    <div class="flex items-center justify-between mb-2">
+      <div class="flex items-center gap-3">
+        <h2 class="text-3xl font-black section-gradient-title">
+          <span class="en">All Guides</span>
+          <span class="zh">全部攻略</span>
+        </h2>
+        <span class="bg-slate-900 text-white text-xs font-bold px-2 py-0.5 rounded-full">95+</span>
+      </div>
+      <a href="/en/all-guides.html" class="text-blue-600 font-bold text-sm hover:underline hidden sm:block">
+        <span class="en">View Directory &rarr;</span>
+        <span class="zh">查看目录 &rarr;</span>
+      </a>
+    </div>
+    <p class="text-slate-600 mb-5">
+      <span class="en">Filter by category or click any card to read the full guide.</span>
+      <span class="zh">按分类筛选或点击卡片阅读完整攻略。</span>
+    </p>
+
+    <!-- Tabs -->
     <div class="flex flex-wrap gap-2 mb-5 text-sm font-bold" id="guide-tabs">
       <button onclick="filterGuides('all')" class="guide-tab active px-3 py-1.5 rounded-lg bg-slate-900 text-white" data-cat="all"><span class="en">All</span><span class="zh">全部</span></button>
-      <button onclick="filterGuides('starter')" class="guide-tab px-3 py-1.5 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200" data-cat="starter"><span class="en">🚀 Starter</span><span class="zh">🚀 新手</span></button>
-      <button onclick="filterGuides('systems')" class="guide-tab px-3 py-1.5 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200" data-cat="systems"><span class="en">⚙️ Systems</span><span class="zh">⚙️ 系统</span></button>
-      <button onclick="filterGuides('items')" class="guide-tab px-3 py-1.5 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200" data-cat="items"><span class="en">🗺️ Exploration</span><span class="zh">🗺️ 探索</span></button>
-      <button onclick="filterGuides('updates')" class="guide-tab px-3 py-1.5 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200" data-cat="updates"><span class="en">📝 Updates</span><span class="zh">📝 更新</span></button>
-      <button onclick="filterGuides('dlc')" class="guide-tab px-3 py-1.5 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200" data-cat="dlc"><span class="en">🚌 DLC</span><span class="zh">🚌 DLC</span></button>
+      <button onclick="filterGuides('starter')" class="guide-tab px-3 py-1.5 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200" data-cat="starter"><span class="en">Starter</span><span class="zh">新手</span></button>
+      <button onclick="filterGuides('systems')" class="guide-tab px-3 py-1.5 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200" data-cat="systems"><span class="en">Systems</span><span class="zh">系统</span></button>
+      <button onclick="filterGuides('explore')" class="guide-tab px-3 py-1.5 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200" data-cat="explore"><span class="en">Exploration</span><span class="zh">探索</span></button>
+      <button onclick="filterGuides('biomes')" class="guide-tab px-3 py-1.5 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200" data-cat="biomes"><span class="en">Biomes</span><span class="zh">群系</span></button>
+      <button onclick="filterGuides('update')" class="guide-tab px-3 py-1.5 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200" data-cat="update"><span class="en">Updates</span><span class="zh">更新</span></button>
+      <button onclick="filterGuides('dlc')" class="guide-tab px-3 py-1.5 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200" data-cat="dlc"><span class="en">DLC</span><span class="zh">DLC</span></button>
     </div>
 
-    <!-- Guide cards grid -->
+    <!-- Guide Grid -->
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3" id="guide-grid">
       <!-- Starter -->
       <a href="/en/starter-guide.html" class="guide-card card p-4 hover:shadow-xl transition group" data-cat="starter">
-        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-blue-600 font-bold">STARTER</span><span class="text-[10px] bg-green-100 text-green-700 px-1.5 py-0.5 rounded font-bold">✓ Verified</span></div>
+        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-blue-600 font-bold">STARTER</span><span class="text-[10px] bg-green-100 text-green-700 px-1.5 py-0.5 rounded font-bold">Verified</span></div>
         <div class="font-black text-base mb-1 group-hover:text-blue-600 transition">First Hour Walkthrough</div>
-        <div class="text-xs text-slate-500">0-1小时具体路线，避免新手常见错误</div>
+        <div class="text-xs text-slate-500">0-1 hour step-by-step for new players</div>
       </a>
       <a href="/en/crafting.html" class="guide-card card p-4 hover:shadow-xl transition group" data-cat="starter">
-        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-emerald-600 font-bold">CRAFTING</span><span class="text-[10px] bg-green-100 text-green-700 px-1.5 py-0.5 rounded font-bold">✓ Verified</span></div>
+        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-emerald-600 font-bold">CRAFTING</span><span class="text-[10px] bg-green-100 text-green-700 px-1.5 py-0.5 rounded font-bold">Verified</span></div>
         <div class="font-black text-base mb-1 group-hover:text-blue-600 transition">Crafting Database</div>
-        <div class="text-xs text-slate-500">全配方数据库，含状态标签</div>
+        <div class="text-xs text-slate-500">Full recipe list with status tags</div>
       </a>
       <a href="/en/progression.html" class="guide-card card p-4 hover:shadow-xl transition group" data-cat="starter">
-        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-purple-600 font-bold">PROGRESSION</span><span class="text-[10px] bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded font-bold">Updated</span></div>
+        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-purple-600 font-bold">PROGRESSION</span></div>
         <div class="font-black text-base mb-1 group-hover:text-blue-600 transition">Tech Tree & Progression</div>
-        <div class="text-xs text-slate-500">信号塔选择、解锁顺序、最优技能路线</div>
+        <div class="text-xs text-slate-500">Signal tower unlocks & optimal path</div>
       </a>
 
       <!-- Systems -->
       <a href="/en/energy.html" class="guide-card card p-4 hover:shadow-xl transition group" data-cat="systems">
-        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-amber-600 font-bold">ENERGY</span><span class="text-[10px] bg-green-100 text-green-700 px-1.5 py-0.5 rounded font-bold">✓ Verified</span></div>
+        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-amber-600 font-bold">ENERGY</span><span class="text-[10px] bg-green-100 text-green-700 px-1.5 py-0.5 rounded font-bold">Verified</span></div>
         <div class="font-black text-base mb-1 group-hover:text-blue-600 transition">Power & Energy</div>
-        <div class="text-xs text-slate-500">太阳能、风能、电池，夜间断电解决方案</div>
+        <div class="text-xs text-slate-500">Solar, wind, batteries & night solutions</div>
       </a>
       <a href="/en/van-upgrades.html" class="guide-card card p-4 hover:shadow-xl transition group" data-cat="systems">
-        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-teal-600 font-bold">VAN</span><span class="text-[10px] bg-green-100 text-green-700 px-1.5 py-0.5 rounded font-bold">✓ Verified</span></div>
-        <div class="font-black text-base mb-1 group-hover:text-blue-600 transition">Van Upgrades & Layouts</div>
-        <div class="text-xs text-slate-500">模块解锁顺序，4种布局模板</div>
+        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-teal-600 font-bold">VAN</span><span class="text-[10px] bg-green-100 text-green-700 px-1.5 py-0.5 rounded font-bold">Verified</span></div>
+        <div class="font-black text-base mb-1 group-hover:text-blue-600 transition">Van Upgrades</div>
+        <div class="text-xs text-slate-500">Module unlock order & 4 layout templates</div>
+      </a>
+      <a href="/en/van-layouts.html" class="guide-card card p-4 hover:shadow-xl transition group bg-gradient-to-r from-orange-50 to-amber-50" data-cat="systems">
+        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-orange-600 font-bold">VAN</span><span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.5 rounded font-bold">NEW</span></div>
+        <div class="font-black text-base mb-1 group-hover:text-blue-600 transition">Van Layout Ideas</div>
+        <div class="text-xs text-slate-500">3 creative build templates + new items</div>
       </a>
       <a href="/en/multiplayer.html" class="guide-card card p-4 hover:shadow-xl transition group" data-cat="systems">
-        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-purple-600 font-bold">CO-OP</span><span class="text-[10px] bg-green-100 text-green-700 px-1.5 py-0.5 rounded font-bold">✓ Verified</span></div>
+        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-purple-600 font-bold">CO-OP</span><span class="text-[10px] bg-green-100 text-green-700 px-1.5 py-0.5 rounded font-bold">Verified</span></div>
         <div class="font-black text-base mb-1 group-hover:text-blue-600 transition">4-Player Multiplayer</div>
-        <div class="text-xs text-slate-500">角色分工、房主/加入、常见联机问题</div>
+        <div class="text-xs text-slate-500">Roles, host/join, common issues</div>
+      </a>
+      <a href="/en/farming-cooking.html" class="guide-card card p-4 hover:shadow-xl transition group bg-gradient-to-r from-emerald-50 to-green-50" data-cat="systems">
+        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-emerald-600 font-bold">FARMING</span><span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.5 rounded font-bold">NEW</span></div>
+        <div class="font-black text-base mb-1 group-hover:text-blue-600 transition">Farming & Cooking</div>
+        <div class="text-xs text-slate-500">Crop data, recipes & food strategy</div>
+      </a>
+      <a href="/en/pets-guide.html" class="guide-card card p-4 hover:shadow-xl transition group bg-gradient-to-r from-pink-50 to-rose-50" data-cat="systems">
+        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-pink-600 font-bold">PETS</span><span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.5 rounded font-bold">NEW</span></div>
+        <div class="font-black text-base mb-1 group-hover:text-blue-600 transition">Pet Guide</div>
+        <div class="text-xs text-slate-500">Dogs, cats & community requests</div>
       </a>
       <a href="/en/system-requirements.html" class="guide-card card p-4 hover:shadow-xl transition group" data-cat="systems">
         <div class="flex items-center gap-2 mb-1"><span class="text-xs text-slate-600 font-bold">PC</span></div>
         <div class="font-black text-base mb-1 group-hover:text-blue-600 transition">PC Requirements</div>
-        <div class="text-xs text-slate-500">官方配置要求 + 各显卡帧数预估</div>
+        <div class="text-xs text-slate-500">Official specs + GPU benchmarks</div>
       </a>
       <a href="/en/tech-fixes.html" class="guide-card card p-4 hover:shadow-xl transition group" data-cat="systems">
         <div class="flex items-center gap-2 mb-1"><span class="text-xs text-red-600 font-bold">FIXES</span></div>
         <div class="font-black text-base mb-1 group-hover:text-blue-600 transition">Tech Fixes</div>
-        <div class="text-xs text-slate-500">il2cpp错误、晕动症、Steam Deck优化</div>
+        <div class="text-xs text-slate-500">il2cpp, motion sickness, Steam Deck</div>
       </a>
 
-      <!-- Exploration / Items -->
-      <a href="/en/items/redwood.html" class="guide-card card p-4 hover:shadow-xl transition group" data-cat="items">
-        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-red-600 font-bold">ITEMS</span></div>
-        <div class="font-black text-base mb-1 group-hover:text-blue-600 transition">Redwood Location</div>
-        <div class="text-xs text-slate-500">红木位置，首次篝火必备</div>
-      </a>
-      <a href="/en/items/gnome-workshop.html" class="guide-card card p-4 hover:shadow-xl transition group" data-cat="items">
-        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-emerald-600 font-bold">SECRETS</span></div>
-        <div class="font-black text-base mb-1 group-hover:text-blue-600 transition">Hidden Gnome Workshop</div>
-        <div class="text-xs text-slate-500">隐藏"Meet the Devs"区域攻略</div>
-      </a>
-      <a href="/en/collectibles.html" class="guide-card card p-4 hover:shadow-xl transition group" data-cat="items">
+      <!-- Exploration -->
+      <a href="/en/collectibles.html" class="guide-card card p-4 hover:shadow-xl transition group" data-cat="explore">
         <div class="flex items-center gap-2 mb-1"><span class="text-xs text-amber-600 font-bold">COLLECT</span></div>
         <div class="font-black text-base mb-1 group-hover:text-blue-600 transition">Collectibles Map</div>
-        <div class="text-xs text-slate-500">USB钥匙、石堆、全部秘密位置</div>
+        <div class="text-xs text-slate-500">USB keys, cairns & secret locations</div>
+      </a>
+      <a href="/en/collectibles-map.html" class="guide-card card p-4 hover:shadow-xl transition group" data-cat="explore">
+        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-sky-600 font-bold">MAP</span></div>
+        <div class="font-black text-base mb-1 group-hover:text-blue-600 transition">Interactive Collectibles Map</div>
+        <div class="text-xs text-slate-500">Mark USB/cairns/hidden areas</div>
+      </a>
+      <a href="/en/achievements.html" class="guide-card card p-4 hover:shadow-xl transition group bg-gradient-to-r from-purple-50 to-indigo-50" data-cat="explore">
+        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-purple-600 font-bold">32</span></div>
+        <div class="font-black text-base mb-1 group-hover:text-blue-600 transition">Achievements Guide</div>
+        <div class="text-xs text-slate-500">All Steam achievements & unlock tips</div>
+      </a>
+
+      <!-- Biomes -->
+      <a href="/en/biome-grasslands.html" class="guide-card card p-4 hover:shadow-xl transition group bg-gradient-to-r from-green-50 to-emerald-50" data-cat="biomes">
+        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-emerald-600 font-bold">BIOME 1</span><span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.5 rounded font-bold">NEW</span></div>
+        <div class="font-black text-base mb-1 group-hover:text-blue-600 transition">Grasslands Guide</div>
+        <div class="text-xs text-slate-500">Starting area: resources, landmarks, fishing</div>
+      </a>
+      <a href="/en/biome-canyon.html" class="guide-card card p-4 hover:shadow-xl transition group bg-gradient-to-r from-orange-50 to-amber-50" data-cat="biomes">
+        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-amber-600 font-bold">BIOME 2</span><span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.5 rounded font-bold">NEW</span></div>
+        <div class="font-black text-base mb-1 group-hover:text-blue-600 transition">Canyon Guide</div>
+        <div class="text-xs text-slate-500">Desert survival, engine heat, rare magnets</div>
+      </a>
+      <a href="/en/biome-coast.html" class="guide-card card p-4 hover:shadow-xl transition group bg-gradient-to-r from-blue-50 to-cyan-50" data-cat="biomes">
+        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-cyan-600 font-bold">BIOME 3</span><span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.5 rounded font-bold">NEW</span></div>
+        <div class="font-black text-base mb-1 group-hover:text-blue-600 transition">Coast Guide</div>
+        <div class="text-xs text-slate-500">Best fishing biome! Ferry, lighthouse</div>
+      </a>
+      <a href="/en/biome-mountain.html" class="guide-card card p-4 hover:shadow-xl transition group bg-gradient-to-r from-slate-50 to-blue-50" data-cat="biomes">
+        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-blue-600 font-bold">BIOME 4</span><span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.5 rounded font-bold">NEW</span></div>
+        <div class="font-black text-base mb-1 group-hover:text-blue-600 transition">Mountain Guide</div>
+        <div class="text-xs text-slate-500">Final biome: hot air balloon, dev Easter eggs</div>
       </a>
 
       <!-- Updates -->
-      <a href="/en/patch-notes.html" class="guide-card card p-4 hover:shadow-xl transition group bg-gradient-to-r from-emerald-50 to-teal-50" data-cat="updates">
-        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-emerald-600 font-bold">📝 PATCH</span><span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.5 rounded font-bold">NEW</span></div>
-        <div class="font-black text-base mb-1 group-hover:text-blue-600 transition">Patch Notes 1.0.6–1.0.12 🎉</div>
-        <div class="text-xs text-slate-500">完整更新日志、路线图、钓鱼预览</div>
+      <a href="/en/patch-notes-auto-1.1.4.html" class="guide-card card p-4 hover:shadow-xl transition group bg-gradient-to-r from-cyan-50 to-blue-50" data-cat="update">
+        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-cyan-600 font-bold">PATCH</span><span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.5 rounded font-bold">LATEST</span></div>
+        <div class="font-black text-base mb-1 group-hover:text-blue-600 transition">Patch 1.1.4 Notes</div>
+        <div class="text-xs text-slate-500">The Fishing Update — full changelog</div>
       </a>
-      <a href="/en/fishing.html" class="guide-card card p-4 hover:shadow-xl transition group bg-gradient-to-r from-cyan-50 to-blue-50" data-cat="updates">
-        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-cyan-600 font-bold">🎣 SUMMER 1.1</span><span class="text-[10px] bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded font-bold">Preview</span></div>
-        <div class="font-black text-base mb-1 group-hover:text-blue-600 transition">Fishing Guide</div>
-        <div class="text-xs text-slate-500">即将推出的钓鱼系统预览与攻略</div>
+      <a href="/en/fishing.html" class="guide-card card p-4 hover:shadow-xl transition group bg-gradient-to-r from-cyan-50 to-blue-50" data-cat="update">
+        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-cyan-600 font-bold">FISHING</span><span class="text-[10px] bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded font-bold">HOT</span></div>
+        <div class="font-black text-base mb-1 group-hover:text-blue-600 transition">Fishing System Guide</div>
+        <div class="text-xs text-slate-500">How to fish, all fish types, fish tanks</div>
+      </a>
+      <a href="/en/patch-notes.html" class="guide-card card p-4 hover:shadow-xl transition group" data-cat="update">
+        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-emerald-600 font-bold">PATCHES</span></div>
+        <div class="font-black text-base mb-1 group-hover:text-blue-600 transition">All Patch Notes</div>
+        <div class="text-xs text-slate-500">1.0.11 through 1.1.4 complete history</div>
       </a>
 
       <!-- DLC -->
       <a href="/en/school-bus-adventures.html" class="guide-card card p-4 hover:shadow-xl transition group bg-gradient-to-r from-amber-50 to-orange-50" data-cat="dlc">
-        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-amber-600 font-bold">🚌 DLC</span><span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.5 rounded font-bold">NEW</span></div>
+        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-amber-600 font-bold">DLC</span><span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.5 rounded font-bold">-20%</span></div>
         <div class="font-black text-base mb-1 group-hover:text-blue-600 transition">School Bus Adventures</div>
-        <div class="text-xs text-slate-500">新载具、新功能、内容攻略</div>
+        <div class="text-xs text-slate-500">New vehicle, features & content guide</div>
       </a>
-      <a href="/en/achievements.html" class="guide-card card p-4 hover:shadow-xl transition group bg-gradient-to-r from-purple-50 to-indigo-50" data-cat="dlc">
-        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-purple-600 font-bold">🏆 32</span></div>
-        <div class="font-black text-base mb-1 group-hover:text-blue-600 transition">Achievements Guide</div>
-        <div class="text-xs text-slate-500">全部Steam成就攻略与解锁技巧</div>
-      </a>
-
-      <!-- Tools -->
-      <a href="/en/faq.html" class="guide-card card p-4 hover:shadow-xl transition group bg-gradient-to-r from-green-50 to-emerald-50" data-cat="items">
-        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-green-600 font-bold">❓ FAQ</span><span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.5 rounded font-bold">NEW</span></div>
-        <div class="font-black text-base mb-1 group-hover:text-blue-600 transition">Frequently Asked Questions</div>
-        <div class="text-xs text-slate-500">存档、多人、平台、时长等常见问题</div>
-      </a>
-      <a href="/en/compare.html" class="guide-card card p-4 hover:shadow-xl transition group bg-gradient-to-r from-violet-50 to-purple-50" data-cat="items">
-        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-violet-600 font-bold">⚔️ VS</span><span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.5 rounded font-bold">NEW</span></div>
-        <div class="font-black text-base mb-1 group-hover:text-blue-600 transition">Outbound vs Similar Games</div>
-        <div class="text-xs text-slate-500">对比The Long Dark、Core Keeper等</div>
-      </a>
-      <a href="/en/collectibles-map.html" class="guide-card card p-4 hover:shadow-xl transition group bg-gradient-to-r from-sky-50 to-cyan-50" data-cat="items">
-        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-sky-600 font-bold">🗺️ MAP</span><span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.5 rounded font-bold">NEW</span></div>
-        <div class="font-black text-base mb-1 group-hover:text-blue-600 transition">Interactive Collectibles Map</div>
-        <div class="text-xs text-slate-500">可交互收集品地图，标记USB/石堆/隐藏区域</div>
+      <a href="/en/game-controllers.html" class="guide-card card p-4 hover:shadow-xl transition group" data-cat="dlc">
+        <div class="flex items-center gap-2 mb-1"><span class="text-xs text-slate-600 font-bold">GEAR</span></div>
+        <div class="font-black text-base mb-1 group-hover:text-blue-600 transition">Controllers & Gear</div>
+        <div class="text-xs text-slate-500">Best controllers for Outbound</div>
       </a>
     </div>
 
-    <div class="mt-4 text-sm text-slate-500"><span class="en">中文版：</span><a href="/zh/starter-guide.html" class="text-blue-600 hover:underline">开荒</a> · <a href="/zh/crafting.html" class="text-blue-600 hover:underline">合成表</a> · <a href="/zh/energy.html" class="text-blue-600 hover:underline">能源</a> · <a href="/zh/van-upgrades.html" class="text-blue-600 hover:underline">房车</a> · <a href="/zh/multiplayer.html" class="text-blue-600 hover:underline">联机</a> · <a href="/zh/collectibles.html" class="text-blue-600 hover:underline">收集品</a> · <a href="/zh/progression.html" class="text-blue-600 hover:underline">科技树</a> · <a href="/zh/school-bus-adventures.html" class="text-blue-600 hover:underline">DLC校车</a> · <a href="/zh/achievements.html" class="text-blue-600 hover:underline">成就</a> · <a href="/zh/patch-notes.html" class="text-blue-600 hover:underline">补丁日志</a> · <a href="/zh/fishing.html" class="text-blue-600 hover:underline">钓鱼</a></div>
+    <div class="mt-4 text-sm text-slate-500">
+      <span class="en">Chinese: </span>
+      <a href="/zh/starter-guide.html" class="text-blue-600 hover:underline">开荒</a> &middot;
+      <a href="/zh/crafting.html" class="text-blue-600 hover:underline">合成</a> &middot;
+      <a href="/zh/energy.html" class="text-blue-600 hover:underline">能源</a> &middot;
+      <a href="/zh/van-upgrades.html" class="text-blue-600 hover:underline">房车</a> &middot;
+      <a href="/zh/multiplayer.html" class="text-blue-600 hover:underline">联机</a> &middot;
+      <a href="/zh/achievements.html" class="text-blue-600 hover:underline">成就</a> &middot;
+      <a href="/zh/fishing.html" class="text-blue-600 hover:underline">钓鱼</a> &middot;
+      <a href="/zh/farming-cooking.html" class="text-blue-600 hover:underline">种植</a> &middot;
+      <a href="/zh/pets-guide.html" class="text-blue-600 hover:underline">宠物</a> &middot;
+      <a href="/zh/van-layouts.html" class="text-blue-600 hover:underline">布局</a> &middot;
+      <a href="/zh/patch-notes.html" class="text-blue-600 hover:underline">补丁</a>
+    </div>
   </section>
 
-  <main class="max-w-7xl mx-auto px-4 py-16">
+  <div class="adslot max-w-7xl mx-auto px-4 mt-8">[ Ad slot - mid page ]</div>
+
+  <!-- Game Stats Bar -->
+  <section class="max-w-7xl mx-auto px-4 pt-10 pb-4">
+    <div class="card p-6 bg-gradient-to-r from-slate-50 to-slate-100">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div>
+          <div class="text-3xl font-black text-slate-900">1,595</div>
+          <div class="text-sm text-slate-500"><span class="en">Steam Reviews</span><span class="zh">Steam评价</span></div>
+          <div class="text-xs text-emerald-600 font-bold">73% Positive</div>
+        </div>
+        <div>
+          <div class="text-3xl font-black text-slate-900">32</div>
+          <div class="text-sm text-slate-500"><span class="en">Achievements</span><span class="zh">成就</span></div>
+          <div class="text-xs text-purple-600 font-bold"><span class="en">Full guide available</span><span class="zh">完整攻略已上线</span></div>
+        </div>
+        <div>
+          <div class="text-3xl font-black text-slate-900">4</div>
+          <div class="text-sm text-slate-500"><span class="en">Biomes</span><span class="zh">群系</span></div>
+          <div class="text-xs text-blue-600 font-bold"><span class="en">Each with guides</span><span class="zh">各有攻略</span></div>
+        </div>
+        <div>
+          <div class="text-3xl font-black text-slate-900">95+</div>
+          <div class="text-sm text-slate-500"><span class="en">Guide Pages</span><span class="zh">攻略页面</span></div>
+          <div class="text-xs text-amber-600 font-bold"><span class="en">Growing daily</span><span class="zh">持续更新</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content with TOC -->
+  <main class="max-w-7xl mx-auto px-4 py-12">
     <div class="grid lg:grid-cols-[260px_1fr] gap-10">
-      <aside class="hidden lg:block"><div class="sticky top-24 card p-4 toc text-sm"><div class="font-black mb-3"><span class="en">Contents</span><span class="zh">目录</span></div><a href="#guides" class="text-blue-600 font-bold"><span class="en">📖 Game Guides</span><span class="zh">📖 游戏攻略</span></a><a href="#overview"><span class="en">Game Overview</span><span class="zh">游戏概览</span></a><a href="#gallery"><span class="en">Screenshots</span><span class="zh">截图视频</span></a><a href="#start"><span class="en">First Hour Plan</span><span class="zh">首小时开荒</span></a><a href="#systems"><span class="en">Core Systems</span><span class="zh">核心系统</span></a><a href="#crafting"><span class="en">Crafting Roadmap</span><span class="zh">合成路线</span></a><a href="#multiplayer"><span class="en">Co-op Guide</span><span class="zh">联机攻略</span></a><a href="#requirements"><span class="en">PC Requirements</span><span class="zh">配置要求</span></a><a href="#faq">FAQ</a></div></aside>
+      <aside class="hidden lg:block">
+        <div class="sticky top-24 card p-4 toc text-sm">
+          <div class="font-black mb-3"><span class="en">Contents</span><span class="zh">目录</span></div>
+          <a href="#guides" class="text-blue-600 font-bold"><span class="en">All Guides</span><span class="zh">全部攻略</span></a>
+          <a href="#overview"><span class="en">Game Overview</span><span class="zh">游戏概览</span></a>
+          <a href="#biomes"><span class="en">Biome Guides</span><span class="zh">群系攻略</span></a>
+          <a href="#start"><span class="en">First Hour Plan</span><span class="zh">首小时开荒</span></a>
+          <a href="#systems"><span class="en">Core Systems</span><span class="zh">核心系统</span></a>
+          <a href="#multiplayer"><span class="en">Co-op Guide</span><span class="zh">联机攻略</span></a>
+          <a href="#requirements"><span class="en">PC Requirements</span><span class="zh">配置要求</span></a>
+          <a href="#faq">FAQ</a>
+        </div>
+      </aside>
       <div class="space-y-14">
+
+        <!-- Overview -->
         <section id="overview" class="card p-8">
-          <h2 class="text-4xl font-black gradient-title mb-6"><span class="en">What is Outbound?</span><span class="zh">Outbound 是什么游戏？</span></h2>
-          <div class="grid md:grid-cols-2 gap-8 items-center"><div class="space-y-4 text-slate-700 leading-8"><p><span class="en">Outbound is a cozy open-world exploration and survival-crafting game set in a utopian near future. You start with an empty electric camper van and gradually turn it into a mobile home.</span><span class="zh">《Outbound》是一款近未来乌托邦背景的舒适开放世界探索与生存建造游戏。玩家从一辆空荡荡的电动房车开始，逐步把它改造成移动之家。</span></p><p><span class="en">The official Steam description highlights five pillars: explore colorful biomes, build and craft modular parts, grow plants and mushrooms, adopt and train a pet, and play solo or online co-op with up to 4 players.</span><span class="zh">Steam 官方介绍的核心卖点包括：探索多样生态群系、用模块化部件建造房车、种植植物与蘑菇、领养训练宠物，以及单人或最多 4 人在线合作。</span></p><p class="font-semibold text-slate-900"><span class="en">This site focuses on launch-day answers: what to build first, how power works, what resources matter, and how to avoid wasting early materials.</span><span class="zh">本站重点解决首发当天玩家最需要的答案：先造什么、能源怎么供、哪些资源优先、如何避免前期材料浪费。</span></p></div><img src="assets/header.jpg" onerror="this.style.display='none';this.parentElement.classList.add('imgbox')" alt="Outbound header" class="rounded-2xl w-full shadow-lg" /></div>
+          <h2 class="text-4xl font-black section-gradient-title mb-6">
+            <span class="en">What is Outbound?</span>
+            <span class="zh">Outbound 是什么游戏？</span>
+          </h2>
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="space-y-4 text-slate-700 leading-8">
+              <p>
+                <span class="en">Outbound is a cozy open-world exploration and survival-crafting game set in a utopian near future. You start with an empty electric camper van and gradually turn it into a mobile home.</span>
+                <span class="zh">《Outbound / 拾光旅人》是一款近未来乌托邦背景的舒适开放世界探索与生存建造游戏。玩家从一辆空荡荡的电动房车开始，逐步把它改造成移动之家。</span>
+              </p>
+              <p>
+                <span class="en">The latest <strong>Fishing Update (v1.1.4)</strong> added a full fishing system, fish tanks, stairs, and doors — expanding the cozy sandbox even further.</span>
+                <span class="zh">最新的<strong>钓鱼更新（v1.1.4）</strong>新增了完整的钓鱼系统、鱼缸装饰、楼梯和门，进一步扩展了舒适沙盒体验。</span>
+              </p>
+              <p class="font-semibold text-slate-900">
+                <span class="en">This site covers everything from launch day to the Fishing Update: what to build first, how power works, all 4 biomes, fishing spots, and 100% completion.</span>
+                <span class="zh">本站覆盖从发售日到钓鱼更新的全部内容：先造什么、能源怎么供、4大群系、钓鱼点，以及100%完成攻略。</span>
+              </p>
+            </div>
+            <img src="assets/header.jpg" onerror="this.style.display='none';this.parentElement.classList.add('bg-gradient-to-br','from-blue-100','to-cyan-100','rounded-2xl')" alt="Outbound header" class="rounded-2xl w-full shadow-lg" />
+          </div>
         </section>
 
+        <!-- Biome Preview -->
+        <section id="biomes" class="space-y-6">
+          <h2 class="text-3xl font-black">
+            <span class="en">Explore All 4 Biomes</span>
+            <span class="zh">探索全部4个群系</span>
+          </h2>
+          <div class="grid md:grid-cols-2 gap-4">
+            <a href="/en/biome-grasslands.html" class="card p-5 bg-gradient-to-r from-green-50 to-emerald-50 hover:shadow-lg transition">
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="text-sm text-emerald-600 font-bold">BIOME 1</div>
+                  <div class="font-black text-lg">Grasslands</div>
+                  <div class="text-xs text-slate-500">Starting area &middot; Gentle introduction</div>
+                </div>
+                <span class="text-3xl">🌿</span>
+              </div>
+            </a>
+            <a href="/en/biome-canyon.html" class="card p-5 bg-gradient-to-r from-orange-50 to-amber-50 hover:shadow-lg transition">
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="text-sm text-amber-600 font-bold">BIOME 2</div>
+                  <div class="font-black text-lg">Canyon</div>
+                  <div class="text-xs text-slate-500">Desert &middot; Engine heat challenges</div>
+                </div>
+                <span class="text-3xl">🏜️</span>
+              </div>
+            </a>
+            <a href="/en/biome-coast.html" class="card p-5 bg-gradient-to-r from-blue-50 to-cyan-50 hover:shadow-lg transition">
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="text-sm text-cyan-600 font-bold">BIOME 3</div>
+                  <div class="font-black text-lg">Coast</div>
+                  <div class="text-xs text-slate-500">Beach &middot; Best fishing spots</div>
+                </div>
+                <span class="text-3xl">🌊</span>
+              </div>
+            </a>
+            <a href="/en/biome-mountain.html" class="card p-5 bg-gradient-to-r from-slate-50 to-blue-50 hover:shadow-lg transition">
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="text-sm text-blue-600 font-bold">BIOME 4</div>
+                  <div class="font-black text-lg">Mountain</div>
+                  <div class="text-xs text-slate-500">Snow peaks &middot; Endgame content</div>
+                </div>
+                <span class="text-3xl">🏔️</span>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <!-- Gallery -->
         <section id="gallery" class="space-y-6">
           <div class="flex items-end justify-between gap-4">
-            <h2 class="text-3xl font-black"><span class="en">Screenshots and Video</span><span class="zh">实机画面与视频</span></h2>
-            <a class="text-blue-600 font-bold" href="https://store.steampowered.com/app/2681030/Outbound/" target="_blank"><span class="en">View on Steam</span><span class="zh">查看 Steam 页面</span></a>
+            <h2 class="text-3xl font-black">
+              <span class="en">Screenshots</span>
+              <span class="zh">实机画面</span>
+            </h2>
+            <a class="text-blue-600 font-bold" href="https://store.steampowered.com/app/2681030/Outbound/" target="_blank">
+              <span class="en">View on Steam</span>
+              <span class="zh">查看 Steam 页面</span>
+            </a>
           </div>
-          <div class="grid md:grid-cols-3 gap-5">
-            <img src="assets/screenshot_new_1.jpg" class="rounded-2xl shadow h-56 w-full object-cover" alt="Outbound screenshot - camper van in nature">
-            <img src="assets/screenshot_new_2.jpg" class="rounded-2xl shadow h-56 w-full object-cover" alt="Outbound screenshot - crafting and building">
-            <img src="assets/screenshot_new_3.jpg" class="rounded-2xl shadow h-56 w-full object-cover" alt="Outbound screenshot - van interior customization">
-            <img src="assets/screenshot_new_4.jpg" class="rounded-2xl shadow h-56 w-full object-cover" alt="Outbound screenshot - exploration and biomes">
-            <img src="assets/screenshot_new_5.jpg" class="rounded-2xl shadow h-56 w-full object-cover" alt="Outbound screenshot - gardening and plants">
-            <img src="assets/screenshot_new_6.jpg" class="rounded-2xl shadow h-56 w-full object-cover" alt="Outbound screenshot - cozy camping scene">
+          <div class="grid md:grid-cols-3 gap-4">
+            <img src="assets/screenshot_new_1.jpg" class="rounded-2xl shadow h-48 w-full object-cover" alt="Outbound screenshot">
+            <img src="assets/screenshot_new_2.jpg" class="rounded-2xl shadow h-48 w-full object-cover" alt="Outbound screenshot">
+            <img src="assets/screenshot_new_3.jpg" class="rounded-2xl shadow h-48 w-full object-cover" alt="Outbound screenshot">
+            <img src="assets/screenshot_new_4.jpg" class="rounded-2xl shadow h-48 w-full object-cover" alt="Outbound screenshot">
+            <img src="assets/screenshot_new_5.jpg" class="rounded-2xl shadow h-48 w-full object-cover" alt="Outbound screenshot">
+            <img src="assets/screenshot_new_6.jpg" class="rounded-2xl shadow h-48 w-full object-cover" alt="Outbound screenshot">
           </div>
-          <div class="card p-6 mt-6">
-            <div class="flex items-center justify-between">
+          <div class="card p-6 mt-4">
+            <div class="flex items-center justify-between flex-wrap gap-4">
               <div>
-                <div class="font-black text-xl mb-2"><span class="en">🎮 Now Available!</span><span class="zh">🎮 现已发售！</span></div>
-                <p class="text-slate-600"><span class="en">Outbound launched on May 11, 2026. 1,1582 reviews, 73.73.73.72.73.73.4% positive. Latest update: Patch 1.0.12 🎉 100K Players!</span><span class="zh">Outbound 于 2026年5月11日发售。1582条评价，73.73.73.72.73.73.4%好评。最新更新：补丁 1.0.12 🎉 10万玩家达成！</span></p>
+                <div class="font-black text-xl mb-2">🎮 <span class="en">Now Available + Summer Sale!</span><span class="zh">现已发售 + 夏季促销！</span></div>
+                <p class="text-slate-600">
+                  <span class="en">Outbound launched May 11, 2026. <strong>1,595 reviews</strong>, 73% positive. <strong>-20% off</strong> right now! Latest: Patch 1.1.4 (The Fishing Update).</span>
+                  <span class="zh">Outbound 于2026年5月11日发售。<strong>1,595条评价</strong>，73%好评。目前<strong>-20%折扣</strong>中！最新补丁：1.1.4（钓鱼更新）。</span>
+                </p>
               </div>
-              <a class="bg-slate-900 text-white text-center px-6 py-3 rounded-xl font-bold" target="_blank" href="https://store.steampowered.com/app/2681030/Outbound/">
-                <span class="en">Buy on Steam</span><span class="zh">Steam 购买</span>
+              <a class="bg-slate-900 text-white text-center px-6 py-3 rounded-xl font-bold whitespace-nowrap" target="_blank" href="https://store.steampowered.com/app/2681030/Outbound/">
+                <span class="en">Buy on Steam</span>
+                <span class="zh">Steam购买</span>
               </a>
             </div>
           </div>
         </section>
 
+        <!-- First Hour -->
         <section id="start" class="card p-8">
-          <h2 class="text-3xl font-black mb-6"><span class="en">First Hour Starter Plan</span><span class="zh">首小时开荒路线</span></h2>
+          <h2 class="text-3xl font-black mb-6">
+            <span class="en">First Hour Starter Plan</span>
+            <span class="zh">首小时开荒路线</span>
+          </h2>
           <div class="grid md:grid-cols-2 gap-6">
-            <div class="p-5 rounded-2xl bg-blue-50"><h3 class="font-black text-xl mb-3"><span class="en">0-10 min: check power and storage</span><span class="zh">0-10 分钟：确认电力和储物</span></h3><p class="text-slate-700 leading-7"><span class="en">Before expanding, understand where energy is generated, where it is consumed, and how much storage space your starter van has.</span><span class="zh">扩建之前，先确认电力从哪里来、哪些设备会耗电、初始房车能放多少材料。</span></p></div>
-            <div class="p-5 rounded-2xl bg-emerald-50"><h3 class="font-black text-xl mb-3"><span class="en">10-25 min: gather basic materials</span><span class="zh">10-25 分钟：采集基础材料</span></h3><p class="text-slate-700 leading-7"><span class="en">Prioritize wood-like, metal-like and plant resources. Keep rare components until you know the recipe path.</span><span class="zh">优先拿木材类、金属类、植物类资源。稀有零件先别乱用，等确认合成路线再消耗。</span></p></div>
-            <div class="p-5 rounded-2xl bg-amber-50"><h3 class="font-black text-xl mb-3"><span class="en">25-40 min: build a work loop</span><span class="zh">25-40 分钟：建立工作循环</span></h3><p class="text-slate-700 leading-7"><span class="en">Aim for a simple loop: gather resources, process materials, craft a useful module, then upgrade the van layout.</span><span class="zh">目标是形成循环：采集资源、加工材料、制作有用模块、再升级房车布局。</span></p></div>
-            <div class="p-5 rounded-2xl bg-purple-50"><h3 class="font-black text-xl mb-3"><span class="en">40-60 min: choose your direction</span><span class="zh">40-60 分钟：确定发展方向</span></h3><p class="text-slate-700 leading-7"><span class="en">Pick one route first: power stability, storage expansion, farming/cooking, or exploration mobility.</span><span class="zh">先选一条路线：电力稳定、储物扩容、种植烹饪，或探索机动性。</span></p></div>
+            <div class="p-5 rounded-2xl bg-blue-50">
+              <h3 class="font-black text-xl mb-3">
+                <span class="en">0-10 min: check power and storage</span>
+                <span class="zh">0-10 分钟：确认电力和储物</span>
+              </h3>
+              <p class="text-slate-700 leading-7">
+                <span class="en">Before expanding, understand where energy is generated, where it is consumed, and how much storage space your starter van has.</span>
+                <span class="zh">扩建之前，先确认电力从哪里来、哪些设备会耗电、初始房车能放多少材料。</span>
+              </p>
+            </div>
+            <div class="p-5 rounded-2xl bg-emerald-50">
+              <h3 class="font-black text-xl mb-3">
+                <span class="en">10-25 min: gather basic materials</span>
+                <span class="zh">10-25 分钟：采集基础材料</span>
+              </h3>
+              <p class="text-slate-700 leading-7">
+                <span class="en">Prioritize wood-like, metal-like and plant resources. Keep rare components until you know the recipe path.</span>
+                <span class="zh">优先拿木材类、金属类、植物类资源。稀有零件先别乱用，等确认合成路线再消耗。</span>
+              </p>
+            </div>
+            <div class="p-5 rounded-2xl bg-amber-50">
+              <h3 class="font-black text-xl mb-3">
+                <span class="en">25-40 min: build a work loop</span>
+                <span class="zh">25-40 分钟：建立工作循环</span>
+              </h3>
+              <p class="text-slate-700 leading-7">
+                <span class="en">Aim for a simple loop: gather resources, process materials, craft a useful module, then upgrade the van layout.</span>
+                <span class="zh">目标是形成循环：采集资源、加工材料、制作有用模块、再升级房车布局。</span>
+              </p>
+            </div>
+            <div class="p-5 rounded-2xl bg-purple-50">
+              <h3 class="font-black text-xl mb-3">
+                <span class="en">40-60 min: choose your direction</span>
+                <span class="zh">40-60 分钟：确定发展方向</span>
+              </h3>
+              <p class="text-slate-700 leading-7">
+                <span class="en">Pick one route first: power stability, storage expansion, farming/cooking, or exploration mobility.</span>
+                <span class="zh">先选一条路线：电力稳定、储物扩容、种植烹饪，或探索机动性。</span>
+              </p>
+            </div>
           </div>
         </section>
 
-        <section id="systems" class="space-y-6"><h2 class="text-3xl font-black"><span class="en">Core Systems Explained</span><span class="zh">核心玩法系统</span></h2><div class="grid md:grid-cols-2 gap-6"><div class="card p-6"><h3 class="font-black text-xl mb-3"><span class="en">Energy: sun, wind and water</span><span class="zh">能源：太阳能、风能、水能</span></h3><p class="text-slate-700 leading-7"><span class="en">Outbound revolves around sustainable power. Energy determines how many stations, modules and comfort upgrades your van can support. Expect early guides to focus on stable production before decoration.</span><span class="zh">Outbound 的核心是可持续供电。电力决定你能运行多少工作站、模块和舒适性升级。早期攻略会优先关注稳定发电，而不是装饰。</span></p></div><div class="card p-6"><h3 class="font-black text-xl mb-3"><span class="en">Modular van building</span><span class="zh">模块化房车建造</span></h3><p class="text-slate-700 leading-7"><span class="en">The vehicle is your base. Space planning matters: storage, crafting stations, sleeping/comfort zones and external modules compete for limited room.</span><span class="zh">房车就是你的基地。空间规划很重要：储物、工作台、休息舒适区、外部模块都会抢有限空间。</span></p></div><div class="card p-6"><h3 class="font-black text-xl mb-3"><span class="en">Growing and cooking</span><span class="zh">种植与烹饪</span></h3><p class="text-slate-700 leading-7"><span class="en">Official copy confirms gardens, plants, mushrooms and cooking. Food systems are likely tied to health, travel efficiency or long-term self-sufficiency.</span><span class="zh">官方确认有花园、植物、蘑菇和烹饪。食物系统大概率与健康、旅行效率或长期自给自足有关。</span></p></div><div class="card p-6"><h3 class="font-black text-xl mb-3"><span class="en">Pets and training</span><span class="zh">宠物与训练</span></h3><p class="text-slate-700 leading-7"><span class="en">Players can adopt a friend at the Paws & Whiskers Lodge, then feed, pet and train it. Launch-day testing should identify what pets can help with.</span><span class="zh">玩家可以在 Paws & Whiskers Lodge 领养伙伴，并喂养、抚摸、训练它。首发后需要验证宠物具体能帮哪些忙。</span></p></div></div></section>
-
-        <section id="crafting" class="card p-8">
-          <h2 class="text-3xl font-black mb-4"><span class="en">Crafting Roadmap</span><span class="zh">合成路线图</span></h2><p class="text-slate-600 mb-6"><span class="en">Full recipes will be updated after hands-on verification. Below is the launch-day tracking table for the most important early-game items.</span><span class="zh">完整配方会在实测后更新。下面是首发当天最需要优先验证的前期物品追踪表。</span></p>
-          <div class="overflow-x-auto"><table class="w-full text-left border-collapse"><thead><tr class="bg-slate-900 text-white"><th class="p-3">Item</th><th class="p-3">Priority</th><th class="p-3"><span class="en">Why it matters</span><span class="zh">作用</span></th><th class="p-3">Status</th></tr></thead><tbody class="divide-y"><tr><td class="p-3 font-bold">Solar / Wind Power Module</td><td class="p-3">High</td><td class="p-3"><span class="en">Stabilizes crafting and automation.</span><span class="zh">稳定工作台和自动化供电。</span></td><td class="p-3 text-amber-600 font-bold">Pending verification</td></tr><tr><td class="p-3 font-bold">Storage Upgrade</td><td class="p-3">High</td><td class="p-3"><span class="en">Reduces early material loss and travel interruptions.</span><span class="zh">减少前期材料丢失和频繁往返。</span></td><td class="p-3 text-amber-600 font-bold">Pending verification</td></tr><tr><td class="p-3 font-bold">Basic Workstation</td><td class="p-3">High</td><td class="p-3"><span class="en">Unlocks processing and modular upgrades.</span><span class="zh">解锁加工和模块升级。</span></td><td class="p-3 text-amber-600 font-bold">Pending verification</td></tr><tr><td class="p-3 font-bold">Garden / Planter</td><td class="p-3">Medium</td><td class="p-3"><span class="en">Supports self-sufficient food production.</span><span class="zh">支持食物自给。</span></td><td class="p-3 text-amber-600 font-bold">Pending verification</td></tr></tbody></table></div>
+        <!-- Core Systems -->
+        <section id="systems" class="space-y-6">
+          <h2 class="text-3xl font-black">
+            <span class="en">Core Systems</span>
+            <span class="zh">核心玩法系统</span>
+          </h2>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="card p-6">
+              <h3 class="font-black text-xl mb-3">
+                <span class="en">Energy: sun, wind and water</span>
+                <span class="zh">能源：太阳能、风能、水能</span>
+              </h3>
+              <p class="text-slate-700 leading-7">
+                <span class="en">Outbound revolves around sustainable power. Energy determines how many stations, modules and comfort upgrades your van can support.</span>
+                <span class="zh">Outbound 的核心是可持续供电。电力决定你能运行多少工作台、模块和舒适性升级。</span>
+              </p>
+            </div>
+            <div class="card p-6">
+              <h3 class="font-black text-xl mb-3">
+                <span class="en">Modular van building</span>
+                <span class="zh">模块化房车建造</span>
+              </h3>
+              <p class="text-slate-700 leading-7">
+                <span class="en">The vehicle is your base. Space planning matters: storage, crafting stations, sleeping/comfort zones and external modules compete for limited room.</span>
+                <span class="zh">房车就是你的基地。空间规划很重要：储物、工作台、休息舒适区、外部模块都会抢有限空间。</span>
+              </p>
+            </div>
+            <div class="card p-6">
+              <h3 class="font-black text-xl mb-3">
+                <span class="en">Fishing (NEW in 1.1.4)</span>
+                <span class="zh">钓鱼（1.1.4新增）</span>
+              </h3>
+              <p class="text-slate-700 leading-7">
+                <span class="en">Cast your line at water spots across all 4 biomes. Collect fish in your journal and display them in fish tanks. Each biome has unique species!</span>
+                <span class="zh">在4个群系的水域钓鱼。在日志中收集鱼类并用鱼缸展示。每个群系都有独特鱼种！</span>
+              </p>
+            </div>
+            <div class="card p-6">
+              <h3 class="font-black text-xl mb-3">
+                <span class="en">Pets and companions</span>
+                <span class="zh">宠物与伙伴</span>
+              </h3>
+              <p class="text-slate-700 leading-7">
+                <span class="en">Adopt a dog at the Paws & Whiskers Lodge. Feed, pet and train your companion. The community is asking for cats next!</span>
+                <span class="zh">在 Paws & Whiskers Lodge 领养狗狗。喂养、抚摸和训练你的伙伴。社区正在呼吁加入猫咪！</span>
+              </p>
+            </div>
+          </div>
         </section>
 
-        <section id="multiplayer" class="card p-8"><h2 class="text-3xl font-black mb-4"><span class="en">Co-op Multiplayer Guide</span><span class="zh">多人联机攻略</span></h2><div class="grid md:grid-cols-3 gap-5"><div class="p-5 bg-slate-50 rounded-2xl"><h3 class="font-black mb-2"><span class="en">Driver</span><span class="zh">驾驶位</span></h3><p class="text-slate-700"><span class="en">Handles route choice and biome scouting.</span><span class="zh">负责路线选择和生态群系探索。</span></p></div><div class="p-5 bg-slate-50 rounded-2xl"><h3 class="font-black mb-2"><span class="en">Builder</span><span class="zh">建造位</span></h3><p class="text-slate-700"><span class="en">Manages van layout, workstations and modules.</span><span class="zh">管理房车布局、工作台和模块。</span></p></div><div class="p-5 bg-slate-50 rounded-2xl"><h3 class="font-black mb-2"><span class="en">Gatherer</span><span class="zh">采集位</span></h3><p class="text-slate-700"><span class="en">Collects resources and marks useful locations.</span><span class="zh">收集资源并标记有用地点。</span></p></div></div></section>
+        <!-- Multiplayer -->
+        <section id="multiplayer" class="card p-8">
+          <h2 class="text-3xl font-black mb-4">
+            <span class="en">Co-op Multiplayer Guide</span>
+            <span class="zh">多人联机攻略</span>
+          </h2>
+          <div class="grid md:grid-cols-3 gap-5">
+            <div class="p-5 bg-slate-50 rounded-2xl">
+              <h3 class="font-black mb-2"><span class="en">Driver</span><span class="zh">驾驶位</span></h3>
+              <p class="text-slate-700"><span class="en">Handles route choice and biome scouting.</span><span class="zh">负责路线选择和生态群系探索。</span></p>
+            </div>
+            <div class="p-5 bg-slate-50 rounded-2xl">
+              <h3 class="font-black mb-2"><span class="en">Builder</span><span class="zh">建造位</span></h3>
+              <p class="text-slate-700"><span class="en">Manages van layout, workstations and modules.</span><span class="zh">管理房车布局、工作台和模块。</span></p>
+            </div>
+            <div class="p-5 bg-slate-50 rounded-2xl">
+              <h3 class="font-black mb-2"><span class="en">Gatherer</span><span class="zh">采集位</span></h3>
+              <p class="text-slate-700"><span class="en">Collects resources and marks useful locations.</span><span class="zh">收集资源并标记有用地点。</span></p>
+            </div>
+          </div>
+        </section>
 
-        <section id="requirements" class="card p-8"><h2 class="text-3xl font-black mb-6"><span class="en">Official PC Requirements</span><span class="zh">官方 PC 配置要求</span></h2><div class="grid md:grid-cols-2 gap-6"><div class="bg-slate-50 rounded-2xl p-6"><h3 class="font-black text-xl mb-4">Minimum</h3><ul class="space-y-2 text-slate-700"><li>OS: Windows 10 64-bit</li><li>CPU: Intel Core i3-10100F / Ryzen 3 3100</li><li>RAM: 4 GB</li><li>GPU: NVIDIA GTX 1050 / AMD RX 570</li><li>DirectX: 11</li><li>Storage: 16 GB</li></ul></div><div class="bg-blue-50 rounded-2xl p-6"><h3 class="font-black text-xl mb-4">Recommended</h3><ul class="space-y-2 text-slate-700"><li>OS: Windows 11 64-bit</li><li>CPU: Intel i3-12100F / Ryzen 7 1700 or better</li><li>RAM: 8 GB</li><li>GPU: NVIDIA RTX 3060 / AMD RX 7600XT or better</li><li>DirectX: 12</li><li>Storage: 16 GB</li></ul></div></div></section>
+        <!-- PC Requirements -->
+        <section id="requirements" class="card p-8">
+          <h2 class="text-3xl font-black mb-6">
+            <span class="en">Official PC Requirements</span>
+            <span class="zh">官方 PC 配置要求</span>
+          </h2>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-slate-50 rounded-2xl p-6">
+              <h3 class="font-black text-xl mb-4">Minimum</h3>
+              <ul class="space-y-2 text-slate-700">
+                <li>OS: Windows 10 64-bit</li>
+                <li>CPU: Intel Core i3-10100F / Ryzen 3 3100</li>
+                <li>RAM: 4 GB</li>
+                <li>GPU: NVIDIA GTX 1050 / AMD RX 570</li>
+                <li>DirectX: 11</li>
+                <li>Storage: 16 GB</li>
+              </ul>
+            </div>
+            <div class="bg-blue-50 rounded-2xl p-6">
+              <h3 class="font-black text-xl mb-4">Recommended</h3>
+              <ul class="space-y-2 text-slate-700">
+                <li>OS: Windows 11 64-bit</li>
+                <li>CPU: Intel i3-12100F / Ryzen 7 1700 or better</li>
+                <li>RAM: 8 GB</li>
+                <li>GPU: NVIDIA RTX 3060 / AMD RX 7600XT or better</li>
+                <li>DirectX: 12</li>
+                <li>Storage: 16 GB</li>
+              </ul>
+            </div>
+          </div>
+        </section>
 
-        <section id="faq" class="space-y-4"><h2 class="text-3xl font-black mb-6">FAQ</h2><details class="card p-5" open><summary class="font-black cursor-pointer"><span class="en">Does Outbound support Chinese?</span><span class="zh">Outbound 支持中文吗？</span></summary><p class="mt-3 text-slate-700"><span class="en">Yes. Steam lists Simplified Chinese and Traditional Chinese among supported languages.</span><span class="zh">支持。Steam 页面列出了简体中文和繁体中文。</span></p></details><details class="card p-5"><summary class="font-black cursor-pointer"><span class="en">Can I play solo?</span><span class="zh">可以单人玩吗？</span></summary><p class="mt-3 text-slate-700"><span class="en">Yes. Official text says the game can be played alone or together with friends.</span><span class="zh">可以。官方说明支持单人游玩，也支持和朋友一起玩。</span></p></details><details class="card p-5"><summary class="font-black cursor-pointer"><span class="en">How many players are supported online?</span><span class="zh">最多几个人联机？</span></summary><p class="mt-3 text-slate-700"><span class="en">Official Steam text says online co-op supports up to 4 players.</span><span class="zh">Steam 官方说明支持最多 4 人在线合作。</span></p></details></section>
+        <!-- FAQ -->
+        <section id="faq" class="space-y-4">
+          <h2 class="text-3xl font-black mb-6">FAQ</h2>
+          <details class="card p-5" open>
+            <summary class="font-black cursor-pointer">
+              <span class="en">Does Outbound support Chinese?</span>
+              <span class="zh">Outbound 支持中文吗？</span>
+            </summary>
+            <p class="mt-3 text-slate-700">
+              <span class="en">Yes. Steam lists Simplified Chinese and Traditional Chinese among supported languages. This guide site also supports both English and Chinese.</span>
+              <span class="zh">支持。Steam 页面列出了简体中文和繁体中文。本站也支持中英双语。</span>
+            </p>
+          </details>
+          <details class="card p-5">
+            <summary class="font-black cursor-pointer">
+              <span class="en">What changed in Patch 1.1.4?</span>
+              <span class="zh">1.1.4补丁更新了什么？</span>
+            </summary>
+            <p class="mt-3 text-slate-700">
+              <span class="en">The Fishing Update added a complete fishing system, fish tanks for decoration, stairs and doors as new buildable items. Fish can be caught across all 4 biomes and tracked in a journal.</span>
+              <span class="zh">钓鱼更新新增了完整的钓鱼系统、鱼缸装饰、楼梯和门等新建造物品。所有4个群系都可以钓鱼并在日志中追踪。</span>
+            </p>
+          </details>
+          <details class="card p-5">
+            <summary class="font-black cursor-pointer">
+              <span class="en">Can I play solo?</span>
+              <span class="zh">可以单人玩吗？</span>
+            </summary>
+            <p class="mt-3 text-slate-700">
+              <span class="en">Yes. The game can be played alone or together with up to 3 friends (4 players total).</span>
+              <span class="zh">可以。支持单人游玩，也支持最多3名好友联机（共4人）。</span>
+            </p>
+          </details>
+          <details class="card p-5">
+            <summary class="font-black cursor-pointer">
+              <span class="en">Is the Fishing Update free?</span>
+              <span class="zh">钓鱼更新是免费的吗？</span>
+            </summary>
+            <p class="mt-3 text-slate-700">
+              <span class="en">Yes! The Fishing Update (v1.1.4) is a free content update. You just need the base game.</span>
+              <span class="zh">是的！钓鱼更新（v1.1.4）是免费内容更新，只需拥有本体游戏即可。</span>
+            </p>
+          </details>
+        </section>
       </div>
     </div>
   </main>
 
+  <!-- Discussion -->
   <section class="max-w-4xl mx-auto px-4 pb-8">
     <div class="card p-6">
       <h2 class="text-2xl font-black mb-2">💬 <span class="en">Discussion</span><span class="zh">玩家讨论</span></h2>
-      <p class="text-slate-600 text-sm mb-4"><span class="en">Drop a tip, a fix, or a question. Sign in with GitHub to post in English. Chinese discussion below.</span><span class="zh">发现新技巧或想提问？欢迎留言。</span></p>
+      <p class="text-slate-600 text-sm mb-4">
+        <span class="en">Share tips, ask questions, or report new findings. Sign in with GitHub to post.</span>
+        <span class="zh">分享技巧、提问或报告新发现。使用 GitHub 账号登录即可留言。</span>
+      </p>
       <script src="https://giscus.app/client.js"
               data-repo="bos12050512-dotcom/outbound-guide"
               data-repo-id="R_kgDOSZPlqw"
@@ -271,15 +790,21 @@
               data-loading="lazy"
               crossorigin="anonymous"
               async></script>
-      <div class="mt-3 text-xs text-slate-500"><span class="en">Reddit: </span><a href="https://www.reddit.com/r/Outbound/" target="_blank" class="text-blue-600 hover:underline">r/Outbound</a> · <span class="en">Email: </span><span class="font-mono">contact[at]outboundguide.org</span></div>
+      <div class="mt-3 text-xs text-slate-500">
+        <span class="en">Email: </span><span class="font-mono">contact[at]outboundguide.org</span>
+      </div>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="bg-slate-950 text-slate-300 py-12 mt-16">
     <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row gap-6 justify-between">
       <div>
         <div class="font-black text-white text-xl mb-2">OutboundGuide.org</div>
-        <p class="max-w-2xl"><span class="en">Non-official fan guide. Outbound is a trademark of Square Glade Games. Images and game information are used for community guide purposes.</span><span class="zh">非官方玩家攻略站。Outbound 为 Square Glade Games 商标。图片与游戏信息仅用于玩家攻略与资料整理。</span></p>
+        <p class="max-w-2xl">
+          <span class="en">Non-official fan guide. Outbound is a trademark of Square Glade Games. Images and game information are used for community guide purposes.</span>
+          <span class="zh">非官方玩家攻略站。Outbound 为 Square Glade Games 商标。图片与游戏信息仅用于玩家攻略与资料整理。</span>
+        </p>
         <div class="mt-4 flex flex-wrap gap-4 text-sm">
           <a href="/en/about.html" class="hover:text-white">About</a>
           <a href="/en/privacy.html" class="hover:text-white">Privacy</a>
@@ -293,15 +818,40 @@
         </div>
       </div>
       <div class="text-sm">
-        <a class="underline" href="https://store.steampowered.com/app/2681030/Outbound/" target="_blank">Steam</a> · 
+        <a class="underline" href="https://store.steampowered.com/app/2681030/Outbound/" target="_blank">Steam</a> &middot;
         <a class="underline" href="https://www.squareglade.games" target="_blank">Developer</a>
       </div>
     </div>
   </footer>
 
   <script>
-    function setLang(lang){const b=document.getElementById('bodyTag'),en=document.getElementById('btn-en'),zh=document.getElementById('btn-zh'); if(lang==='zh'){b.className='lang-zh';zh.className='px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm';en.className='px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm'}else{b.className='lang-en';en.className='px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm';zh.className='px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm'} localStorage.setItem('lang',lang)}; setLang(localStorage.getItem('lang')||'en');
-    function filterGuides(cat){document.querySelectorAll('.guide-tab').forEach(t=>{t.className=t.dataset.cat===cat?'guide-tab active px-3 py-1.5 rounded-lg bg-slate-900 text-white':'guide-tab px-3 py-1.5 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200'});document.querySelectorAll('.guide-card').forEach(c=>{c.style.display=cat==='all'||c.dataset.cat===cat?'':'none'})}
+    function setLang(lang){
+      const b = document.getElementById('bodyTag'),
+            en = document.getElementById('btn-en'),
+            zh = document.getElementById('btn-zh');
+      if(lang === 'zh'){
+        b.className = 'lang-zh';
+        zh.className = 'px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm';
+        en.className = 'px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm';
+      } else {
+        b.className = 'lang-en';
+        en.className = 'px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm';
+        zh.className = 'px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm';
+      }
+      localStorage.setItem('lang', lang);
+    }
+    setLang(localStorage.getItem('lang') || 'en');
+
+    function filterGuides(cat){
+      document.querySelectorAll('.guide-tab').forEach(t => {
+        t.className = t.dataset.cat === cat
+          ? 'guide-tab active px-3 py-1.5 rounded-lg bg-slate-900 text-white'
+          : 'guide-tab px-3 py-1.5 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200';
+      });
+      document.querySelectorAll('.guide-card').forEach(c => {
+        c.style.display = (cat === 'all' || c.dataset.cat === cat) ? '' : 'none';
+      });
+    }
   </script>
 </body>
 </html>
