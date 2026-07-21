@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crash Fixes & Troubleshooting - Outbound Won't Start | Outbound Guide</title>
+<meta name="description" content="Fix Outbound crashes on startup, black screen, save corruption, performance issues, and controller problems. Step-by-step troubleshooting guide updated July 2026.">
+<link rel="canonical" href="https://outboundguide.org/en/crash-fixes.html" />
+<link rel="alternate" hreflang="en" href="https://outboundguide.org/en/crash-fixes.html" />
+<link rel="alternate" hreflang="zh" href="https://outboundguide.org/zh/crash-fixes.html" />
+<link rel="alternate" hreflang="x-default" href="https://outboundguide.org/en/crash-fixes.html" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V167JMFJWE"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-V167JMFJWE');</script>
+<style>
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f7fafc;color:#0f172a}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:18px;box-shadow:0 8px 30px rgba(15,23,42,.06)}
+.adslot{background:repeating-linear-gradient(45deg,#f1f5f9,#f1f5f9 10px,#e2e8f0 10px,#e2e8f0 20px);border:1px dashed #94a3b8;color:#64748b;font-size:12px;text-align:center;padding:24px;border-radius:12px}
+.fix-card{transition:transform .25s,box-shadow .25s}
+.fix-card:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(15,23,42,.1)}
+.code-block{background:#1e293b;color:#e2e8f0;font-family:'Fira Code',monospace;font-size:13px;padding:1rem;border-radius:8px;overflow-x:auto}
+.quick-nav{position:sticky;top:72px;z-40;background:white;border-radius:16px;border:1px solid #e5e7eb;padding:1rem;margin-bottom:1.5rem;box-shadow:0 4px 20px rgba(15,23,42,.08)}
+section[id]{scroll-margin-top:100px}
+.step-num{background:linear-gradient(135deg,#ef4444,#f97316);color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
+</style>
+</head>
+<body>
+
+<nav class="bg-white/95 backdrop-blur sticky top-0 z-50 border-b border-slate-200">
+  <div class="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
+    <a href="/" class="font-black text-xl text-blue-600">OutboundGuide.org</a>
+    <div class="hidden md:flex gap-5 text-sm font-semibold text-slate-700">
+      <a href="/en/starter-guide.html">Starter</a>
+      <a href="/en/all-guides.html" class="text-indigo-600 font-bold">Guides</a>
+      <a href="/en/crafting.html">Crafting</a>
+      <a href="/en/tech-fixes.html">Tech Fixes</a>
+      <a href="/en/multiplayer-fixes.html">Multiplayer</a>
+    </div>
+    <div class="flex items-center gap-2 bg-slate-100 p-1 rounded-xl">
+      <button id="btn-en" onclick="setLang('en')" class="px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm">EN</button>
+      <button id="btn-zh" onclick="setLang('zh')" class="px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm">中文</button>
+    </div>
+  </div>
+</nav>
+
+<header class="bg-gradient-to-br from-red-600 via-orange-600 to-amber-600 text-white py-16">
+  <div class="max-w-5xl mx-auto px-4">
+    <div class="inline-flex gap-2 items-center bg-red-500/30 rounded-full px-4 py-2 text-sm font-bold mb-6">
+      <span>🚨</span><span>Crash & Startup Troubleshooting</span>
+    </div>
+    <h1 class="text-4xl md:text-5xl font-black mb-4">Crash Fixes & Troubleshooting</h1>
+    <p class="text-xl text-orange-100 mb-6">Game won't start? Black screen? Crashing? Here's how to fix Outbound's most common startup and stability issues.</p>
+    <div class="flex flex-wrap gap-3 text-sm">
+      <span class="bg-white/20 px-4 py-2 rounded-full font-bold">💥 Startup Crashes</span>
+      <span class="bg-white/20 px-4 py-2 rounded-full">🖥️ Black Screen</span>
+      <span class="bg-white/20 px-4 py-2 rounded-full">🎮 Controller</span>
+      <span class="bg-white/20 px-4 py-2 rounded-full">⚡ Performance</span>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-5xl mx-auto px-4 py-10">
+
+<div class="adslot">[ Ad slot - top banner ]</div>
+
+<!-- Quick Navigation -->
+<div class="quick-nav">
+  <h3 class="text-sm font-bold text-slate-500 mb-3">⚡ QUICK JUMP</h3>
+  <div class="flex flex-wrap gap-2">
+    <a href="#startup-crash" class="bg-red-100 text-red-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-red-200">💥 Startup Crash</a>
+    <a href="#black-screen" class="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-slate-200">🖥️ Black Screen</a>
+    <a href="#multiplayer" class="bg-blue-100 text-blue-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-blue-200">🌐 Multiplayer</a>
+    <a href="#save-corruption" class="bg-amber-100 text-amber-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-amber-200">💾 Save Corruption</a>
+    <a href="#performance" class="bg-emerald-100 text-emerald-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-emerald-200">⚡ Performance</a>
+    <a href="#controller" class="bg-purple-100 text-purple-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-purple-200">🎮 Controller</a>
+    <a href="#help" class="bg-pink-100 text-pink-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-pink-200">🆘 Get Help</a>
+  </div>
+</div>
+
+<!-- 1. Game Won't Launch / Crashes on Startup -->
+<section id="startup-crash" class="mb-12 scroll-mt-20">
+  <div class="flex items-center gap-3 mb-6">
+    <span class="text-4xl">💥</span>
+    <div>
+      <h2 class="text-2xl font-black">Game Won't Launch / Crashes on Startup</h2>
+      <p class="text-slate-500 text-sm">The most reported issue on Steam forums</p>
+    </div>
+  </div>
+
+  <div class="card p-6 bg-red-50 border-l-4 border-red-500 mb-6">
+    <h3 class="font-bold text-lg mb-2">Why this happens</h3>
+    <p class="text-slate-700 text-sm">Outbound uses the Unity engine with IL2CPP scripting backend. Common causes include corrupted game files, outdated VC++ runtimes, missing DirectX components, and antivirus interference. The issue spiked after the July 2026 patch.</p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">1</span>
+        Verify Game Files
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">Corrupted or missing files are the #1 cause of startup crashes.</p>
+      <ol class="list-decimal pl-6 space-y-2 text-sm text-slate-700">
+        <li>Open <b>Steam</b> &rarr; <b>Library</b></li>
+        <li>Right-click <b>Outbound</b> &rarr; <b>Properties</b></li>
+        <li>Go to <b>Installed Files</b> tab</li>
+        <li>Click <b>Verify integrity of game files</b></li>
+        <li>Wait for completion, then restart Steam</li>
+      </ol>
+      <div class="mt-3 bg-green-50 p-3 rounded-lg text-xs text-green-700">✅ This fixes ~60% of startup crashes</div>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">2</span>
+        Update Visual C++ Redistributables
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">IL2CPP requires the latest VC++ runtime to function.</p>
+      <ol class="list-decimal pl-6 space-y-2 text-sm text-slate-700">
+        <li>Download <b>VC++ Redistributable 2015-2022 (x64)</b> from Microsoft</li>
+        <li>Run the installer and follow prompts</li>
+        <li>Restart your PC</li>
+        <li>Launch Outbound again</li>
+      </ol>
+      <div class="mt-3 bg-blue-50 p-3 rounded-lg text-xs text-blue-700">💡 Download from <code>aka.ms/vs/17/release/vc_redist.x64.exe</code></div>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">3</span>
+        Run as Administrator
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">Permission issues can block the game from reading critical files.</p>
+      <ol class="list-decimal pl-6 space-y-2 text-sm text-slate-700">
+        <li>Right-click <b>Outbound.exe</b> or the Steam shortcut</li>
+        <li>Select <b>Properties</b> &rarr; <b>Compatibility</b></li>
+        <li>Check <b>Run this program as an administrator</b></li>
+        <li>Click <b>Apply</b> &rarr; <b>OK</b></li>
+      </ol>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">4</span>
+        Disable Overlay & Background Apps
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">Steam Overlay, Discord, and GeForce Experience can conflict with Unity.</p>
+      <ol class="list-decimal pl-6 space-y-2 text-sm text-slate-700">
+        <li>Steam: <b>Settings</b> &rarr; <b>In-Game</b> &rarr; Uncheck <b>Enable Steam Overlay</b></li>
+        <li>Discord: Disable <b>In-Game Overlay</b></li>
+        <li>Close MSI Afterburner / Rivatuner if running</li>
+        <li>Temporarily disable GeForce Experience overlay</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="card p-6 mt-6 bg-amber-50 border border-amber-200">
+    <h4 class="font-bold text-amber-800 mb-2">🛡️ Prevention</h4>
+    <ul class="list-disc pl-6 text-sm text-amber-700 space-y-1">
+      <li>Add Outbound folder to antivirus exclusions</li>
+      <li>Don't alt-tab during the initial loading sequence</li>
+      <li>Keep GPU drivers updated (NVIDIA 566+ / AMD 24.12+)</li>
+      <li>Install the game on an SSD, not a mechanical hard drive</li>
+    </ul>
+  </div>
+</section>
+
+<div class="adslot">[ Ad slot - mid article ]</div>
+
+<!-- 2. Black Screen on Launch -->
+<section id="black-screen" class="mb-12 scroll-mt-20">
+  <div class="flex items-center gap-3 mb-6">
+    <span class="text-4xl">🖥️</span>
+    <div>
+      <h2 class="text-2xl font-black">Black Screen on Launch</h2>
+      <p class="text-slate-500 text-sm">Game runs but display stays black</p>
+    </div>
+  </div>
+
+  <div class="card p-6 bg-slate-900 text-slate-100 mb-6">
+    <h3 class="font-bold text-lg mb-2">Why this happens</h3>
+    <p class="text-slate-300 text-sm">Usually caused by incorrect display resolution, fullscreen mode conflicts, or the game rendering on an integrated GPU instead of your dedicated graphics card. Dual-GPU laptops are especially prone to this.</p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">1</span>
+        Force Dedicated GPU
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">Laptops often default to integrated graphics.</p>
+      <div class="space-y-2">
+        <div class="bg-slate-50 p-3 rounded-lg text-sm">
+          <p class="font-semibold text-slate-700">NVIDIA:</p>
+          <p class="text-slate-600">NVIDIA Control Panel &rarr; Manage 3D Settings &rarr; Program Settings &rarr; Select Outbound &rarr; Preferred GPU: High-performance NVIDIA processor</p>
+        </div>
+        <div class="bg-slate-50 p-3 rounded-lg text-sm">
+          <p class="font-semibold text-slate-700">AMD:</p>
+          <p class="text-slate-600">AMD Software &rarr; Graphics &rarr; Add Outbound &rarr; Set to High Performance</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">2</span>
+        Delete Display Settings
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">Reset the game's display configuration.</p>
+      <div class="code-block text-sm mb-3">
+        <p class="text-slate-400"># Delete or rename this file:</p>
+        <p>%AppData%\Outbound\settings.json</p>
+      </div>
+      <p class="text-xs text-slate-500">The game will recreate it with default settings on next launch.</p>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">3</span>
+        Launch in Windowed Mode
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">Bypass fullscreen-exclusive mode conflicts.</p>
+      <ol class="list-decimal pl-6 space-y-2 text-sm text-slate-700">
+        <li>Right-click Outbound in Steam Library</li>
+        <li><b>Properties</b> &rarr; <b>General</b></li>
+        <li>In <b>Launch Options</b>, type: <code>-windowed -w 1920 -h 1080</code></li>
+        <li>Launch the game</li>
+      </ol>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">4</span>
+        Update Graphics Drivers
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">Black screens are often resolved with latest drivers.</p>
+      <div class="space-y-2">
+        <a href="https://www.nvidia.com/drivers" target="_blank" class="block bg-green-50 p-3 rounded-lg text-sm text-green-700 hover:bg-green-100 font-semibold">NVIDIA Drivers &rarr;</a>
+        <a href="https://www.amd.com/support" target="_blank" class="block bg-red-50 p-3 rounded-lg text-sm text-red-700 hover:bg-red-100 font-semibold">AMD Drivers &rarr;</a>
+        <a href="https://www.intel.com/content/www/us/en/download-center" target="_blank" class="block bg-blue-50 p-3 rounded-lg text-sm text-blue-700 hover:bg-blue-100 font-semibold">Intel Drivers &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card p-6 mt-6 bg-amber-50 border border-amber-200">
+    <h4 class="font-bold text-amber-800 mb-2">🛡️ Prevention</h4>
+    <ul class="list-disc pl-6 text-sm text-amber-700 space-y-1">
+      <li>Set your monitor to native resolution before launching</li>
+      <li>Disable HDR mode if you experience black screen after logo</li>
+      <li>Don't use Alt+Enter to toggle fullscreen during loading</li>
+      <li>For dual-monitor setups, try disconnecting the secondary monitor temporarily</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 3. Multiplayer Connection Issues -->
+<section id="multiplayer" class="mb-12 scroll-mt-20">
+  <div class="flex items-center gap-3 mb-6">
+    <span class="text-4xl">🌐</span>
+    <div>
+      <h2 class="text-2xl font-black">Multiplayer Connection Issues</h2>
+      <p class="text-slate-500 text-sm">Can't join friends or getting disconnected</p>
+    </div>
+  </div>
+
+  <div class="card p-6 bg-blue-50 border-l-4 border-blue-500 mb-6">
+    <h3 class="font-bold text-lg mb-2">Why this happens</h3>
+    <p class="text-slate-700 text-sm">Outbound uses peer-to-peer (P2P) networking via Steam's relay servers. Connection issues are usually caused by NAT type conflicts, firewall blocking, outdated game versions between players, or unstable host internet.</p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">1</span>
+        Check NAT Type
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">Strict NAT prevents P2P connections.</p>
+      <div class="space-y-2 text-sm">
+        <div class="flex items-center gap-2"><span class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-bold">Open</span><span class="text-slate-600">Best - no issues expected</span></div>
+        <div class="flex items-center gap-2"><span class="bg-amber-100 text-amber-700 px-2 py-1 rounded text-xs font-bold">Moderate</span><span class="text-slate-600">Works with most players</span></div>
+        <div class="flex items-center gap-2"><span class="bg-red-100 text-red-700 px-2 py-1 rounded text-xs font-bold">Strict</span><span class="text-slate-600">Cannot host; can only join Open hosts</span></div>
+      </div>
+      <p class="text-xs text-slate-500 mt-3">Check in Steam: <b>View</b> &rarr; <b>Settings</b> &rarr; <b>In-Game</b> or use your router's admin panel.</p>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">2</span>
+        Port Forwarding
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">Open these ports on your router for reliable hosting.</p>
+      <div class="code-block text-sm">
+        <p>UDP: 27015-27050</p>
+        <p>TCP: 27015-27030</p>
+        <p>UDP: 3478, 4379, 4380</p>
+      </div>
+      <p class="text-xs text-slate-500 mt-3">Or enable UPnP on your router to let Steam handle this automatically.</p>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">3</span>
+        Same Game Version
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">Version mismatch is a common cause of failed joins.</p>
+      <ol class="list-decimal pl-6 space-y-2 text-sm text-slate-700">
+        <li>All players: Check version in main menu (bottom-left corner)</li>
+        <li>If different: Restart Steam to force update</li>
+        <li>Verify game files if update doesn't appear</li>
+        <li>Wait for Steam to finish downloading before launching</li>
+      </ol>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">4</span>
+        Firewall & Antivirus
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">Windows Firewall often blocks P2P games.</p>
+      <ol class="list-decimal pl-6 space-y-2 text-sm text-slate-700">
+        <li>Open <b>Windows Security</b> &rarr; <b>Firewall</b></li>
+        <li>Click <b>Allow an app through firewall</b></li>
+        <li>Add <b>Outbound.exe</b> for both Private and Public</li>
+        <li>Temporarily disable third-party AV to test</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="card p-6 mt-6 bg-amber-50 border border-amber-200">
+    <h4 class="font-bold text-amber-800 mb-2">🛡️ Prevention</h4>
+    <ul class="list-disc pl-6 text-sm text-amber-700 space-y-1">
+      <li>Host should have at least 5 Mbps upload speed</li>
+      <li>Use wired Ethernet instead of WiFi when hosting</li>
+      <li>Close bandwidth-heavy apps (streaming, downloads) while playing</li>
+      <li>Save game before inviting players to minimize loss on disconnect</li>
+    </ul>
+  </div>
+</section>
+
+<div class="adslot">[ Ad slot - mid article ]</div>
+
+<!-- 4. Save File Corruption -->
+<section id="save-corruption" class="mb-12 scroll-mt-20">
+  <div class="flex items-center gap-3 mb-6">
+    <span class="text-4xl">💾</span>
+    <div>
+      <h2 class="text-2xl font-black">Save File Corruption</h2>
+      <p class="text-slate-500 text-sm">Progress lost, won't load, or saves disappear</p>
+    </div>
+  </div>
+
+  <div class="card p-6 bg-amber-50 border-l-4 border-amber-500 mb-6">
+    <h3 class="font-bold text-lg mb-2">Why this happens</h3>
+    <p class="text-slate-700 text-sm">Corruption usually occurs from force-closing the game during auto-save, power loss, cloud sync conflicts (especially with Steam Cloud + multiple PCs), or disk errors. The July 2026 patch introduced a new save format that occasionally conflicts with old backups.</p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">1</span>
+        Restore from Backup
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">Outbound creates automatic backups every 30 minutes.</p>
+      <div class="code-block text-sm mb-3">
+        <p class="text-slate-400"># Save locations:</p>
+        <p>%AppData%\Outbound\Saves\</p>
+        <p>%AppData%\Outbound\Saves_Backup\</p>
+      </div>
+      <ol class="list-decimal pl-6 space-y-2 text-sm text-slate-700">
+        <li>Navigate to the backup folder</li>
+        <li>Find the most recent <code>.sav</code> file before corruption</li>
+        <li>Copy it to the main Saves folder</li>
+        <li>Rename to match the original save name</li>
+      </ol>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">2</span>
+        Disable Steam Cloud Temporarily
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">Cloud sync conflicts can overwrite valid saves.</p>
+      <ol class="list-decimal pl-6 space-y-2 text-sm text-slate-700">
+        <li>Steam &rarr; Right-click Outbound &rarr; <b>Properties</b></li>
+        <li><b>General</b> tab &rarr; Uncheck <b>Keep games saves in Steam Cloud</b></li>
+        <li>Restore local save from backup</li>
+        <li>Launch game to verify it loads</li>
+        <li>Re-enable Steam Cloud after confirming it works</li>
+      </ol>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">3</span>
+        Check Disk for Errors
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">Bad sectors can corrupt save files.</p>
+      <ol class="list-decimal pl-6 space-y-2 text-sm text-slate-700">
+        <li>Open <b>File Explorer</b> &rarr; Right-click your game drive</li>
+        <li><b>Properties</b> &rarr; <b>Tools</b> tab</li>
+        <li>Click <b>Check</b> under Error checking</li>
+        <li>Run <b>chkdsk /f</b> if prompted</li>
+        <li>Restart your PC to complete the scan</li>
+      </ol>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">4</span>
+        Use Save Editor (Advanced)
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">If the save won't load at all, a save editor may recover it.</p>
+      <div class="bg-red-50 p-3 rounded-lg text-sm text-red-700">
+        <p class="font-semibold">⚠️ Warning</p>
+        <p>Always back up your saves before editing. Community save editors are available on r/Outbound and Nexus Mods, but use at your own risk.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card p-6 mt-6 bg-amber-50 border border-amber-200">
+    <h4 class="font-bold text-amber-800 mb-2">🛡️ Prevention</h4>
+    <ul class="list-disc pl-6 text-sm text-amber-700 space-y-1">
+      <li>Never Alt+F4 or force-close during the auto-save icon</li>
+      <li>Manually save at safe locations before quitting</li>
+      <li>Back up your save folder weekly to cloud storage or external drive</li>
+      <li>Don't play the same save on multiple PCs without waiting for cloud sync</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 5. Performance Issues & Stuttering -->
+<section id="performance" class="mb-12 scroll-mt-20">
+  <div class="flex items-center gap-3 mb-6">
+    <span class="text-4xl">⚡</span>
+    <div>
+      <h2 class="text-2xl font-black">Performance Issues & Stuttering</h2>
+      <p class="text-slate-500 text-sm">Low FPS, frame drops, and micro-stutters</p>
+    </div>
+  </div>
+
+  <div class="card p-6 bg-emerald-50 border-l-4 border-emerald-500 mb-6">
+    <h3 class="font-bold text-lg mb-2">Why this happens</h3>
+    <p class="text-slate-700 text-sm">Outbound is an open-world Unity game with dynamic weather, day-night cycles, and physics-driven objects. Stuttering often comes from shader compilation, loading assets from HDD, CPU bottlenecks during world generation, or background processes stealing resources.</p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">1</span>
+        Best Settings for FPS
+      </h3>
+      <div class="space-y-2 text-sm">
+        <div class="flex justify-between items-center p-2 bg-slate-50 rounded"><span>Shadow Quality</span><span class="bg-red-100 text-red-700 px-2 py-1 rounded text-xs font-bold">Low / Off</span></div>
+        <div class="flex justify-between items-center p-2 bg-slate-50 rounded"><span>View Distance</span><span class="bg-amber-100 text-amber-700 px-2 py-1 rounded text-xs font-bold">Medium</span></div>
+        <div class="flex justify-between items-center p-2 bg-slate-50 rounded"><span>Texture Quality</span><span class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-bold">High</span></div>
+        <div class="flex justify-between items-center p-2 bg-slate-50 rounded"><span>V-Sync</span><span class="bg-red-100 text-red-700 px-2 py-1 rounded text-xs font-bold">Off</span></div>
+        <div class="flex justify-between items-center p-2 bg-slate-50 rounded"><span>Anti-Aliasing</span><span class="bg-amber-100 text-amber-700 px-2 py-1 rounded text-xs font-bold">FXAA</span></div>
+        <div class="flex justify-between items-center p-2 bg-slate-50 rounded"><span>Motion Blur</span><span class="bg-red-100 text-red-700 px-2 py-1 rounded text-xs font-bold">Off</span></div>
+      </div>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">2</span>
+        Fix Stuttering
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">Persistent stutter fixes for Unity games.</p>
+      <ol class="list-decimal pl-6 space-y-2 text-sm text-slate-700">
+        <li>Set <b>Power Plan</b> to <b>High Performance</b> in Windows</li>
+        <li>In NVIDIA/AMD Control Panel, set <b>Power Management</b> to <b>Prefer Maximum Performance</b></li>
+        <li>Disable <b>Fullscreen Optimizations</b> for Outbound.exe</li>
+        <li>Cap FPS to your monitor's refresh rate using RTSS or in-game limiter</li>
+        <li>Close Chrome/Edge tabs (they eat RAM)</li>
+      </ol>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">3</span>
+        Install on SSD
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">HDDs cause massive hitching during open-world streaming.</p>
+      <div class="bg-blue-50 p-3 rounded-lg text-sm text-blue-700">
+        <p class="font-semibold">Recommended:</p>
+        <p>NVMe SSD with 3000+ MB/s read speed. SATA SSD is acceptable. Avoid mechanical hard drives for this game.</p>
+      </div>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">4</span>
+        Shader Preloading
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">Unity shader compilation causes micro-stutter.</p>
+      <ol class="list-decimal pl-6 space-y-2 text-sm text-slate-700">
+        <li>Launch the game and let it sit at the main menu for 5 minutes</li>
+        <li>Start a new game, stand still for 2-3 minutes</li>
+        <li>Walk around the starting area to force shader compilation</li>
+        <li>Restart the game after this "warm-up" session</li>
+      </ol>
+      <p class="text-xs text-slate-500 mt-2">Subsequent sessions will be much smoother.</p>
+    </div>
+  </div>
+
+  <div class="card p-6 mt-6 bg-amber-50 border border-amber-200">
+    <h4 class="font-bold text-amber-800 mb-2">🛡️ Prevention</h4>
+    <ul class="list-disc pl-6 text-sm text-amber-700 space-y-1">
+      <li>Keep GPU drivers updated (check monthly)</li>
+      <li>Ensure at least 16GB RAM (8GB causes frequent stutter)</li>
+      <li>Don't run OBS or streaming software on the same PC if FPS is already low</li>
+      <li>Defragment HDDs monthly (not needed for SSDs)</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 6. Controller Not Working -->
+<section id="controller" class="mb-12 scroll-mt-20">
+  <div class="flex items-center gap-3 mb-6">
+    <span class="text-4xl">🎮</span>
+    <div>
+      <h2 class="text-2xl font-black">Controller Not Working</h2>
+      <p class="text-slate-500 text-sm">Xbox, PlayStation, or third-party controllers unresponsive</p>
+    </div>
+  </div>
+
+  <div class="card p-6 bg-purple-50 border-l-4 border-purple-500 mb-6">
+    <h3 class="font-bold text-lg mb-2">Why this happens</h3>
+    <p class="text-slate-700 text-sm">Unity's input system can fail to detect controllers if Steam Input is interfering, if the controller was connected after launch, or if drivers for third-party controllers (like DS4Windows) are conflicting with native Steam Input.</p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">1</span>
+        Disable Steam Input
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">Steam Input often conflicts with native controller support.</p>
+      <ol class="list-decimal pl-6 space-y-2 text-sm text-slate-700">
+        <li>Steam &rarr; Right-click <b>Outbound</b> &rarr; <b>Properties</b></li>
+        <li><b>Controller</b> tab</li>
+        <li>Change <b>Override for Outbound</b> to <b>Disable Steam Input</b></li>
+        <li>Disconnect and reconnect your controller</li>
+        <li>Launch the game</li>
+      </ol>
+      <div class="mt-3 bg-green-50 p-3 rounded-lg text-xs text-green-700">✅ Fixes most Xbox and PlayStation controller issues</div>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">2</span>
+        Connect Before Launch
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">Unity sometimes fails to detect hot-plugged controllers.</p>
+      <ol class="list-decimal pl-6 space-y-2 text-sm text-slate-700">
+        <li>Close Outbound completely</li>
+        <li>Connect your controller via USB or Bluetooth</li>
+        <li>Wait 10 seconds for Windows to recognize it</li>
+        <li>Verify it appears in <b>Windows Settings &rarr; Bluetooth & devices</b></li>
+        <li>Launch Outbound</li>
+      </ol>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">3</span>
+        DS4Windows / DualSense Users
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">DualShock 4 and DualSense need special handling.</p>
+      <ol class="list-decimal pl-6 space-y-2 text-sm text-slate-700">
+        <li>Close DS4Windows completely</li>
+        <li>In Steam, enable <b>PlayStation Configuration Support</b></li>
+        <li>Keep Steam Input <b>Enabled</b> for PlayStation controllers</li>
+        <li>Or use DS4Windows in <b>Hide DS4 Controller</b> mode with Steam Input disabled</li>
+      </ol>
+      <p class="text-xs text-slate-500 mt-2">Don't run both DS4Windows and Steam Input simultaneously.</p>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">4</span>
+        Test in Big Picture Mode
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">Steam Big Picture provides better controller support.</p>
+      <ol class="list-decimal pl-6 space-y-2 text-sm text-slate-700">
+        <li>Launch <b>Steam Big Picture Mode</b></li>
+        <li>Navigate to Outbound in your library</li>
+        <li>Launch from Big Picture</li>
+        <li>Check if controller works in this mode</li>
+      </ol>
+      <p class="text-xs text-slate-500 mt-2">If it works in Big Picture but not normal mode, Steam Input configuration is the culprit.</p>
+    </div>
+  </div>
+
+  <div class="card p-6 mt-6 bg-amber-50 border border-amber-200">
+    <h4 class="font-bold text-amber-800 mb-2">🛡️ Prevention</h4>
+    <ul class="list-disc pl-6 text-sm text-amber-700 space-y-1">
+      <li>Use wired connection for competitive play (less latency, no disconnects)</li>
+      <li>Update controller firmware (Xbox Accessories app / DS4Windows)</li>
+      <li>Don't connect multiple controllers unless playing local co-op</li>
+      <li>Keep Bluetooth drivers updated to avoid input lag</li>
+    </ul>
+  </div>
+</section>
+
+<div class="adslot">[ Ad slot - bottom banner ]</div>
+
+<!-- 7. Where to Get More Help -->
+<section id="help" class="mb-12 scroll-mt-20">
+  <div class="flex items-center gap-3 mb-6">
+    <span class="text-4xl">🆘</span>
+    <div>
+      <h2 class="text-2xl font-black">Where to Get More Help</h2>
+      <p class="text-slate-500 text-sm">If none of the above fixes work</p>
+    </div>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-6">
+    <a href="https://steamcommunity.com/app/2681030/discussions/" target="_blank" class="fix-card card p-6 text-center hover:no-underline">
+      <div class="text-4xl mb-3">🛟</div>
+      <h3 class="font-bold text-lg mb-2">Steam Forums</h3>
+      <p class="text-slate-600 text-sm">Official discussion boards. Search before posting - most issues have existing threads.</p>
+    </a>
+
+    <a href="https://www.reddit.com/r/Outbound/" target="_blank" class="fix-card card p-6 text-center hover:no-underline">
+      <div class="text-4xl mb-3">🤖</div>
+      <h3 class="font-bold text-lg mb-2">r/Outbound</h3>
+      <p class="text-slate-600 text-sm">Active community of 15,000+ players. Quick responses and community-tested fixes.</p>
+    </a>
+
+    <a href="https://discord.gg/outbound" target="_blank" class="fix-card card p-6 text-center hover:no-underline">
+      <div class="text-4xl mb-3">💬</div>
+      <h3 class="font-bold text-lg mb-2">Official Discord</h3>
+      <p class="text-slate-600 text-sm">Developer presence in #bug-reports and #tech-support channels.</p>
+    </a>
+  </div>
+
+  <div class="card p-6 mt-6 bg-gradient-to-r from-blue-50 to-indigo-50">
+    <h3 class="font-bold text-lg mb-3">📋 Information to Include When Asking for Help</h3>
+    <div class="grid md:grid-cols-2 gap-4 text-sm">
+      <ul class="list-disc pl-6 text-slate-700 space-y-1">
+        <li>Your PC specs (CPU, GPU, RAM)</li>
+        <li>Game version (bottom-left of main menu)</li>
+        <li>Windows version (Run: <code>winver</code>)</li>
+        <li>Exact error message or screenshot</li>
+      </ul>
+      <ul class="list-disc pl-6 text-slate-700 space-y-1">
+        <li>When the issue started (after patch? new install?)</li>
+        <li>Steps you've already tried</li>
+        <li>GPU driver version</li>
+        <li>Whether issue is reproducible</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Related Guides -->
+<section class="card p-6 bg-gradient-to-r from-red-50 to-orange-50 mb-6">
+  <h2 class="text-xl font-black mb-4">Related Troubleshooting Guides</h2>
+  <div class="flex flex-wrap gap-4">
+    <a href="/en/tech-fixes.html" class="bg-white px-5 py-3 rounded-xl shadow-sm font-semibold text-slate-700 hover:shadow-md transition">🔧 Tech Fixes (il2cpp, Motion Sickness, Steam Deck) &rarr;</a>
+    <a href="/en/multiplayer-fixes.html" class="bg-white px-5 py-3 rounded-xl shadow-sm font-semibold text-slate-700 hover:shadow-md transition">🌐 Multiplayer Fixes (Connection, Host Issues, Achievements) &rarr;</a>
+  </div>
+</section>
+
+<!-- Sources -->
+<section class="card p-6 bg-slate-50 mb-6">
+  <h2 class="text-lg font-black mb-3">Sources</h2>
+  <ul class="list-disc pl-6 text-sm text-slate-600 space-y-1">
+    <li>Steam Community Discussions - Outbound (AppID 2681030)</li>
+    <li>r/Outbound troubleshooting megathreads (July 2026)</li>
+    <li>Square Glade Games official Discord #tech-support</li>
+    <li>Unity IL2CPP documentation and known issues</li>
+    <li>Direct community testing and verification</li>
+  </ul>
+  <p class="text-xs text-slate-500 mt-3">OutboundGuide.org is a non-official fan guide and is not affiliated with Square Glade Games. Last updated: July 21, 2026.</p>
+</section>
+
+<!-- Comments -->
+<section class="card p-6">
+  <h2 class="text-xl font-black mb-2">💬 Discussion</h2>
+  <p class="text-slate-600 text-sm mb-4">Found a fix that worked for you? Share it below to help other players!</p>
+  <script src="https://giscus.app/client.js"
+          data-repo="OASISXXr/outbound-guide"
+          data-repo-id="R_kgDOSZPlqw"
+          data-category="Announcements"
+          data-category-id="DIC_kwDOSZPlq84C8s3i"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="top"
+          data-theme="light"
+          data-lang="en"
+          data-loading="lazy"
+          crossorigin="anonymous"
+          async>
+  </script>
+  <noscript class="text-sm text-slate-500">Comments require JavaScript. You can also discuss in our <a href="https://www.reddit.com/r/Outbound/" class="text-blue-600 underline">Reddit community</a> or email <span class="font-mono">contact[at]outboundguide.org</span>.</noscript>
+</section>
+
+</main>
+
+<footer class="bg-slate-950 text-slate-300 py-10 mt-10">
+  <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row gap-4 justify-between text-sm">
+    <div>
+      <div class="font-black text-white">OutboundGuide.org</div>
+      <div class="text-slate-400">Non-official fan guide. Outbound &copy; Square Glade Games.</div>
+    </div>
+    <div class="flex flex-wrap gap-4">
+      <a href="/en/about.html" class="hover:text-white">About</a>
+      <a href="/en/privacy.html" class="hover:text-white">Privacy</a>
+      <a href="/en/disclaimer.html" class="hover:text-white">Disclaimer</a>
+      <a href="/en/contact.html" class="hover:text-white">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function setLang(lang){
+  const en=document.getElementById('btn-en'),zh=document.getElementById('btn-zh');
+  if(lang==='zh'){
+    zh.className='px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm';
+    en.className='px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm';
+    window.location.href = '/zh/crash-fixes.html';
+  }else{
+    en.className='px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm';
+    zh.className='px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm';
+  }
+  localStorage.setItem('lang',lang);
+}
+</script>
+</body>
+</html>

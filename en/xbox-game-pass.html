@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en" class="lang-en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xbox Game Pass Guide - Outbound on XGP | Outbound Guide</title>
+  <meta name="description" content="Complete Xbox Game Pass guide for Outbound. Learn how to play on XGP, cross-play support, cross-save setup, multiplayer troubleshooting, and how the XGP version compares to Steam.">
+  <link rel="alternate" hreflang="en" href="https://outboundguide.org/en/xbox-game-pass.html">
+  <link rel="alternate" hreflang="zh" href="https://outboundguide.org/zh/xbox-game-pass.html">
+  <link rel="canonical" href="https://outboundguide.org/en/xbox-game-pass.html">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V167JMFJWE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V167JMFJWE');
+  </script>
+  <style>
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,system-ui,sans-serif;background:#f7fafc;color:#0f172a}
+    .card{background:#fff;border-radius:1rem;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+    .lang-zh .en{display:none}
+    .lang-en .zh{display:none}
+    .tag{display:inline-flex;align-items:center;gap:.375rem;background:#e8f5e9;color:#1b5e20;padding:.375rem .875rem;border-radius:9999px;font-size:.875rem;font-weight:500}
+    .section-anchor{padding-top:6rem;margin-top:-4rem}
+    .toc-link.active{color:#107c10;font-weight:600}
+    .xbox-green{background:linear-gradient(135deg,#107c10 0%,#1e8b1e 50%,#2e9e2e 100%)}
+    .xbox-green-light{background:linear-gradient(135deg,#e8f5e9 0%,#c8e6c9 100%)}
+    .btn-xbox{background:#107c10;color:#fff;padding:.75rem 1.5rem;border-radius:.5rem;font-weight:600;transition:background .2s}
+    .btn-xbox:hover{background:#0e6b0e}
+    .issue-card{border-left:4px solid #ef4444}
+    .tip-card{border-left:4px solid #107c10}
+  </style>
+</head>
+<body class="lang-en">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="index.html" class="flex items-center gap-2 font-bold text-xl text-gray-900">
+          <span class="text-green-600">Outbound</span>Guide.org
+        </a>
+        <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+          <a href="starter-guide.html" class="text-gray-600 hover:text-green-600">Starter</a>
+          <a href="all-guides.html" class="text-gray-900">Guides</a>
+          <a href="crafting.html" class="text-gray-600 hover:text-green-600">Crafting</a>
+          <a href="patch-notes.html" class="text-gray-600 hover:text-green-600">Patches</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="../zh/xbox-game-pass.html" class="text-sm px-3 py-1.5 rounded-lg border border-gray-300 hover:bg-gray-50 transition">中文</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="xbox-green pt-32 pb-20 px-4 text-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur px-4 py-1.5 rounded-full text-sm font-medium mb-6">
+        <span>🎮</span> Xbox Game Pass
+      </div>
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Outbound on Xbox Game Pass</h1>
+      <p class="text-lg md:text-xl text-green-50 max-w-2xl mx-auto">
+        Everything you need to know about playing Outbound through Xbox Game Pass, including cross-play, save sync, and multiplayer setup.
+      </p>
+      <div class="flex flex-wrap justify-center gap-3 mt-8">
+        <span class="tag bg-white/20 !text-white border border-white/30">🎮 Xbox Game Pass</span>
+        <span class="tag bg-white/20 !text-white border border-white/30">🔄 Cross-play</span>
+        <span class="tag bg-white/20 !text-white border border-white/30">💾 Save Sync</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="lg:grid lg:grid-cols-[280px_1fr] gap-12">
+
+      <!-- Sidebar TOC -->
+      <aside class="hidden lg:block">
+        <div class="sticky top-24 card p-6">
+          <h3 class="font-bold text-gray-900 mb-4">Table of Contents</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#availability" class="toc-link text-gray-600 hover:text-green-700">Is Outbound on Xbox Game Pass?</a></li>
+            <li><a href="#how-to-play" class="toc-link text-gray-600 hover:text-green-700">How to Play on XGP</a></li>
+            <li><a href="#cross-play" class="toc-link text-gray-600 hover:text-green-700">Cross-Play & Cross-Save</a></li>
+            <li><a href="#multiplayer" class="toc-link text-gray-600 hover:text-green-700">Multiplayer on XGP</a></li>
+            <li><a href="#issues" class="toc-link text-gray-600 hover:text-green-700">Known Issues & Fixes</a></li>
+            <li><a href="#comparison" class="toc-link text-gray-600 hover:text-green-700">XGP vs Steam</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="space-y-16">
+
+        <!-- Section 1 -->
+        <section id="availability" class="section-anchor">
+          <div class="card p-8">
+            <h2 class="text-2xl font-bold mb-4">Is Outbound on Xbox Game Pass?</h2>
+            <p class="text-gray-600 mb-4">
+              Yes, <strong>Outbound is available on Xbox Game Pass</strong> for both PC (via Xbox app / Microsoft Store) and Xbox consoles. The game was added to the Game Pass catalog around its official 1.0 launch in mid-2026, making it accessible to millions of subscribers at no additional cost beyond the subscription fee.
+            </p>
+            <div class="tip-card bg-green-50 p-4 rounded-r-lg mb-4">
+              <p class="text-green-800 font-medium">✅ Subscription Tiers That Include Outbound:</p>
+              <ul class="mt-2 space-y-1 text-green-700 text-sm">
+                <li>• Xbox Game Pass for PC</li>
+                <li>• Xbox Game Pass Ultimate (Console + PC + Cloud)</li>
+                <li>• Xbox Game Pass Console (Xbox Series X|S and Xbox One)</li>
+              </ul>
+            </div>
+            <p class="text-gray-600">
+              If you are an active Game Pass subscriber, you can install Outbound directly from the Xbox app on Windows or from the Microsoft Store / Xbox Store on console. The file size is approximately 4-6 GB, so ensure you have enough storage space available.
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section id="how-to-play" class="section-anchor">
+          <div class="card p-8">
+            <h2 class="text-2xl font-bold mb-4">How to Play Outbound on Xbox Game Pass</h2>
+            <p class="text-gray-600 mb-6">Getting started with Outbound on XGP is straightforward. Follow these steps depending on your platform:</p>
+
+            <h3 class="text-lg font-semibold mb-3 text-gray-900">On PC (Windows 10/11)</h3>
+            <ol class="list-decimal list-inside space-y-2 text-gray-600 mb-6">
+              <li>Open the <strong>Xbox app</strong> on your PC (download from Microsoft Store if not installed).</li>
+              <li>Sign in with your Microsoft account that has an active Game Pass subscription.</li>
+              <li>Search for "Outbound" in the search bar.</li>
+              <li>Click <strong>Install</strong> to download the game.</li>
+              <li>Launch from the Xbox app or from your Start Menu once installation completes.</li>
+            </ol>
+
+            <h3 class="text-lg font-semibold mb-3 text-gray-900">On Xbox Console (Series X|S / One)</h3>
+            <ol class="list-decimal list-inside space-y-2 text-gray-600 mb-6">
+              <li>Press the Xbox button and open the <strong>Microsoft Store</strong> or <strong>Game Pass</strong> tab.</li>
+              <li>Search for "Outbound" and select the Game Pass version.</li>
+              <li>Click <strong>Install</strong> to begin downloading.</li>
+              <li>Once installed, launch from My Games & Apps.</li>
+            </ol>
+
+            <div class="tip-card bg-green-50 p-4 rounded-r-lg">
+              <p class="text-green-800 font-medium">💡 Pro Tip</p>
+              <p class="text-green-700 text-sm mt-1">Enable "Auto-Update" in your Xbox app settings so Outbound stays current with the latest patches without manual intervention.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 3 -->
+        <section id="cross-play" class="section-anchor">
+          <div class="card p-8">
+            <h2 class="text-2xl font-bold mb-4">Cross-Play & Cross-Save</h2>
+            <p class="text-gray-600 mb-4">
+              One of the most common questions from the Steam Community is whether Xbox Game Pass players can play with Steam players. Here is what you need to know about cross-platform functionality in Outbound.
+            </p>
+
+            <h3 class="text-lg font-semibold mb-3 text-gray-900">Cross-Play (Multiplayer Between Platforms)</h3>
+            <p class="text-gray-600 mb-4">
+              Outbound supports <strong>cross-play between Xbox Game Pass (PC) and Steam PC players</strong>. This means if you are playing through the Xbox app on PC, you can join multiplayer sessions hosted by friends on Steam, and vice versa.
+            </p>
+            <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-4">
+              <p class="text-gray-700 text-sm">
+                <strong>How cross-play works:</strong> The game uses an in-game invite code system. The host generates a session code from the pause menu, and other players enter this code to join — regardless of whether they are on Steam or Xbox Game Pass PC.
+              </p>
+            </div>
+            <p class="text-gray-600 mb-4">
+              However, <strong>console-to-PC cross-play is currently limited</strong>. Xbox console players (Series X|S / One) can play with other Xbox console players and Xbox Game Pass PC players through the Xbox network, but direct cross-play between Xbox console and Steam PC via invite codes may not be fully supported at this time. Always check the latest patch notes for updates on this feature.
+            </p>
+
+            <h3 class="text-lg font-semibold mb-3 text-gray-900">Cross-Save (Save File Transfer)</h3>
+            <p class="text-gray-600 mb-4">
+              Outbound supports <strong>cross-save between Xbox Game Pass PC and Xbox console</strong> through Xbox cloud saves. Your progress is automatically synced to your Microsoft account, allowing you to continue your journey on either platform.
+            </p>
+            <div class="issue-card bg-red-50 p-4 rounded-r-lg">
+              <p class="text-red-800 font-medium">⚠️ Important Limitation</p>
+              <p class="text-red-700 text-sm mt-1">Cross-save between Xbox Game Pass and Steam is <strong>not supported</strong>. Save files are stored in different formats and locations (Microsoft cloud vs. local Steam userdata). If you switch from XGP to Steam (or buy the game on Steam after trying it on Game Pass), you will need to start a new save file.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 4 -->
+        <section id="multiplayer" class="section-anchor">
+          <div class="card p-8">
+            <h2 class="text-2xl font-bold mb-4">Multiplayer on Xbox Game Pass</h2>
+            <p class="text-gray-600 mb-4">
+              Multiplayer is one of Outbound's standout features, supporting up to <strong>4 players co-op</strong>. Xbox Game Pass players have reported some unique challenges when setting up multiplayer sessions, particularly when mixing platforms. This section covers the most common scenarios and solutions based on community discussions.
+            </p>
+
+            <h3 class="text-lg font-semibold mb-3 text-gray-900">How to Host a Multiplayer Session</h3>
+            <ol class="list-decimal list-inside space-y-2 text-gray-600 mb-6">
+              <li>Launch Outbound and load your save file.</li>
+              <li>Open the pause menu and select <strong>Multiplayer</strong>.</li>
+              <li>Click <strong>Host Session</strong> to create a lobby.</li>
+              <li>Share the generated <strong>invite code</strong> with your friends (4-digit or alphanumeric code).</li>
+              <li>Your friends enter the code in their Multiplayer menu under <strong>Join Session</strong>.</li>
+            </ol>
+
+            <h3 class="text-lg font-semibold mb-3 text-gray-900">Common XGP Multiplayer Issues (From Steam Discussions)</h3>
+            <div class="space-y-4 mb-6">
+              <div class="issue-card bg-red-50 p-4 rounded-r-lg">
+                <p class="text-red-800 font-medium">❌ "Friends can't join my XGP session"</p>
+                <p class="text-red-700 text-sm mt-1">This is the most reported issue. If you are on XGP PC and your friend is on Steam, ensure both of you are on the exact same game version. The Xbox app and Steam may receive patches at slightly different times. Check the version number in the main menu bottom-right corner.</p>
+              </div>
+              <div class="issue-card bg-red-50 p-4 rounded-r-lg">
+                <p class="text-red-800 font-medium">❌ "Connection timeout / session not found"</p>
+                <p class="text-red-700 text-sm mt-1">Xbox Game Pass PC uses a different networking layer than Steam. Try having the Steam player host instead of the XGP player — many users report better success with Steam-hosted sessions. Also ensure Windows Firewall is not blocking the Xbox app.</p>
+              </div>
+              <div class="issue-card bg-red-50 p-4 rounded-r-lg">
+                <p class="text-red-800 font-medium">❌ "NAT type strict on Xbox console"</p>
+                <p class="text-red-700 text-sm mt-1">Console players with Strict or Moderate NAT types may have trouble connecting to PC-hosted sessions. Go to Xbox Settings > Network > Test NAT Type. If it shows Strict, try enabling UPnP on your router or setting a port forward for Xbox Live.</p>
+              </div>
+            </div>
+
+            <h3 class="text-lg font-semibold mb-3 text-gray-900">Best Practices for Stable Co-op</h3>
+            <ul class="list-disc list-inside space-y-2 text-gray-600">
+              <li><strong>Use a wired connection</strong> if possible — Wi-Fi can cause desync in larger camps.</li>
+              <li><strong>Designate one permanent host</strong> to avoid world-state conflicts.</li>
+              <li><strong>Save frequently</strong> by sleeping in your van bed — progress only saves for the host.</li>
+              <li><strong>Avoid simultaneous building</strong> — have one player place structures while others gather.</li>
+              <li><strong>Restart the game</strong> if you experience inventory desync or invisible items.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Section 5 -->
+        <section id="issues" class="section-anchor">
+          <div class="card p-8">
+            <h2 class="text-2xl font-bold mb-4">Known Issues & Fixes</h2>
+            <p class="text-gray-600 mb-6">
+              Based on community reports from both the Xbox app reviews and Steam Community Discussions, here are the most common issues affecting Xbox Game Pass players and their workarounds.
+            </p>
+
+            <div class="space-y-6">
+              <div class="border border-gray-200 rounded-lg p-5">
+                <h4 class="font-semibold text-gray-900 mb-2">Game won't launch from Xbox app</h4>
+                <p class="text-gray-600 text-sm mb-2">Some players report the game crashing immediately or showing a black screen.</p>
+                <div class="tip-card bg-green-50 p-3 rounded-r-lg">
+                  <p class="text-green-800 text-sm font-medium">Fix:</p>
+                  <ul class="text-green-700 text-sm mt-1 list-disc list-inside">
+                    <li>Update the Xbox app and Gaming Services through Microsoft Store.</li>
+                    <li>Reset the game: Windows Settings > Apps > Outbound > Advanced options > Reset.</li>
+                    <li>Ensure Windows is fully updated (especially the Gaming Services component).</li>
+                    <li>Run the Xbox app as Administrator.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="border border-gray-200 rounded-lg p-5">
+                <h4 class="font-semibold text-gray-900 mb-2">Controller not recognized (XGP PC)</h4>
+                <p class="text-gray-600 text-sm mb-2">Xbox controllers may not be detected in-game even though Windows sees them.</p>
+                <div class="tip-card bg-green-50 p-3 rounded-r-lg">
+                  <p class="text-green-800 text-sm font-medium">Fix:</p>
+                  <ul class="text-green-700 text-sm mt-1 list-disc list-inside">
+                    <li>Disconnect and reconnect the controller after launching the game.</li>
+                    <li>Use a wired USB connection instead of Bluetooth.</li>
+                    <li>Disable Steam Input if you also have Steam running — it can conflict.</li>
+                    <li>Update controller firmware via Xbox Accessories app.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="border border-gray-200 rounded-lg p-5">
+                <h4 class="font-semibold text-gray-900 mb-2">Progress not syncing between PC and console</h4>
+                <p class="text-gray-600 text-sm mb-2">Cloud save sync can occasionally fail between Xbox Game Pass PC and Xbox console.</p>
+                <div class="tip-card bg-green-50 p-3 rounded-r-lg">
+                  <p class="text-green-800 text-sm font-medium">Fix:</p>
+                  <ul class="text-green-700 text-sm mt-1 list-disc list-inside">
+                    <li>Ensure you are signed into the <strong>same Microsoft account</strong> on both devices.</li>
+                    <li>On Xbox console: My Games & Apps > Outbound > Menu > Manage game > Saved data > Sync now.</li>
+                    <li>Close the game fully on one platform before opening on the other.</li>
+                    <li>Allow 5-10 minutes for cloud sync after closing the game.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="border border-gray-200 rounded-lg p-5">
+                <h4 class="font-semibold text-gray-900 mb-2">Missing DLC / Deluxe Edition content</h4>
+                <p class="text-gray-600 text-sm mb-2">Xbox Game Pass includes the base game only. Deluxe Edition cosmetics or DLC packs are not included.</p>
+                <div class="tip-card bg-green-50 p-3 rounded-r-lg">
+                  <p class="text-green-800 text-sm font-medium">Fix:</p>
+                  <ul class="text-green-700 text-sm mt-1 list-disc list-inside">
+                    <li>Deluxe Edition items can be purchased separately from the Microsoft Store.</li>
+                    <li>Game Pass subscribers usually receive a 10-20% discount on DLC purchases.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 6 -->
+        <section id="comparison" class="section-anchor">
+          <div class="card p-8">
+            <h2 class="text-2xl font-bold mb-4">Xbox Game Pass vs Steam Version</h2>
+            <p class="text-gray-600 mb-6">
+              Wondering whether to play on Game Pass or buy the Steam version? Here is a side-by-side comparison to help you decide.
+            </p>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm text-left">
+                <thead class="bg-gray-50 text-gray-700 font-semibold">
+                  <tr>
+                    <th class="px-4 py-3 rounded-tl-lg">Feature</th>
+                    <th class="px-4 py-3">Xbox Game Pass</th>
+                    <th class="px-4 py-3 rounded-tr-lg">Steam</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100">
+                  <tr>
+                    <td class="px-4 py-3 font-medium">Price</td>
+                    <td class="px-4 py-3 text-green-700">Included with subscription (~$10-17/month)</td>
+                    <td class="px-4 py-3">One-time purchase (~$30-40)</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-medium">Game Content</td>
+                    <td class="px-4 py-3">Base game only</td>
+                    <td class="px-4 py-3">Base game + optional Deluxe Edition bundle</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-medium">Cross-Play (PC)</td>
+                    <td class="px-4 py-3 text-green-700">✅ Yes, with Steam PC via invite codes</td>
+                    <td class="px-4 py-3 text-green-700">✅ Yes, with XGP PC via invite codes</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-medium">Cross-Save</td>
+                    <td class="px-4 py-3 text-red-600">❌ No (Xbox cloud only)</td>
+                    <td class="px-4 py-3 text-red-600">❌ No (Steam cloud only)</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-medium">Mod Support</td>
+                    <td class="px-4 py-3 text-red-600">❌ Limited / Not supported</td>
+                    <td class="px-4 py-3 text-green-700">✅ Potential future mod support</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-medium">Achievements</td>
+                    <td class="px-4 py-3">Xbox Achievements</td>
+                    <td class="px-4 py-3">Steam Achievements</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-medium">Cloud Saves</td>
+                    <td class="px-4 py-3 text-green-700">✅ Xbox Cloud (PC + Console)</td>
+                    <td class="px-4 py-3 text-green-700">✅ Steam Cloud</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-medium">Update Speed</td>
+                    <td class="px-4 py-3">Sometimes delayed vs Steam</td>
+                    <td class="px-4 py-3 text-green-700">Usually receives patches first</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-medium">Refund Policy</td>
+                    <td class="px-4 py-3">N/A (subscription model)</td>
+                    <td class="px-4 py-3 text-green-700">✅ 14-day / 2-hour Steam refund</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="mt-6 p-4 bg-gray-50 rounded-lg">
+              <p class="text-gray-700 text-sm">
+                <strong>Our recommendation:</strong> If you are already a Game Pass subscriber, start there — it is the most cost-effective way to try Outbound. If you fall in love with the game and want permanent ownership, potential mod support, and the fastest updates, consider buying it on Steam during a sale. Your Game Pass save will not transfer, so factor that into your decision.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Related Guides -->
+        <section>
+          <div class="card p-8">
+            <h2 class="text-2xl font-bold mb-4">Related Guides</h2>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <a href="multiplayer.html" class="block p-4 border border-gray-200 rounded-lg hover:border-green-500 hover:bg-green-50 transition">
+                <h4 class="font-semibold text-gray-900">Multiplayer Guide</h4>
+                <p class="text-sm text-gray-500 mt-1">Full co-op setup, troubleshooting, and tips for playing with friends.</p>
+              </a>
+              <a href="tech-fixes.html" class="block p-4 border border-gray-200 rounded-lg hover:border-green-500 hover:bg-green-50 transition">
+                <h4 class="font-semibold text-gray-900">Technical Fixes</h4>
+                <p class="text-sm text-gray-500 mt-1">Common crashes, performance issues, and how to fix them.</p>
+              </a>
+              <a href="starter-guide.html" class="block p-4 border border-gray-200 rounded-lg hover:border-green-500 hover:bg-green-50 transition">
+                <h4 class="font-semibold text-gray-900">Starter Guide</h4>
+                <p class="text-sm text-gray-500 mt-1">New to Outbound? Start here for your first days in the wilderness.</p>
+              </a>
+              <a href="system-requirements.html" class="block p-4 border border-gray-200 rounded-lg hover:border-green-500 hover:bg-green-50 transition">
+                <h4 class="font-semibold text-gray-900">System Requirements</h4>
+                <p class="text-sm text-gray-500 mt-1">Minimum and recommended specs for smooth gameplay.</p>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Last Updated -->
+        <div class="text-center text-sm text-gray-400">
+          Last updated: July 21, 2026
+        </div>
+
+        <!-- Giscus Comments -->
+        <section class="card p-8">
+          <h2 class="text-2xl font-bold mb-6">Comments & Questions</h2>
+          <script src="https://giscus.app/client.js"
+            data-repo="outboundguide/outboundguide.github.io"
+            data-repo-id="R_kgDOOetdqA"
+            data-category="General"
+            data-category-id="DIC_kwDOOetdqM4CpzAS"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-theme="light"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async>
+          </script>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-12 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="text-sm">
+          © 2026 OutboundGuide.org · Fan-made guide, not affiliated with Outbound developers.
+        </div>
+        <div class="flex gap-4 text-sm">
+          <a href="privacy.html" class="hover:text-white">Privacy</a>
+          <a href="disclaimer.html" class="hover:text-white">Disclaimer</a>
+          <a href="contact.html" class="hover:text-white">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // TOC Active State
+    const sections = document.querySelectorAll('.section-anchor');
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          tocLinks.forEach(link => link.classList.remove('active'));
+          const id = entry.target.getAttribute('id');
+          const activeLink = document.querySelector(`.toc-link[href="#${id}"]`);
+          if (activeLink) activeLink.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -80% 0px' });
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>

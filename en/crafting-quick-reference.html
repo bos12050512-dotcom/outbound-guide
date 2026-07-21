@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Crafting Quick Reference - All Recipes & Materials | Outbound Guide</title>
+<meta name="description" content="Quickly find any crafting recipe, material requirement, or workstation need in Outbound. Searchable database of all recipes with materials, workstations, and biomes. Updated July 2026." />
+<link rel="canonical" href="https://outboundguide.org/en/crafting-quick-reference.html" />
+<link rel="alternate" hreflang="en" href="https://outboundguide.org/en/crafting-quick-reference.html" />
+<link rel="alternate" hreflang="zh" href="https://outboundguide.org/zh/crafting-quick-reference.html" />
+<link rel="alternate" hreflang="x-default" href="https://outboundguide.org/en/crafting-quick-reference.html" />
+<meta property="og:title" content="Crafting Quick Reference - All Recipes & Materials | Outbound Guide" />
+<meta property="og:description" content="Searchable database of all Outbound crafting recipes with materials, workstations, and biomes." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://outboundguide.org/en/crafting-quick-reference.html" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V167JMFJWE"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-V167JMFJWE');</script>
+<style>
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f7fafc;color:#0f172a}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:18px;box-shadow:0 8px 30px rgba(15,23,42,.06)}
+.adslot{background:repeating-linear-gradient(45deg,#f1f5f9,#f1f5f9 10px,#e2e8f0 10px,#e2e8f0 20px);border:1px dashed #94a3b8;color:#64748b;font-size:12px;text-align:center;padding:24px;border-radius:12px}
+table{border-collapse:collapse;width:100%}
+th,td{padding:10px 12px;border-bottom:1px solid #e5e7eb;text-align:left;font-size:14px}
+thead{background:#0f172a;color:#fff;position:sticky;top:56px;z-index:30}
+tr:hover td{background:#f8fafc}
+.tag{display:inline-block;padding:2px 10px;border-radius:999px;font-size:11px;font-weight:700}
+.t-tools{background:#dbeafe;color:#1e40af}
+.t-building{background:#dcfce7;color:#166534}
+.t-furniture{background:#f3e8ff;color:#7e22ce}
+.t-energy{background:#fef3c7;color:#92400e}
+.t-food{background:#ffedd5;color:#c2410c}
+.t-decorations{background:#fce7f3;color:#be185d}
+.search-input{width:100%;padding:12px 16px;border:1px solid #e5e7eb;border-radius:12px;font-size:14px;outline:none;transition:border-color .2s}
+.search-input:focus{border-color:#3b82f6;box-shadow:0 0 0 3px rgba(59,130,246,.1)}
+.filter-btn{padding:6px 14px;border-radius:999px;font-size:12px;font-weight:700;border:1px solid #e5e7eb;background:#fff;color:#64748b;cursor:pointer;transition:all .2s}
+.filter-btn:hover{background:#f1f5f9}
+.filter-btn.active{background:#0f172a;color:#fff;border-color:#0f172a}
+.item-name{font-weight:700;color:#0f172a}
+.item-zh{font-size:12px;color:#64748b;font-weight:500}
+.no-results{text-align:center;padding:40px;color:#64748b}
+</style>
+</head>
+<body>
+
+<nav class="bg-white/95 backdrop-blur sticky top-0 z-50 border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
+    <a href="/" class="font-black text-xl text-blue-600">OutboundGuide.org</a>
+    <div class="hidden md:flex gap-5 text-sm font-semibold text-slate-700">
+      <a href="/en/starter-guide.html">Starter</a>
+      <a href="/en/all-guides.html" class="text-indigo-600 font-bold">Guides</a>
+      <a href="/en/crafting.html" class="text-blue-600">Crafting</a>
+      <a href="/en/patch-notes.html">Patches</a>
+      <a href="/en/multiplayer.html">Co-op</a>
+      <a href="/en/energy.html">Energy</a>
+    </div>
+    <div class="flex items-center gap-2 bg-slate-100 p-1 rounded-xl">
+      <button id="btn-en" onclick="setLang('en')" class="px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm">EN</button>
+      <button id="btn-zh" onclick="setLang('zh')" class="px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm">中文</button>
+    </div>
+  </div>
+</nav>
+
+<header class="bg-gradient-to-br from-emerald-600 to-blue-600 text-white py-16">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-sm opacity-80 mb-3">Quick Lookup Tool &middot; Updated July 21, 2026</div>
+    <h1 class="text-4xl md:text-5xl font-black mb-4">Crafting Quick Reference</h1>
+    <p class="text-lg opacity-90 mb-6">Quickly find any crafting recipe, material requirement, or workstation need in Outbound.</p>
+    <div class="flex flex-wrap gap-3 text-sm">
+      <span class="bg-white/20 px-4 py-2 rounded-full font-bold">⚡ Quick Lookup</span>
+      <span class="bg-white/20 px-4 py-2 rounded-full">📋 All Recipes</span>
+      <span class="bg-white/20 px-4 py-2 rounded-full">🔧 Workstations</span>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-6xl mx-auto px-4 py-10 space-y-8">
+
+<div class="adslot">[ Ad slot - top banner ]</div>
+
+<!-- Search & Filter -->
+<section class="card p-6">
+  <div class="flex flex-col md:flex-row gap-4 mb-4">
+    <div class="flex-1">
+      <input type="text" id="searchInput" class="search-input" placeholder="Search recipes by item name (English or Chinese)..." oninput="filterTable()">
+    </div>
+  </div>
+  <div class="flex flex-wrap gap-2">
+    <button class="filter-btn active" onclick="setCategory('all')" data-cat="all">All</button>
+    <button class="filter-btn" onclick="setCategory('tools')" data-cat="tools">🔧 Tools</button>
+    <button class="filter-btn" onclick="setCategory('building')" data-cat="building">🏗️ Building</button>
+    <button class="filter-btn" onclick="setCategory('furniture')" data-cat="furniture">🪑 Furniture</button>
+    <button class="filter-btn" onclick="setCategory('energy')" data-cat="energy">⚡ Energy</button>
+    <button class="filter-btn" onclick="setCategory('food')" data-cat="food">🍳 Food</button>
+    <button class="filter-btn" onclick="setCategory('decorations')" data-cat="decorations">🎨 Decorations</button>
+  </div>
+</section>
+
+<!-- Recipe Table -->
+<section class="card overflow-hidden">
+  <div class="overflow-x-auto max-h-[70vh] overflow-y-auto">
+    <table id="recipeTable">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Category</th>
+          <th>Materials</th>
+          <th>Workstation</th>
+          <th>Biome</th>
+        </tr>
+      </thead>
+      <tbody id="recipeBody">
+        <!-- Tools -->
+        <tr data-category="tools">
+          <td><div class="item-name">Pickaxe</div><div class="item-zh">镐</div></td>
+          <td><span class="tag t-tools">Tools</span></td>
+          <td>3x Scrap Metal, 2x Wood</td>
+          <td>Basic Workbench</td>
+          <td>Any</td>
+        </tr>
+        <tr data-category="tools">
+          <td><div class="item-name">Pickaxe Mk.2</div><div class="item-zh">镐 Mk.2</div></td>
+          <td><span class="tag t-tools">Tools</span></td>
+          <td>1x Pickaxe, 4x Iron Ingot, 2x Rope</td>
+          <td>Advanced Workbench</td>
+          <td>Any</td>
+        </tr>
+        <tr data-category="tools">
+          <td><div class="item-name">Axe</div><div class="item-zh">斧头</div></td>
+          <td><span class="tag t-tools">Tools</span></td>
+          <td>2x Scrap Metal, 3x Wood</td>
+          <td>Basic Workbench</td>
+          <td>Any</td>
+        </tr>
+        <tr data-category="tools">
+          <td><div class="item-name">Axe Mk.2</div><div class="item-zh">斧头 Mk.2</div></td>
+          <td><span class="tag t-tools">Tools</span></td>
+          <td>1x Axe, 4x Iron Ingot, 2x Leather</td>
+          <td>Advanced Workbench</td>
+          <td>Any</td>
+        </tr>
+        <tr data-category="tools">
+          <td><div class="item-name">Fishing Rod</div><div class="item-zh">钓竿</div></td>
+          <td><span class="tag t-tools">Tools</span></td>
+          <td>3x Wood, 2x Rope, 1x Scrap Metal</td>
+          <td>Basic Workbench</td>
+          <td>Coast</td>
+        </tr>
+        <tr data-category="tools">
+          <td><div class="item-name">Watering Can</div><div class="item-zh">浇水壶</div></td>
+          <td><span class="tag t-tools">Tools</span></td>
+          <td>2x Scrap Metal, 1x Plastic</td>
+          <td>Basic Workbench</td>
+          <td>Any</td>
+        </tr>
+        <tr data-category="tools">
+          <td><div class="item-name">Flashlight</div><div class="item-zh">手电筒</div></td>
+          <td><span class="tag t-tools">Tools</span></td>
+          <td>2x Scrap Metal, 1x Battery Cell, 1x Glass</td>
+          <td>Basic Workbench</td>
+          <td>Any</td>
+        </tr>
+        <tr data-category="tools">
+          <td><div class="item-name">Binoculars</div><div class="item-zh">望远镜</div></td>
+          <td><span class="tag t-tools">Tools</span></td>
+          <td>2x Glass, 2x Scrap Metal, 1x Rubber</td>
+          <td>Advanced Workbench</td>
+          <td>Any</td>
+        </tr>
+        <!-- Building -->
+        <tr data-category="building">
+          <td><div class="item-name">Foundation</div><div class="item-zh">地基</div></td>
+          <td><span class="tag t-building">Building</span></td>
+          <td>4x Concrete, 2x Wood</td>
+          <td>Building Workbench</td>
+          <td>Any</td>
+        </tr>
+        <tr data-category="building">
+          <td><div class="item-name">Wall</div><div class="item-zh">墙壁</div></td>
+          <td><span class="tag t-building">Building</span></td>
+          <td>3x Wood, 2x Scrap Metal</td>
+          <td>Building Workbench</td>
+          <td>Any</td>
+        </tr>
+        <tr data-category="building">
+          <td><div class="item-name">Door</div><div class="item-zh">门</div></td>
+          <td><span class="tag t-building">Building</span></td>
+          <td>3x Wood, 2x Scrap Metal, 1x Hinge</td>
+          <td>Building Workbench</td>
+          <td>Any</td>
+        </tr>
+        <tr data-category="building">
+          <td><div class="item-name">Window</div><div class="item-zh">窗户</div></td>
+          <td><span class="tag t-building">Building</span></td>
+          <td>2x Glass, 2x Wood</td>
+          <td>Building Workbench</td>
+          <td>Any</td>
+        </tr>
+        <tr data-category="building">
+          <td><div class="item-name">Roof</div><div class="item-zh">屋顶</div></td>
+          <td><span class="tag t-building">Building</span></td>
+          <td>4x Iron Sheet, 2x Wood</td>
+          <td>Building Workbench</td>
+          <td>Any</td>
+        </tr>
+        <tr data-category="building">
+          <td><div class="item-name">Ladder</div><div class="item-zh">梯子</div></td>
+          <td><span class="tag t-building">Building</span></td>
+          <td>4x Wood, 2x Scrap Metal</td>
+          <td>Basic Workbench</td>
+          <td>Any</td>
+        </tr>
+        <tr data-category="building">
+          <td><div class="item-name">Storage Crate</div><div class="item-zh">储物箱</div></td>
+          <td><span class="tag t-building">Building</span></td>
+          <td>4x Wood, 2x Scrap Metal</td>
+          <td>Basic Workbench</td>
+          <td>Any</td>
+        </tr>
+        <tr data-category="building">
+          <td><div class="item-name">Large Storage</div><div class="item-zh">大型储物箱</div></td>
+          <td><span class="tag t-building">Building</span></td>
+          <td>6x Wood, 4x Iron Ingot, 2x Hinge</td>
+          <td>Advanced Workbench</td>
+          <td>Any</td>
+        </tr>
+        <!-- Furniture -->
+        <tr data-category="furniture">
+          <td><div class="item-name">Bed</div><div class="item-zh">床</div></td>
+          <td><span class="tag t-furniture">Furniture</span></td>
+          <td>4x Wood, 3x Fabric, 2x Cotton</td>
+          <td>Basic Workbench</td>
+          <td>Any</td>
+        </tr>
+        <tr data-category="furniture">
+          <td><div class="item-name">Table</div><div class="item-zh">桌子</div></td>
+          <td><span class="tag t-furniture">Furniture</span></td>
+          <td>4x Wood, 2x Scrap Metal</td>
+          <td>Basic Workbench</td>
+          <td>Any</td>
+        </tr>
+        <tr data-category="furniture">
+          <td><div class="item-name">Chair</div><div class="item-zh">椅子</div></td>
+          <td><span class="tag t-furniture">Furniture</span></td>
+          <td>3x Wood, 1x Fabric</td>
+          <td>Basic Workbench</td>
+          <td>Any</td>
+        </tr>
+        <tr data-category="furniture">
+          <td><div class="item-name">Shelf</div><div class="item-zh">架子</div></td>
+          <td><span class="tag t-furniture">Furniture</span></td>
+          <td>3x Wood, 2x Scrap Metal</td>
+          <td>Basic Workbench</td>
+          <td>Any</td>
+        </tr>
+        <tr data-category="furniture">
+          <td><div class="item-name">Lamp</div><div class="item-zh">灯</div></td>
+          <td><span class="tag t-furniture">Furniture</span></td>
+          <td>1x Glass, 2x Scrap Metal, 1x Copper Wire</td>
+          <td>Basic Workbench</td>
+          <td>Any</td>
+        </tr>
+        <tr data-category="furniture">
+          <td><div class="item-name">Couch</div><div class="item-zh">沙发</div></td>
+          <td><span class="tag t-furniture">Furniture</span></td>
+          <td>4x Fabric, 3x Wood, 2x Cotton</td>
+          <td>Advanced Workbench</td>
+          <td>Any</td>
+        </tr>
+        <!-- Energy -->
+        <tr data-category="energy">
+          <td><div class="item-name">Solar Panel (Tier 1)</div><div class="item-zh">太阳能板 (T1)</div></td>
+          <td><span class="tag t-energy">Energy</span></td>
+          <td>4x Glass, 3x Copper Wire, 2x Iron Ingot, 1x Circuit Board</td>
+          <td>Advanced Workbench</td>
+          <td>Any</td>
+        </tr>
+        <tr data-category="energy">
+          <td><div class="item-name">Wind Turbine (Tier 1)</div><div class="item-zh">风力涡轮机 (T1)</div></td>
+          <td><span class="tag t-energy">Energy</span></td>
+          <td>4x Iron Ingot, 3x Copper Wire, 2x Scrap Metal</td>
+          <td>Advanced Workbench</td>
+          <td>Any</td>
+        </tr>
+        <tr data-category="energy">
+          <td><div class="item-name">Battery Cell</div><div class="item-zh">电池</div></td>
+          <td><span class="tag t-energy">Energy</span></td>
+          <td>2x Acid, 2x Copper Wire, 1x Plastic</td>
+          <td>Chemistry Station</td>
+          <td>Any</td>
+        </tr>
+        <tr data-category="energy">
+          <td><div class="item-name">Power Distribution Hub</div><div class="item-zh">配电中心</div></td>
+          <td><span class="tag t-energy">Energy</span></td>
+          <td>3x Circuit Board, 4x Copper Wire, 2x Iron Ingot</td>
+          <td>Advanced Workbench</td>
+          <td>Any</td>
+        </tr>
+        <tr data-category="energy">
+          <td><div class="item-name">Generator</div><div class="item-zh">发电机</div></td>
+          <td><span class="tag t-energy">Energy</span></td>
+          <td>4x Iron Ingot, 2x Copper Wire, 2x Scrap Metal, 1x Fuel Tank</td>
+          <td>Advanced Workbench</td>
+          <td>Any</td>
+        </tr>
+        <tr data-category="energy">
+          <td><div class="item-name">Cable</div><div class="item-zh">电缆</div></td>
+          <td><span class="tag t-energy">Energy</span></td>
+          <td>1x Copper Wire, 1x Rubber</td>
+          <td>Basic Workbench</td>
+          <td>Any</td>
+        </tr>
+        <!-- Food -->
+        <tr data-category="food">
+          <td><div class="item-name">Grilled Fish</div><div class="item-zh">烤鱼</div></td>
+          <td><span class="tag t-food">Food</span></td>
+          <td>1x Raw Fish, 1x Salt</td>
+          <td>Cooking Station</td>
+          <td>Coast</td>
+        </tr>
+        <tr data-category="food">
+          <td><div class="item-name">Vegetable Soup</div><div class="item-zh">蔬菜汤</div></td>
+          <td><span class="tag t-food">Food</span></td>
+          <td>2x Vegetable, 1x Water, 1x Salt</td>
+          <td>Cooking Station</td>
+          <td>Any</td>
+        </tr>
+        <tr data-category="food">
+          <td><div class="item-name">Bread</div><div class="item-zh">面包</div></td>
+          <td><span class="tag t-food">Food</span></td>
+          <td>2x Flour, 1x Water</td>
+          <td>Cooking Station</td>
+          <td>Grasslands</td>
+        </tr>
+        <tr data-category="food">
+          <td><div class="item-name">Fruit Salad</div><div class="item-zh">水果沙拉</div></td>
+          <td><span class="tag t-food">Food</span></td>
+          <td>3x Fruit, 1x Honey</td>
+          <td>Cooking Station</td>
+          <td>Forest</td>
+        </tr>
+        <tr data-category="food">
+          <td><div class="item-name">Mushroom Stew</div><div class="item-zh">蘑菇炖菜</div></td>
+          <td><span class="tag t-food">Food</span></td>
+          <td>3x Mushroom, 1x Water, 1x Vegetable</td>
+          <td>Cooking Station</td>
+          <td>Forest / Cave</td>
+        </tr>
+        <tr data-category="food">
+          <td><div class="item-name">Coffee</div><div class="item-zh">咖啡</div></td>
+          <td><span class="tag t-food">Food</span></td>
+          <td>2x Coffee Beans, 1x Water</td>
+          <td>Cooking Station</td>
+          <td>Mountain</td>
+        </tr>
+        <!-- Decorations -->
+        <tr data-category="decorations">
+          <td><div class="item-name">Rug</div><div class="item-zh">地毯</div></td>
+          <td><span class="tag t-decorations">Decorations</span></td>
+          <td>4x Fabric, 2x Dye</td>
+          <td>Basic Workbench</td>
+          <td>Any</td>
+        </tr>
+        <tr data-category="decorations">
+          <td><div class="item-name">Painting</div><div class="item-zh">画作</div></td>
+          <td><span class="tag t-decorations">Decorations</span></td>
+          <td>2x Canvas, 2x Wood, 1x Dye</td>
+          <td>Basic Workbench</td>
+          <td>Any</td>
+        </tr>
+        <tr data-category="decorations">
+          <td><div class="item-name">Potted Plant</div><div class="item-zh">盆栽</div></td>
+          <td><span class="tag t-decorations">Decorations</span></td>
+          <td>1x Plant, 1x Clay Pot, 1x Soil</td>
+          <td>Basic Workbench</td>
+          <td>Grasslands</td>
+        </tr>
+        <tr data-category="decorations">
+          <td><div class="item-name">Wind Chime</div><div class="item-zh">风铃</div></td>
+          <td><span class="tag t-decorations">Decorations</span></td>
+          <td>3x Scrap Metal, 1x Wood, 1x String</td>
+          <td>Basic Workbench</td>
+          <td>Coast</td>
+        </tr>
+        <tr data-category="decorations">
+          <td><div class="item-name">Lantern</div><div class="item-zh">灯笼</div></td>
+          <td><span class="tag t-decorations">Decorations</span></td>
+          <td>2x Glass, 1x Scrap Metal, 1x Candle</td>
+          <td>Basic Workbench</td>
+          <td>Any</td>
+        </tr>
+        <tr data-category="decorations">
+          <td><div class="item-name">Trophy</div><div class="item-zh">奖杯</div></td>
+          <td><span class="tag t-decorations">Decorations</span></td>
+          <td>2x Gold Ingot, 1x Wood</td>
+          <td>Advanced Workbench</td>
+          <td>Any</td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="noResults" class="no-results hidden">No recipes found matching your search. Try different keywords.</div>
+  </div>
+</section>
+
+<div class="adslot">[ Ad slot - in-article ]</div>
+
+<!-- Legend -->
+<section class="card p-6">
+  <h2 class="text-xl font-black mb-4">Category Legend</h2>
+  <div class="flex flex-wrap gap-3">
+    <span class="tag t-tools">🔧 Tools</span>
+    <span class="tag t-building">🏗️ Building</span>
+    <span class="tag t-furniture">🪑 Furniture</span>
+    <span class="tag t-energy">⚡ Energy</span>
+    <span class="tag t-food">🍳 Food</span>
+    <span class="tag t-decorations">🎨 Decorations</span>
+  </div>
+  <p class="text-sm text-slate-500 mt-4">Tip: Click any category button above the table to filter. Use the search box to find items by English or Chinese name.</p>
+</section>
+
+<!-- Link to full guide -->
+<section class="card p-6 bg-gradient-to-r from-emerald-50 to-blue-50">
+  <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+    <div>
+      <h2 class="text-xl font-black mb-2">Need More Details?</h2>
+      <p class="text-slate-600 text-sm">Check our full crafting guide for unlock order, workstation locations, and energy module strategies.</p>
+    </div>
+    <a href="/en/crafting.html" class="bg-blue-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-700 transition text-center">View Full Crafting Guide &rarr;</a>
+  </div>
+</section>
+
+<div class="adslot">[ Ad slot - bottom banner ]</div>
+
+<!-- Sources -->
+<section class="card p-6 bg-slate-50">
+  <h2 class="text-lg font-black mb-3">Sources</h2>
+  <ul class="list-disc pl-6 text-sm text-slate-600 space-y-1">
+    <li>In-game recipe verification (July 2026)</li>
+    <li>Steam Community Guides for Outbound</li>
+    <li>r/Outbound community recipe compilation</li>
+    <li>Square Glade Games official patch notes</li>
+  </ul>
+  <p class="text-xs text-slate-500 mt-3">OutboundGuide.org is a non-official fan guide and is not affiliated with Square Glade Games. Last updated: July 21, 2026.</p>
+</section>
+
+<!-- Comments -->
+<section class="card p-6">
+  <h2 class="text-xl font-black mb-2">💬 Discussion</h2>
+  <p class="text-slate-600 text-sm mb-4">Found a missing recipe or incorrect material? Let us know below so we can update the database.</p>
+  <script src="https://giscus.app/client.js"
+          data-repo="OASISXXr/outbound-guide"
+          data-repo-id="R_kgDOSZPlqw"
+          data-category="Announcements"
+          data-category-id="DIC_kwDOSZPlq84C8s3i"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="top"
+          data-theme="light"
+          data-lang="en"
+          data-loading="lazy"
+          crossorigin="anonymous"
+          async>
+  </script>
+  <noscript class="text-sm text-slate-500">Comments require JavaScript. You can also discuss in our <a href="https://www.reddit.com/r/Outbound/" class="text-blue-600 underline">Reddit community</a> or email <span class="font-mono">contact[at]outboundguide.org</span>.</noscript>
+</section>
+
+</main>
+
+<footer class="bg-slate-950 text-slate-300 py-10 mt-10">
+  <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row gap-4 justify-between text-sm">
+    <div>
+      <div class="font-black text-white">OutboundGuide.org</div>
+      <div class="text-slate-400">Non-official fan guide. Outbound &copy; Square Glade Games.</div>
+    </div>
+    <div class="flex flex-wrap gap-4">
+      <a href="/en/about.html" class="hover:text-white">About</a>
+      <a href="/en/privacy.html" class="hover:text-white">Privacy</a>
+      <a href="/en/disclaimer.html" class="hover:text-white">Disclaimer</a>
+      <a href="/en/contact.html" class="hover:text-white">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+let currentCategory = 'all';
+function setCategory(cat) {
+  currentCategory = cat;
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    if(btn.dataset.cat === cat) btn.classList.add('active');
+    else btn.classList.remove('active');
+  });
+  filterTable();
+}
+function filterTable() {
+  const query = document.getElementById('searchInput').value.toLowerCase();
+  const rows = document.querySelectorAll('#recipeBody tr');
+  let visibleCount = 0;
+  rows.forEach(row => {
+    const cat = row.dataset.category;
+    const text = row.textContent.toLowerCase();
+    const catMatch = currentCategory === 'all' || cat === currentCategory;
+    const searchMatch = !query || text.includes(query);
+    if(catMatch && searchMatch) {
+      row.style.display = '';
+      visibleCount++;
+    } else {
+      row.style.display = 'none';
+    }
+  });
+  const noResults = document.getElementById('noResults');
+  if(visibleCount === 0) noResults.classList.remove('hidden');
+  else noResults.classList.add('hidden');
+}
+function setLang(lang){
+  const en=document.getElementById('btn-en'),zh=document.getElementById('btn-zh');
+  if(lang==='zh'){
+    zh.className='px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm';
+    en.className='px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm';
+    window.location.href = '/zh/crafting-quick-reference.html';
+  }else{
+    en.className='px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm';
+    zh.className='px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm';
+  }
+  localStorage.setItem('lang',lang);
+}
+</script>
+</body>
+</html>

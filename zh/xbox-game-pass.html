@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="lang-zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xbox Game Pass 游玩指南 - Outbound | Outbound 攻略</title>
+  <meta name="description" content="Outbound Xbox Game Pass 完整攻略。了解如何在 XGP 上游玩、跨平台联机支持、存档同步设置、多人联机故障排除，以及 XGP 版本与 Steam 版本的对比。">
+  <link rel="alternate" hreflang="en" href="https://outboundguide.org/en/xbox-game-pass.html">
+  <link rel="alternate" hreflang="zh" href="https://outboundguide.org/zh/xbox-game-pass.html">
+  <link rel="canonical" href="https://outboundguide.org/zh/xbox-game-pass.html">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V167JMFJWE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V167JMFJWE');
+  </script>
+  <style>
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,system-ui,sans-serif;background:#f7fafc;color:#0f172a}
+    .card{background:#fff;border-radius:1rem;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+    .lang-zh .en{display:none}
+    .lang-en .zh{display:none}
+    .tag{display:inline-flex;align-items:center;gap:.375rem;background:#e8f5e9;color:#1b5e20;padding:.375rem .875rem;border-radius:9999px;font-size:.875rem;font-weight:500}
+    .section-anchor{padding-top:6rem;margin-top:-4rem}
+    .toc-link.active{color:#107c10;font-weight:600}
+    .xbox-green{background:linear-gradient(135deg,#107c10 0%,#1e8b1e 50%,#2e9e2e 100%)}
+    .xbox-green-light{background:linear-gradient(135deg,#e8f5e9 0%,#c8e6c9 100%)}
+    .btn-xbox{background:#107c10;color:#fff;padding:.75rem 1.5rem;border-radius:.5rem;font-weight:600;transition:background .2s}
+    .btn-xbox:hover{background:#0e6b0e}
+    .issue-card{border-left:4px solid #ef4444}
+    .tip-card{border-left:4px solid #107c10}
+  </style>
+</head>
+<body class="lang-zh">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="index.html" class="flex items-center gap-2 font-bold text-xl text-gray-900">
+          <span class="text-green-600">Outbound</span>Guide.org
+        </a>
+        <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+          <a href="starter-guide.html" class="text-gray-600 hover:text-green-600">入门</a>
+          <a href="all-guides.html" class="text-gray-900">攻略</a>
+          <a href="crafting.html" class="text-gray-600 hover:text-green-600">合成</a>
+          <a href="patch-notes.html" class="text-gray-600 hover:text-green-600">补丁</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="../en/xbox-game-pass.html" class="text-sm px-3 py-1.5 rounded-lg border border-gray-300 hover:bg-gray-50 transition">English</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="xbox-green pt-32 pb-20 px-4 text-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur px-4 py-1.5 rounded-full text-sm font-medium mb-6">
+        <span>🎮</span> Xbox Game Pass
+      </div>
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4">在 Xbox Game Pass 上玩 Outbound</h1>
+      <p class="text-lg md:text-xl text-green-50 max-w-2xl mx-auto">
+        关于通过 Xbox Game Pass 游玩 Outbound 的一切信息，包括跨平台联机、存档同步和多人设置。
+      </p>
+      <div class="flex flex-wrap justify-center gap-3 mt-8">
+        <span class="tag bg-white/20 !text-white border border-white/30">🎮 Xbox Game Pass</span>
+        <span class="tag bg-white/20 !text-white border border-white/30">🔄 跨平台联机</span>
+        <span class="tag bg-white/20 !text-white border border-white/30">💾 存档同步</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="lg:grid lg:grid-cols-[280px_1fr] gap-12">
+
+      <!-- Sidebar TOC -->
+      <aside class="hidden lg:block">
+        <div class="sticky top-24 card p-6">
+          <h3 class="font-bold text-gray-900 mb-4">目录</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#availability" class="toc-link text-gray-600 hover:text-green-700">Outbound 是否在 XGP 上？</a></li>
+            <li><a href="#how-to-play" class="toc-link text-gray-600 hover:text-green-700">如何在 XGP 上游玩</a></li>
+            <li><a href="#cross-play" class="toc-link text-gray-600 hover:text-green-700">跨平台联机与存档</a></li>
+            <li><a href="#multiplayer" class="toc-link text-gray-600 hover:text-green-700">XGP 多人联机</a></li>
+            <li><a href="#issues" class="toc-link text-gray-600 hover:text-green-700">已知问题与修复</a></li>
+            <li><a href="#comparison" class="toc-link text-gray-600 hover:text-green-700">XGP vs Steam 对比</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="space-y-16">
+
+        <!-- Section 1 -->
+        <section id="availability" class="section-anchor">
+          <div class="card p-8">
+            <h2 class="text-2xl font-bold mb-4">Outbound 是否在 Xbox Game Pass 上？</h2>
+            <p class="text-gray-600 mb-4">
+              是的，<strong>Outbound 已登陆 Xbox Game Pass</strong>，支持 PC 端（通过 Xbox 应用 / Microsoft Store）和 Xbox 主机端。该游戏于 2026 年中正式版 1.0 发布时加入 Game Pass 游戏库，订阅用户无需额外付费即可游玩。
+            </p>
+            <div class="tip-card bg-green-50 p-4 rounded-r-lg mb-4">
+              <p class="text-green-800 font-medium">✅ 包含 Outbound 的订阅档位：</p>
+              <ul class="mt-2 space-y-1 text-green-700 text-sm">
+                <li>• Xbox Game Pass for PC（PC 版）</li>
+                <li>• Xbox Game Pass Ultimate（主机 + PC + 云游戏）</li>
+                <li>• Xbox Game Pass Console（Xbox Series X|S 和 Xbox One）</li>
+              </ul>
+            </div>
+            <p class="text-gray-600">
+              如果你是活跃的 Game Pass 订阅用户，可以直接通过 Windows 上的 Xbox 应用或主机上的 Microsoft Store / Xbox Store 安装 Outbound。游戏文件大小约为 4-6 GB，请确保有足够的存储空间。
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section id="how-to-play" class="section-anchor">
+          <div class="card p-8">
+            <h2 class="text-2xl font-bold mb-4">如何在 Xbox Game Pass 上游玩 Outbound</h2>
+            <p class="text-gray-600 mb-6">在 XGP 上开始 Outbound 之旅非常简单。根据你的平台，按照以下步骤操作：</p>
+
+            <h3 class="text-lg font-semibold mb-3 text-gray-900">PC 端（Windows 10/11）</h3>
+            <ol class="list-decimal list-inside space-y-2 text-gray-600 mb-6">
+              <li>在电脑上打开 <strong>Xbox 应用</strong>（如未安装，可从 Microsoft Store 下载）。</li>
+              <li>使用拥有有效 Game Pass 订阅的 Microsoft 账号登录。</li>
+              <li>在搜索栏中搜索 "Outbound"。</li>
+              <li>点击 <strong>安装</strong> 按钮下载游戏。</li>
+              <li>安装完成后，从 Xbox 应用或开始菜单启动游戏。</li>
+            </ol>
+
+            <h3 class="text-lg font-semibold mb-3 text-gray-900">Xbox 主机端（Series X|S / One）</h3>
+            <ol class="list-decimal list-inside space-y-2 text-gray-600 mb-6">
+              <li>按 Xbox 按钮，打开 <strong>Microsoft Store</strong> 或 <strong>Game Pass</strong> 标签页。</li>
+              <li>搜索 "Outbound" 并选择 Game Pass 版本。</li>
+              <li>点击 <strong>安装</strong> 开始下载。</li>
+              <li>安装完成后，从"我的游戏和应用"中启动。</li>
+            </ol>
+
+            <div class="tip-card bg-green-50 p-4 rounded-r-lg">
+              <p class="text-green-800 font-medium">💡 专业提示</p>
+              <p class="text-green-700 text-sm mt-1">在 Xbox 应用设置中启用"自动更新"，这样 Outbound 就能在发布新补丁时自动保持最新，无需手动操作。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 3 -->
+        <section id="cross-play" class="section-anchor">
+          <div class="card p-8">
+            <h2 class="text-2xl font-bold mb-4">跨平台联机与存档同步</h2>
+            <p class="text-gray-600 mb-4">
+              Steam 社区中最常见的问题之一是：Xbox Game Pass 玩家能否与 Steam 玩家一起联机？以下是关于 Outbound 跨平台功能的详细说明。
+            </p>
+
+            <h3 class="text-lg font-semibold mb-3 text-gray-900">跨平台联机（不同平台间的多人游戏）</h3>
+            <p class="text-gray-600 mb-4">
+              Outbound 支持 <strong>Xbox Game Pass（PC）与 Steam PC 玩家之间的跨平台联机</strong>。这意味着如果你通过 PC 端的 Xbox 应用游玩，可以加入 Steam 好友创建的多人游戏，反之亦然。
+            </p>
+            <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-4">
+              <p class="text-gray-700 text-sm">
+                <strong>跨平台联机机制：</strong>游戏使用内置的邀请码系统。房主从暂停菜单生成一个会话代码，其他玩家输入该代码即可加入 —— 无论对方是在 Steam 还是 Xbox Game Pass PC 上游玩。
+              </p>
+            </div>
+            <p class="text-gray-600 mb-4">
+              不过，<strong>主机与 PC 之间的跨平台联机目前有一定限制</strong>。Xbox 主机玩家（Series X|S / One）可以通过 Xbox 网络与其他 Xbox 主机玩家和 Xbox Game Pass PC 玩家联机，但 Xbox 主机与 Steam PC 之间通过邀请码的直接跨平台联机可能尚未完全支持。请随时关注最新补丁说明以获取该功能的更新。
+            </p>
+
+            <h3 class="text-lg font-semibold mb-3 text-gray-900">跨平台存档（存档文件转移）</h3>
+            <p class="text-gray-600 mb-4">
+              Outbound 支持 <strong>Xbox Game Pass PC 与 Xbox 主机之间的跨平台存档</strong>，通过 Xbox 云存档自动同步。你的进度会自动保存到 Microsoft 账号中，让你可以在任一平台上继续冒险。
+            </p>
+            <div class="issue-card bg-red-50 p-4 rounded-r-lg">
+              <p class="text-red-800 font-medium">⚠️ 重要限制</p>
+              <p class="text-red-700 text-sm mt-1">Xbox Game Pass 与 Steam 之间的跨平台存档<strong>不被支持</strong>。存档文件存储在不同的格式和位置（Microsoft 云端 vs. 本地 Steam 用户数据）。如果你从 XGP 切换到 Steam（或在 Game Pass 试玩后购买 Steam 版），需要重新开始新的存档。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 4 -->
+        <section id="multiplayer" class="section-anchor">
+          <div class="card p-8">
+            <h2 class="text-2xl font-bold mb-4">XGP 多人联机指南</h2>
+            <p class="text-gray-600 mb-4">
+              多人联机是 Outbound 最亮眼的功能之一，支持最多 <strong>4 人合作</strong>。Xbox Game Pass 玩家在设置多人游戏时报告了一些独特的挑战，特别是在混合不同平台时。本节根据社区讨论整理了最常见的场景和解决方案。
+            </p>
+
+            <h3 class="text-lg font-semibold mb-3 text-gray-900">如何创建多人游戏房间</h3>
+            <ol class="list-decimal list-inside space-y-2 text-gray-600 mb-6">
+              <li>启动 Outbound 并加载你的存档。</li>
+              <li>打开暂停菜单，选择 <strong>多人游戏</strong>。</li>
+              <li>点击 <strong>创建房间</strong> 来建立联机大厅。</li>
+              <li>将生成的 <strong>邀请码</strong> 分享给你的好友（4 位数字或字母数字组合）。</li>
+              <li>你的好友在多人游戏菜单中选择 <strong>加入房间</strong> 并输入邀请码。</li>
+            </ol>
+
+            <h3 class="text-lg font-semibold mb-3 text-gray-900">XGP 常见联机问题（来自 Steam 讨论区）</h3>
+            <div class="space-y-4 mb-6">
+              <div class="issue-card bg-red-50 p-4 rounded-r-lg">
+                <p class="text-red-800 font-medium">❌ "好友无法加入我的 XGP 房间"</p>
+                <p class="text-red-700 text-sm mt-1">这是报告最多的问题。如果你在使用 XGP PC 版，而好友在 Steam 上，请确保你们的游戏版本完全一致。Xbox 应用和 Steam 的补丁发布时间可能略有不同。检查主菜单右下角的版本号。</p>
+              </div>
+              <div class="issue-card bg-red-50 p-4 rounded-r-lg">
+                <p class="text-red-800 font-medium">❌ "连接超时 / 找不到房间"</p>
+                <p class="text-red-700 text-sm mt-1">Xbox Game Pass PC 使用的网络层与 Steam 不同。尝试让 Steam 玩家担任房主而非 XGP 玩家 —— 许多用户报告 Steam 房主的成功率更高。同时确保 Windows 防火墙没有阻止 Xbox 应用。</p>
+              </div>
+              <div class="issue-card bg-red-50 p-4 rounded-r-lg">
+                <p class="text-red-800 font-medium">❌ "Xbox 主机 NAT 类型为严格"</p>
+                <p class="text-red-700 text-sm mt-1">NAT 类型为"严格"或"中等"的主机玩家可能难以连接 PC 房主创建的房间。前往 Xbox 设置 > 网络 > 测试 NAT 类型。如果显示"严格"，尝试在路由器上启用 UPnP 或为 Xbox Live 设置端口转发。</p>
+              </div>
+            </div>
+
+            <h3 class="text-lg font-semibold mb-3 text-gray-900">稳定联机的最佳实践</h3>
+            <ul class="list-disc list-inside space-y-2 text-gray-600">
+              <li><strong>尽可能使用有线网络</strong> —— Wi-Fi 在大型营地中可能导致不同步。</li>
+              <li><strong>指定一名固定房主</strong> —— 避免世界状态冲突。</li>
+              <li><strong>频繁保存进度</strong> —— 在房车床上睡觉保存，只有房主的进度会被保存。</li>
+              <li><strong>避免同时建造</strong> —— 让一名玩家负责放置建筑，其他人负责收集资源。</li>
+              <li><strong>重启游戏</strong> —— 如果遇到物品栏不同步或隐形物品问题，尝试重启。</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Section 5 -->
+        <section id="issues" class="section-anchor">
+          <div class="card p-8">
+            <h2 class="text-2xl font-bold mb-4">已知问题与修复方法</h2>
+            <p class="text-gray-600 mb-6">
+              根据 Xbox 应用评论和 Steam 社区讨论区的玩家反馈，以下是最常见的 Xbox Game Pass 玩家遇到的问题及其解决方法。
+            </p>
+
+            <div class="space-y-6">
+              <div class="border border-gray-200 rounded-lg p-5">
+                <h4 class="font-semibold text-gray-900 mb-2">游戏无法从 Xbox 应用启动</h4>
+                <p class="text-gray-600 text-sm mb-2">部分玩家报告游戏启动后立即崩溃或黑屏。</p>
+                <div class="tip-card bg-green-50 p-3 rounded-r-lg">
+                  <p class="text-green-800 text-sm font-medium">解决方法：</p>
+                  <ul class="text-green-700 text-sm mt-1 list-disc list-inside">
+                    <li>通过 Microsoft Store 更新 Xbox 应用和 Gaming Services。</li>
+                    <li>重置游戏：Windows 设置 > 应用 > Outbound > 高级选项 > 重置。</li>
+                    <li>确保 Windows 系统完全更新（尤其是 Gaming Services 组件）。</li>
+                    <li>以管理员身份运行 Xbox 应用。</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="border border-gray-200 rounded-lg p-5">
+                <h4 class="font-semibold text-gray-900 mb-2">手柄无法识别（XGP PC 版）</h4>
+                <p class="text-gray-600 text-sm mb-2">Windows 可以识别 Xbox 手柄，但游戏内无法使用。</p>
+                <div class="tip-card bg-green-50 p-3 rounded-r-lg">
+                  <p class="text-green-800 text-sm font-medium">解决方法：</p>
+                  <ul class="text-green-700 text-sm mt-1 list-disc list-inside">
+                    <li>启动游戏后断开并重新连接手柄。</li>
+                    <li>使用有线 USB 连接代替蓝牙。</li>
+                    <li>如果同时运行了 Steam，禁用 Steam 输入 —— 可能会产生冲突。</li>
+                    <li>通过 Xbox Accessories 应用更新手柄固件。</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="border border-gray-200 rounded-lg p-5">
+                <h4 class="font-semibold text-gray-900 mb-2">PC 与主机之间进度无法同步</h4>
+                <p class="text-gray-600 text-sm mb-2">Xbox Game Pass PC 与 Xbox 主机之间的云存档同步偶尔可能失败。</p>
+                <div class="tip-card bg-green-50 p-3 rounded-r-lg">
+                  <p class="text-green-800 text-sm font-medium">解决方法：</p>
+                  <ul class="text-green-700 text-sm mt-1 list-disc list-inside">
+                    <li>确保你在两台设备上登录的是<strong>同一个 Microsoft 账号</strong>。</li>
+                    <li>在 Xbox 主机上：我的游戏和应用 > Outbound > 菜单 > 管理游戏 > 已保存数据 > 立即同步。</li>
+                    <li>在另一个平台上完全关闭游戏后再打开。</li>
+                    <li>关闭游戏后等待 5-10 分钟，让云存档完成同步。</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="border border-gray-200 rounded-lg p-5">
+                <h4 class="font-semibold text-gray-900 mb-2">缺少 DLC / 豪华版内容</h4>
+                <p class="text-gray-600 text-sm mb-2">Xbox Game Pass 仅包含基础游戏。豪华版 cosmetic 道具或 DLC 包不包含在内。</p>
+                <div class="tip-card bg-green-50 p-3 rounded-r-lg">
+                  <p class="text-green-800 text-sm font-medium">解决方法：</p>
+                  <ul class="text-green-700 text-sm mt-1 list-disc list-inside">
+                    <li>豪华版物品可以单独从 Microsoft Store 购买。</li>
+                    <li>Game Pass 订阅用户购买 DLC 通常可享受 10-20% 的折扣。</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 6 -->
+        <section id="comparison" class="section-anchor">
+          <div class="card p-8">
+            <h2 class="text-2xl font-bold mb-4">Xbox Game Pass vs Steam 版本对比</h2>
+            <p class="text-gray-600 mb-6">
+              不知道该在 Game Pass 上玩还是购买 Steam 版本？以下是对比表格，帮助你做出决定。
+            </p>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm text-left">
+                <thead class="bg-gray-50 text-gray-700 font-semibold">
+                  <tr>
+                    <th class="px-4 py-3 rounded-tl-lg">功能</th>
+                    <th class="px-4 py-3">Xbox Game Pass</th>
+                    <th class="px-4 py-3 rounded-tr-lg">Steam</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100">
+                  <tr>
+                    <td class="px-4 py-3 font-medium">价格</td>
+                    <td class="px-4 py-3 text-green-700">包含在订阅中（约 70-120 元/月）</td>
+                    <td class="px-4 py-3">一次性购买（约 200-300 元）</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-medium">游戏内容</td>
+                    <td class="px-4 py-3">仅基础游戏</td>
+                    <td class="px-4 py-3">基础游戏 + 可选豪华版捆绑包</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-medium">跨平台联机（PC）</td>
+                    <td class="px-4 py-3 text-green-700">✅ 支持，与 Steam PC 通过邀请码联机</td>
+                    <td class="px-4 py-3 text-green-700">✅ 支持，与 XGP PC 通过邀请码联机</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-medium">跨平台存档</td>
+                    <td class="px-4 py-3 text-red-600">❌ 不支持（仅限 Xbox 云存档）</td>
+                    <td class="px-4 py-3 text-red-600">❌ 不支持（仅限 Steam 云存档）</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-medium">Mod 支持</td>
+                    <td class="px-4 py-3 text-red-600">❌ 有限 / 不支持</td>
+                    <td class="px-4 py-3 text-green-700">✅ 未来可能支持 Mod</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-medium">成就系统</td>
+                    <td class="px-4 py-3">Xbox 成就</td>
+                    <td class="px-4 py-3">Steam 成就</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-medium">云存档</td>
+                    <td class="px-4 py-3 text-green-700">✅ Xbox 云存档（PC + 主机）</td>
+                    <td class="px-4 py-3 text-green-700">✅ Steam 云存档</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-medium">更新速度</td>
+                    <td class="px-4 py-3">有时比 Steam 稍慢</td>
+                    <td class="px-4 py-3 text-green-700">通常最先获得补丁</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-medium">退款政策</td>
+                    <td class="px-4 py-3">不适用（订阅模式）</td>
+                    <td class="px-4 py-3 text-green-700">✅ Steam 14 天 / 2 小时退款</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="mt-6 p-4 bg-gray-50 rounded-lg">
+              <p class="text-gray-700 text-sm">
+                <strong>我们的建议：</strong>如果你已经是 Game Pass 订阅用户，直接从这里开始 —— 这是试玩 Outbound 最划算的方式。如果你爱上了这款游戏，想要永久拥有、潜在的 Mod 支持以及最快的更新，可以考虑在 Steam 促销期间购买。注意你的 Game Pass 存档无法转移，请将此因素纳入考虑。
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Related Guides -->
+        <section>
+          <div class="card p-8">
+            <h2 class="text-2xl font-bold mb-4">相关攻略</h2>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <a href="multiplayer.html" class="block p-4 border border-gray-200 rounded-lg hover:border-green-500 hover:bg-green-50 transition">
+                <h4 class="font-semibold text-gray-900">多人联机攻略</h4>
+                <p class="text-sm text-gray-500 mt-1">完整的合作模式设置、故障排除和与好友游玩技巧。</p>
+              </a>
+              <a href="tech-fixes.html" class="block p-4 border border-gray-200 rounded-lg hover:border-green-500 hover:bg-green-50 transition">
+                <h4 class="font-semibold text-gray-900">技术问题修复</h4>
+                <p class="text-sm text-gray-500 mt-1">常见崩溃、性能问题及解决方法。</p>
+              </a>
+              <a href="starter-guide.html" class="block p-4 border border-gray-200 rounded-lg hover:border-green-500 hover:bg-green-50 transition">
+                <h4 class="font-semibold text-gray-900">新手入门攻略</h4>
+                <p class="text-sm text-gray-500 mt-1">刚接触 Outbound？从这里开始你的荒野生存之旅。</p>
+              </a>
+              <a href="system-requirements.html" class="block p-4 border border-gray-200 rounded-lg hover:border-green-500 hover:bg-green-50 transition">
+                <h4 class="font-semibold text-gray-900">系统配置要求</h4>
+                <p class="text-sm text-gray-500 mt-1">流畅游玩所需的最低和推荐配置。</p>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Last Updated -->
+        <div class="text-center text-sm text-gray-400">
+          最后更新：2026年7月21日
+        </div>
+
+        <!-- Giscus Comments -->
+        <section class="card p-8">
+          <h2 class="text-2xl font-bold mb-6">评论与提问</h2>
+          <script src="https://giscus.app/client.js"
+            data-repo="outboundguide/outboundguide.github.io"
+            data-repo-id="R_kgDOOetdqA"
+            data-category="General"
+            data-category-id="DIC_kwDOOetdqM4CpzAS"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-theme="light"
+            data-lang="zh-CN"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async>
+          </script>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-12 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="text-sm">
+          © 2026 OutboundGuide.org · 玩家自制攻略，与 Outbound 开发者无关联。
+        </div>
+        <div class="flex gap-4 text-sm">
+          <a href="privacy.html" class="hover:text-white">隐私政策</a>
+          <a href="disclaimer.html" class="hover:text-white">免责声明</a>
+          <a href="contact.html" class="hover:text-white">联系我们</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // TOC Active State
+    const sections = document.querySelectorAll('.section-anchor');
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          tocLinks.forEach(link => link.classList.remove('active'));
+          const id = entry.target.getAttribute('id');
+          const activeLink = document.querySelector(`.toc-link[href="#${id}"]`);
+          if (activeLink) activeLink.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -80% 0px' });
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>

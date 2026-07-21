@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>崩溃修复与故障排查 - Outbound 无法启动 | Outbound 攻略</title>
+<meta name="description" content="修复 Outbound 启动崩溃、黑屏、存档损坏、性能卡顿和手柄问题。详细的逐步故障排查指南，更新于2026年7月。">
+<link rel="canonical" href="https://outboundguide.org/zh/crash-fixes.html" />
+<link rel="alternate" hreflang="en" href="https://outboundguide.org/en/crash-fixes.html" />
+<link rel="alternate" hreflang="zh" href="https://outboundguide.org/zh/crash-fixes.html" />
+<link rel="alternate" hreflang="x-default" href="https://outboundguide.org/en/crash-fixes.html" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V167JMFJWE"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-V167JMFJWE');</script>
+<style>
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f7fafc;color:#0f172a}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:18px;box-shadow:0 8px 30px rgba(15,23,42,.06)}
+.adslot{background:repeating-linear-gradient(45deg,#f1f5f9,#f1f5f9 10px,#e2e8f0 10px,#e2e8f0 20px);border:1px dashed #94a3b8;color:#64748b;font-size:12px;text-align:center;padding:24px;border-radius:12px}
+.fix-card{transition:transform .25s,box-shadow .25s}
+.fix-card:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(15,23,42,.1)}
+.code-block{background:#1e293b;color:#e2e8f0;font-family:'Fira Code',monospace;font-size:13px;padding:1rem;border-radius:8px;overflow-x:auto}
+.quick-nav{position:sticky;top:72px;z-40;background:white;border-radius:16px;border:1px solid #e5e7eb;padding:1rem;margin-bottom:1.5rem;box-shadow:0 4px 20px rgba(15,23,42,.08)}
+section[id]{scroll-margin-top:100px}
+.step-num{background:linear-gradient(135deg,#ef4444,#f97316);color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
+</style>
+</head>
+<body>
+
+<nav class="bg-white/95 backdrop-blur sticky top-0 z-50 border-b border-slate-200">
+  <div class="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
+    <a href="/zh/" class="font-black text-xl text-blue-600">OutboundGuide.org</a>
+    <div class="hidden md:flex gap-5 text-sm font-semibold text-slate-700">
+      <a href="/zh/starter-guide.html">开荒</a>
+      <a href="/zh/crafting.html">合成</a>
+      <a href="/zh/tech-fixes.html">技术修复</a>
+      <a href="/zh/multiplayer-fixes.html">联机修复</a>
+    </div>
+    <div class="flex items-center gap-2 bg-slate-100 p-1 rounded-xl">
+      <button id="btn-en" onclick="setLang('en')" class="px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm">EN</button>
+      <button id="btn-zh" onclick="setLang('zh')" class="px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm">中文</button>
+    </div>
+  </div>
+</nav>
+
+<header class="bg-gradient-to-br from-red-600 via-orange-600 to-amber-600 text-white py-16">
+  <div class="max-w-5xl mx-auto px-4">
+    <div class="inline-flex gap-2 items-center bg-red-500/30 rounded-full px-4 py-2 text-sm font-bold mb-6">
+      <span>🚨</span><span>崩溃与启动故障排查</span>
+    </div>
+    <h1 class="text-4xl md:text-5xl font-black mb-4">崩溃修复与故障排查</h1>
+    <p class="text-xl text-orange-100 mb-6">游戏无法启动？黑屏？崩溃？这里提供 Outbound 最常见的启动和稳定性问题的修复方法。</p>
+    <div class="flex flex-wrap gap-3 text-sm">
+      <span class="bg-white/20 px-4 py-2 rounded-full font-bold">💥 启动崩溃</span>
+      <span class="bg-white/20 px-4 py-2 rounded-full">🖥️ 黑屏</span>
+      <span class="bg-white/20 px-4 py-2 rounded-full">🎮 手柄</span>
+      <span class="bg-white/20 px-4 py-2 rounded-full">⚡ 性能</span>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-5xl mx-auto px-4 py-10">
+
+<div class="adslot">[ 广告位 - 顶部横幅 ]</div>
+
+<!-- 快速导航 -->
+<div class="quick-nav">
+  <h3 class="text-sm font-bold text-slate-500 mb-3">⚡ 快速跳转</h3>
+  <div class="flex flex-wrap gap-2">
+    <a href="#startup-crash" class="bg-red-100 text-red-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-red-200">💥 启动崩溃</a>
+    <a href="#black-screen" class="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-slate-200">🖥️ 黑屏</a>
+    <a href="#multiplayer" class="bg-blue-100 text-blue-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-blue-200">🌐 联机问题</a>
+    <a href="#save-corruption" class="bg-amber-100 text-amber-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-amber-200">💾 存档损坏</a>
+    <a href="#performance" class="bg-emerald-100 text-emerald-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-emerald-200">⚡ 性能卡顿</a>
+    <a href="#controller" class="bg-purple-100 text-purple-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-purple-200">🎮 手柄</a>
+    <a href="#help" class="bg-pink-100 text-pink-700 px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-pink-200">🆘 获取帮助</a>
+  </div>
+</div>
+
+<!-- 1. 游戏无法启动 / 启动时崩溃 -->
+<section id="startup-crash" class="mb-12 scroll-mt-20">
+  <div class="flex items-center gap-3 mb-6">
+    <span class="text-4xl">💥</span>
+    <div>
+      <h2 class="text-2xl font-black">游戏无法启动 / 启动时崩溃</h2>
+      <p class="text-slate-500 text-sm">Steam 论坛上报告最多的问题</p>
+    </div>
+  </div>
+
+  <div class="card p-6 bg-red-50 border-l-4 border-red-500 mb-6">
+    <h3 class="font-bold text-lg mb-2">原因分析</h3>
+    <p class="text-slate-700 text-sm">Outbound 使用 Unity 引擎和 IL2CPP 脚本后端。常见原因包括游戏文件损坏、VC++ 运行时过期、DirectX 组件缺失以及杀毒软件干扰。此问题在 2026 年 7 月补丁后激增。</p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">1</span>
+        验证游戏文件完整性
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">文件损坏或缺失是启动崩溃的首要原因。</p>
+      <ol class="list-decimal pl-6 space-y-2 text-sm text-slate-700">
+        <li>打开 <b>Steam</b> &rarr; <b>库</b></li>
+        <li>右键 <b>Outbound</b> &rarr; <b>属性</b></li>
+        <li>进入 <b>已安装文件</b> 选项卡</li>
+        <li>点击 <b>验证游戏文件的完整性</b></li>
+        <li>等待完成，然后重启 Steam</li>
+      </ol>
+      <div class="mt-3 bg-green-50 p-3 rounded-lg text-xs text-green-700">✅ 可修复约 60% 的启动崩溃</div>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">2</span>
+        更新 Visual C++ 运行库
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">IL2CPP 需要最新的 VC++ 运行库才能正常工作。</p>
+      <ol class="list-decimal pl-6 space-y-2 text-sm text-slate-700">
+        <li>从 Microsoft 下载 <b>VC++ Redistributable 2015-2022 (x64)</b></li>
+        <li>运行安装程序并按提示操作</li>
+        <li>重启电脑</li>
+        <li>再次启动 Outbound</li>
+      </ol>
+      <div class="mt-3 bg-blue-50 p-3 rounded-lg text-xs text-blue-700">💡 下载地址：<code>aka.ms/vs/17/release/vc_redist.x64.exe</code></div>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">3</span>
+        以管理员身份运行
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">权限问题可能阻止游戏读取关键文件。</p>
+      <ol class="list-decimal pl-6 space-y-2 text-sm text-slate-700">
+        <li>右键 <b>Outbound.exe</b> 或 Steam 快捷方式</li>
+        <li>选择 <b>属性</b> &rarr; <b>兼容性</b></li>
+        <li>勾选 <b>以管理员身份运行此程序</b></li>
+        <li>点击 <b>应用</b> &rarr; <b>确定</b></li>
+      </ol>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">4</span>
+        关闭覆盖层和后台应用
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">Steam 覆盖层、Discord 和 GeForce Experience 可能与 Unity 冲突。</p>
+      <ol class="list-decimal pl-6 space-y-2 text-sm text-slate-700">
+        <li>Steam：<b>设置</b> &rarr; <b>游戏中</b> &rarr; 取消勾选 <b>启用 Steam 覆盖层</b></li>
+        <li>Discord：关闭 <b>游戏内覆盖层</b></li>
+        <li>关闭 MSI Afterburner / Rivatuner（如有运行）</li>
+        <li>临时禁用 GeForce Experience 覆盖层</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="card p-6 mt-6 bg-amber-50 border border-amber-200">
+    <h4 class="font-bold text-amber-800 mb-2">🛡️ 预防措施</h4>
+    <ul class="list-disc pl-6 text-sm text-amber-700 space-y-1">
+      <li>将 Outbound 文件夹添加到杀毒软件排除项</li>
+      <li>初始加载序列期间不要切换窗口（Alt+Tab）</li>
+      <li>保持显卡驱动更新（NVIDIA 566+ / AMD 24.12+）</li>
+      <li>将游戏安装在 SSD 上，而非机械硬盘</li>
+    </ul>
+  </div>
+</section>
+
+<div class="adslot">[ 广告位 - 文中 ]</div>
+
+<!-- 2. 启动黑屏 -->
+<section id="black-screen" class="mb-12 scroll-mt-20">
+  <div class="flex items-center gap-3 mb-6">
+    <span class="text-4xl">🖥️</span>
+    <div>
+      <h2 class="text-2xl font-black">启动黑屏</h2>
+      <p class="text-slate-500 text-sm">游戏在运行但屏幕保持黑屏</p>
+    </div>
+  </div>
+
+  <div class="card p-6 bg-slate-900 text-slate-100 mb-6">
+    <h3 class="font-bold text-lg mb-2">原因分析</h3>
+    <p class="text-slate-300 text-sm">通常由不正确的显示分辨率、全屏模式冲突，或游戏在集成显卡而非独立显卡上渲染导致。双显卡笔记本电脑尤其容易出现此问题。</p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">1</span>
+        强制使用独立显卡
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">笔记本电脑通常默认使用集成显卡。</p>
+      <div class="space-y-2">
+        <div class="bg-slate-50 p-3 rounded-lg text-sm">
+          <p class="font-semibold text-slate-700">NVIDIA：</p>
+          <p class="text-slate-600">NVIDIA 控制面板 &rarr; 管理 3D 设置 &rarr; 程序设置 &rarr; 选择 Outbound &rarr; 首选图形处理器：高性能 NVIDIA 处理器</p>
+        </div>
+        <div class="bg-slate-50 p-3 rounded-lg text-sm">
+          <p class="font-semibold text-slate-700">AMD：</p>
+          <p class="text-slate-600">AMD Software &rarr; 显卡 &rarr; 添加 Outbound &rarr; 设为高性能</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">2</span>
+        删除显示设置文件
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">重置游戏的显示配置。</p>
+      <div class="code-block text-sm mb-3">
+        <p class="text-slate-400"># 删除或重命名以下文件：</p>
+        <p>%AppData%\Outbound\settings.json</p>
+      </div>
+      <p class="text-xs text-slate-500">下次启动时游戏会以默认设置重新创建该文件。</p>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">3</span>
+        以窗口模式启动
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">绕过全屏独占模式冲突。</p>
+      <ol class="list-decimal pl-6 space-y-2 text-sm text-slate-700">
+        <li>在 Steam 库中右键 Outbound</li>
+        <li><b>属性</b> &rarr; <b>通用</b></li>
+        <li>在 <b>启动选项</b> 中输入：<code>-windowed -w 1920 -h 1080</code></li>
+        <li>启动游戏</li>
+      </ol>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">4</span>
+        更新显卡驱动
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">最新驱动通常能解决黑屏问题。</p>
+      <div class="space-y-2">
+        <a href="https://www.nvidia.com/drivers" target="_blank" class="block bg-green-50 p-3 rounded-lg text-sm text-green-700 hover:bg-green-100 font-semibold">NVIDIA 驱动 &rarr;</a>
+        <a href="https://www.amd.com/support" target="_blank" class="block bg-red-50 p-3 rounded-lg text-sm text-red-700 hover:bg-red-100 font-semibold">AMD 驱动 &rarr;</a>
+        <a href="https://www.intel.com/content/www/us/en/download-center" target="_blank" class="block bg-blue-50 p-3 rounded-lg text-sm text-blue-700 hover:bg-blue-100 font-semibold">Intel 驱动 &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card p-6 mt-6 bg-amber-50 border border-amber-200">
+    <h4 class="font-bold text-amber-800 mb-2">🛡️ 预防措施</h4>
+    <ul class="list-disc pl-6 text-sm text-amber-700 space-y-1">
+      <li>启动前将显示器设为本机分辨率</li>
+      <li>如果在 Logo 后出现黑屏，尝试禁用 HDR 模式</li>
+      <li>加载过程中不要使用 Alt+Enter 切换全屏</li>
+      <li>双显示器用户可尝试临时断开副显示器</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 3. 联机连接问题 -->
+<section id="multiplayer" class="mb-12 scroll-mt-20">
+  <div class="flex items-center gap-3 mb-6">
+    <span class="text-4xl">🌐</span>
+    <div>
+      <h2 class="text-2xl font-black">联机连接问题</h2>
+      <p class="text-slate-500 text-sm">无法加入好友游戏或频繁掉线</p>
+    </div>
+  </div>
+
+  <div class="card p-6 bg-blue-50 border-l-4 border-blue-500 mb-6">
+    <h3 class="font-bold text-lg mb-2">原因分析</h3>
+    <p class="text-slate-700 text-sm">Outbound 使用基于 Steam 中继服务器的点对点（P2P）网络。连接问题通常由 NAT 类型冲突、防火墙拦截、玩家间游戏版本不一致或主机网络不稳定导致。</p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">1</span>
+        检查 NAT 类型
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">严格 NAT 会阻止 P2P 连接。</p>
+      <div class="space-y-2 text-sm">
+        <div class="flex items-center gap-2"><span class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-bold">开放 (Open)</span><span class="text-slate-600">最佳 - 通常无问题</span></div>
+        <div class="flex items-center gap-2"><span class="bg-amber-100 text-amber-700 px-2 py-1 rounded text-xs font-bold">中等 (Moderate)</span><span class="text-slate-600">可与大部分玩家连接</span></div>
+        <div class="flex items-center gap-2"><span class="bg-red-100 text-red-700 px-2 py-1 rounded text-xs font-bold">严格 (Strict)</span><span class="text-slate-600">无法主持；只能加入开放主机</span></div>
+      </div>
+      <p class="text-xs text-slate-500 mt-3">在 Steam 中查看：<b>查看</b> &rarr; <b>设置</b> &rarr; <b>游戏中</b>，或使用路由器管理面板。</p>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">2</span>
+        端口转发
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">在路由器上开放以下端口以获得稳定的主持体验。</p>
+      <div class="code-block text-sm">
+        <p>UDP: 27015-27050</p>
+        <p>TCP: 27015-27030</p>
+        <p>UDP: 3478, 4379, 4380</p>
+      </div>
+      <p class="text-xs text-slate-500 mt-3">或在路由器上启用 UPnP，让 Steam 自动处理。</p>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">3</span>
+        确保游戏版本一致
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">版本不匹配是加入失败的最常见原因。</p>
+      <ol class="list-decimal pl-6 space-y-2 text-sm text-slate-700">
+        <li>所有玩家：在主菜单左下角查看版本号</li>
+        <li>如果不同：重启 Steam 强制更新</li>
+        <li>如果更新未出现：验证游戏文件完整性</li>
+        <li>确保 Steam 下载完成后再启动游戏</li>
+      </ol>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">4</span>
+        防火墙和杀毒软件
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">Windows 防火墙经常会拦截 P2P 游戏。</p>
+      <ol class="list-decimal pl-6 space-y-2 text-sm text-slate-700">
+        <li>打开 <b>Windows 安全中心</b> &rarr; <b>防火墙</b></li>
+        <li>点击 <b>允许应用通过防火墙</b></li>
+        <li>添加 <b>Outbound.exe</b>，允许专用和公用网络</li>
+        <li>临时禁用第三方杀毒软件测试</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="card p-6 mt-6 bg-amber-50 border border-amber-200">
+    <h4 class="font-bold text-amber-800 mb-2">🛡️ 预防措施</h4>
+    <ul class="list-disc pl-6 text-sm text-amber-700 space-y-1">
+      <li>主机的上传速度应至少达到 5 Mbps</li>
+      <li>主持游戏时尽量使用有线网络而非 WiFi</li>
+      <li>游玩时关闭占用带宽的应用（流媒体、下载）</li>
+      <li>邀请玩家前先保存游戏，以最小化掉线损失</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 4. 存档损坏 -->
+<section id="save-corruption" class="mb-12 scroll-mt-20">
+  <div class="flex items-center gap-3 mb-6">
+    <span class="text-4xl">💾</span>
+    <div>
+      <h2 class="text-2xl font-black">存档损坏</h2>
+      <p class="text-slate-500 text-sm">进度丢失、无法加载或存档消失</p>
+    </div>
+  </div>
+
+  <div class="card p-6 bg-amber-50 border-l-4 border-amber-500 mb-6">
+    <h3 class="font-bold text-lg mb-2">原因分析</h3>
+    <p class="text-slate-700 text-sm">损坏通常发生在自动保存时强制关闭游戏、断电、云同步冲突（特别是 Steam 云 + 多台电脑），或磁盘错误。2026 年 7 月补丁引入了新的存档格式，偶尔会与旧备份冲突。</p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">1</span>
+        从备份恢复
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">Outbound 每 30 分钟自动创建备份。</p>
+      <div class="code-block text-sm mb-3">
+        <p class="text-slate-400"># 存档位置：</p>
+        <p>%AppData%\Outbound\Saves\</p>
+        <p>%AppData%\Outbound\Saves_Backup\</p>
+      </div>
+      <ol class="list-decimal pl-6 space-y-2 text-sm text-slate-700">
+        <li>打开备份文件夹</li>
+        <li>找到损坏前最新的 <code>.sav</code> 文件</li>
+        <li>将其复制到主 Saves 文件夹</li>
+        <li>重命名为与原始存档匹配的名称</li>
+      </ol>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">2</span>
+        临时禁用 Steam 云同步
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">云同步冲突可能覆盖有效存档。</p>
+      <ol class="list-decimal pl-6 space-y-2 text-sm text-slate-700">
+        <li>Steam &rarr; 右键 Outbound &rarr; <b>属性</b></li>
+        <li><b>通用</b> 选项卡 &rarr; 取消勾选 <b>将游戏存档保存在 Steam 云中</b></li>
+        <li>从备份恢复本地存档</li>
+        <li>启动游戏确认可正常加载</li>
+        <li>确认正常后重新启用 Steam 云</li>
+      </ol>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">3</span>
+        检查磁盘错误
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">坏扇区可能导致存档文件损坏。</p>
+      <ol class="list-decimal pl-6 space-y-2 text-sm text-slate-700">
+        <li>打开 <b>文件资源管理器</b> &rarr; 右键游戏所在磁盘</li>
+        <li><b>属性</b> &rarr; <b>工具</b> 选项卡</li>
+        <li>在查错下点击 <b>检查</b></li>
+        <li>如提示则运行 <b>chkdsk /f</b></li>
+        <li>重启电脑完成扫描</li>
+      </ol>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">4</span>
+        使用存档编辑器（高级）
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">如果存档完全无法加载，存档编辑器可能挽救。</p>
+      <div class="bg-red-50 p-3 rounded-lg text-sm text-red-700">
+        <p class="font-semibold">⚠️ 警告</p>
+        <p>编辑前务必备份存档。r/Outbound 和 Nexus Mods 上有社区存档编辑器，但请自行承担风险使用。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card p-6 mt-6 bg-amber-50 border border-amber-200">
+    <h4 class="font-bold text-amber-800 mb-2">🛡️ 预防措施</h4>
+    <ul class="list-disc pl-6 text-sm text-amber-700 space-y-1">
+      <li>自动保存图标出现时切勿 Alt+F4 或强制关闭</li>
+      <li>退出前在安全的地点手动保存</li>
+      <li>每周将存档文件夹备份到云盘或外置硬盘</li>
+      <li>在多台电脑上游玩同一存档时，等待云同步完成</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 5. 性能问题和卡顿 -->
+<section id="performance" class="mb-12 scroll-mt-20">
+  <div class="flex items-center gap-3 mb-6">
+    <span class="text-4xl">⚡</span>
+    <div>
+      <h2 class="text-2xl font-black">性能问题和卡顿</h2>
+      <p class="text-slate-500 text-sm">FPS 低、掉帧和微卡顿</p>
+    </div>
+  </div>
+
+  <div class="card p-6 bg-emerald-50 border-l-4 border-emerald-500 mb-6">
+    <h3 class="font-bold text-lg mb-2">原因分析</h3>
+    <p class="text-slate-700 text-sm">Outbound 是使用 Unity 引擎的开放世界游戏，包含动态天气、昼夜循环和物理驱动对象。卡顿通常来自着色器编译、HDD 加载资源、世界生成时的 CPU 瓶颈，或后台进程抢占资源。</p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">1</span>
+        最佳 FPS 设置
+      </h3>
+      <div class="space-y-2 text-sm">
+        <div class="flex justify-between items-center p-2 bg-slate-50 rounded"><span>阴影质量</span><span class="bg-red-100 text-red-700 px-2 py-1 rounded text-xs font-bold">低 / 关闭</span></div>
+        <div class="flex justify-between items-center p-2 bg-slate-50 rounded"><span>视野距离</span><span class="bg-amber-100 text-amber-700 px-2 py-1 rounded text-xs font-bold">中</span></div>
+        <div class="flex justify-between items-center p-2 bg-slate-50 rounded"><span>纹理质量</span><span class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-bold">高</span></div>
+        <div class="flex justify-between items-center p-2 bg-slate-50 rounded"><span>垂直同步</span><span class="bg-red-100 text-red-700 px-2 py-1 rounded text-xs font-bold">关闭</span></div>
+        <div class="flex justify-between items-center p-2 bg-slate-50 rounded"><span>抗锯齿</span><span class="bg-amber-100 text-amber-700 px-2 py-1 rounded text-xs font-bold">FXAA</span></div>
+        <div class="flex justify-between items-center p-2 bg-slate-50 rounded"><span>动态模糊</span><span class="bg-red-100 text-red-700 px-2 py-1 rounded text-xs font-bold">关闭</span></div>
+      </div>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">2</span>
+        修复卡顿
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">针对 Unity 游戏的持续性卡顿修复。</p>
+      <ol class="list-decimal pl-6 space-y-2 text-sm text-slate-700">
+        <li>在 Windows 中将 <b>电源计划</b> 设为 <b>高性能</b></li>
+        <li>在 NVIDIA/AMD 控制面板中将 <b>电源管理模式</b> 设为 <b>最高性能优先</b></li>
+        <li>为 Outbound.exe 禁用 <b>全屏优化</b></li>
+        <li>使用 RTSS 或游戏内限制器将 FPS 限制为显示器刷新率</li>
+        <li>关闭 Chrome/Edge 标签页（它们占用大量内存）</li>
+      </ol>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">3</span>
+        安装到 SSD
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">机械硬盘在开放世界流式加载时会产生严重卡顿。</p>
+      <div class="bg-blue-50 p-3 rounded-lg text-sm text-blue-700">
+        <p class="font-semibold">推荐：</p>
+        <p>读取速度 3000+ MB/s 的 NVMe SSD。SATA SSD 也可接受。避免将游戏安装在机械硬盘上。</p>
+      </div>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">4</span>
+        着色器预加载
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">Unity 着色器编译会导致微卡顿。</p>
+      <ol class="list-decimal pl-6 space-y-2 text-sm text-slate-700">
+        <li>启动游戏，在主菜单静置 5 分钟</li>
+        <li>开始新游戏，原地站立 2-3 分钟</li>
+        <li>在起始区域四处走动以强制编译着色器</li>
+        <li>此"热身"后重启游戏</li>
+      </ol>
+      <p class="text-xs text-slate-500 mt-2">后续游玩会流畅得多。</p>
+    </div>
+  </div>
+
+  <div class="card p-6 mt-6 bg-amber-50 border border-amber-200">
+    <h4 class="font-bold text-amber-800 mb-2">🛡️ 预防措施</h4>
+    <ul class="list-disc pl-6 text-sm text-amber-700 space-y-1">
+      <li>保持显卡驱动更新（每月检查）</li>
+      <li>确保至少 16GB 内存（8GB 会导致频繁卡顿）</li>
+      <li>如果 FPS 已较低，不要在同一台电脑上运行 OBS 或直播软件</li>
+      <li>机械硬盘每月进行碎片整理（SSD 不需要）</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 6. 手柄不工作 -->
+<section id="controller" class="mb-12 scroll-mt-20">
+  <div class="flex items-center gap-3 mb-6">
+    <span class="text-4xl">🎮</span>
+    <div>
+      <h2 class="text-2xl font-black">手柄不工作</h2>
+      <p class="text-slate-500 text-sm">Xbox、PlayStation 或第三方手柄无响应</p>
+    </div>
+  </div>
+
+  <div class="card p-6 bg-purple-50 border-l-4 border-purple-500 mb-6">
+    <h3 class="font-bold text-lg mb-2">原因分析</h3>
+    <p class="text-slate-700 text-sm">Unity 的输入系统可能在 Steam Input 干扰时无法检测手柄，或手柄在游戏启动后才连接，或第三方手柄驱动（如 DS4Windows）与 Steam 原生输入冲突。</p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">1</span>
+        禁用 Steam 输入
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">Steam 输入经常与游戏原生手柄支持冲突。</p>
+      <ol class="list-decimal pl-6 space-y-2 text-sm text-slate-700">
+        <li>Steam &rarr; 右键 <b>Outbound</b> &rarr; <b>属性</b></li>
+        <li><b>控制器</b> 选项卡</li>
+        <li>将 <b>Outbound 的覆盖</b> 改为 <b>禁用 Steam 输入</b></li>
+        <li>断开并重新连接手柄</li>
+        <li>启动游戏</li>
+      </ol>
+      <div class="mt-3 bg-green-50 p-3 rounded-lg text-xs text-green-700">✅ 可修复大多数 Xbox 和 PlayStation 手柄问题</div>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">2</span>
+        启动前连接手柄
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">Unity 有时无法检测热插拔的手柄。</p>
+      <ol class="list-decimal pl-6 space-y-2 text-sm text-slate-700">
+        <li>完全关闭 Outbound</li>
+        <li>通过 USB 或蓝牙连接手柄</li>
+        <li>等待 10 秒让 Windows 识别</li>
+        <li>在 <b>Windows 设置 &rarr; 蓝牙和设备</b> 中确认已识别</li>
+        <li>启动 Outbound</li>
+      </ol>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">3</span>
+        DS4Windows / DualSense 用户
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">DualShock 4 和 DualSense 需要特殊处理。</p>
+      <ol class="list-decimal pl-6 space-y-2 text-sm text-slate-700">
+        <li>完全关闭 DS4Windows</li>
+        <li>在 Steam 中启用 <b>PlayStation 配置支持</b></li>
+        <li>PlayStation 手柄保持 Steam 输入 <b>启用</b></li>
+        <li>或在使用 DS4Windows 的 <b>隐藏 DS4 控制器</b> 模式时禁用 Steam 输入</li>
+      </ol>
+      <p class="text-xs text-slate-500 mt-2">不要同时运行 DS4Windows 和 Steam 输入。</p>
+    </div>
+
+    <div class="fix-card card p-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+        <span class="step-num">4</span>
+        在大屏幕模式中测试
+      </h3>
+      <p class="text-slate-600 text-sm mb-3">Steam 大屏幕模式提供更好的手柄支持。</p>
+      <ol class="list-decimal pl-6 space-y-2 text-sm text-slate-700">
+        <li>启动 <b>Steam 大屏幕模式</b></li>
+        <li>在库中找到 Outbound</li>
+        <li>从大屏幕启动</li>
+        <li>检查手柄在此模式下是否工作</li>
+      </ol>
+      <p class="text-xs text-slate-500 mt-2">如果在大屏幕中可用但普通模式不行，则 Steam 输入配置是罪魁祸首。</p>
+    </div>
+  </div>
+
+  <div class="card p-6 mt-6 bg-amber-50 border border-amber-200">
+    <h4 class="font-bold text-amber-800 mb-2">🛡️ 预防措施</h4>
+    <ul class="list-disc pl-6 text-sm text-amber-700 space-y-1">
+      <li>竞技游玩时使用有线连接（延迟更低、不会断开）</li>
+      <li>更新手柄固件（Xbox Accessories 应用 / DS4Windows）</li>
+      <li>非本地合作游玩时不要连接多个手柄</li>
+      <li>保持蓝牙驱动更新以避免输入延迟</li>
+    </ul>
+  </div>
+</section>
+
+<div class="adslot">[ 广告位 - 底部横幅 ]</div>
+
+<!-- 7. 获取更多帮助的渠道 -->
+<section id="help" class="mb-12 scroll-mt-20">
+  <div class="flex items-center gap-3 mb-6">
+    <span class="text-4xl">🆘</span>
+    <div>
+      <h2 class="text-2xl font-black">获取更多帮助的渠道</h2>
+      <p class="text-slate-500 text-sm">如果以上方法都无效</p>
+    </div>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-6">
+    <a href="https://steamcommunity.com/app/2681030/discussions/" target="_blank" class="fix-card card p-6 text-center hover:no-underline">
+      <div class="text-4xl mb-3">🛟</div>
+      <h3 class="font-bold text-lg mb-2">Steam 论坛</h3>
+      <p class="text-slate-600 text-sm">官方讨论版。发帖前先搜索 - 大多数问题已有现成帖子。</p>
+    </a>
+
+    <a href="https://www.reddit.com/r/Outbound/" target="_blank" class="fix-card card p-6 text-center hover:no-underline">
+      <div class="text-4xl mb-3">🤖</div>
+      <h3 class="font-bold text-lg mb-2">r/Outbound</h3>
+      <p class="text-slate-600 text-sm">15000+ 玩家的活跃社区。回复迅速，修复方案经社区测试。</p>
+    </a>
+
+    <a href="https://discord.gg/outbound" target="_blank" class="fix-card card p-6 text-center hover:no-underline">
+      <div class="text-4xl mb-3">💬</div>
+      <h3 class="font-bold text-lg mb-2">官方 Discord</h3>
+      <p class="text-slate-600 text-sm">开发者在 #bug-reports 和 #tech-support 频道活跃。</p>
+    </a>
+  </div>
+
+  <div class="card p-6 mt-6 bg-gradient-to-r from-blue-50 to-indigo-50">
+    <h3 class="font-bold text-lg mb-3">📋 求助时应提供的信息</h3>
+    <div class="grid md:grid-cols-2 gap-4 text-sm">
+      <ul class="list-disc pl-6 text-slate-700 space-y-1">
+        <li>电脑配置（CPU、GPU、内存）</li>
+        <li>游戏版本（主菜单左下角）</li>
+        <li>Windows 版本（运行：<code>winver</code>）</li>
+        <li>具体错误信息或截图</li>
+      </ul>
+      <ul class="list-disc pl-6 text-slate-700 space-y-1">
+        <li>问题何时开始（补丁后？新安装？）</li>
+        <li>已尝试过的解决方法</li>
+        <li>显卡驱动版本</li>
+        <li>问题是否可复现</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 相关指南 -->
+<section class="card p-6 bg-gradient-to-r from-red-50 to-orange-50 mb-6">
+  <h2 class="text-xl font-black mb-4">相关故障排查指南</h2>
+  <div class="flex flex-wrap gap-4">
+    <a href="/zh/tech-fixes.html" class="bg-white px-5 py-3 rounded-xl shadow-sm font-semibold text-slate-700 hover:shadow-md transition">🔧 技术修复（il2cpp、晕3D、Steam Deck） &rarr;</a>
+    <a href="/zh/multiplayer-fixes.html" class="bg-white px-5 py-3 rounded-xl shadow-sm font-semibold text-slate-700 hover:shadow-md transition">🌐 联机修复（连接、主机问题、成就） &rarr;</a>
+  </div>
+</section>
+
+<!-- 来源 -->
+<section class="card p-6 bg-slate-50 mb-6">
+  <h2 class="text-lg font-black mb-3">来源</h2>
+  <ul class="list-disc pl-6 text-sm text-slate-600 space-y-1">
+    <li>Steam 社区讨论 - Outbound (AppID 2681030)</li>
+    <li>r/Outbound 故障排查综合帖（2026年7月）</li>
+    <li>Square Glade Games 官方 Discord #tech-support</li>
+    <li>Unity IL2CPP 文档及已知问题</li>
+    <li>社区直接测试与验证</li>
+  </ul>
+  <p class="text-xs text-slate-500 mt-3">OutboundGuide.org 是非官方玩家攻略站，与 Square Glade Games 无关。最后更新：2026年7月21日。</p>
+</section>
+
+<!-- 评论 -->
+<section class="card p-6">
+  <h2 class="text-xl font-black mb-2">💬 讨论</h2>
+  <p class="text-slate-600 text-sm mb-4">找到了对你有效的修复方法？在下方分享，帮助其他玩家！</p>
+  <script src="https://giscus.app/client.js"
+          data-repo="OASISXXr/outbound-guide"
+          data-repo-id="R_kgDOSZPlqw"
+          data-category="Announcements"
+          data-category-id="DIC_kwDOSZPlq84C8s3i"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="top"
+          data-theme="light"
+          data-lang="zh"
+          data-loading="lazy"
+          crossorigin="anonymous"
+          async>
+  </script>
+  <noscript class="text-sm text-slate-500">评论需要 JavaScript。你也可以在我们的 <a href="https://www.reddit.com/r/Outbound/" class="text-blue-600 underline">Reddit 社区</a> 讨论，或发送邮件至 <span class="font-mono">contact[at]outboundguide.org</span>。</noscript>
+</section>
+
+</main>
+
+<footer class="bg-slate-950 text-slate-300 py-10 mt-10">
+  <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row gap-4 justify-between text-sm">
+    <div>
+      <div class="font-black text-white">OutboundGuide.org</div>
+      <div class="text-slate-400">非官方玩家攻略站。Outbound &copy; Square Glade Games。</div>
+    </div>
+    <div class="flex flex-wrap gap-4">
+      <a href="/zh/about.html" class="hover:text-white">关于</a>
+      <a href="/zh/privacy.html" class="hover:text-white">隐私</a>
+      <a href="/zh/disclaimer.html" class="hover:text-white">免责声明</a>
+      <a href="/zh/contact.html" class="hover:text-white">联系我们</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function setLang(lang){
+  const en=document.getElementById('btn-en'),zh=document.getElementById('btn-zh');
+  if(lang==='en'){
+    en.className='px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm';
+    zh.className='px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm';
+    window.location.href = '/en/crash-fixes.html';
+  }else{
+    zh.className='px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm';
+    en.className='px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm';
+  }
+  localStorage.setItem('lang',lang);
+}
+</script>
+</body>
+</html>
