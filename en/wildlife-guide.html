@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wildlife Update Guide - All 34 Animals, Photography & Journal | Outbound Guide</title>
+  <meta name="description" content="Complete guide to Outbound's Wildlife Update (v1.2.0). All 34 animal species across 4 biomes, photography system tips, wildlife journal completion, and the new Wildlife Outpost.">
+  <link rel="canonical" href="https://outboundguide.org/en/wildlife-guide.html" />
+  <link rel="alternate" hreflang="en" href="https://outboundguide.org/en/wildlife-guide.html" />
+  <link rel="alternate" hreflang="zh" href="https://outboundguide.org/zh/wildlife-guide.html" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V167JMFJWE"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-V167JMFJWE');</script>
+  <style>
+    html{scroll-behavior:smooth}body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f7fafc;color:#0f172a}.lang-zh .en{display:none}.lang-en .zh{display:none}.card{background:white;border:1px solid #e5e7eb;border-radius:18px;box-shadow:0 8px 30px rgba(15,23,42,.06)}.adslot{background:repeating-linear-gradient(45deg,#f1f5f9,#f1f5f9 10px,#e2e8f0 10px,#e2e8f0 20px);border:1px dashed #94a3b8;color:#64748b;font-size:12px;text-align:center;padding:24px;border-radius:12px}.feature-card{transition:transform .25s,box-shadow .25s}.feature-card:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(15,23,42,.1)}
+  </style>
+</head>
+<body id="bodyTag" class="lang-en">
+
+  <nav class="bg-white/95 backdrop-blur sticky top-0 z-50 border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
+      <a href="/" class="font-black text-xl text-blue-600">OutboundGuide.org</a>
+      <div class="hidden md:flex gap-5 text-sm font-semibold text-slate-700">
+        <a href="/en/starter-guide.html"><span class="en">Starter</span><span class="zh">开荒</span></a>
+        <a href="/en/all-guides.html" class="text-indigo-600 font-bold"><span class="en">Guides</span><span class="zh">攻略</span></a>
+        <a href="/en/crafting.html"><span class="en">Crafting</span><span class="zh">合成</span></a>
+        <a href="/en/fishing.html"><span class="en">Fishing</span><span class="zh">钓鱼</span></a>
+        <a href="/en/patch-notes.html"><span class="en">Patches</span><span class="zh">补丁</span></a>
+        <a href="/en/co-op.html"><span class="en">Co-op</span><span class="zh">联机</span></a>
+        <a href="/en/achievements.html"><span class="en">Achievements</span><span class="zh">成就</span></a>
+      </div>
+      <div class="flex items-center gap-2 bg-slate-100 p-1 rounded-xl">
+        <button id="btn-en" onclick="setLang('en')" class="px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm">EN</button>
+        <button id="btn-zh" onclick="setLang('zh')" class="px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm">中文</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-amber-500 via-orange-500 to-red-500 text-white py-16">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="inline-flex gap-2 items-center bg-white/20 backdrop-blur rounded-full px-4 py-2 text-sm font-bold mb-6">
+        <span>🦊</span><span class="en">Major Update · v1.2.0 · September 2026</span><span class="zh">大型更新 · v1.2.0 · 2026年9月</span>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-black mb-4">
+        <span class="en">Wildlife Update Complete Guide</span>
+        <span class="zh">野生动物更新完全指南</span>
+      </h1>
+      <p class="text-xl text-amber-100 mb-6">
+        <span class="en">34 animal species, photography system, and wildlife journal tracking across all 4 biomes</span>
+        <span class="zh">34种动物物种、摄影系统以及横跨4个生物群系的野生动物日志追踪</span>
+      </p>
+      <div class="flex flex-wrap gap-3 text-sm">
+        <span class="bg-amber-300 text-slate-900 px-4 py-2 rounded-full font-bold">📸 Photography System</span>
+        <span class="bg-white/20 px-4 py-2 rounded-full">📔 Wildlife Journal</span>
+        <span class="bg-white/20 px-4 py-2 rounded-full">🦊 34 Animal Species</span>
+        <span class="bg-white/20 px-4 py-2 rounded-full">🏕️ Wildlife Outpost</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-10">
+    <div class="adslot">[ Ad slot - top banner ]</div>
+
+    <!-- Overview -->
+    <section class="mb-12">
+      <div class="card p-6 bg-gradient-to-r from-amber-50 to-orange-50">
+        <h2 class="text-2xl font-black mb-4"><span class="en">Wildlife Update Overview</span><span class="zh">野生动物更新概览</span></h2>
+        <p class="text-slate-600 text-sm mb-4"><span class="en">The Wildlife Update was released in <strong>September 2026</strong> as version <strong>v1.2.0</strong> — the largest content update for Outbound to date. This <strong>FREE major update</strong> introduces 34 unique animal species across all 4 biomes, a brand-new photography system with a dedicated camera tool, a wildlife journal to document every discovery, and a brand-new location: the <strong>Wildlife Outpost</strong>. Available now on PC (Steam & Epic), PS5, and Xbox Series X/S, with Nintendo Switch and Switch 2 versions coming later.</span><span class="zh">野生动物更新于 <strong>2026年9月</strong> 以 <strong>v1.2.0</strong> 版本发布——这是Outbound迄今为止规模最大的内容更新。本次 <strong>免费大型更新</strong> 在全部4个生物群系中引入了34种独特的动物物种、全新的摄影系统和专用相机工具、用于记录每一次发现的野生动物日志，以及全新的地点：<strong>野生动物前哨站</strong>。现已登陆PC（Steam和Epic）、PS5和Xbox Series X/S平台，Nintendo Switch和Switch 2版本将在稍后推出。</span></p>
+        <div class="grid md:grid-cols-4 gap-4 text-center">
+          <div class="bg-white rounded-xl p-4">
+            <div class="text-3xl mb-2">🦌</div>
+            <div class="font-bold text-slate-800"><span class="en">34 Animal Species</span><span class="zh">34种动物</span></div>
+            <div class="text-xs text-slate-500"><span class="en">Unique wildlife across 4 biomes</span><span class="zh">遍布4个生物群系的独特野生动物</span></div>
+          </div>
+          <div class="bg-white rounded-xl p-4">
+            <div class="text-3xl mb-2">📸</div>
+            <div class="font-bold text-slate-800"><span class="en">Photography System</span><span class="zh">摄影系统</span></div>
+            <div class="text-xs text-slate-500"><span class="en">Capture animals with your camera</span><span class="zh">用你的相机记录动物</span></div>
+          </div>
+          <div class="bg-white rounded-xl p-4">
+            <div class="text-3xl mb-2">📔</div>
+            <div class="font-bold text-slate-800"><span class="en">Wildlife Journal</span><span class="zh">野生动物日志</span></div>
+            <div class="text-xs text-slate-500"><span class="en">Track every species you discover</span><span class="zh">追踪你发现的每一个物种</span></div>
+          </div>
+          <div class="bg-white rounded-xl p-4">
+            <div class="text-3xl mb-2">🏕️</div>
+            <div class="font-bold text-slate-800"><span class="en">Wildlife Outpost</span><span class="zh">野生动物前哨站</span></div>
+            <div class="text-xs text-slate-500"><span class="en">New location to explore</span><span class="zh">可供探索的新地点</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What's New -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-black mb-6"><span class="en">What's New in v1.2.0</span><span class="zh">v1.2.0 更新内容</span></h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="feature-card card p-6 border-l-4 border-amber-500">
+          <h3 class="font-bold text-lg mb-3">📸 <span class="en">Photography System</span><span class="zh">摄影系统</span></h3>
+          <p class="text-slate-600 text-sm mb-4"><span class="en">Equip your brand-new camera and snap photos of animals in their natural habitats. Each successful photo unlocks the animal in your journal and contributes to your wildlife collection progress.</span><span class="zh">装备你的全新相机，在动物的自然栖息地中为它们拍照。每张成功拍摄的照片都会在你的日志中解锁该动物，并为你的野生动物收集进度做出贡献。</span></p>
+          <ul class="text-sm text-slate-600 space-y-1 list-disc pl-4">
+            <li><span class="en">Dedicated camera tool</span><span class="zh">专用相机工具</span></li>
+            <li><span class="en">Photo quality affects journal rating</span><span class="zh">照片质量影响日志评分</span></li>
+            <li><span class="en">Zoom and focus controls</span><span class="zh">变焦和对焦控制</span></li>
+          </ul>
+        </div>
+
+        <div class="feature-card card p-6 border-l-4 border-orange-500">
+          <h3 class="font-bold text-lg mb-3">📔 <span class="en">Wildlife Journal</span><span class="zh">野生动物日志</span></h3>
+          <p class="text-slate-600 text-sm mb-4"><span class="en">Every animal you photograph is recorded in your wildlife journal. Track your discoveries, view detailed animal information, and work toward completing the full collection of all 34 species.</span><span class="zh">你拍摄的每一只动物都会记录在野生动物日志中。追踪你的发现、查看详细的动物信息，并努力完成全部34种物种的完整收集。</span></p>
+          <ul class="text-sm text-slate-600 space-y-1 list-disc pl-4">
+            <li><span class="en">Track discovered/photographed species</span><span class="zh">追踪已发现/已拍摄的物种</span></li>
+            <li><span class="en">Rarity tiers and collection stats</span><span class="zh">稀有度等级和收集统计</span></li>
+            <li><span class="en">Detailed animal fact entries</span><span class="zh">详细的动物科普条目</span></li>
+          </ul>
+        </div>
+
+        <div class="feature-card card p-6 border-l-4 border-red-500">
+          <h3 class="font-bold text-lg mb-3">🏕️ <span class="en">Wildlife Outpost</span><span class="zh">野生动物前哨站</span></h3>
+          <p class="text-slate-600 text-sm mb-4"><span class="en">Visit the new Wildlife Outpost — a dedicated ranger station packed with wildlife information, photo displays, quest boards, and special rewards for dedicated naturalists.</span><span class="zh">参观全新的野生动物前哨站——一座专门的护林员站，汇集了野生动物信息、照片展示、任务公告板，以及为敬业的博物学家准备的特殊奖励。</span></p>
+          <ul class="text-sm text-slate-600 space-y-1 list-disc pl-4">
+            <li><span class="en">New explorable location</span><span class="zh">全新可探索地点</span></li>
+            <li><span class="en">Wildlife quests and challenges</span><span class="zh">野生动物任务和挑战</span></li>
+            <li><span class="en">Unique rewards for completion</span><span class="zh">完成后的独特奖励</span></li>
+          </ul>
+        </div>
+
+        <div class="feature-card card p-6 border-l-4 border-rose-500">
+          <h3 class="font-bold text-lg mb-3">🦊 <span class="en">34 Animal Species</span><span class="zh">34种动物物种</span></h3>
+          <p class="text-slate-600 text-sm mb-4"><span class="en">Discover 34 unique animal species distributed across all 4 biomes — from common deer and rabbits to rare birds and legendary creatures. Each biome has its own distinct wildlife population.</span><span class="zh">在全部4个生物群系中发现34种独特的动物物种——从常见的鹿和兔子到稀有的鸟类和传说生物。每个生物群系都有其独特的野生动物种群。</span></p>
+          <ul class="text-sm text-slate-600 space-y-1 list-disc pl-4">
+            <li><span class="en">4 rarity tiers: Common, Uncommon, Rare, Legendary</span><span class="zh">4个稀有度等级：普通、不常见、稀有、传说</span></li>
+            <li><span class="en">Mammals, birds, insects & more</span><span class="zh">哺乳动物、鸟类、昆虫等多种类别</span></li>
+            <li><span class="en">Biome-specific species</span><span class="zh">各生物群系特有的物种</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="adslot">[ Ad slot - mid-content ]</div>
+
+    <!-- Animals by Biome -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-black mb-6"><span class="en">🦌 Animals by Biome</span><span class="zh">🦌 各生物群系动物</span></h2>
+      <p class="text-slate-600 text-sm mb-6"><span class="en">The Wildlife Update introduces <strong>34 animal species</strong> spread across the game's 4 biomes. Each biome features its own unique wildlife with different rarity tiers. Below is a breakdown of confirmed and expected species per biome. You'll need to explore every corner of the map to complete your wildlife journal!</span><span class="zh">野生动物更新在游戏的4个生物群系中引入了 <strong>34种动物物种</strong>。每个生物群系都有其独特的野生动物和不同的稀有度等级。以下是各生物群系已确认和预期物种的分类。你需要探索地图的每一个角落才能完成你的野生动物日志！</span></p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Grasslands -->
+        <div class="feature-card card p-6 border-l-4 border-green-500">
+          <h3 class="font-bold text-lg mb-3"><span class="en">🌿 Grasslands</span><span class="zh">🌿 草原</span></h3>
+          <p class="text-xs text-slate-500 mb-3"><span class="en">Open meadows and rolling hills. The most accessible biome with abundant wildlife.</span><span class="zh">开阔的草地和起伏的丘陵。最容易到达的生物群系，野生动物丰富。</span></p>
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="text-left text-xs text-slate-500 border-b border-slate-200">
+                <th class="pb-2"><span class="en">Animal</span><span class="zh">动物</span></th>
+                <th class="pb-2"><span class="en">Type</span><span class="zh">类型</span></th>
+                <th class="pb-2"><span class="en">Rarity</span><span class="zh">稀有度</span></th>
+              </tr>
+            </thead>
+            <tbody class="text-slate-700">
+              <tr class="border-b border-slate-100"><td class="py-2">White-tailed Deer</td><td>Mammal</td><td><span class="text-slate-500">Common</span></td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">Eastern Cottontail Rabbit</td><td>Mammal</td><td><span class="text-slate-500">Common</span></td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">Red Fox</td><td>Mammal</td><td><span class="text-slate-500">Common</span></td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">Meadow Vole</td><td>Mammal</td><td><span class="text-slate-500">Common</span></td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">Eastern Bluebird</td><td>Bird</td><td><span class="text-slate-500">Common</span></td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">Monarch Butterfly</td><td>Insect</td><td><span class="text-emerald-600">Uncommon</span></td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">American Goldfinch</td><td>Bird</td><td><span class="text-emerald-600">Uncommon</span></td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">Groundhog</td><td>Mammal</td><td><span class="text-emerald-600">Uncommon</span></td></tr>
+              <tr><td class="py-2">Great Horned Owl</td><td>Bird</td><td><span class="text-amber-600">Rare</span></td></tr>
+            </tbody>
+          </table>
+          <div class="text-xs text-slate-400 mt-2"><span class="en">9 species in this biome</span><span class="zh">本群系共9种</span></div>
+        </div>
+
+        <!-- Canyon -->
+        <div class="feature-card card p-6 border-l-4 border-orange-500">
+          <h3 class="font-bold text-lg mb-3"><span class="en">🏜️ Canyon</span><span class="zh">🏜️ 峡谷</span></h3>
+          <p class="text-xs text-slate-500 mb-3"><span class="en">Arid desert canyons and rocky outcrops. Hardy creatures adapted to harsh conditions.</span><span class="zh">干旱的沙漠峡谷和岩石露头。适应恶劣环境的坚韧生物。</span></p>
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="text-left text-xs text-slate-500 border-b border-slate-200">
+                <th class="pb-2"><span class="en">Animal</span><span class="zh">动物</span></th>
+                <th class="pb-2"><span class="en">Type</span><span class="zh">类型</span></th>
+                <th class="pb-2"><span class="en">Rarity</span><span class="zh">稀有度</span></th>
+              </tr>
+            </thead>
+            <tbody class="text-slate-700">
+              <tr class="border-b border-slate-100"><td class="py-2">Desert Cottontail</td><td>Mammal</td><td><span class="text-slate-500">Common</span></td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">Black-tailed Jackrabbit</td><td>Mammal</td><td><span class="text-slate-500">Common</span></td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">Roadrunner</td><td>Bird</td><td><span class="text-slate-500">Common</span></td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">Western Diamondback</td><td>Reptile</td><td><span class="text-emerald-600">Uncommon</span></td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">Coyote</td><td>Mammal</td><td><span class="text-emerald-600">Uncommon</span></td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">Bighorn Sheep</td><td>Mammal</td><td><span class="text-emerald-600">Uncommon</span></td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">Tarantula Hawk Wasp</td><td>Insect</td><td><span class="text-amber-600">Rare</span></td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">Gila Monster</td><td>Reptile</td><td><span class="text-amber-600">Rare</span></td></tr>
+              <tr><td class="py-2">Desert Bighorn Ram</td><td>Mammal</td><td><span class="text-purple-600">Legendary</span></td></tr>
+            </tbody>
+          </table>
+          <div class="text-xs text-slate-400 mt-2"><span class="en">9 species in this biome</span><span class="zh">本群系共9种</span></div>
+        </div>
+
+        <!-- Coast -->
+        <div class="feature-card card p-6 border-l-4 border-sky-500">
+          <h3 class="font-bold text-lg mb-3"><span class="en">🌊 Coast</span><span class="zh">🌊 海岸</span></h3>
+          <p class="text-xs text-slate-500 mb-3"><span class="en">Sandy beaches, tide pools, and rocky cliffs. Seabirds and coastal mammals abound.</span><span class="zh">沙滩、潮池和岩石悬崖。海鸟和海岸哺乳动物比比皆是。</span></p>
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="text-left text-xs text-slate-500 border-b border-slate-200">
+                <th class="pb-2"><span class="en">Animal</span><span class="zh">动物</span></th>
+                <th class="pb-2"><span class="en">Type</span><span class="zh">类型</span></th>
+                <th class="pb-2"><span class="en">Rarity</span><span class="zh">稀有度</span></th>
+              </tr>
+            </thead>
+            <tbody class="text-slate-700">
+              <tr class="border-b border-slate-100"><td class="py-2">Western Gull</td><td>Bird</td><td><span class="text-slate-500">Common</span></td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">Sea Otter</td><td>Mammal</td><td><span class="text-slate-500">Common</span></td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">Harbor Seal</td><td>Mammal</td><td><span class="text-slate-500">Common</span></td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">Sand Crab</td><td>Crustacean</td><td><span class="text-slate-500">Common</span></td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">Brown Pelican</td><td>Bird</td><td><span class="text-emerald-600">Uncommon</span></td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">Great Blue Heron</td><td>Bird</td><td><span class="text-emerald-600">Uncommon</span></td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">Sea Lion</td><td>Mammal</td><td><span class="text-emerald-600">Uncommon</span></td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">Bald Eagle</td><td>Bird</td><td><span class="text-amber-600">Rare</span></td></tr>
+              <tr><td class="py-2">Humpback Whale</td><td>Mammal</td><td><span class="text-purple-600">Legendary</span></td></tr>
+            </tbody>
+          </table>
+          <div class="text-xs text-slate-400 mt-2"><span class="en">9 species in this biome</span><span class="zh">本群系共9种</span></div>
+        </div>
+
+        <!-- Mountain -->
+        <div class="feature-card card p-6 border-l-4 border-slate-500">
+          <h3 class="font-bold text-lg mb-3"><span class="en">⛰️ Mountain</span><span class="zh">⛰️ 山脉</span></h3>
+          <p class="text-xs text-slate-500 mb-3"><span class="en">Alpine forests and snow-capped peaks. Majestic and elusive high-altitude wildlife.</span><span class="zh">高山森林和白雪皑皑的山峰。雄伟而难以捉摸的高海拔野生动物。</span></p>
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="text-left text-xs text-slate-500 border-b border-slate-200">
+                <th class="pb-2"><span class="en">Animal</span><span class="zh">动物</span></th>
+                <th class="pb-2"><span class="en">Type</span><span class="zh">类型</span></th>
+                <th class="pb-2"><span class="en">Rarity</span><span class="zh">稀有度</span></th>
+              </tr>
+            </thead>
+            <tbody class="text-slate-700">
+              <tr class="border-b border-slate-100"><td class="py-2">Mule Deer</td><td>Mammal</td><td><span class="text-slate-500">Common</span></td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">American Robin</td><td>Bird</td><td><span class="text-slate-500">Common</span></td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">Red Squirrel</td><td>Mammal</td><td><span class="text-slate-500">Common</span></td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">Steller's Jay</td><td>Bird</td><td><span class="text-emerald-600">Uncommon</span></td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">Mountain Goat</td><td>Mammal</td><td><span class="text-emerald-600">Uncommon</span></td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">Pine Marten</td><td>Mammal</td><td><span class="text-amber-600">Rare</span></td></tr>
+              <tr class="border-b border-slate-100"><td class="py-2">Gray Wolf</td><td>Mammal</td><td><span class="text-amber-600">Rare</span></td></tr>
+              <tr><td class="py-2">Golden Eagle</td><td>Bird</td><td><span class="text-purple-600">Legendary</span></td></tr>
+            </tbody>
+          </table>
+          <div class="text-xs text-slate-400 mt-2"><span class="en">8 species in this biome · 35 total across all biomes</span><span class="zh">本群系共8种 · 全群系总计35种</span></div>
+        </div>
+      </div>
+      <p class="text-xs text-slate-400 mt-4 italic"><span class="en">Animal names and rarities are based on early-access gameplay and community data mining. Some species counts may vary slightly as the community discovers all 34 animals. Rarity tiers: <span class="text-slate-500 font-semibold">Common</span> · <span class="text-emerald-600 font-semibold">Uncommon</span> · <span class="text-amber-600 font-semibold">Rare</span> · <span class="text-purple-600 font-semibold">Legendary</span>. We'll update this page as more verified information becomes available.</span><span class="zh">动物名称和稀有度基于抢先体验游戏玩法和社区数据挖掘。随着社区发现全部34种动物，某些物种数量可能会略有不同。稀有度等级：<span class="text-slate-500 font-semibold">普通</span> · <span class="text-emerald-600 font-semibold">不常见</span> · <span class="text-amber-600 font-semibold">稀有</span> · <span class="text-purple-600 font-semibold">传说</span>。我们将随着更多验证信息的出现持续更新本页面。</span></p>
+    </section>
+
+    <!-- Photography System Guide -->
+    <section class="mb-12">
+      <div class="card p-6 bg-gradient-to-r from-cyan-50 to-blue-50">
+        <h2 class="text-2xl font-black mb-4"><span class="en">📸 Photography System Guide</span><span class="zh">📸 摄影系统指南</span></h2>
+        <p class="text-slate-600 text-sm mb-6"><span class="en">The new camera is your primary tool for documenting wildlife. Taking high-quality photos of animals unlocks them in your journal and progresses your collection. Here's how the photography system works:</span><span class="zh">全新的相机是你记录野生动物的主要工具。为动物拍摄高质量照片可以在日志中解锁它们并推进你的收集进度。以下是摄影系统的工作原理：</span></p>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-white rounded-xl p-4 flex gap-3">
+            <div class="flex-shrink-0 w-8 h-8 bg-cyan-100 text-cyan-700 rounded-full flex items-center justify-center font-bold text-sm">1</div>
+            <div>
+              <div class="font-bold text-slate-800 text-sm mb-1"><span class="en">Equip the Camera</span><span class="zh">装备相机</span></div>
+              <div class="text-xs text-slate-600"><span class="en">The camera is available in your tool wheel once you start the Wildlife Update. Select it like any other tool to enter photo mode.</span><span class="zh">开始野生动物更新后，相机将出现在你的工具轮盘中。像选择其他工具一样选择它即可进入拍照模式。</span></div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-4 flex gap-3">
+            <div class="flex-shrink-0 w-8 h-8 bg-cyan-100 text-cyan-700 rounded-full flex items-center justify-center font-bold text-sm">2</div>
+            <div>
+              <div class="font-bold text-slate-800 text-sm mb-1"><span class="en">Find and Approach Animals</span><span class="zh">寻找并接近动物</span></div>
+              <div class="text-xs text-slate-600"><span class="en">Explore the biomes to find wildlife. Move slowly and stay downwind to avoid spooking skittish animals. Some species are more approachable than others.</span><span class="zh">探索生物群系寻找野生动物。缓慢移动并保持在下风处以避免惊扰胆小的动物。某些物种比其他物种更容易接近。</span></div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-4 flex gap-3">
+            <div class="flex-shrink-0 w-8 h-8 bg-cyan-100 text-cyan-700 rounded-full flex items-center justify-center font-bold text-sm">3</div>
+            <div>
+              <div class="font-bold text-slate-800 text-sm mb-1"><span class="en">Frame and Focus</span><span class="zh">构图和对焦</span></div>
+              <div class="text-xs text-slate-600"><span class="en">Use zoom to get closer without disturbing the animal. Center the animal in your viewfinder and wait for the focus indicator to confirm a good shot.</span><span class="zh">使用变焦功能在不惊扰动物的情况下靠得更近。将动物置于取景器中央，等待对焦指示器确认良好的拍摄效果。</span></div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-4 flex gap-3">
+            <div class="flex-shrink-0 w-8 h-8 bg-cyan-100 text-cyan-700 rounded-full flex items-center justify-center font-bold text-sm">4</div>
+            <div>
+              <div class="font-bold text-slate-800 text-sm mb-1"><span class="en">Capture and Review</span><span class="zh">拍摄和回顾</span></div>
+              <div class="text-xs text-slate-600"><span class="en">Take the shot! A successful photo adds the animal to your wildlife journal. Higher-quality photos (closer, centered, well-lit) give better journal entries and more collection progress.</span><span class="zh">按下快门！成功的照片会将该动物添加到你的野生动物日志中。更高质量的照片（更近、居中、光线充足）会带来更好的日志条目和更多的收集进度。</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 bg-white rounded-xl p-5 border border-cyan-200">
+          <h3 class="font-bold text-slate-800 mb-3"><span class="en">💡 Pro Photography Tips</span><span class="zh">💡 专业摄影技巧</span></h3>
+          <ul class="text-sm text-slate-600 space-y-2 list-disc pl-4">
+            <li><span class="en"><strong>Stay crouched</strong> when approaching animals — you're less likely to be detected.</span><span class="zh"><strong>保持蹲姿</strong>接近动物——你更不容易被发现。</span></li>
+            <li><span class="en"><strong>Use maximum zoom</strong> for skittish rare animals to avoid spooking them.</span><span class="zh">对胆小的稀有动物使用<strong>最大变焦</strong>，避免惊吓到它们。</span></li>
+            <li><span class="en"><strong>Golden hour lighting</strong> (dawn/dusk) gives the best photo quality ratings.</span><span class="zh"><strong>黄金时段光线</strong>（黎明/黄昏）能获得最佳的照片质量评分。</span></li>
+            <li><span class="en"><strong>Front-facing shots</strong> where the animal looks toward the camera score higher.</span><span class="zh">动物朝向相机的<strong>正面拍摄</strong>得分更高。</span></li>
+            <li><span class="en"><strong>Revisit areas</strong> — animal spawns cycle throughout the day and night.</span><span class="zh"><strong>重访区域</strong>——动物的生成会随昼夜循环而变化。</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wildlife Outpost -->
+    <section class="mb-12">
+      <div class="card p-6 bg-gradient-to-r from-emerald-50 to-teal-50">
+        <h2 class="text-2xl font-black mb-4"><span class="en">🏕️ Wildlife Outpost</span><span class="zh">🏕️ 野生动物前哨站</span></h2>
+        <p class="text-slate-600 text-sm mb-6"><span class="en">The Wildlife Outpost is a brand-new location introduced in v1.2.0. This ranger station serves as the central hub for all wildlife-related activities in Outbound. Here's what you can do there:</span><span class="zh">野生动物前哨站是v1.2.0中引入的全新地点。这座护林员站是Outbound中所有野生动物相关活动的中心枢纽。以下是你可以在那里做的事情：</span></p>
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="bg-white rounded-xl p-4">
+            <div class="text-2xl mb-2">📋</div>
+            <div class="font-bold text-slate-800 text-sm"><span class="en">Quest Board</span><span class="zh">任务公告板</span></div>
+            <div class="text-xs text-slate-500"><span class="en">Pick up wildlife photography challenges and daily quests from the ranger station bulletin board.</span><span class="zh">从护林员站公告板领取野生动物摄影挑战和每日任务。</span></div>
+          </div>
+          <div class="bg-white rounded-xl p-4">
+            <div class="text-2xl mb-2">🖼️</div>
+            <div class="font-bold text-slate-800 text-sm"><span class="en">Photo Gallery</span><span class="zh">照片画廊</span></div>
+            <div class="text-xs text-slate-500"><span class="en">View your best wildlife photos displayed in the outpost gallery. Show off your collection!</span><span class="zh">在前哨站画廊中查看你最好的野生动物照片。炫耀你的收集！</span></div>
+          </div>
+          <div class="bg-white rounded-xl p-4">
+            <div class="text-2xl mb-2">🎁</div>
+            <div class="font-bold text-slate-800 text-sm"><span class="en">Rewards & Upgrades</span><span class="zh">奖励和升级</span></div>
+            <div class="text-xs text-slate-500"><span class="en">Earn unique rewards, camera upgrades, and decor items by completing wildlife challenges.</span><span class="zh">通过完成野生动物挑战赚取独特奖励、相机升级和装饰物品。</span></div>
+          </div>
+          <div class="bg-white rounded-xl p-4">
+            <div class="text-2xl mb-2">🗺️</div>
+            <div class="font-bold text-slate-800 text-sm"><span class="en">Wildlife Map</span><span class="zh">野生动物地图</span></div>
+            <div class="text-xs text-slate-500"><span class="en">Check the outpost map for hints about where to find rare and legendary animals.</span><span class="zh">查看前哨站地图，获取寻找稀有和传说动物的线索。</span></div>
+          </div>
+          <div class="bg-white rounded-xl p-4">
+            <div class="text-2xl mb-2">🔬</div>
+            <div class="font-bold text-slate-800 text-sm"><span class="en">Information Kiosk</span><span class="zh">信息亭</span></div>
+            <div class="text-xs text-slate-500"><span class="en">Learn interesting facts about each animal species you've discovered in the wild.</span><span class="zh">了解你在野外发现的每种动物物种的有趣知识。</span></div>
+          </div>
+          <div class="bg-white rounded-xl p-4">
+            <div class="text-2xl mb-2">🏆</div>
+            <div class="font-bold text-slate-800 text-sm"><span class="en">Completion Rewards</span><span class="zh">完成奖励</span></div>
+            <div class="text-xs text-slate-500"><span class="en">Unlock special titles, van decor, and achievements by completing your wildlife journal.</span><span class="zh">通过完成野生动物日志解锁特殊称号、露营车装饰和成就。</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tips for Completing Your Journal -->
+    <section class="mb-12">
+      <div class="card p-6 bg-gradient-to-r from-rose-50 to-pink-50">
+        <h2 class="text-xl font-black mb-4"><span class="en">💡 Tips for Completing Your Wildlife Journal</span><span class="zh">💡 完成野生动物日志的技巧</span></h2>
+        <ul class="text-sm text-slate-600 space-y-3 list-disc pl-4">
+          <li><span class="en"><strong>Explore every biome thoroughly.</strong> With 34 species spread across 4 biomes, you'll need to visit each one multiple times. Don't just stick to the starting grasslands — the canyon, coast, and mountains each have unique animals you won't find anywhere else.</span><span class="zh"><strong>彻底探索每个生物群系。</strong>34种物种分布在4个生物群系中，你需要多次访问每个群系。不要只停留在初始草原——峡谷、海岸和山脉各自拥有你在其他地方找不到的独特动物。</span></li>
+          <li><span class="en"><strong>Visit at different times of day.</strong> Many animals are crepuscular (active at dawn and dusk) or nocturnal. The great horned owl, for example, only appears at night. Cycle through morning, midday, evening, and nighttime to maximize your discoveries.</span><span class="zh"><strong>在不同的时间段访问。</strong>许多动物是晨昏性的（在黎明和黄昏活跃）或夜行性的。例如，大雕鸮只在夜间出现。在早晨、正午、傍晚和夜间之间循环以最大化你的发现。</span></li>
+          <li><span class="en"><strong>Be patient and move slowly.</strong> Rare and legendary animals are easily spooked. Crouch, move slowly, and use your camera's zoom to photograph from a distance. Rushing in will cause them to flee before you can get a shot.</span><span class="zh"><strong>保持耐心，缓慢移动。</strong>稀有和传说级动物很容易受到惊吓。蹲下、缓慢移动，并使用相机的变焦从远处拍摄。贸然靠近会导致它们在你按下快门前就逃走了。</span></li>
+          <li><span class="en"><strong>Check the Wildlife Outpost quest board.</strong> Daily and weekly quests can point you toward specific animals you might be missing. Quests also reward you with camera upgrades and useful items.</span><span class="zh"><strong>查看野生动物前哨站任务公告板。</strong>每日和每周任务可以指引你找到可能遗漏的特定动物。任务还会奖励你相机升级和有用的物品。</span></li>
+          <li><span class="en"><strong>Bring a friend in co-op.</strong> Exploring with a friend in co-op mode makes wildlife spotting faster and more fun. Each player builds their own journal, but you can share locations and tips with each other as you discover animals together.</span><span class="zh"><strong>带朋友一起联机。</strong>和朋友一起在联机模式中探索可以更快、更有趣地发现野生动物。每位玩家建立自己的日志，但你们可以在共同发现动物时互相分享位置和技巧。</span></li>
+          <li><span class="en"><strong>Pay attention to audio cues.</strong> Many animals make distinct sounds — bird calls, deer rustling, wolf howls. Use your ears to locate animals you might not see immediately. Headphones or good speakers can help a lot!</span><span class="zh"><strong>注意声音提示。</strong>许多动物会发出独特的声音——鸟鸣、鹿的沙沙声、狼嚎。用你的耳朵定位你可能无法立即看到的动物。耳机或好的音箱会有很大帮助！</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Platform Availability -->
+    <section class="mb-12">
+      <div class="card p-6 bg-gradient-to-r from-violet-50 to-purple-50">
+        <h2 class="text-xl font-black mb-4"><span class="en">🎮 Platform Availability</span><span class="zh">🎮 平台可用性</span></h2>
+        <p class="text-slate-600 text-sm mb-4"><span class="en">The Wildlife Update (v1.2.0) is available now on the following platforms, with more coming soon:</span><span class="zh">野生动物更新（v1.2.0）现已在以下平台推出，更多平台即将上线：</span></p>
+        <div class="grid md:grid-cols-3 gap-3">
+          <div class="bg-white rounded-xl p-4 text-center border-2 border-green-300">
+            <div class="text-2xl mb-1">🖥️</div>
+            <div class="font-bold text-slate-800 text-sm">PC (Steam / Epic)</div>
+            <div class="text-xs text-green-600 font-semibold"><span class="en">Available Now</span><span class="zh">现已推出</span></div>
+          </div>
+          <div class="bg-white rounded-xl p-4 text-center border-2 border-green-300">
+            <div class="text-2xl mb-1">🎮</div>
+            <div class="font-bold text-slate-800 text-sm">PS5</div>
+            <div class="text-xs text-green-600 font-semibold"><span class="en">Available Now</span><span class="zh">现已推出</span></div>
+          </div>
+          <div class="bg-white rounded-xl p-4 text-center border-2 border-green-300">
+            <div class="text-2xl mb-1">🎮</div>
+            <div class="font-bold text-slate-800 text-sm">Xbox Series X/S</div>
+            <div class="text-xs text-green-600 font-semibold"><span class="en">Available Now</span><span class="zh">现已推出</span></div>
+          </div>
+          <div class="bg-white rounded-xl p-4 text-center border-2 border-amber-300 md:col-span-3">
+            <div class="text-2xl mb-1">🕹️</div>
+            <div class="font-bold text-slate-800 text-sm">Nintendo Switch / Switch 2</div>
+            <div class="text-xs text-amber-600 font-semibold"><span class="en">Coming Later</span><span class="zh">稍后推出</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="mb-12">
+      <div class="card p-6 bg-gradient-to-r from-slate-50 to-slate-100">
+        <h2 class="text-xl font-black mb-4"><span class="en">❓ Frequently Asked Questions</span><span class="zh">❓ 常见问题</span></h2>
+        <div class="space-y-4">
+          <div>
+            <h3 class="font-bold text-sm mb-1"><span class="en">Is the Wildlife Update free?</span><span class="zh">野生动物更新是免费的吗？</span></h3>
+            <p class="text-sm text-slate-600"><span class="en">Yes! The Wildlife Update (v1.2.0) is a <strong>completely free</strong> major content update. It is not a paid DLC. All players get access automatically when they update their game.</span><span class="zh">是的！野生动物更新（v1.2.0）是一次<strong>完全免费</strong>的大型内容更新。它不是付费DLC。所有玩家在更新游戏后都会自动获得访问权限。</span></p>
+          </div>
+          <div>
+            <h3 class="font-bold text-sm mb-1"><span class="en">How many animals are there in total?</span><span class="zh">总共有多少种动物？</span></h3>
+            <p class="text-sm text-slate-600"><span class="en">The Wildlife Update introduces <strong>34 unique animal species</strong> distributed across all 4 biomes (Grasslands, Canyon, Coast, and Mountain). Animals range from common species like deer and rabbits to rare and legendary creatures.</span><span class="zh">野生动物更新引入了<strong>34种独特的动物物种</strong>，分布在全部4个生物群系（草原、峡谷、海岸和山脉）中。动物种类从鹿和兔子等常见物种到稀有和传说生物不等。</span></p>
+          </div>
+          <div>
+            <h3 class="font-bold text-sm mb-1"><span class="en">Do I need to buy a DLC for the Wildlife Update?</span><span class="zh">我需要购买DLC才能玩野生动物更新吗？</span></h3>
+            <p class="text-sm text-slate-600"><span class="en">No. The Wildlife Update is a free game update (v1.2.0), not paid DLC. Simply update your game to the latest version and all wildlife content will be available to you at no extra cost.</span><span class="zh">不需要。野生动物更新是免费游戏更新（v1.2.0），不是付费DLC。只需将游戏更新到最新版本，所有野生动物内容都将免费提供给你。</span></p>
+          </div>
+          <div>
+            <h3 class="font-bold text-sm mb-1"><span class="en">Can I take photos of my pet dog?</span><span class="zh">我可以给我的宠物狗拍照吗？</span></h3>
+            <p class="text-sm text-slate-600"><span class="en">You can definitely take photos of your pet dog with the camera! However, your pet dog does not count toward the wildlife journal collection — it's already your faithful companion, not a wild animal to discover. The 34 species in the journal are all wild animals found in the biomes.</span><span class="zh">你当然可以用相机给你的宠物狗拍照！但是，你的宠物狗不计入野生动物日志收集——它已经是你忠实的伙伴，而不是需要发现的野生动物。日志中的34个物种都是在生物群系中发现的野生动物。</span></p>
+          </div>
+          <div>
+            <h3 class="font-bold text-sm mb-1"><span class="en">When does the Wildlife Update come out?</span><span class="zh">野生动物更新什么时候出？</span></h3>
+            <p class="text-sm text-slate-600"><span class="en">The Wildlife Update (v1.2.0) was released in <strong>September 2026</strong>. It's available now on PC (Steam & Epic), PS5, and Xbox Series X/S. Nintendo Switch and Switch 2 versions will be released at a later date.</span><span class="zh">野生动物更新（v1.2.0）已于 <strong>2026年9月</strong> 发布。现已登陆PC（Steam和Epic）、PS5和Xbox Series X/S。Nintendo Switch和Switch 2版本将在稍后发布。</span></p>
+          </div>
+          <div>
+            <h3 class="font-bold text-sm mb-1"><span class="en">Does the Wildlife Update work in co-op?</span><span class="zh">野生动物更新支持联机吗？</span></h3>
+            <p class="text-sm text-slate-600"><span class="en">Yes! Wildlife photography and the journal system are fully supported in co-op mode with up to 4 players. Each player builds their own wildlife journal independently, but you can explore and discover animals together.</span><span class="zh">支持！野生动物摄影和日志系统完全支持最多4名玩家的联机模式。每位玩家独立建立自己的野生动物日志，但你们可以一起探索和发现动物。</span></p>
+          </div>
+          <div>
+            <h3 class="font-bold text-sm mb-1"><span class="en">Are there achievements for the Wildlife Update?</span><span class="zh">野生动物更新有成就吗？</span></h3>
+            <p class="text-sm text-slate-600"><span class="en">Yes, the Wildlife Update includes new achievements tied to photographing specific animals, reaching collection milestones, and completing your full wildlife journal.</span><span class="zh">是的，野生动物更新包含与拍摄特定动物、达成收集里程碑和完成完整野生动物日志相关的新成就。</span></p>
+          </div>
+          <div>
+            <h3 class="font-bold text-sm mb-1"><span class="en">Can animals attack me?</span><span class="zh">动物会攻击我吗？</span></h3>
+            <p class="text-sm text-slate-600"><span class="en">No, Outbound's wildlife is peaceful. Animals may run away if you get too close, but they won't attack you. The focus is on observation, photography, and appreciation of nature — not combat.</span><span class="zh">不会，Outbound的野生动物都是和平的。如果你靠得太近，动物可能会逃跑，但它们不会攻击你。重点在于观察、摄影和欣赏自然——而不是战斗。</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="adslot">[ Ad slot - bottom ]</div>
+
+    <section class="card p-6">
+      <h2 class="text-xl font-black mb-4"><span class="en">💬 Community Discussion</span><span class="zh">💬 社区讨论</span></h2>
+      <p class="text-slate-600 text-sm mb-4"><span class="en">Already spotted a legendary animal? Share your best wildlife photos and discovery tips!</span><span class="zh">已经发现了传说动物？分享你最好的野生动物照片和发现技巧吧！</span></p>
+      <script src="https://giscus.app/client.js"
+              data-repo="bos12050512-dotcom/outbound-guide"
+              data-repo-id="R_kgDOSZPlqw"
+              data-category="Announcements"
+              data-category-id="DIC_kwDOSZPlq84C8s3i"
+              data-mapping="pathname"
+              data-strict="0"
+              data-reactions-enabled="1"
+              data-emit-metadata="0"
+              data-input-position="top"
+              data-theme="light"
+              data-lang="en"
+              data-loading="lazy"
+              crossorigin="anonymous"
+              async></script>
+    </section>
+  </main>
+
+  <footer class="bg-slate-950 text-slate-300 py-10 mt-10">
+    <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row gap-4 justify-between text-sm">
+      <div>
+        <div class="font-black text-white">OutboundGuide.org</div>
+        <div class="text-slate-400"><span class="en">Non-official fan guide. Outbound &copy; Square Glade Games.</span><span class="zh">非官方玩家攻略站。Outbound &copy; Square Glade Games。</span></div>
+      </div>
+      <div class="flex flex-wrap gap-4">
+        <a href="/en/about.html" class="hover:text-white"><span class="en">About</span><span class="zh">关于</span></a>
+        <a href="/en/privacy.html" class="hover:text-white"><span class="en">Privacy</span><span class="zh">隐私</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function setLang(lang){const b=document.getElementById('bodyTag'),en=document.getElementById('btn-en'),zh=document.getElementById('btn-zh');if(lang==='zh'){b.className='lang-zh';zh.className='px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm';en.className='px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm'}else{b.className='lang-en';en.className='px-3 py-1.5 rounded-lg bg-white shadow text-blue-600 font-bold text-sm';zh.className='px-3 py-1.5 rounded-lg text-slate-500 font-bold text-sm'}localStorage.setItem('lang',lang)}setLang(localStorage.getItem('lang')||'en');
+  </script>
+</body>
+</html>
